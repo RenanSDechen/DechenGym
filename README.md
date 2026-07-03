@@ -51,11 +51,16 @@ DechenGym/
 │   └── test_ergonomia.py
 │   ├── geracao_imagem.py         # Tools de imagem (SVG / PNG / prompt IA)
 │   ├── sintese_came.py           # Tools de came de resistência variável
+│   ├── orquestrador/             # briefing → projeto validado
+│   │   ├── pipeline.py           #   núcleo determinístico + autocorreção
+│   │   ├── adapters.py           #   LLM plugável (regras / Anthropic)
+│   │   └── agente.py             #   orquestrar()
 ├── examples/
 │   ├── exemplo_braco_articulado.py
 │   ├── exemplo_ergonomia.py
 │   ├── exemplo_imagem.py
-│   └── exemplo_came.py
+│   ├── exemplo_came.py
+│   └── exemplo_orquestrador.py
 └── output/                       # artefatos gerados (.scad / .svg / .json)
 ```
 
@@ -121,6 +126,12 @@ python examples/exemplo_braco_articulado.py
 | `gerar_came_openscad`             | Código OpenSCAD da came (chapa extrudada + furos).     |
 | `gerar_came_svg`                  | Preview 2D do perfil da came (SVG).                    |
 | `sintetizar_came_de_ergonomia`    | Atalho: came a partir do envelope ergonômico.          |
+
+### Orquestração
+
+| Tool                              | Descrição                                              |
+|-----------------------------------|--------------------------------------------------------|
+| `projetar_maquina`                | Pipeline completo → projeto validado (todas as etapas).|
 
 ### Ergonomia
 
@@ -230,6 +241,38 @@ sintetizada, reavaliada por `avaliar_curva_resistencia`, pontua **100/100**.
 python examples/exemplo_came.py
 ```
 
+## Orquestrador (briefing → projeto validado)
+
+O orquestrador transforma um **briefing em linguagem natural** em um projeto
+completo e validado, encadeando todas as ferramentas com um loop de
+**autocorreção estrutural**. A arquitetura é **provedor-agnóstica**:
+
+- **Núcleo determinístico** (`projetar_maquina`): ergonomia → came → estrutura
+  (autocorreção) → geometria → imagem. Roda e é testado **offline**, sem LLM.
+- **Camada de LLM plugável**: `AdaptadorRegras` (fallback heurístico, offline)
+  e `AdaptadorAnthropic` (interpreta briefings livres via Claude quando há
+  `ANTHROPIC_API_KEY`). `adaptador_padrao()` escolhe automaticamente.
+
+O **loop de autocorreção** é o comportamento "de agente": propõe uma espessura
+de parede, valida a estrutura, e escala para a próxima espessura comercial até
+aprovar — registrando cada tentativa.
+
+```python
+from dechengym.orquestrador import orquestrar, AdaptadorRegras
+
+res = orquestrar("cadeira extensora para 120 kg, feminino P50", adaptador=AdaptadorRegras())
+print(res["projeto"]["resumo"])
+# Cadeira extensora: pivo 400.0 mm, pega neutra Ø34.8 mm, came sino
+# (casamento 100/100), perfil 50x50 parede 1.5 mm (APROVADO).
+```
+
+```bash
+python examples/exemplo_orquestrador.py "rosca de biceps 40kg feminino P50"
+```
+
+Para usar o Claude de verdade na interpretação do briefing, exporte
+`ANTHROPIC_API_KEY` e instale `anthropic` (o núcleo do projeto não muda).
+
 ## Modelo de cálculo estrutural
 
 - **Momento fletor:** `M = m · g · d` (kg → N via g = 9,80665 m/s²).
@@ -255,8 +298,9 @@ Contrato de aceite de referência já coberto:
 - [x] Módulo de **ergonomia** (antropometria, ADM, pegada, curva de força).
 - [x] Geração da **imagem do produto** (SVG técnico / PNG OpenSCAD / prompt IA).
 - [x] **Síntese de came** de resistência variável (curva de força → geometria).
-- [x] **Auditoria de defeitos** em estrutura e ergonomia (76 testes, incl. regressões).
-- [ ] **Agente orquestrador** (briefing em linguagem natural → design validado).
-- [ ] Fechar loop estrutura↔geometria (validação realimenta o `.scad`).
-- [ ] Custom components completos para **Langflow**.
+- [x] **Auditoria de defeitos** em estrutura e ergonomia (88 testes, incl. regressões).
+- [x] **Agente orquestrador** (briefing → design validado, provedor-agnóstico).
+- [x] Loop estrutura↔geometria (validação realimenta o `.scad`).
+- [ ] Render PNG automático (instalar OpenSCAD no ambiente).
+- [ ] Custom components completos para **Langflow** (incl. orquestrador).
 - [ ] Bancos de dados a partir de fontes reais (metalon e antropometria).

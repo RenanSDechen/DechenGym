@@ -40,6 +40,7 @@ from dechengym.sintese_came import (
     sintetizar_came_de_ergonomia,
     sintetizar_perfil_came,
 )
+from dechengym.orquestrador.pipeline import projetar_maquina_params
 from dechengym.ergonomia import (
     avaliar_curva_resistencia,
     calcular_alinhamento_pivo,
@@ -88,6 +89,8 @@ TOOLS: dict[str, Callable[..., Any]] = {
     "avaliar_curva_resistencia": avaliar_curva_resistencia,
     "calcular_alinhamento_pivo": calcular_alinhamento_pivo,
     "projetar_ergonomia": projetar_ergonomia,
+    # --- Orquestração (pipeline completo) ---
+    "projetar_maquina": projetar_maquina_params,
 }
 
 
@@ -583,6 +586,34 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
                     "type": "string",
                     "enum": ["conforto", "forca_preensao", "precisao"],
                 },
+            },
+            "required": ["exercicio"],
+        },
+    },
+    # ------------------------ Orquestração --------------------------------
+    {
+        "name": "projetar_maquina",
+        "description": (
+            "Pipeline completo: de um exercicio + parametros a um projeto "
+            "validado (ergonomia + came de resistencia variavel + estrutura "
+            "com autocorrecao de espessura + geometria OpenSCAD + memorial + "
+            "imagem). Retorna tudo, incluindo 'aprovado' e 'resumo'."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "exercicio": {"type": "string"},
+                "carga_kg": {"type": "number"},
+                "percentil": {"type": "number"},
+                "sexo": {"type": "string", "enum": ["masculino", "feminino"]},
+                "objetivo_pega": {
+                    "type": "string",
+                    "enum": ["conforto", "forca_preensao", "precisao"],
+                },
+                "comprimento_alavanca_mm": {"type": "number"},
+                "perfil": {"type": "string", "description": "Ex.: '50x50', '60x60'."},
+                "fator_seguranca": {"type": "number"},
+                "raio_max_came_mm": {"type": "number"},
             },
             "required": ["exercicio"],
         },

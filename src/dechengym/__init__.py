@@ -44,6 +44,12 @@ from dechengym.sintese_came import (
     gerar_came_svg,
     sintetizar_came_de_ergonomia,
 )
+from dechengym.orquestrador import (
+    RequisicaoProjeto,
+    projetar_maquina,
+    orquestrar,
+    adaptador_padrao,
+)
 from dechengym.ergonomia import (
     get_antropometria,
     calcular_faixa_ajuste,
@@ -95,4 +101,9 @@ __all__ = [
     "avaliar_curva_resistencia",
     "calcular_alinhamento_pivo",
     "projetar_ergonomia",
+    # Orquestração
+    "RequisicaoProjeto",
+    "projetar_maquina",
+    "orquestrar",
+    "adaptador_padrao",
 ]
