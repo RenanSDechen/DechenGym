@@ -104,6 +104,32 @@ class TestSaidasCame:
 
 
 class TestSinteseDeErgonomia:
+    @pytest.mark.parametrize(
+        "exercicio",
+        [
+            "rosca_biceps",
+            "triceps_maquina",
+            "supino_maquina",
+            "remada_maquina",
+            "desenvolvimento_maquina",
+            "cadeira_extensora",
+            "mesa_flexora",
+            "cadeira_abdutora",
+        ],
+    )
+    def test_came_de_ergonomia_funciona_para_todo_exercicio(self, exercicio):
+        # Regressão: exercícios de extensão (tríceps, cadeira extensora) tinham
+        # amplitude zero e quebravam a síntese da came. Todos devem funcionar.
+        # Given o envelope ergonômico do exercício
+        env = projetar_ergonomia(exercicio, carga_pico_kg=50)
+        # When sintetizamos a came e reavaliamos o casamento
+        perfil = sintetizar_came_de_ergonomia(env, raio_max_mm=100)
+        resistencia = calcular_resistencia_came(perfil, carga_kg=50)
+        aval = avaliar_curva_resistencia(resistencia["torque_nm"], env["grupo_muscular"])
+        # Then a amplitude é positiva e o casamento é (praticamente) perfeito
+        assert perfil["amplitude_graus"] > 0
+        assert aval["pontuacao"] >= 99.5
+
     def test_usa_grupo_e_adm_do_envelope(self):
         # Given o envelope ergonômico da rosca de bíceps
         env = projetar_ergonomia("rosca_biceps")

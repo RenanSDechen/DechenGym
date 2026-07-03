@@ -105,7 +105,9 @@ CATALOGO_EXERCICIOS: dict[str, Exercicio] = {
         "grupo_muscular": "gluteo",
         "pegada_orientacao": "neutra",
         "pegada_largura": "media",
-        "medida_alinhamento_pivo": "altura_ombro_sentado",
+        # Maquina de quadril: eixo ~ altura do quadril sentado, aproximada
+        # pela altura poplitea (altura do assento acima do piso).
+        "medida_alinhamento_pivo": "altura_poplitea",
         "postura": "sentado",
     },
 }

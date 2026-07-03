@@ -88,6 +88,8 @@ def dimensionar_pega(
 
     if comprimento_mao_mm is None:
         comprimento_mao_mm = get_antropometria("comprimento_mao", percentil, sexo)
+    elif comprimento_mao_mm <= 0:
+        raise ValueError("comprimento_mao_mm deve ser positivo.")
 
     cfg = DIAMETRO_PEGA[objetivo]
     ideal = comprimento_mao_mm * cfg["fator_comprimento_mao"]
@@ -137,6 +139,8 @@ def calcular_largura_pegada(
 
     if largura_biacromial_mm is None:
         largura_biacromial_mm = get_antropometria("largura_biacromial", percentil, sexo)
+    elif largura_biacromial_mm <= 0:
+        raise ValueError("largura_biacromial_mm deve ser positivo.")
 
     cfg = LARGURAS_PEGADA[largura]
     distancia = largura_biacromial_mm * cfg["fator_biacromial"]

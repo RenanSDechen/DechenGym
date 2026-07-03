@@ -100,7 +100,9 @@ def calcular_faixa_ajuste(
         Percentis que definem os extremos do envelope (padrão 5 e 95).
     sexo:
         ``"masculino"``, ``"feminino"`` ou ``"ambos"``. Em ``"ambos"``, o
-        mínimo vem do feminino e o máximo do masculino.
+        mínimo e o máximo são tomados como o **menor** e o **maior** valor
+        entre os dois sexos (não se assume que o homem é sempre o maior —
+        para a largura do quadril, por exemplo, a mulher P95 é mais larga).
     folga_mm:
         Folga de projeto adicionada em cada extremo (mm).
 
@@ -117,8 +119,15 @@ def calcular_faixa_ajuste(
     True
     """
     if sexo == "ambos":
-        minimo = get_antropometria(medida, percentil_min, "feminino")
-        maximo = get_antropometria(medida, percentil_max, "masculino")
+        # Envelope real: menor valor no percentil inferior e maior valor no
+        # percentil superior, considerando ambos os sexos (o maior nem sempre
+        # é o homem — ex.: largura do quadril).
+        minimo = min(
+            get_antropometria(medida, percentil_min, s) for s in sexos_disponiveis()
+        )
+        maximo = max(
+            get_antropometria(medida, percentil_max, s) for s in sexos_disponiveis()
+        )
     else:
         minimo = get_antropometria(medida, percentil_min, sexo)
         maximo = get_antropometria(medida, percentil_max, sexo)

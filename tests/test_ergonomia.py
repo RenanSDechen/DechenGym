@@ -215,3 +215,43 @@ class TestProjetoErgonomico:
         # Then levanta KeyError
         with pytest.raises(KeyError):
             projetar_ergonomia("voar")
+
+
+# ==========================================================================
+# Regressões (defeitos corrigidos na auditoria)
+# ==========================================================================
+class TestRegressoes:
+    def test_faixa_ambos_usa_maior_entre_sexos(self):
+        # Regressão do Defeito #1: na largura do quadril a mulher P95 (420) é
+        # mais larga que o homem P95 (400); "ambos" não pode assumir homem=máx.
+        # Given a largura do quadril e o envelope "ambos"
+        faixa = calcular_faixa_ajuste("largura_quadril_sentado", sexo="ambos")
+        # Then o máximo acomoda a mulher P95 (420 mm), não os 400 do homem
+        assert faixa["maximo_mm"] == pytest.approx(420.0)
+
+    def test_extensao_cotovelo_tem_amplitude_de_trabalho(self):
+        # Regressão do Defeito #2: extensão de cotovelo (tríceps) é trabalhada
+        # pelo arco de flexão — não pode ter amplitude zero.
+        adm = get_amplitude_movimento("cotovelo", "extensao")
+        assert adm["amplitude_treino_graus"] > 0
+        assert adm["adm_treino"] == [10, 135]
+
+    def test_extensao_joelho_tem_amplitude_de_trabalho(self):
+        # Regressão do Defeito #2: cadeira extensora percorre o arco de flexão.
+        adm = get_amplitude_movimento("joelho", "extensao")
+        assert adm["amplitude_treino_graus"] > 0
+        assert adm["adm_treino"] == [0, 120]
+
+    def test_cadeira_abdutora_nao_alinha_pelo_ombro(self):
+        # Regressão do Defeito #3: máquina de quadril não pode alinhar o pivô
+        # pela altura do ombro.
+        env = projetar_ergonomia("cadeira_abdutora")
+        assert env["alinhamento_pivo"]["medida_referencia"] != "altura_ombro_sentado"
+        assert env["articulacao"] == "quadril"
+
+    def test_valores_diretos_negativos_na_pega_levantam_erro(self):
+        # Regressão do Defeito #4: guardas de entrada para valores diretos.
+        with pytest.raises(ValueError):
+            dimensionar_pega("conforto", comprimento_mao_mm=-10)
+        with pytest.raises(ValueError):
+            calcular_largura_pegada("media", largura_biacromial_mm=-10)

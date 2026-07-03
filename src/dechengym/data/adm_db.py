@@ -72,9 +72,11 @@ ADM: dict[str, dict[str, Movimento]] = {
             "descricao": "Dobrar o cotovelo (ex.: rosca)",
         },
         "extensao": {
-            "adm_anatomica": (0, 0),
-            "adm_treino": (0, 0),
-            "descricao": "Estender o cotovelo (retorno da flexao)",
+            # Nao ha hiperextensao alem do neutro no cotovelo; a extensao e
+            # trabalhada percorrendo o MESMO arco de flexao (ex.: triceps).
+            "adm_anatomica": (0, 145),
+            "adm_treino": (10, 135),
+            "descricao": "Extensao de cotovelo pelo arco de flexao (ex.: triceps)",
         },
         "pronacao": {
             "adm_anatomica": (0, 85),
@@ -116,9 +118,11 @@ ADM: dict[str, dict[str, Movimento]] = {
             "descricao": "Dobrar o joelho (ex.: mesa flexora)",
         },
         "extensao": {
-            "adm_anatomica": (0, 0),
-            "adm_treino": (0, 0),
-            "descricao": "Estender o joelho (ex.: cadeira extensora)",
+            # A extensao de joelho e trabalhada percorrendo o arco de flexao
+            # (da posicao fletida ate a extensao total) — ex.: cadeira extensora.
+            "adm_anatomica": (0, 135),
+            "adm_treino": (0, 120),
+            "descricao": "Extensao de joelho pelo arco de flexao (ex.: cadeira extensora)",
         },
     },
     "tornozelo": {
