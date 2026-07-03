@@ -50,10 +50,12 @@ DechenGym/
 │   ├── test_geracao_openscad.py
 │   └── test_ergonomia.py
 │   ├── geracao_imagem.py         # Tools de imagem (SVG / PNG / prompt IA)
+│   ├── sintese_came.py           # Tools de came de resistência variável
 ├── examples/
 │   ├── exemplo_braco_articulado.py
 │   ├── exemplo_ergonomia.py
-│   └── exemplo_imagem.py
+│   ├── exemplo_imagem.py
+│   └── exemplo_came.py
 └── output/                       # artefatos gerados (.scad / .svg / .json)
 ```
 
@@ -109,6 +111,16 @@ python examples/exemplo_braco_articulado.py
 | `gerar_preview_svg`               | Desenho técnico 2D (blueprint) em SVG — sem dependências. |
 | `renderizar_openscad_png`         | Render 3D em PNG via OpenSCAD CLI (se instalado).       |
 | `montar_prompt_imagem_produto`    | Prompt para modelo texto→imagem (render de produto).   |
+
+### Síntese de came (resistência variável)
+
+| Tool                              | Descrição                                              |
+|-----------------------------------|--------------------------------------------------------|
+| `sintetizar_perfil_came`          | Gera o perfil da came a partir da curva de força.      |
+| `calcular_resistencia_came`       | Torque resultante τ(θ) = W·r(θ) da came.               |
+| `gerar_came_openscad`             | Código OpenSCAD da came (chapa extrudada + furos).     |
+| `gerar_came_svg`                  | Preview 2D do perfil da came (SVG).                    |
+| `sintetizar_came_de_ergonomia`    | Atalho: came a partir do envelope ergonômico.          |
 
 ### Ergonomia
 
@@ -190,6 +202,34 @@ O pipeline completo é: `projetar_ergonomia` →
 `gerar_memorial_descritivo` + `gerar_preview_svg` /
 `montar_prompt_imagem_produto`.
 
+## Síntese de came (o diferencial ergonômico)
+
+O que separa uma máquina genérica de uma com biomecânica projetada é a
+**came de resistência variável**: a resistência sentida deve acompanhar a
+força do músculo em cada ponto do movimento. O módulo `sintese_came`
+converte a curva de força em geometria fabricável.
+
+Fundamento: com tração de cabo aproximadamente constante `W = m·g`, o torque
+resistente é `τ(θ) = W · r(θ)`, onde `r(θ)` é o raio efetivo da came. Para
+manter a intensidade relativa constante, queremos `τ(θ) ∝ S(θ)` (curva de
+força), logo:
+
+```
+r(θ) = r_max · S_norm(θ)
+```
+
+ou seja, **o raio da came é proporcional à curva de força normalizada** — o
+pico de resistência coincide com o ponto de maior força. Para o bíceps
+(curva em sino), isso produz a came em formato de lágrima, com raio máximo
+no meio da amplitude.
+
+O casamento é **provado por round-trip**: a resistência recalculada da came
+sintetizada, reavaliada por `avaliar_curva_resistencia`, pontua **100/100**.
+
+```bash
+python examples/exemplo_came.py
+```
+
 ## Modelo de cálculo estrutural
 
 - **Momento fletor:** `M = m · g · d` (kg → N via g = 9,80665 m/s²).
@@ -214,6 +254,8 @@ Contrato de aceite de referência já coberto:
 
 - [x] Módulo de **ergonomia** (antropometria, ADM, pegada, curva de força).
 - [x] Geração da **imagem do produto** (SVG técnico / PNG OpenSCAD / prompt IA).
-- [ ] Instalar OpenSCAD no ambiente para render PNG automático.
-- [ ] Custom components completos para **Langflow** (incl. imagem).
+- [x] **Síntese de came** de resistência variável (curva de força → geometria).
+- [ ] **Agente orquestrador** (briefing em linguagem natural → design validado).
+- [ ] Fechar loop estrutura↔geometria (validação realimenta o `.scad`).
+- [ ] Custom components completos para **Langflow**.
 - [ ] Bancos de dados a partir de fontes reais (metalon e antropometria).

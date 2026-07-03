@@ -37,6 +37,13 @@ from dechengym.geracao_imagem import (
     renderizar_openscad_png,
     montar_prompt_imagem_produto,
 )
+from dechengym.sintese_came import (
+    sintetizar_perfil_came,
+    calcular_resistencia_came,
+    gerar_came_openscad,
+    gerar_came_svg,
+    sintetizar_came_de_ergonomia,
+)
 from dechengym.ergonomia import (
     get_antropometria,
     calcular_faixa_ajuste,
@@ -69,6 +76,12 @@ __all__ = [
     "gerar_imagem",
     "renderizar_openscad_png",
     "montar_prompt_imagem_produto",
+    # Síntese de came (resistência variável)
+    "sintetizar_perfil_came",
+    "calcular_resistencia_came",
+    "gerar_came_openscad",
+    "gerar_came_svg",
+    "sintetizar_came_de_ergonomia",
     # Ergonomia
     "get_antropometria",
     "calcular_faixa_ajuste",

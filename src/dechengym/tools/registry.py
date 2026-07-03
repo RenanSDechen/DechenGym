@@ -33,6 +33,13 @@ from dechengym.geracao_imagem import (
     montar_prompt_imagem_produto,
     renderizar_openscad_png,
 )
+from dechengym.sintese_came import (
+    calcular_resistencia_came,
+    gerar_came_openscad,
+    gerar_came_svg,
+    sintetizar_came_de_ergonomia,
+    sintetizar_perfil_came,
+)
 from dechengym.ergonomia import (
     avaliar_curva_resistencia,
     calcular_alinhamento_pivo,
@@ -62,6 +69,12 @@ TOOLS: dict[str, Callable[..., Any]] = {
     "gerar_preview_svg": gerar_preview_svg,
     "renderizar_openscad_png": renderizar_openscad_png,
     "montar_prompt_imagem_produto": montar_prompt_imagem_produto,
+    # --- Síntese de came (resistência variável) ---
+    "sintetizar_perfil_came": sintetizar_perfil_came,
+    "calcular_resistencia_came": calcular_resistencia_came,
+    "gerar_came_openscad": gerar_came_openscad,
+    "gerar_came_svg": gerar_came_svg,
+    "sintetizar_came_de_ergonomia": sintetizar_came_de_ergonomia,
     # --- Ergonomia ---
     "get_antropometria": get_antropometria,
     "calcular_faixa_ajuste": calcular_faixa_ajuste,
@@ -266,6 +279,90 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
                 "idioma": {"type": "string", "enum": ["pt", "en"]},
             },
             "required": ["parametros_geometria"],
+        },
+    },
+    # --------------------- Síntese de came (resistência) ------------------
+    {
+        "name": "sintetizar_perfil_came",
+        "description": (
+            "Sintetiza o perfil de uma came de resistencia variavel a partir "
+            "da curva de forca de um grupo muscular: o raio efetivo fica "
+            "proporcional a forca (r = raio_max x S_norm), casando resistencia "
+            "e forca ao longo da ADM. Retorna amostras polares e o poligono XY."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "grupo_muscular": {"type": "string"},
+                "raio_max_mm": {"type": "number"},
+                "amplitude_movimento_graus": {"type": "number"},
+                "n_pontos": {"type": "integer"},
+            },
+            "required": ["grupo_muscular"],
+        },
+    },
+    {
+        "name": "calcular_resistencia_came",
+        "description": (
+            "Calcula o torque resistente (N.m) produzido pela came para uma "
+            "carga (kg), amostrado nos 5 pontos canonicos do movimento — "
+            "pronto para reavaliar o casamento com avaliar_curva_resistencia."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "perfil_came": {"type": "object"},
+                "carga_kg": {"type": "number"},
+            },
+            "required": ["perfil_came", "carga_kg"],
+        },
+    },
+    {
+        "name": "gerar_came_openscad",
+        "description": (
+            "Gera o codigo OpenSCAD da came (chapa 2D extrudada) com furo do "
+            "eixo no centro e furo de ancoragem do cabo junto ao raio de pico."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "perfil_came": {"type": "object"},
+                "espessura_mm": {"type": "number"},
+                "diametro_eixo_mm": {"type": "number"},
+                "diametro_furo_cabo_mm": {"type": "number"},
+            },
+            "required": ["perfil_came"],
+        },
+    },
+    {
+        "name": "gerar_came_svg",
+        "description": (
+            "Gera um preview 2D (SVG) do perfil da came, sem dependencias."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "perfil_came": {"type": "object"},
+                "largura_px": {"type": "integer"},
+            },
+            "required": ["perfil_came"],
+        },
+    },
+    {
+        "name": "sintetizar_came_de_ergonomia",
+        "description": (
+            "Atalho: sintetiza a came diretamente do envelope de "
+            "projetar_ergonomia, usando o grupo muscular e a amplitude de "
+            "treino (ADM) do envelope."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "envelope": {"type": "object"},
+                "raio_max_mm": {"type": "number"},
+                "n_pontos": {"type": "integer"},
+            },
+            "required": ["envelope"],
         },
     },
     # ---------------------------- Ergonomia -------------------------------
