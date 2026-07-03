@@ -67,9 +67,12 @@ CURVAS_FORCA: dict[str, CurvaForca] = {
         "descricao": "Desenvolvimento: mais forte perto da extensao",
     },
     "quadriceps": {
-        "tipo": "ascendente",
-        "perfil": (0.60, 0.74, 0.86, 0.95, 1.00),
-        "descricao": "Extensao de joelho: mais forte perto da extensao total",
+        # O torque extensor do joelho tem pico proximo a 60 graus de flexao e
+        # cai na extensao terminal (onde ha maior estresse patelofemoral); nao
+        # e "ascendente ate a extensao total".
+        "tipo": "sino",
+        "perfil": (0.75, 1.00, 0.90, 0.74, 0.58),
+        "descricao": "Extensao de joelho: pico ~60 graus de flexao, fraco na extensao final",
     },
     "isquiotibiais": {
         "tipo": "descendente",
@@ -80,6 +83,13 @@ CURVAS_FORCA: dict[str, CurvaForca] = {
         "tipo": "sino",
         "perfil": (0.60, 0.85, 1.00, 0.88, 0.62),
         "descricao": "Extensao de quadril: pico na regiao media",
+    },
+    "abdutores_quadril": {
+        # Abducao de quadril (gluteo medio/minimo): mais forte proximo do
+        # neutro/aducao e enfraquece conforme a abducao avanca.
+        "tipo": "descendente",
+        "perfil": (1.00, 0.90, 0.80, 0.70, 0.60),
+        "descricao": "Abducao de quadril: mais forte no inicio (proximo ao neutro)",
     },
     "panturrilha": {
         "tipo": "descendente",

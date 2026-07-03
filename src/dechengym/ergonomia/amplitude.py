@@ -92,8 +92,14 @@ def validar_amplitude_projetada(
         )
 
     aprovado = not violacoes
-    sugestao_ini = max(ini, rec_min)
-    sugestao_fim = min(fim, rec_max)
+    # Clampa cada extremo DENTRO de [rec_min, rec_max]. Como o clamp é
+    # monotônico e ini <= fim, o arco sugerido nunca fica invertido — mesmo
+    # quando todo o arco projetado cai fora da faixa (ex.: 50-60 em 0-45).
+    def _clamp(v: float) -> float:
+        return min(max(v, rec_min), rec_max)
+
+    sugestao_ini = _clamp(ini)
+    sugestao_fim = _clamp(fim)
 
     return {
         "aprovado": aprovado,

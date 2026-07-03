@@ -255,6 +255,7 @@ Contrato de aceite de referência já coberto:
 - [x] Módulo de **ergonomia** (antropometria, ADM, pegada, curva de força).
 - [x] Geração da **imagem do produto** (SVG técnico / PNG OpenSCAD / prompt IA).
 - [x] **Síntese de came** de resistência variável (curva de força → geometria).
+- [x] **Auditoria de defeitos** em estrutura e ergonomia (76 testes, incl. regressões).
 - [ ] **Agente orquestrador** (briefing em linguagem natural → design validado).
 - [ ] Fechar loop estrutura↔geometria (validação realimenta o `.scad`).
 - [ ] Custom components completos para **Langflow**.

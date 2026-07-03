@@ -255,3 +255,28 @@ class TestRegressoes:
             dimensionar_pega("conforto", comprimento_mao_mm=-10)
         with pytest.raises(ValueError):
             calcular_largura_pegada("media", largura_biacromial_mm=-10)
+
+    def test_arco_totalmente_fora_da_faixa_nao_inverte_sugestao(self):
+        # Regressão (auditoria): quando todo o arco cai fora da ADM, o arco
+        # sugerido não pode ficar invertido (início > fim).
+        rel = validar_amplitude_projetada("ombro", "extensao", 50, 60)
+        assert rel["aprovado"] is False
+        ini, fim = rel["arco_sugerido_graus"]
+        assert ini <= fim
+        # E ambos clampados no limite superior da faixa (0-45 -> 45).
+        assert ini == pytest.approx(45.0) and fim == pytest.approx(45.0)
+
+    def test_curva_quadriceps_nao_tem_pico_na_extensao_terminal(self):
+        # Regressão (auditoria): torque extensor do joelho tem pico no meio, não
+        # na extensão total (100% do movimento).
+        curva = get_curva_forca("quadriceps")
+        pico_idx = curva["perfil"].index(max(curva["perfil"]))
+        assert pico_idx not in (0, len(curva["perfil"]) - 1)
+
+    def test_cadeira_abdutora_usa_curva_de_abdutores(self):
+        # Regressão (auditoria): a cadeira abdutora não pode usar a curva de
+        # extensão de quadril (gluteo); precisa de curva de abdutores.
+        env = projetar_ergonomia("cadeira_abdutora")
+        assert env["grupo_muscular"] == "abdutores_quadril"
+        curva = get_curva_forca("abdutores_quadril")
+        assert curva["tipo"] == "descendente"

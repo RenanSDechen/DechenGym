@@ -82,7 +82,11 @@ def sintetizar_perfil_came(
     amplitude_movimento_graus:
         Rotação da came ao longo da ADM (a came gira solidária ao braço).
     n_pontos:
-        Número de amostras da superfície de trabalho.
+        Número de amostras da superfície de trabalho. Para que os pontos
+        canônicos (0/25/50/75/100%) usados por
+        :func:`calcular_resistencia_came` caiam exatamente sobre nós da malha
+        (round-trip exato), use ``n_pontos`` tal que ``n_pontos - 1`` seja
+        múltiplo de 4 (o padrão 49 satisfaz isso).
 
     Returns
     -------
@@ -109,8 +113,14 @@ def sintetizar_perfil_came(
         raise ValueError("n_pontos deve ser >= 3.")
 
     curva = get_curva_forca(grupo_muscular)
-    perfil5 = list(curva["perfil"])
-    s_min = min(perfil5)  # como o pico é 1.0, s_min = raio_min/raio_max
+    # Normaliza pelo pico para que raio_max sempre corresponda ao ponto de
+    # maior força, independentemente da escala com que a curva foi tabelada.
+    perfil_bruto = list(curva["perfil"])
+    pico = max(perfil_bruto)
+    if pico <= 0:
+        raise ValueError(f"Curva de forca de '{grupo_muscular}' invalida (pico <= 0).")
+    perfil5 = [v / pico for v in perfil_bruto]
+    s_min = min(perfil5)  # raio_min / raio_max
     raio_min_mm = raio_max_mm * s_min
 
     amostras: list[dict[str, float]] = []
@@ -241,8 +251,10 @@ def gerar_came_openscad(
     # Ponto de ancoragem do cabo: extremidade de maior raio da superfície.
     a_pico = max(perfil_came["amostras_trabalho"], key=lambda a: a["raio_mm"])
     rad = math.radians(a_pico["angulo_graus"])
-    # Um pouco para dentro do raio de pico, para deixar material na borda.
-    r_furo = max(a_pico["raio_mm"] - max(diametro_furo_cabo_mm, 10.0), 0.0)
+    # Um pouco para dentro do raio de pico, para deixar material na borda. O
+    # recuo é limitado a 30% do raio de pico para nunca colapsar no eixo.
+    recuo = min(max(diametro_furo_cabo_mm, 10.0), a_pico["raio_mm"] * 0.3)
+    r_furo = a_pico["raio_mm"] - recuo
     furo_x = round(r_furo * math.cos(rad), 3)
     furo_y = round(r_furo * math.sin(rad), 3)
 

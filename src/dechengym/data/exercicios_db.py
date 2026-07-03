@@ -102,11 +102,11 @@ CATALOGO_EXERCICIOS: dict[str, Exercicio] = {
         "nome": "Cadeira abdutora",
         "articulacao": "quadril",
         "movimento": "abducao",
-        "grupo_muscular": "gluteo",
+        "grupo_muscular": "abdutores_quadril",
         "pegada_orientacao": "neutra",
         "pegada_largura": "media",
-        # Maquina de quadril: eixo ~ altura do quadril sentado, aproximada
-        # pela altura poplitea (altura do assento acima do piso).
+        # Maquina de quadril: o eixo de abducao e o quadril, cuja altura acima
+        # do piso, sentado, e aproximada pela altura do assento (~ poplitea).
         "medida_alinhamento_pivo": "altura_poplitea",
         "postura": "sentado",
     },

@@ -73,10 +73,16 @@ def parametros_geometria_de_ergonomia(
     altura_pivo = envelope["alinhamento_pivo"]["altura_pivo_mm"]
     diametro_pega = envelope["pegada"]["diametro"]["diametro_recomendado_mm"]
 
+    # O pivô no .scad fica em z = perfil_base + altura_coluna. Para que o eixo
+    # coincida com a altura anatômica, descontamos a altura da base.
+    perfil_base = float((extras or {}).get("perfil_base_mm", _PARAMETROS_PADRAO["perfil_base_mm"]))
+    altura_coluna = max(0.0, altura_pivo - perfil_base)
+
     parametros: dict[str, Any] = {
         "nome": envelope.get("exercicio", "maquina_articulada"),
-        # A coluna leva o eixo de pivô até a altura anatômica da articulação.
-        "altura_coluna_mm": altura_pivo,
+        # A coluna leva o eixo de pivô até a altura anatômica da articulação
+        # (medida a partir do piso, descontada a altura da base).
+        "altura_coluna_mm": altura_coluna,
         "diametro_pega_mm": diametro_pega,
     }
     if extras:
@@ -192,11 +198,11 @@ module alavanca() {{
                    perfil_base + altura_coluna])
             rotate([0, 90, 0])
                 metalon(perfil_alavanca, comprimento_alavanca, espessura_parede);
-    // Pega/manopla na extremidade da alavanca.
+    // Pega/manopla na extremidade da alavanca (a alavanca se estende em +X).
     color("Crimson")
-        translate([base_largura/2 - perfil_alavanca/2,
+        translate([base_largura/2 - perfil_alavanca/2 + comprimento_alavanca,
                    base_profundidade/2 - diametro_pega,
-                   perfil_base + altura_coluna + comprimento_alavanca])
+                   perfil_base + altura_coluna])
             eixo_x(diametro_pega, diametro_pega * 3);
 }}
 
@@ -243,26 +249,35 @@ def gerar_memorial_descritivo(
     from dechengym.calculo_estrutural import get_especificacao_metalon
 
     p = _merge_parametros(parametros_geometria)
+    avisos: list[str] = []
 
-    def _peso_por_metro(lado_mm: int | float) -> float:
-        """Peso por metro do perfil quadrado, via especificação de metalon."""
-        perfil = f"{int(lado_mm)}x{int(lado_mm)}"
+    def _peso_por_metro(perfil: str) -> float | None:
+        """Peso por metro do perfil quadrado; ``None`` se fora do catálogo."""
         try:
             spec = get_especificacao_metalon(perfil, p["espessura_parede_mm"])
             return spec["peso_por_metro_kg"]
         except (KeyError, ValueError):
-            return 0.0  # perfil/espessura fora do catálogo: peso não estimado
+            return None  # perfil/espessura fora do catálogo
 
     def _peca(descricao: str, lado_mm, comprimento_mm: float, quantidade: int) -> dict:
-        peso_unit = _peso_por_metro(lado_mm) * (comprimento_mm / 1000.0)
+        perfil = f"{int(lado_mm)}x{int(lado_mm)}"
+        ppm = _peso_por_metro(perfil)
+        estimado = ppm is not None
+        if not estimado:
+            avisos.append(
+                f"Peso nao estimado para '{descricao}': perfil {perfil} parede "
+                f"{p['espessura_parede_mm']} mm fora do catalogo de metalon."
+            )
+        peso_unit = (ppm or 0.0) * (comprimento_mm / 1000.0)
         return {
             "descricao": descricao,
-            "perfil": f"{int(lado_mm)}x{int(lado_mm)}",
+            "perfil": perfil,
             "espessura_parede_mm": p["espessura_parede_mm"],
             "comprimento_corte_mm": round(comprimento_mm, 1),
             "quantidade": quantidade,
-            "peso_unitario_kg": round(peso_unit, 3),
-            "peso_total_kg": round(peso_unit * quantidade, 3),
+            "peso_estimado": estimado,
+            "peso_unitario_kg": round(peso_unit, 3) if estimado else None,
+            "peso_total_kg": round(peso_unit * quantidade, 3) if estimado else None,
         }
 
     lista_cortes = [
@@ -272,7 +287,10 @@ def gerar_memorial_descritivo(
         _peca("Braco de alavanca", p["perfil_alavanca_mm"], p["comprimento_alavanca_mm"], 1),
     ]
 
-    peso_estrutura_kg = round(sum(item["peso_total_kg"] for item in lista_cortes), 3)
+    peso_estrutura_kg = round(
+        sum(item["peso_total_kg"] for item in lista_cortes if item["peso_estimado"]), 3
+    )
+    peso_completo = all(item["peso_estimado"] for item in lista_cortes)
 
     memorial: dict[str, Any] = {
         "projeto": p["nome"],
@@ -299,6 +317,8 @@ def gerar_memorial_descritivo(
         ],
         "lista_cortes": lista_cortes,
         "peso_total_estrutura_kg": peso_estrutura_kg,
+        "peso_total_completo": peso_completo,
+        "avisos": avisos,
     }
 
     if como_json:
