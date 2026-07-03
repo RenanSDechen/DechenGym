@@ -283,6 +283,22 @@ python examples/exemplo_orquestrador.py "rosca de biceps 40kg feminino P50"
 Para usar o Claude de verdade na interpretação do briefing, exporte
 `ANTHROPIC_API_KEY` e instale `anthropic` (o núcleo do projeto não muda).
 
+## Interface web local (Estúdio de Projeto)
+
+O DechenGym tem uma **interface no navegador** (servidor local, stdlib —
+nenhuma dependência extra):
+
+```bash
+python -m dechengym.webapp        # abre http://127.0.0.1:8765
+```
+
+No navegador: escolha o exercício e os parâmetros (ou escreva um briefing
+livre e clique em *Interpretar*), depois **Projetar máquina**. A interface
+mostra o selo aprovado/revisar, os KPIs (casamento da came, parede da
+autocorreção, pivô, pega, massa), o render 3D e os botões para o
+**visualizador 3D interativo**, o **dossiê PDF**, o `.scad` e o memorial.
+Artefatos ficam em `output/webapp/<exercicio>/`.
+
 ## Entregáveis: visualizador 3D e dossiê PDF
 
 Todo projeto orquestrado com `diretorio_saida` gera, além dos `.scad`/`.json`:
