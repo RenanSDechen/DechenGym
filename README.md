@@ -51,6 +51,8 @@ DechenGym/
 │   └── test_ergonomia.py
 │   ├── geracao_imagem.py         # Tools de imagem (SVG / PNG / prompt IA)
 │   ├── sintese_came.py           # Tools de came de resistência variável
+│   ├── montagem3d.py             # modelo 3D + renders + visualizador HTML
+│   ├── relatorio_pdf.py          # dossiê técnico em PDF
 │   ├── orquestrador/             # briefing → projeto validado
 │   │   ├── pipeline.py           #   núcleo determinístico + autocorreção
 │   │   ├── adapters.py           #   LLM plugável (regras / Anthropic)
@@ -132,6 +134,14 @@ python examples/exemplo_braco_articulado.py
 | Tool                              | Descrição                                              |
 |-----------------------------------|--------------------------------------------------------|
 | `projetar_maquina`                | Pipeline completo → projeto validado (todas as etapas).|
+
+### Montagem 3D
+
+| Tool                              | Descrição                                              |
+|-----------------------------------|--------------------------------------------------------|
+| `gerar_pecas_maquina`             | Modelo 3D paramétrico (peças + etapas de montagem).    |
+| `renderizar_svg_3d`               | Render sombreado (câmera orbitável, etapa, explosão).  |
+| `gerar_visualizador_html`         | Visualizador 3D interativo auto-contido (HTML).        |
 
 ### Ergonomia
 
@@ -273,6 +283,22 @@ python examples/exemplo_orquestrador.py "rosca de biceps 40kg feminino P50"
 Para usar o Claude de verdade na interpretação do briefing, exporte
 `ANTHROPIC_API_KEY` e instale `anthropic` (o núcleo do projeto não muda).
 
+## Entregáveis: visualizador 3D e dossiê PDF
+
+Todo projeto orquestrado com `diretorio_saida` gera, além dos `.scad`/`.json`:
+
+- **`montagem_3d.html`** — visualizador 3D **interativo e auto-contido**
+  (HTML + Canvas, zero dependências): arrastar para orbitar, zoom, slider de
+  **etapa de montagem** (a máquina cresce na sequência: chassi → torre →
+  assento → pivôs/cames → braços → anilhas), **vista explodida** e rotação
+  automática. Modelo nativo **iso-lateral** (2 braços independentes).
+- **`dossie_<nome>.pdf`** — dossiê técnico com capa (render 3D + selo
+  aprovado/revisar), ergonomia, came (gráfico força humana × resistência),
+  validação estrutural com o histórico de autocorreção, memorial de cortes e
+  a **sequência de montagem em 6 etapas ilustradas** + vista explodida.
+  Requer `reportlab` + `cairosvg` (em `requirements.txt`); sem elas, o PDF é
+  pulado com aviso e os demais artefatos não são afetados.
+
 ## Modelo de cálculo estrutural
 
 - **Momento fletor:** `M = m · g · d` (kg → N via g = 9,80665 m/s²).
@@ -298,9 +324,10 @@ Contrato de aceite de referência já coberto:
 - [x] Módulo de **ergonomia** (antropometria, ADM, pegada, curva de força).
 - [x] Geração da **imagem do produto** (SVG técnico / PNG OpenSCAD / prompt IA).
 - [x] **Síntese de came** de resistência variável (curva de força → geometria).
-- [x] **Auditoria de defeitos** em estrutura e ergonomia (88 testes, incl. regressões).
+- [x] **Auditoria de defeitos** em estrutura e ergonomia (97 testes, incl. regressões).
 - [x] **Agente orquestrador** (briefing → design validado, provedor-agnóstico).
 - [x] Loop estrutura↔geometria (validação realimenta o `.scad`).
+- [x] **Visualizador 3D de montagem** (HTML interativo) e **dossiê PDF**.
 - [ ] Render PNG automático (instalar OpenSCAD no ambiente).
 - [ ] Custom components completos para **Langflow** (incl. orquestrador).
 - [ ] Bancos de dados a partir de fontes reais (metalon e antropometria).

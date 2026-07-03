@@ -64,7 +64,13 @@ def orquestrar(
 
 
 def _gravar_artefatos(projeto: dict[str, Any], diretorio_saida: str | Path) -> list[str]:
-    """Grava os artefatos do projeto e retorna os caminhos criados."""
+    """Grava os artefatos do projeto e retorna os caminhos criados.
+
+    Além dos ``.scad``/``.svg``/``.json``, tenta gerar o **visualizador 3D
+    interativo** (``montagem_3d.html``, sem dependências) e o **dossiê PDF**
+    (requer ``reportlab`` + ``cairosvg``; se ausentes, o PDF é pulado com
+    aviso em ``montagem_avisos.txt`` — os demais artefatos não são afetados).
+    """
     out = Path(diretorio_saida)
     out.mkdir(parents=True, exist_ok=True)
     nome = projeto["requisicao"]["exercicio"]
@@ -96,4 +102,35 @@ def _gravar_artefatos(projeto: dict[str, Any], diretorio_saida: str | Path) -> l
         caminho = out / arquivo
         caminho.write_text(conteudo, encoding="utf-8")
         criados.append(str(caminho))
+
+    # Visualizador 3D interativo (sem dependências externas).
+    from dechengym.montagem3d import gerar_pecas_maquina, gerar_visualizador_html
+
+    ergonomia = projeto["ergonomia"]
+    modelo = gerar_pecas_maquina(projeto["geometria"]["parametros"], iso_lateral=True)
+    html = gerar_visualizador_html(
+        modelo,
+        titulo=f"{ergonomia['nome']} — Montagem 3D",
+        specs_extra={
+            "carga de projeto": f"{projeto['requisicao']['carga_kg']:.0f} kg",
+            "casamento came": f"{projeto['came']['avaliacao']['pontuacao']}/100",
+        },
+    )
+    caminho_html = out / "montagem_3d.html"
+    caminho_html.write_text(html, encoding="utf-8")
+    criados.append(str(caminho_html))
+
+    # Dossiê PDF (dependências opcionais: reportlab + cairosvg).
+    try:
+        from dechengym.relatorio_pdf import gerar_dossie_pdf
+
+        caminho_pdf = out / f"dossie_{nome}.pdf"
+        gerar_dossie_pdf(projeto, caminho_pdf)
+        criados.append(str(caminho_pdf))
+    except ImportError as exc:
+        (out / "montagem_avisos.txt").write_text(
+            f"Dossie PDF nao gerado (dependencia ausente): {exc}\n"
+            "Instale com: pip install reportlab cairosvg\n",
+            encoding="utf-8",
+        )
     return criados

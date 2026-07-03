@@ -41,6 +41,11 @@ from dechengym.sintese_came import (
     sintetizar_perfil_came,
 )
 from dechengym.orquestrador.pipeline import projetar_maquina_params
+from dechengym.montagem3d import (
+    gerar_pecas_maquina,
+    gerar_visualizador_html,
+    renderizar_svg_3d,
+)
 from dechengym.ergonomia import (
     avaliar_curva_resistencia,
     calcular_alinhamento_pivo,
@@ -91,6 +96,10 @@ TOOLS: dict[str, Callable[..., Any]] = {
     "projetar_ergonomia": projetar_ergonomia,
     # --- Orquestração (pipeline completo) ---
     "projetar_maquina": projetar_maquina_params,
+    # --- Montagem 3D ---
+    "gerar_pecas_maquina": gerar_pecas_maquina,
+    "renderizar_svg_3d": renderizar_svg_3d,
+    "gerar_visualizador_html": gerar_visualizador_html,
 }
 
 
@@ -616,6 +625,62 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
                 "raio_max_came_mm": {"type": "number"},
             },
             "required": ["exercicio"],
+        },
+    },
+    # ------------------------ Montagem 3D ---------------------------------
+    {
+        "name": "gerar_pecas_maquina",
+        "description": (
+            "Gera o modelo 3D parametrico da maquina (lista de pecas com "
+            "etapa de montagem e direcao de explosao) a partir dos parametros "
+            "de geometria. Suporta iso-lateral (2 bracos independentes)."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "parametros": {"type": "object"},
+                "iso_lateral": {"type": "boolean"},
+            },
+            "required": [],
+        },
+    },
+    {
+        "name": "renderizar_svg_3d",
+        "description": (
+            "Renderiza o modelo 3D em SVG sombreado (projecao orbitavel): "
+            "yaw/pitch de camera, limite de etapa de montagem e vista "
+            "explodida (0-1)."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "modelo": {"type": "object"},
+                "largura_px": {"type": "integer"},
+                "yaw_graus": {"type": "number"},
+                "pitch_graus": {"type": "number"},
+                "etapa_max": {"type": "integer"},
+                "explosao": {"type": "number"},
+                "titulo": {"type": "string"},
+                "subtitulo": {"type": "string"},
+            },
+            "required": ["modelo"],
+        },
+    },
+    {
+        "name": "gerar_visualizador_html",
+        "description": (
+            "Gera o visualizador 3D interativo auto-contido (HTML+Canvas, sem "
+            "dependencias): orbitar, zoom, etapas de montagem e vista "
+            "explodida."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "modelo": {"type": "object"},
+                "titulo": {"type": "string"},
+                "specs_extra": {"type": "object"},
+            },
+            "required": ["modelo"],
         },
     },
 ]

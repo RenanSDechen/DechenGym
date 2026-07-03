@@ -50,6 +50,11 @@ from dechengym.orquestrador import (
     orquestrar,
     adaptador_padrao,
 )
+from dechengym.montagem3d import (
+    gerar_pecas_maquina,
+    renderizar_svg_3d,
+    gerar_visualizador_html,
+)
 from dechengym.ergonomia import (
     get_antropometria,
     calcular_faixa_ajuste,
@@ -106,4 +111,8 @@ __all__ = [
     "projetar_maquina",
     "orquestrar",
     "adaptador_padrao",
+    # Montagem 3D
+    "gerar_pecas_maquina",
+    "renderizar_svg_3d",
+    "gerar_visualizador_html",
 ]
