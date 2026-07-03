@@ -45,6 +45,45 @@ def _merge_parametros(parametros_geometria: dict[str, Any] | None) -> dict[str, 
     return p
 
 
+def parametros_geometria_de_ergonomia(
+    envelope: dict[str, Any],
+    extras: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Converte um envelope ergonômico em parâmetros de geometria.
+
+    Ponte entre o módulo de Ergonomia e a Geração OpenSCAD: mapeia o
+    resultado de :func:`dechengym.ergonomia.projetar_ergonomia` para as
+    chaves esperadas por :func:`gerar_script_openscad`, garantindo que a
+    geometria nasça alinhada às recomendações ergonômicas (altura do pivô,
+    diâmetro da pega, etc.).
+
+    Parameters
+    ----------
+    envelope:
+        Saída de ``projetar_ergonomia``.
+    extras:
+        Sobrescritas/complementos de geometria (perfis, espessura, etc.),
+        aplicados por último.
+
+    Returns
+    -------
+    dict
+        Dicionário de ``parametros_geometria`` pronto para a geração.
+    """
+    altura_pivo = envelope["alinhamento_pivo"]["altura_pivo_mm"]
+    diametro_pega = envelope["pegada"]["diametro"]["diametro_recomendado_mm"]
+
+    parametros: dict[str, Any] = {
+        "nome": envelope.get("exercicio", "maquina_articulada"),
+        # A coluna leva o eixo de pivô até a altura anatômica da articulação.
+        "altura_coluna_mm": altura_pivo,
+        "diametro_pega_mm": diametro_pega,
+    }
+    if extras:
+        parametros.update(extras)
+    return parametros
+
+
 # ==========================================================================
 # Tool 5 — Geração do script OpenSCAD
 # ==========================================================================

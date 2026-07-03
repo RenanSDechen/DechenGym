@@ -34,13 +34,24 @@ DechenGym/
 │   ├── config.py                 # constantes físicas e critérios de projeto
 │   ├── calculo_estrutural.py     # Tools de cálculo e validação estrutural
 │   ├── geracao_openscad.py       # Tools de geração OpenSCAD + memorial
-│   ├── data/metalon_db.py        # catálogo mockado de perfis de aço
+│   ├── ergonomia/                # Tools de ergonomia e biomecânica
+│   │   ├── antropometria.py      #   dimensões corporais + faixas de ajuste
+│   │   ├── amplitude.py          #   ADM articular + validação do curso
+│   │   ├── pegada.py             #   padrão de pegada (orientação/largura/diâmetro)
+│   │   ├── curva_resistencia.py  #   curva de força x resistência da máquina
+│   │   └── projeto.py            #   integrador do envelope ergonômico
+│   ├── data/                     # bancos mockados (metalon, antropometria,
+│   │   │                         #   ADM, pegada, curvas de força, exercícios)
+│   │   └── ...
 │   ├── tools/registry.py         # schemas + dispatcher das Tools (Tool Calling)
 │   └── langflow/components.py    # esqueleto de custom components Langflow
 ├── tests/                        # testes BDD (Given/When/Then)
 │   ├── test_calculo_estrutural.py
-│   └── test_geracao_openscad.py
-├── examples/exemplo_braco_articulado.py
+│   ├── test_geracao_openscad.py
+│   └── test_ergonomia.py
+├── examples/
+│   ├── exemplo_braco_articulado.py
+│   └── exemplo_ergonomia.py
 └── output/                       # artefatos gerados (.scad / .json)
 ```
 
@@ -89,9 +100,60 @@ python examples/exemplo_braco_articulado.py
 | `gerar_script_openscad`           | Código OpenSCAD paramétrico da máquina.                |
 | `gerar_memorial_descritivo`       | Lista de cortes e especificações (JSON).               |
 
+### Ergonomia
+
+| Tool                              | Descrição                                              |
+|-----------------------------------|--------------------------------------------------------|
+| `get_antropometria`               | Dimensão corporal por medida, percentil e sexo.        |
+| `calcular_faixa_ajuste`           | Curso de regulagem para o envelope P5–P95.             |
+| `get_amplitude_movimento`         | ADM anatômica e recomendada para treino (graus).       |
+| `validar_amplitude_projetada`     | Verifica se o curso do braço respeita a ADM segura.    |
+| `get_padrao_pegada`               | Orientação do punho (pronada/supinada/neutra/mista).   |
+| `dimensionar_pega`                | Diâmetro da pega a partir do comprimento da mão.       |
+| `calcular_largura_pegada`         | Distância entre pegas a partir da largura biacromial.  |
+| `get_curva_forca`                 | Curva de força humana do grupo muscular.               |
+| `gerar_perfil_resistencia_alvo`   | Perfil de resistência que acompanha a curva de força.  |
+| `avaliar_curva_resistencia`       | Pontua o casamento resistência × curva de força.       |
+| `calcular_alinhamento_pivo`       | Altura do eixo de pivô alinhada ao eixo articular.     |
+| `projetar_ergonomia`              | Integrador: envelope ergonômico completo do exercício. |
+
 Os schemas prontos para tool-calling estão em
 `dechengym.tools.TOOL_SCHEMAS`; a execução por nome em
 `dechengym.tools.executar_tool`.
+
+## Modelo de ergonomia
+
+O módulo de ergonomia trata uma máquina articulada como a interface entre a
+**anatomia do usuário** e a **mecânica do equipamento**, cobrindo:
+
+- **Antropometria (envelope P5–P95):** tabelas por sexo/percentil (mm) que
+  dimensionam os **cursos de regulagem** (assento, encosto) para acomodar da
+  mulher P5 ao homem P95.
+- **Alinhamento articular:** o eixo de pivô da máquina deve coincidir com o
+  eixo anatômico de rotação da articulação (ex.: cotovelo na rosca) — o erro
+  de alinhamento é a principal fonte de desconforto/lesão em máquinas.
+- **Amplitude de movimento (ADM):** cada movimento tem faixa anatômica e
+  faixa **recomendada de treino** (mais conservadora); o curso do braço é
+  validado para não exceder o seguro.
+- **Padrão de pegada** (interface mão–máquina), em três eixos:
+  - *orientação do punho:* pronada, supinada, neutra ou mista;
+  - *largura:* fechada / média / aberta (múltiplo da largura biacromial);
+  - *diâmetro da pega:* ≈ 20% do comprimento da mão para conforto/força de
+    trabalho (~30–45 mm); mais grossa (~50–60 mm) para força de preensão.
+- **Curva de resistência × curva de força:** a resistência da máquina
+  (definida pela geometria do braço/came) deve acompanhar a curva de força
+  do músculo (ascendente, descendente ou em sino) para manter a solicitação
+  adequada em toda a amplitude. `avaliar_curva_resistencia` pontua esse
+  casamento de 0 a 100 e indica onde ajustar a geometria.
+
+O integrador `projetar_ergonomia("rosca_biceps", ...)` consolida tudo isso
+em um "envelope ergonômico", e `parametros_geometria_de_ergonomia(...)`
+converte esse envelope em parâmetros para a geração OpenSCAD — de modo que a
+geometria **nasce alinhada** às recomendações ergonômicas.
+
+```bash
+python examples/exemplo_ergonomia.py
+```
 
 ## Modelo de cálculo estrutural
 
@@ -115,7 +177,7 @@ Contrato de aceite de referência já coberto:
 
 ## Roadmap
 
+- [x] Módulo de **ergonomia** (antropometria, ADM, pegada, curva de força).
 - [ ] Geração da **imagem do produto** (render do `.scad` → PNG).
-- [ ] Módulo de **ergonomia** (ADM articular, curvas de resistência).
 - [ ] Custom components completos para **Langflow**.
-- [ ] Catálogo de metalon a partir de fonte real (substituir o mock).
+- [ ] Bancos de dados a partir de fontes reais (metalon e antropometria).

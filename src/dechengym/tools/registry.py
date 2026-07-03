@@ -28,15 +28,44 @@ from dechengym.geracao_openscad import (
     gerar_memorial_descritivo,
     gerar_script_openscad,
 )
+from dechengym.ergonomia import (
+    avaliar_curva_resistencia,
+    calcular_alinhamento_pivo,
+    calcular_faixa_ajuste,
+    calcular_largura_pegada,
+    dimensionar_pega,
+    gerar_perfil_resistencia_alvo,
+    get_amplitude_movimento,
+    get_antropometria,
+    get_curva_forca,
+    get_padrao_pegada,
+    projetar_ergonomia,
+    validar_amplitude_projetada,
+)
 
 #: Mapa nome -> callable. É a fonte de verdade da execução.
 TOOLS: dict[str, Callable[..., Any]] = {
+    # --- Cálculo estrutural ---
     "calc_momento_fletor": calc_momento_fletor,
     "get_especificacao_metalon": get_especificacao_metalon,
     "validar_resistencia_estrutural": validar_resistencia_estrutural,
     "recomendar_espessura_minima": recomendar_espessura_minima,
+    # --- Geração de saída ---
     "gerar_script_openscad": gerar_script_openscad,
     "gerar_memorial_descritivo": gerar_memorial_descritivo,
+    # --- Ergonomia ---
+    "get_antropometria": get_antropometria,
+    "calcular_faixa_ajuste": calcular_faixa_ajuste,
+    "get_amplitude_movimento": get_amplitude_movimento,
+    "validar_amplitude_projetada": validar_amplitude_projetada,
+    "get_padrao_pegada": get_padrao_pegada,
+    "dimensionar_pega": dimensionar_pega,
+    "calcular_largura_pegada": calcular_largura_pegada,
+    "get_curva_forca": get_curva_forca,
+    "gerar_perfil_resistencia_alvo": gerar_perfil_resistencia_alvo,
+    "avaliar_curva_resistencia": avaliar_curva_resistencia,
+    "calcular_alinhamento_pivo": calcular_alinhamento_pivo,
+    "projetar_ergonomia": projetar_ergonomia,
 }
 
 
@@ -168,6 +197,228 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
                 "como_json": {"type": "boolean"},
             },
             "required": ["parametros_geometria"],
+        },
+    },
+    # ---------------------------- Ergonomia -------------------------------
+    {
+        "name": "get_antropometria",
+        "description": (
+            "Retorna uma dimensao corporal (mm) por medida, percentil (5-95, "
+            "interpolado) e sexo. Ex.: altura_poplitea, comprimento_mao, "
+            "largura_biacromial, altura_ombro_sentado."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "medida": {"type": "string"},
+                "percentil": {"type": "number", "description": "5 a 95. Padrao 50."},
+                "sexo": {"type": "string", "enum": ["masculino", "feminino"]},
+            },
+            "required": ["medida"],
+        },
+    },
+    {
+        "name": "calcular_faixa_ajuste",
+        "description": (
+            "Dimensiona o curso de regulagem de um componente (assento, "
+            "encosto...) para acomodar o envelope P5-P95 (mulher P5 a homem "
+            "P95, quando sexo='ambos')."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "medida": {"type": "string"},
+                "percentil_min": {"type": "number"},
+                "percentil_max": {"type": "number"},
+                "sexo": {"type": "string", "enum": ["masculino", "feminino", "ambos"]},
+                "folga_mm": {"type": "number"},
+            },
+            "required": ["medida"],
+        },
+    },
+    {
+        "name": "get_amplitude_movimento",
+        "description": (
+            "Retorna a amplitude de movimento (graus) anatomica e a "
+            "recomendada para treino de uma articulacao/movimento. Ex.: "
+            "cotovelo/flexao, joelho/extensao, ombro/abducao."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "articulacao": {"type": "string"},
+                "movimento": {"type": "string"},
+            },
+            "required": ["articulacao", "movimento"],
+        },
+    },
+    {
+        "name": "validar_amplitude_projetada",
+        "description": (
+            "Valida se o arco projetado do braco articulado (angulo inicial e "
+            "final, em graus) respeita a ADM de treino; sugere clamp se exceder."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "articulacao": {"type": "string"},
+                "movimento": {"type": "string"},
+                "angulo_inicial_graus": {"type": "number"},
+                "angulo_final_graus": {"type": "number"},
+            },
+            "required": [
+                "articulacao",
+                "movimento",
+                "angulo_inicial_graus",
+                "angulo_final_graus",
+            ],
+        },
+    },
+    {
+        "name": "get_padrao_pegada",
+        "description": (
+            "Descreve uma orientacao de punho (pronada/supinada/neutra/mista): "
+            "angulo do antebraco e enfase muscular/articular."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "orientacao": {
+                    "type": "string",
+                    "enum": ["pronada", "supinada", "neutra", "mista"],
+                }
+            },
+            "required": ["orientacao"],
+        },
+    },
+    {
+        "name": "dimensionar_pega",
+        "description": (
+            "Calcula o diametro recomendado da pega cilindrica a partir do "
+            "comprimento da mao (via percentil/sexo ou valor direto) e do "
+            "objetivo: conforto, forca_preensao ou precisao."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "objetivo": {
+                    "type": "string",
+                    "enum": ["conforto", "forca_preensao", "precisao"],
+                },
+                "percentil": {"type": "number"},
+                "sexo": {"type": "string", "enum": ["masculino", "feminino"]},
+                "comprimento_mao_mm": {"type": "number"},
+            },
+            "required": [],
+        },
+    },
+    {
+        "name": "calcular_largura_pegada",
+        "description": (
+            "Calcula a distancia entre pegas a partir da largura biacromial "
+            "(ombros) e da largura desejada: fechada, media ou aberta."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "largura": {
+                    "type": "string",
+                    "enum": ["fechada", "media", "aberta"],
+                },
+                "percentil": {"type": "number"},
+                "sexo": {"type": "string", "enum": ["masculino", "feminino"]},
+                "largura_biacromial_mm": {"type": "number"},
+            },
+            "required": [],
+        },
+    },
+    {
+        "name": "get_curva_forca",
+        "description": (
+            "Retorna a curva de forca humana normalizada (tipo ascendente/"
+            "descendente/sino e perfil em 0-100% do movimento) de um grupo "
+            "muscular. Ex.: biceps, triceps, quadriceps, dorsal."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {"grupo_muscular": {"type": "string"}},
+            "required": ["grupo_muscular"],
+        },
+    },
+    {
+        "name": "gerar_perfil_resistencia_alvo",
+        "description": (
+            "Gera o perfil de resistencia-alvo (kg em cada ponto do movimento) "
+            "que acompanha a curva de forca do grupo muscular, dada a carga de "
+            "pico."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "grupo_muscular": {"type": "string"},
+                "carga_pico_kg": {"type": "number"},
+            },
+            "required": ["grupo_muscular", "carga_pico_kg"],
+        },
+    },
+    {
+        "name": "avaliar_curva_resistencia",
+        "description": (
+            "Avalia (pontuacao 0-100) o quao bem a resistencia da maquina "
+            "(perfil amostrado em 5 pontos) acompanha a curva de forca do "
+            "grupo muscular, indicando o ponto de maior descasamento."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "perfil_maquina": {
+                    "type": "array",
+                    "items": {"type": "number"},
+                    "description": "Resistencia em 0%,25%,50%,75%,100% do movimento.",
+                },
+                "grupo_muscular": {"type": "string"},
+            },
+            "required": ["perfil_maquina", "grupo_muscular"],
+        },
+    },
+    {
+        "name": "calcular_alinhamento_pivo",
+        "description": (
+            "Calcula a altura do eixo de pivo para alinhar com o eixo "
+            "anatomico da articulacao, a partir de uma medida antropometrica, "
+            "e a faixa de ajuste P5-P95 do componente."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "medida_alinhamento": {"type": "string"},
+                "percentil": {"type": "number"},
+                "sexo": {"type": "string", "enum": ["masculino", "feminino"]},
+            },
+            "required": ["medida_alinhamento"],
+        },
+    },
+    {
+        "name": "projetar_ergonomia",
+        "description": (
+            "Integrador: gera o envelope ergonomico completo de um exercicio "
+            "do catalogo (alinhamento de pivo, ADM, padrao de pegada completo, "
+            "faixas de ajuste do posto e curva de resistencia-alvo). Ex.: "
+            "rosca_biceps, cadeira_extensora, supino_maquina."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "exercicio": {"type": "string"},
+                "percentil": {"type": "number"},
+                "sexo": {"type": "string", "enum": ["masculino", "feminino"]},
+                "carga_pico_kg": {"type": "number"},
+                "objetivo_pega": {
+                    "type": "string",
+                    "enum": ["conforto", "forca_preensao", "precisao"],
+                },
+            },
+            "required": ["exercicio"],
         },
     },
 ]

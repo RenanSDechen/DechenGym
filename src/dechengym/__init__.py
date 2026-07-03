@@ -29,15 +29,46 @@ from dechengym.calculo_estrutural import (
 from dechengym.geracao_openscad import (
     gerar_script_openscad,
     gerar_memorial_descritivo,
+    parametros_geometria_de_ergonomia,
+)
+from dechengym.ergonomia import (
+    get_antropometria,
+    calcular_faixa_ajuste,
+    get_amplitude_movimento,
+    validar_amplitude_projetada,
+    get_padrao_pegada,
+    dimensionar_pega,
+    calcular_largura_pegada,
+    get_curva_forca,
+    gerar_perfil_resistencia_alvo,
+    avaliar_curva_resistencia,
+    calcular_alinhamento_pivo,
+    projetar_ergonomia,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
+    # Cálculo estrutural
     "calc_momento_fletor",
     "get_especificacao_metalon",
     "validar_resistencia_estrutural",
     "recomendar_espessura_minima",
+    # Geração de saída
     "gerar_script_openscad",
     "gerar_memorial_descritivo",
+    "parametros_geometria_de_ergonomia",
+    # Ergonomia
+    "get_antropometria",
+    "calcular_faixa_ajuste",
+    "get_amplitude_movimento",
+    "validar_amplitude_projetada",
+    "get_padrao_pegada",
+    "dimensionar_pega",
+    "calcular_largura_pegada",
+    "get_curva_forca",
+    "gerar_perfil_resistencia_alvo",
+    "avaliar_curva_resistencia",
+    "calcular_alinhamento_pivo",
+    "projetar_ergonomia",
 ]
