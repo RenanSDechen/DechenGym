@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.python-version
+
+# Testes / cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# Artefatos gerados (mantemos a pasta, ignoramos o conteúdo)
+output/*
+!output/.gitkeep
+
+# Sistema operacional
+.DS_Store
+Thumbs.db

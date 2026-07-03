@@ -1,0 +1,30 @@
+# ==========================================================================
+# DechenGym - Dependências do projeto
+# ==========================================================================
+# Núcleo de cálculo, validação de dados e testes.
+# ==========================================================================
+
+# Validação de parâmetros / schemas das Tools (usado tanto pelo core
+# quanto pelos futuros custom components de orquestração).
+pydantic>=2.6
+
+# Cálculo numérico (propriedades de seção, momentos de inércia, etc.).
+numpy>=1.26
+
+# --------------------------------------------------------------------------
+# Testes (contrato BDD - Given/When/Then)
+# --------------------------------------------------------------------------
+pytest>=8.0
+pytest-bdd>=7.0        # opcional: para escrever features .feature caso deseje
+                       #           evoluir dos testes BDD "inline" atuais.
+
+# --------------------------------------------------------------------------
+# Orquestração de Agentes / LLM (OPCIONAL - descomente quando integrar)
+# --------------------------------------------------------------------------
+# A camada de core (cálculo + OpenSCAD) NÃO depende de nenhum framework de
+# LLM. As dependências abaixo só são necessárias quando você for expor as
+# Tools como custom components de Langflow ou orquestrar via SDK.
+#
+# langflow>=1.0
+# anthropic>=0.40          # cliente para os modelos Claude
+# openai>=1.0              # alternativa de provedor
