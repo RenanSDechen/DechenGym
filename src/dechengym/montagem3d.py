@@ -44,7 +44,7 @@ COR_HUMANO = "#7f95aa"
 #: Nomes das etapas de montagem, na ordem.
 ETAPAS_MONTAGEM: list[str] = [
     "Chassi da base",
-    "Mastro dianteiro e escoras",
+    "Estrutura dianteira do pivo",
     "Assento, apoio de peito e apoios de pes",
     "Eixos de pivo e cames",
     "Bracos articulados e pegas",
@@ -86,15 +86,18 @@ def gerar_pecas_maquina(
     """Gera a lista de peças 3D da máquina a partir dos parâmetros do projeto.
 
     A arquitetura segue as máquinas de remada plate-loaded topo de linha
-    (referência: Hammer Strength Iso-Lateral Row, ~155×127×132 cm):
+    (referência: Hammer Strength Iso-Lateral Row IL-ROW, ~155×127×132 cm,
+    perfil compacto e BAIXO):
 
     - o usuário senta **atrás** da máquina, com o peito apoiado no pad e os
       pés nos apoios — o acesso ao assento é totalmente aberto;
-    - os braços articulados pivotam em um **eixo alto no mastro dianteiro**
-      ("overhead pivot") e pendem para baixo; as pegas ficam à frente do
-      peito e viajam para trás/para cima no arco da remada;
-    - as anilhas carregam em **chifres laterais na frente** da máquina,
-      solidários aos braços (do lado oposto do pivô).
+    - cada braço é uma **manivela de pivô baixo dianteiro**: do eixo
+      (~480 mm), o braço de trabalho **sobe para trás** até as pegas em
+      frente ao tórax (pegas neutra + pronada); puxar as pegas gira a
+      manivela e levanta os chifres de anilha na frente;
+    - as anilhas enfiam **ao longo dos chifres inclinados (~50°)** na
+      frente da máquina — as anilhas ficam "tombadas", a assinatura visual
+      das plate-loaded.
 
     Parameters
     ----------
@@ -120,11 +123,13 @@ def gerar_pecas_maquina(
     alavanca = max(float(p.get("comprimento_alavanca_mm", 750)), 400.0)
     d_pega = float(p.get("diametro_pega_mm", 38))
 
-    # Cotas de referência (Hammer IL-ROW: 1550 x 1270 x 1320 mm).
-    prof = 1520.0                 # comprimento (z)
-    pivo_y, pivo_z = 1230.0, 380.0  # eixo de pivô alto, no mastro dianteiro
+    # Cotas de referência (Hammer IL-ROW: 1550 x 1270 x 1320 mm — perfil
+    # BAIXO: pivô baixo na frente, braços-manivela sobem para trás até as
+    # pegas; chifres de anilha inclinados ~50° na frente, anilhas tombadas).
+    prof = 1520.0                   # comprimento (z)
+    pivo_y, pivo_z = 480.0, 300.0   # eixo de pivô BAIXO no pilar dianteiro
     assento_y = 440.0
-    peito_z = 950.0               # plano do apoio de peito (frente do tórax)
+    peito_z = 950.0                 # plano do apoio de peito (frente do tórax)
 
     pc: list[dict[str, Any]] = []
 
@@ -142,24 +147,22 @@ def gerar_pecas_maquina(
     pc.append(_caixa("Pe dianteiro", e, COR_ACO, (-450, 0, 60), (900, perfil, perfil), (0, -1, -1)))
     pc.append(_caixa("Pe traseiro", e, COR_ACO, (-380, 0, prof - perfil - 20), (760, perfil, perfil), (0, -1, 1)))
 
-    # ---- Etapa 2: mastro dianteiro e escoras ---------------------------
+    # ---- Etapa 2: estrutura dianteira (pilar do pivô, perfil baixo) -----
     e = 2
-    for sx in (-1, 1):
-        pc.append(
-            _caixa(f"Mastro {'esq' if sx < 0 else 'dir'}", e, COR_ACO_2,
-                   (sx * 90 - perfil / 2, perfil, pivo_z + 30), (perfil, pivo_y - perfil, perfil),
-                   (0, 0, -1), rot={"eixo": "x", "graus": 4, "centro": [sx * 90, perfil, pivo_z + 60]})
-        )
-    pc.append(_caixa("Cabecote do pivo", e, COR_ACO_2, (-330, pivo_y - 10, pivo_z - perfil / 2), (660, 90, perfil + 20), (0, 1, 0)))
-    # Escoras: barras verticais (+Y) rotacionadas em torno do pé de apoio.
-    # Na convenção de rotação, ângulo POSITIVO leva +Y para +Z (para trás).
+    # Pilar central curto que sustenta o eixo de pivô baixo.
+    pc.append(_caixa("Pilar do pivo", e, COR_ACO_2, (-perfil / 2, perfil, pivo_z - perfil / 2),
+                     (perfil, pivo_y - perfil + 40, perfil), (0, 0, -1)))
+    pc.append(_caixa("Travessa do eixo", e, COR_ACO_2, (-300, pivo_y - 45, pivo_z - perfil / 2 - 6),
+                     (600, 90, perfil + 12), (0, 1, -1)))
+    # Escora dianteira curta (pé -> pilar) e tirante traseiro baixo
+    # (pilar -> base sob a coluna do peito): ângulo POSITIVO leva +Y a +Z.
     pc.append(
-        _caixa("Escora frontal", e, COR_ACO_2, (-perfil / 2, 80, 140), (perfil, 640, perfil),
-               (0, 0, -1), rot={"eixo": "x", "graus": 24, "centro": [0, 90, 150]})
+        _caixa("Escora frontal", e, COR_ACO_2, (-perfil / 2, 70, 110), (perfil, 420, perfil),
+               (0, 0, -1), rot={"eixo": "x", "graus": 26, "centro": [0, 80, 120]})
     )
     pc.append(
-        _caixa("Escora traseira (triangulo)", e, COR_ACO_2, (-perfil / 2, 80, 1130), (perfil, 1260, perfil),
-               (0, 1, 1), rot={"eixo": "x", "graus": -33, "centro": [0, 90, 1140]})
+        _caixa("Tirante traseiro", e, COR_ACO_2, (-perfil / 2, 70, 880), (perfil, 640, perfil),
+               (0, 1, 1), rot={"eixo": "x", "graus": -55, "centro": [0, 80, 890]})
     )
 
     # ---- Etapa 3: assento, apoio de peito e apoios de pés --------------
@@ -180,82 +183,83 @@ def gerar_pecas_maquina(
         )
     par("Apoio de pe", _apoio_pe)
 
-    # ---- Braços / pivôs / anilhas (por lado) ----------------------------
-    bx_abs = 250.0
+    # ---- Braços / pivôs / anilhas (manivela de pivô BAIXO, por lado) ----
+    # O braço é uma manivela: do pivô baixo dianteiro, o braço de trabalho
+    # SOBE para trás (~40°) até as pegas em frente ao tórax; o chifre de
+    # anilhas sai do mesmo cubo para frente-cima (~50°), com as anilhas
+    # enfiadas AO LONGO do chifre (tombadas — assinatura das plate-loaded).
+    bx_abs = 240.0
+    ang_braco = 40.0        # inclinação do braço de trabalho (de +Y p/ +Z)
+    ang_chifre = -50.0      # inclinação do chifre (de +Y p/ -Z)
+    rad_b = math.radians(ang_braco)
 
     def _pivo(nome, sx):
         bx = sx * bx_abs
-        pc.append(_cilindro(nome, 4, COR_EIXO, (bx, pivo_y, pivo_z), "x", 17, 130, (sx, 1, 0)))
+        pc.append(_cilindro(nome, 4, COR_EIXO, (bx, pivo_y, pivo_z), "x", 18, 120, (sx, 1, -1)))
 
     def _came(nome, sx):
-        bx = sx * (bx_abs - 85)
-        pc.append(_cilindro(nome, 4, COR_CAME, (bx, pivo_y, pivo_z), "x", 90, 18, (sx, 1, 0), lados=18))
+        bx = sx * (bx_abs - 80)
+        pc.append(_cilindro(nome, 4, COR_CAME, (bx, pivo_y, pivo_z), "x", 88, 18, (sx, 1, -1), lados=18))
 
     par("Eixo de pivo", _pivo)
     par("Came", _came)
 
-    # Braço principal: pende do pivô alto e inclina ~30° PARA TRÁS (posição
-    # média do curso), levando a pega para a frente do tórax do usuário.
-    # Convenção de rotação: para uma barra que se estende em -Y a partir do
-    # pivô, ângulo NEGATIVO leva a ponta para +Z (em direção ao usuário).
-    ang_braco = 30.0
-    rad = math.radians(ang_braco)
+    # Ponta do braço de trabalho (mundo): sobe alavanca ao ângulo ang_braco.
+    ponta_y = pivo_y + alavanca * math.cos(rad_b)
+    ponta_z = pivo_z + alavanca * math.sin(rad_b)
 
-    def _pos_rotacionada(dy: float, dz: float) -> tuple[float, float]:
-        """Posição no mundo de um ponto (dy, dz) relativo ao pivô, após a
-        rotação do braço (ângulo -ang_braco na convenção interna)."""
-        c, s = math.cos(-rad), math.sin(-rad)
-        return pivo_y + dy * c - dz * s, pivo_z + dy * s + dz * c
+    def _pre_pos(gy: float, gz: float, graus: float) -> tuple[float, float]:
+        """Posição pré-rotação para que, girando `graus` em torno do pivô,
+        a peça termine no ponto (gy, gz) do mundo."""
+        a = math.radians(graus)
+        c, s = math.cos(a), math.sin(a)
+        dy, dz = gy - pivo_y, gz - pivo_z
+        return pivo_y + dy * c + dz * s, pivo_z - dy * s + dz * c
 
     def _braco(nome, sx):
         bx = sx * bx_abs
-        rot = {"eixo": "x", "graus": -ang_braco, "centro": [bx, pivo_y, pivo_z]}
-        pc.append(_caixa(nome, 5, COR_ACO, (bx - perfil / 2, pivo_y - alavanca, pivo_z - perfil / 2),
-                         (perfil, alavanca, perfil), (sx, 0, 1), rot=rot))
+        pc.append(_caixa(nome, 5, COR_ACO, (bx - perfil / 2, pivo_y, pivo_z - perfil / 2),
+                         (perfil, alavanca, perfil), (sx, 0, 1),
+                         rot={"eixo": "x", "graus": ang_braco, "centro": [bx, pivo_y, pivo_z]}))
 
     def _pega_v(nome, sx):
+        # Pega vertical (neutra) quase em pé na ponta do braço: pré-posiciona
+        # para que a rotação de 6° a deixe no lugar com leve inclinação.
         bx = sx * bx_abs
-        rot = {"eixo": "x", "graus": -ang_braco, "centro": [bx, pivo_y, pivo_z]}
-        pc.append(_cilindro(nome, 5, COR_PEGA, (bx, pivo_y - alavanca + 150, pivo_z + perfil / 2 + 45),
-                            "y", d_pega / 2, 300, (sx, 0, 1), rot=rot))
+        py, pz = _pre_pos(ponta_y + 60, ponta_z + 30, 6)
+        pc.append(_cilindro(nome, 5, COR_PEGA, (bx, py, pz), "y", d_pega / 2, 300, (sx, 0, 1),
+                            rot={"eixo": "x", "graus": 6, "centro": [bx, pivo_y, pivo_z]}))
 
     def _pega_h(nome, sx):
-        bx = sx * (bx_abs - 100)
-        rot = {"eixo": "x", "graus": -ang_braco, "centro": [sx * bx_abs, pivo_y, pivo_z]}
-        pc.append(_cilindro(nome, 5, COR_PEGA, (bx, pivo_y - alavanca + 20, pivo_z + perfil / 2 + 45),
-                            "x", d_pega / 2, 170, (sx, 0, 1), rot=rot))
+        # Pega horizontal (pronada), apontando para dentro na ponta do braço.
+        bx = sx * (bx_abs - 95)
+        pc.append(_cilindro(nome, 5, COR_PEGA, (bx, ponta_y - 20, ponta_z + 30), "x",
+                            d_pega / 2, 170, (sx, 0, 1)))
 
     par("Braco articulado", _braco)
     par("Pega neutra", _pega_v)
     par("Pega pronada", _pega_h)
 
-    # Posição (mundo) do centro da pega vertical — usada pelo manequim.
-    pega_cy, pega_cz = _pos_rotacionada(-(alavanca - 150), perfil / 2 + 45)
+    # Posição (mundo) do centro da pega — usada pelo manequim.
+    pega_cy, pega_cz = ponta_y + 60, ponta_z + 30
 
-    # Chifre de anilhas: rígido com o braço, do lado OPOSTO do pivô
-    # (frente-baixo). Ângulo positivo leva a ponta -Y para -Z (frente).
+    # Chifre de anilhas: tubo do cubo do pivô para frente-cima (~50°).
     def _chifre(nome, sx):
         bx = sx * bx_abs
-        pc.append(
-            _caixa(nome, 6, COR_ACO_2, (bx - perfil / 2, pivo_y - 465, pivo_z - perfil / 2),
-                   (perfil, 465, perfil), (sx, 0, -1),
-                   rot={"eixo": "x", "graus": 22, "centro": [bx, pivo_y, pivo_z]})
-        )
-
-    def _luva(nome, sx):
-        bx = sx * bx_abs
-        pc.append(_cilindro(nome, 6, COR_ACO_2, (bx + sx * 115, 800, 210), "x", 25, 230, (sx, 0, -1)))
+        pc.append(_cilindro(nome, 6, COR_ACO_2, (bx, pivo_y + 230, pivo_z), "y", 26, 460, (sx, 0, -1),
+                            rot={"eixo": "x", "graus": ang_chifre, "centro": [bx, pivo_y, pivo_z]}))
 
     def _anilhas(nome, sx):
         bx = sx * bx_abs
         for k in range(3):
+            d = 165 + 44 * k
             pc.append(
                 _cilindro(f"{nome} #{k+1}", 6, COR_ANILHA if k % 2 == 0 else COR_ANILHA_ARO,
-                          (bx + sx * (80 + 40 * k), 800, 210), "x", 215, 34, (sx, 0, -1), lados=22)
+                          (bx, pivo_y + d, pivo_z), "y", 210, 36, (sx, 0, -1), lados=22,
+                          rot={"eixo": "x", "graus": ang_chifre, "centro": [bx, pivo_y, pivo_z]})
             )
 
     par("Chifre de anilhas", _chifre)
-    par("Luva de carga", _luva)
     par("Anilha", _anilhas)
 
     # ---- Etapa 7: manequim (posição do usuário) -------------------------

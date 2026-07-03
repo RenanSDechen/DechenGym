@@ -406,11 +406,11 @@ def gerar_dossie_pdf(
     )
     inst = [
         "Nivele a longarina central e solde os pés dianteiro e traseiro.",
-        "Levante o mastro dianteiro, o cabeçote do pivô e as escoras (triângulo).",
+        "Levante o pilar dianteiro do pivô, a travessa do eixo e as escoras.",
         "Fixe assento, coluna e pad de peito; solde os apoios de pés inclinados.",
         "Instale os eixos de pivô no cabeçote e chavete as cames sintetizadas.",
-        "Monte os braços pendentes nos eixos; fixe pegas neutras e pronadas.",
-        "Solde os chifres/luvas de anilha (lado oposto ao braço) e teste a carga.",
+        "Monte as manivelas (braço + chifre) nos eixos; fixe as pegas.",
+        "Enfie as anilhas nos chifres inclinados e faça o teste de carga.",
         "Posição de uso: sente atrás, peito no pad, pés nos apoios, puxe as pegas.",
     ]
     col_w = (doc.W - 2 * doc.m - 16) / 2
