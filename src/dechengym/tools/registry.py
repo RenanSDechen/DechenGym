@@ -28,6 +28,11 @@ from dechengym.geracao_openscad import (
     gerar_memorial_descritivo,
     gerar_script_openscad,
 )
+from dechengym.geracao_imagem import (
+    gerar_preview_svg,
+    montar_prompt_imagem_produto,
+    renderizar_openscad_png,
+)
 from dechengym.ergonomia import (
     avaliar_curva_resistencia,
     calcular_alinhamento_pivo,
@@ -53,6 +58,10 @@ TOOLS: dict[str, Callable[..., Any]] = {
     # --- Geração de saída ---
     "gerar_script_openscad": gerar_script_openscad,
     "gerar_memorial_descritivo": gerar_memorial_descritivo,
+    # --- Geração de imagem ---
+    "gerar_preview_svg": gerar_preview_svg,
+    "renderizar_openscad_png": renderizar_openscad_png,
+    "montar_prompt_imagem_produto": montar_prompt_imagem_produto,
     # --- Ergonomia ---
     "get_antropometria": get_antropometria,
     "calcular_faixa_ajuste": calcular_faixa_ajuste,
@@ -195,6 +204,66 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
             "properties": {
                 "parametros_geometria": {"type": "object"},
                 "como_json": {"type": "boolean"},
+            },
+            "required": ["parametros_geometria"],
+        },
+    },
+    # -------------------------- Geração de imagem -------------------------
+    {
+        "name": "gerar_preview_svg",
+        "description": (
+            "Gera um desenho tecnico 2D (vista lateral / blueprint) da "
+            "maquina articulada em SVG (Python puro, sem dependencias), "
+            "ilustrando base, coluna, pivo, braco e o arco de movimento (ADM)."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "parametros_geometria": {"type": "object"},
+                "angulo_inicial_graus": {"type": "number"},
+                "angulo_final_graus": {"type": "number"},
+                "largura_px": {"type": "integer"},
+            },
+            "required": ["parametros_geometria"],
+        },
+    },
+    {
+        "name": "renderizar_openscad_png",
+        "description": (
+            "Renderiza um arquivo .scad em PNG usando o executavel do "
+            "OpenSCAD (requer OpenSCAD instalado). Retorna o caminho do PNG."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "caminho_scad": {"type": "string"},
+                "caminho_saida_png": {"type": "string"},
+                "tamanho": {
+                    "type": "array",
+                    "items": {"type": "integer"},
+                    "description": "[largura, altura] em px.",
+                },
+                "camera": {"type": "string"},
+                "colorscheme": {"type": "string"},
+                "openscad_bin": {"type": "string"},
+            },
+            "required": ["caminho_scad"],
+        },
+    },
+    {
+        "name": "montar_prompt_imagem_produto",
+        "description": (
+            "Monta o prompt (positivo e negativo) para um modelo de "
+            "texto->imagem gerar o render de produto da maquina, a partir da "
+            "geometria e (opcional) do envelope ergonomico. Provedor-agnostico."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "parametros_geometria": {"type": "object"},
+                "envelope_ergonomico": {"type": "object"},
+                "estilo": {"type": "string"},
+                "idioma": {"type": "string", "enum": ["pt", "en"]},
             },
             "required": ["parametros_geometria"],
         },

@@ -49,10 +49,12 @@ DechenGym/
 │   ├── test_calculo_estrutural.py
 │   ├── test_geracao_openscad.py
 │   └── test_ergonomia.py
+│   ├── geracao_imagem.py         # Tools de imagem (SVG / PNG / prompt IA)
 ├── examples/
 │   ├── exemplo_braco_articulado.py
-│   └── exemplo_ergonomia.py
-└── output/                       # artefatos gerados (.scad / .json)
+│   ├── exemplo_ergonomia.py
+│   └── exemplo_imagem.py
+└── output/                       # artefatos gerados (.scad / .svg / .json)
 ```
 
 ## Instalação
@@ -99,6 +101,14 @@ python examples/exemplo_braco_articulado.py
 | `recomendar_espessura_minima`     | Menor espessura comercial que aprova o perfil.         |
 | `gerar_script_openscad`           | Código OpenSCAD paramétrico da máquina.                |
 | `gerar_memorial_descritivo`       | Lista de cortes e especificações (JSON).               |
+
+### Geração de imagem
+
+| Tool                              | Descrição                                              |
+|-----------------------------------|--------------------------------------------------------|
+| `gerar_preview_svg`               | Desenho técnico 2D (blueprint) em SVG — sem dependências. |
+| `renderizar_openscad_png`         | Render 3D em PNG via OpenSCAD CLI (se instalado).       |
+| `montar_prompt_imagem_produto`    | Prompt para modelo texto→imagem (render de produto).   |
 
 ### Ergonomia
 
@@ -155,6 +165,31 @@ geometria **nasce alinhada** às recomendações ergonômicas.
 python examples/exemplo_ergonomia.py
 ```
 
+## Geração de imagem
+
+A imagem do produto é atacada em três trilhas complementares, para funcionar
+em qualquer ambiente e degradar graciosamente:
+
+1. **Preview técnico SVG** (`gerar_preview_svg`): vista lateral / blueprint
+   em **Python puro, sem dependências** — sempre disponível e determinístico.
+   Ilustra base, coluna, eixo de pivô, braço nas posições inicial/final e o
+   **arco de movimento (ADM)**, ligando a ergonomia à representação visual.
+2. **Render 3D PNG** (`renderizar_openscad_png`): chama o executável do
+   OpenSCAD para renderizar o `.scad`. Requer o OpenSCAD instalado; caso
+   contrário, levanta um erro com orientação (o SVG segue disponível).
+3. **Render de produto por IA** (`montar_prompt_imagem_produto`): monta o
+   *prompt* (positivo e negativo) descrevendo a máquina, para o agente
+   orquestrador repassar à sua Tool de texto→imagem — **provedor-agnóstico**.
+
+```bash
+python examples/exemplo_imagem.py
+```
+
+O pipeline completo é: `projetar_ergonomia` →
+`parametros_geometria_de_ergonomia` → `gerar_script_openscad` +
+`gerar_memorial_descritivo` + `gerar_preview_svg` /
+`montar_prompt_imagem_produto`.
+
 ## Modelo de cálculo estrutural
 
 - **Momento fletor:** `M = m · g · d` (kg → N via g = 9,80665 m/s²).
@@ -178,6 +213,7 @@ Contrato de aceite de referência já coberto:
 ## Roadmap
 
 - [x] Módulo de **ergonomia** (antropometria, ADM, pegada, curva de força).
-- [ ] Geração da **imagem do produto** (render do `.scad` → PNG).
-- [ ] Custom components completos para **Langflow**.
+- [x] Geração da **imagem do produto** (SVG técnico / PNG OpenSCAD / prompt IA).
+- [ ] Instalar OpenSCAD no ambiente para render PNG automático.
+- [ ] Custom components completos para **Langflow** (incl. imagem).
 - [ ] Bancos de dados a partir de fontes reais (metalon e antropometria).

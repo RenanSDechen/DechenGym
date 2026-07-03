@@ -31,6 +31,12 @@ from dechengym.geracao_openscad import (
     gerar_memorial_descritivo,
     parametros_geometria_de_ergonomia,
 )
+from dechengym.geracao_imagem import (
+    gerar_preview_svg,
+    gerar_imagem,
+    renderizar_openscad_png,
+    montar_prompt_imagem_produto,
+)
 from dechengym.ergonomia import (
     get_antropometria,
     calcular_faixa_ajuste,
@@ -58,6 +64,11 @@ __all__ = [
     "gerar_script_openscad",
     "gerar_memorial_descritivo",
     "parametros_geometria_de_ergonomia",
+    # Geração de imagem
+    "gerar_preview_svg",
+    "gerar_imagem",
+    "renderizar_openscad_png",
+    "montar_prompt_imagem_produto",
     # Ergonomia
     "get_antropometria",
     "calcular_faixa_ajuste",
