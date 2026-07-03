@@ -38,14 +38,18 @@ COR_ANILHA_ARO = "#3a414b"
 COR_EIXO = "#d9a521"
 COR_CAME = "#4c5560"
 
+#: Cor do manequim de referência (posição do usuário).
+COR_HUMANO = "#7f95aa"
+
 #: Nomes das etapas de montagem, na ordem.
 ETAPAS_MONTAGEM: list[str] = [
     "Chassi da base",
-    "Torre traseira",
-    "Assento e apoio de peito",
+    "Mastro dianteiro e escoras",
+    "Assento, apoio de peito e apoios de pes",
     "Eixos de pivo e cames",
     "Bracos articulados e pegas",
     "Suportes e anilhas",
+    "Posicao do usuario (referencia)",
 ]
 
 
@@ -77,119 +81,226 @@ def _cilindro(nome, etapa, cor, centro, eixo, raio, comprimento, explode,
 def gerar_pecas_maquina(
     parametros: dict[str, Any] | None = None,
     iso_lateral: bool = True,
+    incluir_manequim: bool = True,
 ) -> dict[str, Any]:
     """Gera a lista de peças 3D da máquina a partir dos parâmetros do projeto.
+
+    A arquitetura segue as máquinas de remada plate-loaded topo de linha
+    (referência: Hammer Strength Iso-Lateral Row, ~155×127×132 cm):
+
+    - o usuário senta **atrás** da máquina, com o peito apoiado no pad e os
+      pés nos apoios — o acesso ao assento é totalmente aberto;
+    - os braços articulados pivotam em um **eixo alto no mastro dianteiro**
+      ("overhead pivot") e pendem para baixo; as pegas ficam à frente do
+      peito e viajam para trás/para cima no arco da remada;
+    - as anilhas carregam em **chifres laterais na frente** da máquina,
+      solidários aos braços (do lado oposto do pivô).
 
     Parameters
     ----------
     parametros:
-        Parâmetros de geometria (as mesmas chaves de
-        :func:`dechengym.gerar_script_openscad`): ``perfil_base_mm``,
-        ``comprimento_alavanca_mm``, ``altura_coluna_mm``,
-        ``diametro_pega_mm``, ``espessura_parede_mm``...
+        Parâmetros de geometria do projeto: ``perfil_base_mm``,
+        ``comprimento_alavanca_mm`` (distância pivô→pega),
+        ``diametro_pega_mm``...
     iso_lateral:
-        Se ``True`` (padrão), gera **dois braços independentes** espelhados
-        com suportes de anilha (plate-loaded); senão, um braço central.
+        ``True`` (padrão): dois braços independentes espelhados.
+    incluir_manequim:
+        Adiciona a etapa final com um manequim sentado (referência de uso).
 
     Returns
     -------
     dict
         ``{"pecas": [...], "etapas": [...], "specs": {...}}``.
+
+    Convenção: X = largura (0 no centro), Y = altura, Z = profundidade
+    (0 = frente da máquina; o usuário senta em Z alto).
     """
     p = dict(parametros or {})
     perfil = float(p.get("perfil_base_mm", 60))
-    alavanca = float(p.get("comprimento_alavanca_mm", 520))
-    # Altura do eixo de pivô acima do piso (coluna + base).
-    pivo_y = float(p.get("altura_coluna_mm", 540)) + perfil
-    pivo_y = max(pivo_y, 750.0)  # sanidade visual p/ máquina sentada
+    alavanca = max(float(p.get("comprimento_alavanca_mm", 750)), 400.0)
     d_pega = float(p.get("diametro_pega_mm", 38))
 
-    larg = 760.0        # largura total da base
-    prof = 1150.0       # profundidade total da base
-    torre_z = prof - 240
-    torre_h = pivo_y + 260
+    # Cotas de referência (Hammer IL-ROW: 1550 x 1270 x 1320 mm).
+    prof = 1520.0                 # comprimento (z)
+    pivo_y, pivo_z = 1230.0, 380.0  # eixo de pivô alto, no mastro dianteiro
+    assento_y = 440.0
+    peito_z = 950.0               # plano do apoio de peito (frente do tórax)
 
     pc: list[dict[str, Any]] = []
 
-    # ---- Etapa 1: chassi da base --------------------------------------
+    def par(nome, fabrica):
+        """Adiciona a peça espelhada em ±x (ou única no centro)."""
+        if iso_lateral:
+            fabrica(nome + " esq", -1)
+            fabrica(nome + " dir", +1)
+        else:
+            fabrica(nome, 0)
+
+    # ---- Etapa 1: chassi da base ---------------------------------------
     e = 1
-    pc.append(_caixa("Longarina esquerda", e, COR_ACO, (0, 0, 0), (perfil, perfil, prof), (0, -1, 0)))
-    pc.append(_caixa("Longarina direita", e, COR_ACO, (larg - perfil, 0, 0), (perfil, perfil, prof), (0, -1, 0)))
-    pc.append(_caixa("Travessa frontal", e, COR_ACO, (perfil, 0, 40), (larg - 2 * perfil, perfil, perfil), (0, -1, 0)))
-    pc.append(_caixa("Travessa central", e, COR_ACO, (perfil, 0, prof * 0.48), (larg - 2 * perfil, perfil, perfil), (0, -1, 0)))
-    pc.append(_caixa("Travessa traseira", e, COR_ACO, (perfil, 0, prof - perfil - 40), (larg - 2 * perfil, perfil, perfil), (0, -1, 0)))
+    pc.append(_caixa("Longarina central", e, COR_ACO, (-perfil / 2, 0, 0), (perfil, perfil, prof), (0, -1, 0)))
+    pc.append(_caixa("Pe dianteiro", e, COR_ACO, (-450, 0, 60), (900, perfil, perfil), (0, -1, -1)))
+    pc.append(_caixa("Pe traseiro", e, COR_ACO, (-380, 0, prof - perfil - 20), (760, perfil, perfil), (0, -1, 1)))
 
-    # ---- Etapa 2: torre traseira --------------------------------------
+    # ---- Etapa 2: mastro dianteiro e escoras ---------------------------
     e = 2
-    for lado, x in (("esquerda", 120), ("direita", larg - 120 - perfil)):
-        pc.append(_caixa(f"Coluna {lado}", e, COR_ACO_2, (x, perfil, torre_z), (perfil, torre_h - perfil, perfil), (0, 0, 1)))
-    pc.append(_caixa("Travessa superior", e, COR_ACO_2, (120, torre_h, torre_z), (larg - 240, perfil, perfil), (0, 1, 1)))
-    # Mãos-francesas
-    for x in (120, larg - 120 - perfil):
-        pc.append(_caixa("Reforco diagonal", e, COR_ACO_2, (x, perfil, torre_z - 150), (perfil, perfil, 150),
-                         (0, 0, 1), rot={"eixo": "x", "graus": -35, "centro": [x, perfil + perfil / 2, torre_z]}))
-
-    # ---- Etapa 3: assento + apoio de peito -----------------------------
-    e = 3
-    cx = larg / 2
-    assento_y = 470.0
-    pc.append(_caixa("Coluna do assento", e, COR_ACO, (cx - perfil / 2, perfil, 380), (perfil, assento_y - perfil, perfil), (0, 1, -1)))
-    pc.append(_caixa("Banco estofado", e, COR_PAD, (cx - 150, assento_y, 300), (300, 60, 300), (0, 1, -1)))
-    pc.append(_caixa("Haste do apoio de peito", e, COR_ACO, (cx - perfil / 2, assento_y + 60, 250), (perfil, pivo_y - assento_y - 50, perfil), (0, 1, -1)))
+    for sx in (-1, 1):
+        pc.append(
+            _caixa(f"Mastro {'esq' if sx < 0 else 'dir'}", e, COR_ACO_2,
+                   (sx * 90 - perfil / 2, perfil, pivo_z + 30), (perfil, pivo_y - perfil, perfil),
+                   (0, 0, -1), rot={"eixo": "x", "graus": 4, "centro": [sx * 90, perfil, pivo_z + 60]})
+        )
+    pc.append(_caixa("Cabecote do pivo", e, COR_ACO_2, (-330, pivo_y - 10, pivo_z - perfil / 2), (660, 90, perfil + 20), (0, 1, 0)))
+    # Escoras: barras verticais (+Y) rotacionadas em torno do pé de apoio.
+    # Na convenção de rotação, ângulo POSITIVO leva +Y para +Z (para trás).
     pc.append(
-        _caixa("Apoio de peito", e, COR_PAD, (cx - 170, pivo_y - 120, 200), (340, 280, 70), (0, 1, -1),
-               rot={"eixo": "x", "graus": 12, "centro": [cx, pivo_y + 20, 235]})
+        _caixa("Escora frontal", e, COR_ACO_2, (-perfil / 2, 80, 140), (perfil, 640, perfil),
+               (0, 0, -1), rot={"eixo": "x", "graus": 24, "centro": [0, 90, 150]})
+    )
+    pc.append(
+        _caixa("Escora traseira (triangulo)", e, COR_ACO_2, (-perfil / 2, 80, 1130), (perfil, 1260, perfil),
+               (0, 1, 1), rot={"eixo": "x", "graus": -33, "centro": [0, 90, 1140]})
     )
 
-    # ---- Braços / pivôs / anilhas -------------------------------------
-    if iso_lateral:
-        bracos_x = [190.0, larg - 190.0]
-    else:
-        bracos_x = [cx]
+    # ---- Etapa 3: assento, apoio de peito e apoios de pés --------------
+    e = 3
+    pc.append(_caixa("Coluna do assento", e, COR_ACO, (-perfil / 2, perfil, 1240), (perfil, assento_y - perfil, perfil), (0, 1, 1)))
+    pc.append(_caixa("Banco estofado", e, COR_PAD, (-170, assento_y, 1120), (340, 70, 340), (0, 1, 1)))
+    pc.append(_caixa("Coluna do apoio de peito", e, COR_ACO, (-perfil / 2, perfil, peito_z - 55), (perfil, 840, perfil), (0, 1, 0)))
+    pc.append(
+        _caixa("Apoio de peito", e, COR_PAD, (-160, 810, peito_z - 45), (320, 300, 90), (0, 1, 0),
+               rot={"eixo": "x", "graus": -8, "centro": [0, 960, peito_z]})
+    )
 
-    for i, bx in enumerate(bracos_x):
-        lado = "esq" if (iso_lateral and i == 0) else ("dir" if iso_lateral else "central")
-        esp_x = -1 if bx < cx else (1 if iso_lateral else 0)
-
-        # Etapa 4: eixo de pivô + came
-        e = 4
-        pc.append(_cilindro(f"Eixo de pivo {lado}", e, COR_EIXO, (bx, pivo_y, torre_z + perfil / 2), "x", 16, 140, (esp_x, 0, 1)))
-        pc.append(_cilindro(f"Came {lado}", e, COR_CAME, (bx + esp_x * 52, pivo_y, torre_z + perfil / 2), "x", 85, 16, (esp_x, 0, 1), lados=18))
-
-        # Etapa 5: braço articulado + pega
-        e = 5
-        rot_braco = {"eixo": "x", "graus": 14, "centro": [bx, pivo_y, torre_z + perfil / 2]}
+    def _apoio_pe(nome, sx):
+        # Plataforma inclinada onde o pé apoia, sob os joelhos do usuário.
         pc.append(
-            _caixa(f"Braco articulado {lado}", e, COR_ACO, (bx - perfil / 2, pivo_y - perfil / 2, torre_z + perfil / 2 - alavanca),
-                   (perfil, perfil, alavanca), (esp_x, 0, -1), rot=rot_braco)
+            _caixa(nome, 3, COR_ACO_2, (sx * 180 - 100, 55, 730), (200, 24, 280), (sx, -1, 0),
+                   rot={"eixo": "x", "graus": -38, "centro": [sx * 180, 67, 870]})
         )
+    par("Apoio de pe", _apoio_pe)
+
+    # ---- Braços / pivôs / anilhas (por lado) ----------------------------
+    bx_abs = 250.0
+
+    def _pivo(nome, sx):
+        bx = sx * bx_abs
+        pc.append(_cilindro(nome, 4, COR_EIXO, (bx, pivo_y, pivo_z), "x", 17, 130, (sx, 1, 0)))
+
+    def _came(nome, sx):
+        bx = sx * (bx_abs - 85)
+        pc.append(_cilindro(nome, 4, COR_CAME, (bx, pivo_y, pivo_z), "x", 90, 18, (sx, 1, 0), lados=18))
+
+    par("Eixo de pivo", _pivo)
+    par("Came", _came)
+
+    # Braço principal: pende do pivô alto e inclina ~30° PARA TRÁS (posição
+    # média do curso), levando a pega para a frente do tórax do usuário.
+    # Convenção de rotação: para uma barra que se estende em -Y a partir do
+    # pivô, ângulo NEGATIVO leva a ponta para +Z (em direção ao usuário).
+    ang_braco = 30.0
+    rad = math.radians(ang_braco)
+
+    def _pos_rotacionada(dy: float, dz: float) -> tuple[float, float]:
+        """Posição no mundo de um ponto (dy, dz) relativo ao pivô, após a
+        rotação do braço (ângulo -ang_braco na convenção interna)."""
+        c, s = math.cos(-rad), math.sin(-rad)
+        return pivo_y + dy * c - dz * s, pivo_z + dy * s + dz * c
+
+    def _braco(nome, sx):
+        bx = sx * bx_abs
+        rot = {"eixo": "x", "graus": -ang_braco, "centro": [bx, pivo_y, pivo_z]}
+        pc.append(_caixa(nome, 5, COR_ACO, (bx - perfil / 2, pivo_y - alavanca, pivo_z - perfil / 2),
+                         (perfil, alavanca, perfil), (sx, 0, 1), rot=rot))
+
+    def _pega_v(nome, sx):
+        bx = sx * bx_abs
+        rot = {"eixo": "x", "graus": -ang_braco, "centro": [bx, pivo_y, pivo_z]}
+        pc.append(_cilindro(nome, 5, COR_PEGA, (bx, pivo_y - alavanca + 150, pivo_z + perfil / 2 + 45),
+                            "y", d_pega / 2, 300, (sx, 0, 1), rot=rot))
+
+    def _pega_h(nome, sx):
+        bx = sx * (bx_abs - 100)
+        rot = {"eixo": "x", "graus": -ang_braco, "centro": [sx * bx_abs, pivo_y, pivo_z]}
+        pc.append(_cilindro(nome, 5, COR_PEGA, (bx, pivo_y - alavanca + 20, pivo_z + perfil / 2 + 45),
+                            "x", d_pega / 2, 170, (sx, 0, 1), rot=rot))
+
+    par("Braco articulado", _braco)
+    par("Pega neutra", _pega_v)
+    par("Pega pronada", _pega_h)
+
+    # Posição (mundo) do centro da pega vertical — usada pelo manequim.
+    pega_cy, pega_cz = _pos_rotacionada(-(alavanca - 150), perfil / 2 + 45)
+
+    # Chifre de anilhas: rígido com o braço, do lado OPOSTO do pivô
+    # (frente-baixo). Ângulo positivo leva a ponta -Y para -Z (frente).
+    def _chifre(nome, sx):
+        bx = sx * bx_abs
         pc.append(
-            _cilindro(f"Pega neutra {lado}", e, COR_PEGA, (bx, pivo_y - 185, torre_z + perfil / 2 - alavanca + 40),
-                      "y", d_pega / 2, 370, (esp_x, 0, -1), rot=rot_braco)
+            _caixa(nome, 6, COR_ACO_2, (bx - perfil / 2, pivo_y - 465, pivo_z - perfil / 2),
+                   (perfil, 465, perfil), (sx, 0, -1),
+                   rot={"eixo": "x", "graus": 22, "centro": [bx, pivo_y, pivo_z]})
         )
 
-        # Etapa 6: suporte de anilhas (weight horn, atrás da torre) + anilhas
-        e = 6
-        horn_y = pivo_y - 320
-        horn_z = torre_z + perfil + 60
-        rot_horn = {"eixo": "x", "graus": 18, "centro": [bx, horn_y, horn_z]}
-        pc.append(
-            _cilindro(f"Suporte de anilhas {lado}", e, COR_ACO_2, (bx, horn_y, horn_z + 120), "z", 22, 280, (esp_x, 0, 1), rot=rot_horn)
-        )
+    def _luva(nome, sx):
+        bx = sx * bx_abs
+        pc.append(_cilindro(nome, 6, COR_ACO_2, (bx + sx * 115, 800, 210), "x", 25, 230, (sx, 0, -1)))
+
+    def _anilhas(nome, sx):
+        bx = sx * bx_abs
         for k in range(3):
             pc.append(
-                _cilindro(f"Anilha {lado} #{k+1}", e, COR_ANILHA if k % 2 == 0 else COR_ANILHA_ARO,
-                          (bx, horn_y, horn_z + 70 + k * 44), "z", 150, 32, (esp_x, 0, 1), lados=20, rot=rot_horn)
+                _cilindro(f"{nome} #{k+1}", 6, COR_ANILHA if k % 2 == 0 else COR_ANILHA_ARO,
+                          (bx + sx * (80 + 40 * k), 800, 210), "x", 215, 34, (sx, 0, -1), lados=22)
+            )
+
+    par("Chifre de anilhas", _chifre)
+    par("Luva de carga", _luva)
+    par("Anilha", _anilhas)
+
+    # ---- Etapa 7: manequim (posição do usuário) -------------------------
+    # Sentado ATRÁS da máquina: pelve sobre o banco, tórax apoiado no pad,
+    # braços estendidos à frente até as pegas, pés nos apoios inclinados.
+    if incluir_manequim:
+        e = 7
+        topo_banco = assento_y + 70          # ~510
+        ombro_y, ombro_z = 1110, 1060
+        pc.append(_caixa("Pelve (ref)", e, COR_HUMANO, (-150, topo_banco, 1150), (300, 180, 280), (0, 1, 1)))
+        pc.append(
+            _caixa("Tronco (ref)", e, COR_HUMANO, (-165, topo_banco + 155, peito_z + 50), (330, 460, 175), (0, 1, 1),
+                   rot={"eixo": "x", "graus": 6, "centro": [0, topo_banco + 160, peito_z + 135]})
+        )
+        pc.append(_cilindro("Cabeca (ref)", e, COR_HUMANO, (0, 1245, 1075), "y", 85, 200, (0, 1, 1), lados=12))
+        for sx in (-1, 1):
+            lado = "esq" if sx < 0 else "dir"
+            # Braço estendido do ombro até a pega vertical real (pega_cy/cz).
+            dy = pega_cy - ombro_y
+            dz = pega_cz - ombro_z
+            comp = math.hypot(dy, dz) + 30
+            # Barra que se estende em -Y do ombro: ângulo negativo leva a
+            # ponta para +Z; a pega está em -Z (à frente) → atan2 resolve.
+            ang = -math.degrees(math.atan2(dz, -dy))
+            pc.append(
+                _caixa(f"Braco {lado} (ref)", e, COR_HUMANO, (sx * 200 - 35, ombro_y - comp, ombro_z - 35),
+                       (70, comp, 70), (sx, 1, 1),
+                       rot={"eixo": "x", "graus": ang, "centro": [sx * 200, ombro_y, ombro_z]})
+            )
+            # Coxa (horizontal, joelho à frente) e canela (desce ao apoio).
+            pc.append(_caixa(f"Coxa {lado} (ref)", e, COR_HUMANO, (sx * 110 - 60, topo_banco + 10, 850), (120, 130, 400), (sx, 1, 1)))
+            pc.append(
+                _caixa(f"Canela {lado} (ref)", e, COR_HUMANO, (sx * 110 - 50, 110, 830), (100, topo_banco - 90, 100), (sx, 1, 1),
+                       rot={"eixo": "x", "graus": -6, "centro": [sx * 110, topo_banco + 10, 880]})
             )
 
     specs = {
         "perfil_mm": perfil,
         "alavanca_mm": alavanca,
-        "altura_pivo_mm": round(pivo_y, 1),
+        "altura_pivo_mm": pivo_y,
         "diametro_pega_mm": d_pega,
         "iso_lateral": iso_lateral,
-        "n_bracos": len(bracos_x),
-        "base_mm": [larg, prof],
+        "n_bracos": 2 if iso_lateral else 1,
+        "base_mm": [1040, prof],
+        "referencia": "layout Hammer Strength Iso-Lateral Row",
     }
     return {"pecas": pc, "etapas": ETAPAS_MONTAGEM, "specs": specs}
 
@@ -418,7 +529,7 @@ footer{padding:8px 20px;border-top:1px solid #262c34;color:var(--mut);font-size:
 <script>
 const D=__DADOS__;
 const cv=document.getElementById('c'),ctx=cv.getContext('2d');
-let yaw=-0.56,pitch=0.30,zoom=1,giro=false,etapa=6,expl=0;
+let yaw=1.05,pitch=0.22,zoom=1,giro=false,etapa=6,expl=0;
 let drag=null;
 
 function rot(v,e,g,c){const a=g*Math.PI/180,co=Math.cos(a),si=Math.sin(a);
@@ -449,7 +560,7 @@ function draw(){
  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
  const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
  const luz=[0.45,0.8,-0.4],ln=Math.hypot(...luz),lz=luz.map(c=>c/ln);
- const cx0=380,cy0=650,cz0=575; // centro aproximado do modelo
+ const cx0=0,cy0=660,cz0=740; // centro aproximado do modelo
  const tris=[];
  for(const q of D.pecas){
   if(q.etapa>etapa)continue;
@@ -499,5 +610,6 @@ function specs(){const s=D.specs,fmt=[['Tipo',s.iso_lateral?'Iso-lateral (2 brac
   fmt.push([k.replaceAll('_',' '),s[k]])}
  document.getElementById('specs').innerHTML=fmt.map(([a,b])=>`<tr><td>${a}</td><td>${b}</td></tr>`).join('')}
 new ResizeObserver(draw).observe(cv);
+etapa=+rEt.value;
 lista();specs();document.getElementById('oEt').textContent=etapa+'/'+D.etapas.length;draw();tick();
 </script></body></html>""".replace("__TITULO__", titulo).replace("__DADOS__", dados)

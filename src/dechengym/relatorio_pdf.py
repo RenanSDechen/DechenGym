@@ -290,9 +290,12 @@ def gerar_dossie_pdf(
     c.drawCentredString(doc.W - doc.m - 60, doc.H - 90, "APROVADO" if aprovado else "REVISAR")
     doc.y = doc.H - 175
 
-    hero = renderizar_svg_3d(modelo, largura_px=1100, yaw_graus=148, pitch_graus=14)
+    hero = renderizar_svg_3d(modelo, largura_px=1100, yaw_graus=62, pitch_graus=10)
     doc.imagem(_png_do_svg(hero, 1500), doc.W - 2 * doc.m, 385)
-    doc.paragrafo(projeto["resumo"], tam=10, cor=_INK)
+    doc.paragrafo(projeto["resumo"] + " Arquitetura de referencia: maquinas "
+                  "plate-loaded iso-laterais topo de linha (pivo alto no mastro "
+                  "dianteiro, assento traseiro aberto, anilhas nos chifres "
+                  "frontais). O manequim ilustra a posicao de uso.", tam=10, cor=_INK)
 
     # ================= 1. ERGONOMIA =================
     doc._nova_pagina_interna()
@@ -402,12 +405,13 @@ def gerar_dossie_pdf(
         "montagem_3d.html.",
     )
     inst = [
-        "Nivele e esquadre as longarinas e travessas; solde o chassi da base.",
-        "Levante as colunas traseiras, trave com a travessa superior e os reforços diagonais.",
-        "Fixe a coluna do assento e a haste do apoio de peito; monte os estofados.",
-        "Instale os eixos de pivô nas colunas e chavete as cames sintetizadas.",
-        "Monte os braços articulados nos eixos e fixe as pegas neutras.",
-        "Solde os suportes de anilha nos braços e faça o teste de carga.",
+        "Nivele a longarina central e solde os pés dianteiro e traseiro.",
+        "Levante o mastro dianteiro, o cabeçote do pivô e as escoras (triângulo).",
+        "Fixe assento, coluna e pad de peito; solde os apoios de pés inclinados.",
+        "Instale os eixos de pivô no cabeçote e chavete as cames sintetizadas.",
+        "Monte os braços pendentes nos eixos; fixe pegas neutras e pronadas.",
+        "Solde os chifres/luvas de anilha (lado oposto ao braço) e teste a carga.",
+        "Posição de uso: sente atrás, peito no pad, pés nos apoios, puxe as pegas.",
     ]
     col_w = (doc.W - 2 * doc.m - 16) / 2
     img_h = 150.0
@@ -419,7 +423,7 @@ def gerar_dossie_pdf(
             if k >= len(ETAPAS_MONTAGEM):
                 break
             x = doc.m + j * (col_w + 16)
-            svg = renderizar_svg_3d(modelo, largura_px=640, yaw_graus=148, pitch_graus=14, etapa_max=k + 1)
+            svg = renderizar_svg_3d(modelo, largura_px=640, yaw_graus=55, pitch_graus=12, etapa_max=k + 1)
             from reportlab.lib.utils import ImageReader
 
             doc.c.drawImage(ImageReader(_png_do_svg(svg, 760)), x, y_topo - img_h,
@@ -453,7 +457,7 @@ def gerar_dossie_pdf(
     # Vista explodida
     doc.precisa(240)
     doc.paragrafo("Vista explodida (todas as etapas):", cor=_INK)
-    svg_exp = renderizar_svg_3d(modelo, largura_px=1000, yaw_graus=148, pitch_graus=16, explosao=0.85)
+    svg_exp = renderizar_svg_3d(modelo, largura_px=1000, yaw_graus=55, pitch_graus=16, explosao=0.85)
     doc.imagem(_png_do_svg(svg_exp, 1200), doc.W - 2 * doc.m - 40, 300, borda=True)
 
     doc._rodape()
