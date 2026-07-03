@@ -27,19 +27,20 @@ import math
 from typing import Any
 
 # --------------------------------------------------------------------------
-# Paleta (acabamento premium: preto fosco, estofado vermelho, aço, latão)
+# Paleta (visual clássico Hammer Strength: estrutura platinada em tubo oval,
+# estofados e anilhas pretos, pegas emborrachadas escuras)
 # --------------------------------------------------------------------------
-COR_ACO = "#23272e"
-COR_ACO_2 = "#2e343d"
-COR_PAD = "#b91c1c"
-COR_PEGA = "#aab3bd"
-COR_ANILHA = "#14161a"
-COR_ANILHA_ARO = "#3a414b"
+COR_ACO = "#a9aeb6"        # platinum (tubos principais)
+COR_ACO_2 = "#8f959e"      # platinum sombreado (estrutura secundária)
+COR_PAD = "#1c1e22"        # estofados pretos
+COR_PEGA = "#3a3f46"       # pegas emborrachadas
+COR_ANILHA = "#101214"
+COR_ANILHA_ARO = "#2c3138"
 COR_EIXO = "#d9a521"
 COR_CAME = "#4c5560"
 
 #: Cor do manequim de referência (posição do usuário).
-COR_HUMANO = "#7f95aa"
+COR_HUMANO = "#6f8cab"
 
 #: Nomes das etapas de montagem, na ordem.
 ETAPAS_MONTAGEM: list[str] = [
@@ -78,6 +79,65 @@ def _cilindro(nome, etapa, cor, centro, eixo, raio, comprimento, explode,
     return p
 
 
+def _tubo(nome, etapa, cor, pontos, raio, explode, oval=1.0, lados=10,
+          rot=None) -> dict[str, Any]:
+    """Tubo varrido ao longo de uma polilinha 3D, com seção elíptica.
+
+    Os pontos devem estar (aproximadamente) num plano X constante — caso
+    típico dos membros do quadro; a seção usa o eixo lateral X como direção
+    "larga" (``oval`` > 1 → tubo oval achatado, o visual Hammer Strength).
+    A malha (vértices/faces) é pré-tesselada aqui, de modo que os
+    renderizadores (Python e JS) só transformam e desenham.
+    """
+    pts = [list(map(float, q)) for q in pontos]
+    n = len(pts)
+    verts: list[list[float]] = []
+    faces: list[list[int]] = []
+    rx = raio * oval  # semieixo lateral (x)
+
+    def _norm(v):
+        m = math.sqrt(sum(c * c for c in v)) or 1.0
+        return [c / m for c in v]
+
+    for i, c in enumerate(pts):
+        # Tangente média no nó (suaviza os cotovelos da polilinha).
+        if i == 0:
+            t = _norm([pts[1][k] - pts[0][k] for k in range(3)])
+        elif i == n - 1:
+            t = _norm([pts[-1][k] - pts[-2][k] for k in range(3)])
+        else:
+            a = _norm([pts[i][k] - pts[i - 1][k] for k in range(3)])
+            b = _norm([pts[i + 1][k] - pts[i][k] for k in range(3)])
+            t = _norm([a[k] + b[k] for k in range(3)])
+        # Seção: eixo largo ~X (projetado ⊥ t), eixo estreito = t × u.
+        u = [1.0 - t[0] * t[0], -t[0] * t[1], -t[0] * t[2]]
+        u = _norm(u)
+        v = _norm([t[1] * u[2] - t[2] * u[1], t[2] * u[0] - t[0] * u[2],
+                   t[0] * u[1] - t[1] * u[0]])
+        for k in range(lados):
+            a = 2 * math.pi * k / lados
+            ca, sa = math.cos(a), math.sin(a)
+            verts.append([c[j] + rx * ca * u[j] + raio * sa * v[j] for j in range(3)])
+    # Laterais
+    for i in range(n - 1):
+        for k in range(lados):
+            k2 = (k + 1) % lados
+            faces.append([i * lados + k, i * lados + k2,
+                          (i + 1) * lados + k2, (i + 1) * lados + k])
+    # Tampas
+    faces.append(list(range(lados - 1, -1, -1)))
+    faces.append(list(range((n - 1) * lados, n * lados)))
+
+    p = {
+        "nome": nome, "tipo": "mesh", "etapa": etapa, "cor": cor,
+        "verts": [[round(c, 2) for c in vv] for vv in verts],
+        "faces": faces, "explode": list(explode),
+    }
+    if rot:
+        p["rot"] = rot
+    return p
+
+
 def gerar_pecas_maquina(
     parametros: dict[str, Any] | None = None,
     iso_lateral: bool = True,
@@ -85,19 +145,21 @@ def gerar_pecas_maquina(
 ) -> dict[str, Any]:
     """Gera a lista de peças 3D da máquina a partir dos parâmetros do projeto.
 
-    A arquitetura segue as máquinas de remada plate-loaded topo de linha
-    (referência: Hammer Strength Iso-Lateral Row IL-ROW, ~155×127×132 cm,
-    perfil compacto e BAIXO):
+    A arquitetura segue a Hammer Strength Iso-Lateral Row (IL-ROW,
+    ~155×127×132 cm) e a cinemática da patente de Gary Jones ("a pair of
+    levers pivotally connected to the frame in front of the brace and seat,
+    each lever having a lower end adapted to support the weight and a
+    handle at the upper end"):
 
-    - o usuário senta **atrás** da máquina, com o peito apoiado no pad e os
-      pés nos apoios — o acesso ao assento é totalmente aberto;
-    - cada braço é uma **manivela de pivô baixo dianteiro**: do eixo
-      (~480 mm), o braço de trabalho **sobe para trás** até as pegas em
-      frente ao tórax (pegas neutra + pronada); puxar as pegas gira a
-      manivela e levanta os chifres de anilha na frente;
-    - as anilhas enfiam **ao longo dos chifres inclinados (~50°)** na
-      frente da máquina — as anilhas ficam "tombadas", a assinatura visual
-      das plate-loaded.
+    - o usuário senta **atrás**, peito no pad, pés nos apoios — acesso
+      totalmente aberto ao banco;
+    - cada lado tem uma **alavanca em C** de tubo oval: pivô **a meia
+      altura à frente do peito**, pegas (neutra + pronada) na **ponta
+      superior** junto ao tórax e chifre de anilhas na **ponta inferior**,
+      baixa na frente da máquina (anilhas "tombadas" a ~45°);
+    - puxar as pegas para trás gira a alavanca e levanta as anilhas — a
+      came sintetizada no cubo modula o braço de momento;
+    - visual clássico Hammer: tubos ovais platinados, estofados pretos.
 
     Parameters
     ----------
@@ -123,13 +185,25 @@ def gerar_pecas_maquina(
     alavanca = max(float(p.get("comprimento_alavanca_mm", 750)), 400.0)
     d_pega = float(p.get("diametro_pega_mm", 38))
 
-    # Cotas de referência (Hammer IL-ROW: 1550 x 1270 x 1320 mm — perfil
-    # BAIXO: pivô baixo na frente, braços-manivela sobem para trás até as
-    # pegas; chifres de anilha inclinados ~50° na frente, anilhas tombadas).
-    prof = 1520.0                   # comprimento (z)
-    pivo_y, pivo_z = 480.0, 300.0   # eixo de pivô BAIXO no pilar dianteiro
-    assento_y = 440.0
-    peito_z = 950.0                 # plano do apoio de peito (frente do tórax)
+    # Cotas de referência (Hammer IL-ROW: 1550 x 1270 x 1320 mm).
+    # Cinemática conforme a patente de Gary Jones: "a pair of levers
+    # pivotally connected to the frame IN FRONT of the brace and seat, each
+    # lever having a LOWER end adapted to support the weight and a handle
+    # at the UPPER end" — alavanca em C com pivô no meio, pegas em cima e
+    # anilhas embaixo, na frente da máquina.
+    prof = 1500.0
+    pivo_y, pivo_z = 740.0, 330.0   # pivô a meia altura, à frente do peito
+    assento_y = 420.0
+    peito_z = 950.0                 # plano do apoio de peito
+
+    # Direções da alavanca em C (ângulos a partir da vertical)
+    a_sup = math.radians(42.0)      # ponta superior: para cima e para trás
+    a_inf = math.radians(18.0)      # ponta inferior: para baixo e para frente
+    r_inf = 470.0                   # raio do pivô à ponta inferior (pesos)
+    topo_y = pivo_y + alavanca * math.cos(a_sup)
+    topo_z = pivo_z + alavanca * math.sin(a_sup)
+    base_lv_y = pivo_y - r_inf * math.cos(a_inf)
+    base_lv_z = pivo_z - r_inf * math.sin(a_inf)
 
     pc: list[dict[str, Any]] = []
 
@@ -141,155 +215,124 @@ def gerar_pecas_maquina(
         else:
             fabrica(nome, 0)
 
-    # ---- Etapa 1: chassi da base ---------------------------------------
+    # ---- Etapa 1: chassi da base (tubos ovais platinados) ---------------
     e = 1
-    pc.append(_caixa("Longarina central", e, COR_ACO, (-perfil / 2, 0, 0), (perfil, perfil, prof), (0, -1, 0)))
-    pc.append(_caixa("Pe dianteiro", e, COR_ACO, (-450, 0, 60), (900, perfil, perfil), (0, -1, -1)))
-    pc.append(_caixa("Pe traseiro", e, COR_ACO, (-380, 0, prof - perfil - 20), (760, perfil, perfil), (0, -1, 1)))
+    pc.append(_tubo("Longarina central", e, COR_ACO, [(0, 46, -140), (0, 46, prof)], 40, (0, -1, 0), oval=1.5))
+    pc.append(_tubo("Pe dianteiro", e, COR_ACO, [(-470, 42, 60), (470, 42, 60)], 34, (0, -1, -1), oval=1.0))
+    pc.append(_tubo("Pe traseiro", e, COR_ACO, [(-400, 42, 1430), (400, 42, 1430)], 34, (0, -1, 1), oval=1.0))
 
-    # ---- Etapa 2: estrutura dianteira (pilar do pivô, perfil baixo) -----
+    # ---- Etapa 2: estrutura dianteira do pivô ---------------------------
     e = 2
-    # Pilar central curto que sustenta o eixo de pivô baixo.
-    pc.append(_caixa("Pilar do pivo", e, COR_ACO_2, (-perfil / 2, perfil, pivo_z - perfil / 2),
-                     (perfil, pivo_y - perfil + 40, perfil), (0, 0, -1)))
-    pc.append(_caixa("Travessa do eixo", e, COR_ACO_2, (-300, pivo_y - 45, pivo_z - perfil / 2 - 6),
-                     (600, 90, perfil + 12), (0, 1, -1)))
-    # Escora dianteira curta (pé -> pilar) e tirante traseiro baixo
-    # (pilar -> base sob a coluna do peito): ângulo POSITIVO leva +Y a +Z.
-    pc.append(
-        _caixa("Escora frontal", e, COR_ACO_2, (-perfil / 2, 70, 110), (perfil, 420, perfil),
-               (0, 0, -1), rot={"eixo": "x", "graus": 26, "centro": [0, 80, 120]})
-    )
-    pc.append(
-        _caixa("Tirante traseiro", e, COR_ACO_2, (-perfil / 2, 70, 880), (perfil, 640, perfil),
-               (0, 1, 1), rot={"eixo": "x", "graus": -55, "centro": [0, 80, 890]})
-    )
+    pc.append(_tubo("Montante do pivo", e, COR_ACO, [(0, 60, 430), (0, 500, 395), (0, 720, 345)], 36, (0, 0, -1), oval=1.25))
+    pc.append(_tubo("Escora frontal", e, COR_ACO_2, [(0, 60, 120), (0, 700, 328)], 26, (0, 0, -1)))
+    pc.append(_tubo("Tirante traseiro", e, COR_ACO_2, [(0, 60, 950), (0, 712, 352)], 26, (0, 1, 1)))
+    pc.append(_cilindro("Cubo do eixo", e, COR_ACO_2, (0, pivo_y, pivo_z), "x", 44, 620, (0, 1, -1), lados=16))
 
-    # ---- Etapa 3: assento, apoio de peito e apoios de pés --------------
+    # ---- Etapa 3: assento, apoio de peito e apoios de pés ---------------
     e = 3
-    pc.append(_caixa("Coluna do assento", e, COR_ACO, (-perfil / 2, perfil, 1240), (perfil, assento_y - perfil, perfil), (0, 1, 1)))
-    pc.append(_caixa("Banco estofado", e, COR_PAD, (-170, assento_y, 1120), (340, 70, 340), (0, 1, 1)))
-    pc.append(_caixa("Coluna do apoio de peito", e, COR_ACO, (-perfil / 2, perfil, peito_z - 55), (perfil, 840, perfil), (0, 1, 0)))
+    pc.append(_tubo("Coluna do apoio de peito", e, COR_ACO, [(0, 60, 1010), (0, 900, 962)], 34, (0, 1, 0), oval=1.25))
     pc.append(
-        _caixa("Apoio de peito", e, COR_PAD, (-160, 810, peito_z - 45), (320, 300, 90), (0, 1, 0),
+        _caixa("Apoio de peito", e, COR_PAD, (-165, 810, peito_z - 45), (330, 300, 90), (0, 1, 0),
                rot={"eixo": "x", "graus": -8, "centro": [0, 960, peito_z]})
     )
+    pc.append(_tubo("Coluna do assento", e, COR_ACO, [(0, 60, 1290), (0, assento_y, 1290)], 34, (0, 1, 1), oval=1.25))
+    pc.append(_caixa("Banco estofado", e, COR_PAD, (-170, assento_y, 1120), (340, 65, 340), (0, 1, 1)))
 
     def _apoio_pe(nome, sx):
-        # Plataforma inclinada onde o pé apoia, sob os joelhos do usuário.
         pc.append(
-            _caixa(nome, 3, COR_ACO_2, (sx * 180 - 100, 55, 730), (200, 24, 280), (sx, -1, 0),
-                   rot={"eixo": "x", "graus": -38, "centro": [sx * 180, 67, 870]})
+            _caixa(nome, 3, COR_ACO_2, (sx * 180 - 100, 55, 730), (200, 22, 280), (sx, -1, 0),
+                   rot={"eixo": "x", "graus": -38, "centro": [sx * 180, 66, 870]})
         )
     par("Apoio de pe", _apoio_pe)
 
-    # ---- Braços / pivôs / anilhas (manivela de pivô BAIXO, por lado) ----
-    # O braço é uma manivela: do pivô baixo dianteiro, o braço de trabalho
-    # SOBE para trás (~40°) até as pegas em frente ao tórax; o chifre de
-    # anilhas sai do mesmo cubo para frente-cima (~50°), com as anilhas
-    # enfiadas AO LONGO do chifre (tombadas — assinatura das plate-loaded).
-    bx_abs = 240.0
-    ang_braco = 40.0        # inclinação do braço de trabalho (de +Y p/ +Z)
-    ang_chifre = -50.0      # inclinação do chifre (de +Y p/ -Z)
-    rad_b = math.radians(ang_braco)
-
+    # ---- Etapa 4: eixos de pivô e cames ---------------------------------
     def _pivo(nome, sx):
-        bx = sx * bx_abs
-        pc.append(_cilindro(nome, 4, COR_EIXO, (bx, pivo_y, pivo_z), "x", 18, 120, (sx, 1, -1)))
+        pc.append(_cilindro(nome, 4, COR_EIXO, (sx * 345, pivo_y, pivo_z), "x", 18, 90, (sx, 1, 0)))
 
     def _came(nome, sx):
-        bx = sx * (bx_abs - 80)
-        pc.append(_cilindro(nome, 4, COR_CAME, (bx, pivo_y, pivo_z), "x", 88, 18, (sx, 1, -1), lados=18))
+        pc.append(_cilindro(nome, 4, COR_CAME, (sx * 245, pivo_y, pivo_z), "x", 88, 16, (sx, 1, 0), lados=18))
 
     par("Eixo de pivo", _pivo)
     par("Came", _came)
 
-    # Ponta do braço de trabalho (mundo): sobe alavanca ao ângulo ang_braco.
-    ponta_y = pivo_y + alavanca * math.cos(rad_b)
-    ponta_z = pivo_z + alavanca * math.sin(rad_b)
+    # ---- Etapa 5: alavancas em C e pegas ---------------------------------
+    bx_abs = 330.0
+    du_y, du_z = math.cos(a_sup), math.sin(a_sup)          # direção p/ cima-trás
+    perp_y, perp_z = -du_z, du_y                            # perpendicular (arqueia o C)
 
-    def _pre_pos(gy: float, gz: float, graus: float) -> tuple[float, float]:
-        """Posição pré-rotação para que, girando `graus` em torno do pivô,
-        a peça termine no ponto (gy, gz) do mundo."""
-        a = math.radians(graus)
-        c, s = math.cos(a), math.sin(a)
-        dy, dz = gy - pivo_y, gz - pivo_z
-        return pivo_y + dy * c + dz * s, pivo_z - dy * s + dz * c
+    def _alavanca_pts(bx):
+        pts = [(bx, base_lv_y, base_lv_z), (bx, pivo_y - 210, pivo_z - 65), (bx, pivo_y, pivo_z)]
+        for f, bow in ((0.45, 26.0), (0.78, 18.0), (1.0, 0.0)):
+            pts.append((bx,
+                        pivo_y + alavanca * f * du_y + bow * perp_y,
+                        pivo_z + alavanca * f * du_z + bow * perp_z))
+        return pts
 
     def _braco(nome, sx):
         bx = sx * bx_abs
-        pc.append(_caixa(nome, 5, COR_ACO, (bx - perfil / 2, pivo_y, pivo_z - perfil / 2),
-                         (perfil, alavanca, perfil), (sx, 0, 1),
-                         rot={"eixo": "x", "graus": ang_braco, "centro": [bx, pivo_y, pivo_z]}))
-
-    def _pega_v(nome, sx):
-        # Pega vertical (neutra) quase em pé na ponta do braço: pré-posiciona
-        # para que a rotação de 6° a deixe no lugar com leve inclinação.
-        bx = sx * bx_abs
-        py, pz = _pre_pos(ponta_y + 60, ponta_z + 30, 6)
-        pc.append(_cilindro(nome, 5, COR_PEGA, (bx, py, pz), "y", d_pega / 2, 300, (sx, 0, 1),
-                            rot={"eixo": "x", "graus": 6, "centro": [bx, pivo_y, pivo_z]}))
+        pc.append(_tubo(nome, 5, COR_ACO, _alavanca_pts(bx), 32, (sx, 1, 1), oval=1.2, lados=12))
 
     def _pega_h(nome, sx):
-        # Pega horizontal (pronada), apontando para dentro na ponta do braço.
-        bx = sx * (bx_abs - 95)
-        pc.append(_cilindro(nome, 5, COR_PEGA, (bx, ponta_y - 20, ponta_z + 30), "x",
-                            d_pega / 2, 170, (sx, 0, 1)))
+        # Travessa/pega pronada: da alavanca para dentro, na ponta superior.
+        pc.append(_cilindro(nome, 5, COR_PEGA, (sx * (bx_abs - 105) + 0, topo_y, topo_z), "x",
+                            d_pega / 2, 210, (sx, 1, 1)))
+
+    def _pega_v(nome, sx):
+        # Pega neutra vertical na extremidade interna da travessa.
+        pc.append(_cilindro(nome, 5, COR_PEGA, (sx * 225, topo_y + 60, topo_z + 12), "y",
+                            d_pega / 2, 300, (sx, 1, 1)))
 
     par("Braco articulado", _braco)
-    par("Pega neutra", _pega_v)
     par("Pega pronada", _pega_h)
+    par("Pega neutra", _pega_v)
 
-    # Posição (mundo) do centro da pega — usada pelo manequim.
-    pega_cy, pega_cz = ponta_y + 60, ponta_z + 30
+    pega_cy, pega_cz = topo_y + 60, topo_z + 12   # alvo do manequim
 
-    # Chifre de anilhas: tubo do cubo do pivô para frente-cima (~50°).
+    # ---- Etapa 6: chifres de anilha (ponta inferior) e anilhas ----------
+    a_ch = math.radians(42.0)   # chifre sobe para a frente a ~42°
+
     def _chifre(nome, sx):
         bx = sx * bx_abs
-        pc.append(_cilindro(nome, 6, COR_ACO_2, (bx, pivo_y + 230, pivo_z), "y", 26, 460, (sx, 0, -1),
-                            rot={"eixo": "x", "graus": ang_chifre, "centro": [bx, pivo_y, pivo_z]}))
+        fim_y = base_lv_y + 430 * math.cos(a_ch)
+        fim_z = base_lv_z - 430 * math.sin(a_ch)
+        pc.append(_tubo(nome, 6, COR_ACO_2, [(bx, base_lv_y, base_lv_z), (bx, fim_y, fim_z)], 24, (sx, 0, -1)))
 
     def _anilhas(nome, sx):
         bx = sx * bx_abs
         for k in range(3):
-            d = 165 + 44 * k
+            t = 150 + 44 * k
             pc.append(
                 _cilindro(f"{nome} #{k+1}", 6, COR_ANILHA if k % 2 == 0 else COR_ANILHA_ARO,
-                          (bx, pivo_y + d, pivo_z), "y", 210, 36, (sx, 0, -1), lados=22,
-                          rot={"eixo": "x", "graus": ang_chifre, "centro": [bx, pivo_y, pivo_z]})
+                          (bx, base_lv_y + t, base_lv_z), "y", 212, 36, (sx, 0, -1), lados=22,
+                          rot={"eixo": "x", "graus": -math.degrees(a_ch) - 6,
+                               "centro": [bx, base_lv_y, base_lv_z]})
             )
 
     par("Chifre de anilhas", _chifre)
     par("Anilha", _anilhas)
 
-    # ---- Etapa 7: manequim (posição do usuário) -------------------------
-    # Sentado ATRÁS da máquina: pelve sobre o banco, tórax apoiado no pad,
-    # braços estendidos à frente até as pegas, pés nos apoios inclinados.
+    # ---- Etapa 7: manequim (posição do usuário) --------------------------
     if incluir_manequim:
         e = 7
-        topo_banco = assento_y + 70          # ~510
+        topo_banco = assento_y + 65
         ombro_y, ombro_z = 1110, 1060
         pc.append(_caixa("Pelve (ref)", e, COR_HUMANO, (-150, topo_banco, 1150), (300, 180, 280), (0, 1, 1)))
         pc.append(
-            _caixa("Tronco (ref)", e, COR_HUMANO, (-165, topo_banco + 155, peito_z + 50), (330, 460, 175), (0, 1, 1),
+            _caixa("Tronco (ref)", e, COR_HUMANO, (-165, topo_banco + 155, peito_z + 50), (330, 470, 175), (0, 1, 1),
                    rot={"eixo": "x", "graus": 6, "centro": [0, topo_banco + 160, peito_z + 135]})
         )
-        pc.append(_cilindro("Cabeca (ref)", e, COR_HUMANO, (0, 1245, 1075), "y", 85, 200, (0, 1, 1), lados=12))
+        pc.append(_cilindro("Cabeca (ref)", e, COR_HUMANO, (0, 1250, 1075), "y", 85, 200, (0, 1, 1), lados=12))
         for sx in (-1, 1):
             lado = "esq" if sx < 0 else "dir"
-            # Braço estendido do ombro até a pega vertical real (pega_cy/cz).
             dy = pega_cy - ombro_y
             dz = pega_cz - ombro_z
             comp = math.hypot(dy, dz) + 30
-            # Barra que se estende em -Y do ombro: ângulo negativo leva a
-            # ponta para +Z; a pega está em -Z (à frente) → atan2 resolve.
             ang = -math.degrees(math.atan2(dz, -dy))
             pc.append(
                 _caixa(f"Braco {lado} (ref)", e, COR_HUMANO, (sx * 200 - 35, ombro_y - comp, ombro_z - 35),
                        (70, comp, 70), (sx, 1, 1),
                        rot={"eixo": "x", "graus": ang, "centro": [sx * 200, ombro_y, ombro_z]})
             )
-            # Coxa (horizontal, joelho à frente) e canela (desce ao apoio).
             pc.append(_caixa(f"Coxa {lado} (ref)", e, COR_HUMANO, (sx * 110 - 60, topo_banco + 10, 850), (120, 130, 400), (sx, 1, 1)))
             pc.append(
                 _caixa(f"Canela {lado} (ref)", e, COR_HUMANO, (sx * 110 - 50, 110, 830), (100, topo_banco - 90, 100), (sx, 1, 1),
@@ -327,6 +370,12 @@ def _rot_ponto(v, eixo, graus, centro):
 
 def _malha_peca(peca) -> tuple[list[list[float]], list[list[int]]]:
     """Vértices e faces (índices) de uma peça, já com rotação local aplicada."""
+    if peca["tipo"] == "mesh":
+        vs, fs = [list(v) for v in peca["verts"]], peca["faces"]
+        rot = peca.get("rot")
+        if rot:
+            vs = [_rot_ponto(v, rot["eixo"], rot["graus"], rot["centro"]) for v in vs]
+        return vs, fs
     if peca["tipo"] == "box":
         x, y, z = peca["pos"]
         w, h, d = peca["dim"]
@@ -542,6 +591,9 @@ function rot(v,e,g,c){const a=g*Math.PI/180,co=Math.cos(a),si=Math.sin(a);
  return[x+c[0],y+c[1],z+c[2]]}
 
 function malha(q){let vs=[],fs=[];
+ if(q.tipo==='mesh'){vs=q.verts.map(v=>v.slice());fs=q.faces;
+  if(q.rot)vs=vs.map(v=>rot(v,q.rot.eixo,q.rot.graus,q.rot.centro));
+  return[vs,fs]}
  if(q.tipo==='box'){const[x,y,z]=q.pos,[w,h,d]=q.dim;
   vs=[[x,y,z],[x+w,y,z],[x+w,y+h,z],[x,y+h,z],[x,y,z+d],[x+w,y,z+d],[x+w,y+h,z+d],[x,y+h,z+d]];
   fs=[[0,1,2,3],[5,4,7,6],[4,0,3,7],[1,5,6,2],[3,2,6,7],[4,5,1,0]];}
