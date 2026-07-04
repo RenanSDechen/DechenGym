@@ -159,7 +159,7 @@ def _pagina() -> str:
         for k, v in sorted(CATALOGO_EXERCICIOS.items(), key=lambda kv: kv[1]["nome"])
     )
     op_perfil = "".join(
-        f'<option{" selected" if p == "60x60" else ""}>{p}</option>' for p in perfis_disponiveis()
+        f'<option{" selected" if p == "40x80" else ""}>{p}</option>' for p in perfis_disponiveis()
     )
     return _PAGINA.replace("__OPCOES_EX__", op_ex).replace("__OPCOES_PERFIL__", op_perfil)
 

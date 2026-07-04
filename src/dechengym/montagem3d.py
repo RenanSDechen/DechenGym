@@ -30,14 +30,17 @@ from typing import Any
 # Paleta (visual clássico Hammer Strength: estrutura platinada em tubo oval,
 # estofados e anilhas pretos, pegas emborrachadas escuras)
 # --------------------------------------------------------------------------
-COR_ACO = "#a9aeb6"        # platinum (tubos principais)
-COR_ACO_2 = "#8f959e"      # platinum sombreado (estrutura secundária)
-COR_PAD = "#1c1e22"        # estofados pretos
+COR_ACO = "#26282d"        # estrutura preto fosco (pintura eletrostatica)
+COR_ACO_2 = "#33363c"      # estrutura secundaria
+COR_BRACO = "#c1272d"      # bracos articulados vermelho vibrante
+COR_PAD = "#4a3423"        # estofados couro marrom
 COR_PEGA = "#3a3f46"       # pegas emborrachadas
 COR_ANILHA = "#101214"
 COR_ANILHA_ARO = "#2c3138"
 COR_EIXO = "#d9a521"
 COR_CAME = "#4c5560"
+COR_CHAPA = "#787f88"      # bercos de articulacao (chapa SAE 1020)
+COR_INOX = "#b8bec6"       # cremalheira inox
 
 #: Cor do manequim de referência (posição do usuário).
 COR_HUMANO = "#6f8cab"
@@ -181,8 +184,11 @@ def gerar_pecas_maquina(
     (0 = frente da máquina; o usuário senta em Z alto).
     """
     p = dict(parametros or {})
-    perfil = float(p.get("perfil_base_mm", 60))
-    alavanca = max(float(p.get("comprimento_alavanca_mm", 750)), 400.0)
+    perfil_b = float(p.get("perfil_base_mm", 40))    # largura do perfil
+    perfil_h = float(p.get("perfil_altura_mm", p.get("perfil_base_mm", 80)))
+    r_tubo = perfil_h / 2.0                           # semieixo vertical
+    oval_t = max(perfil_b / perfil_h, 0.35)           # 40x80 -> 0.5
+    alavanca = max(float(p.get("comprimento_alavanca_mm", 800)), 400.0)
     d_pega = float(p.get("diametro_pega_mm", 38))
 
     # Cotas de referência (Hammer IL-ROW: 1550 x 1270 x 1320 mm).
@@ -191,8 +197,9 @@ def gerar_pecas_maquina(
     # lever having a LOWER end adapted to support the weight and a handle
     # at the UPPER end" — alavanca em C com pivô no meio, pegas em cima e
     # anilhas embaixo, na frente da máquina.
-    prof = 1500.0
-    pivo_y, pivo_z = 740.0, 330.0   # pivô a meia altura, à frente do peito
+    prof = 1500.0                   # comprimento total 150 cm (spec)
+    larg_v = 600.0                  # semi-largura da base em V (120 cm total)
+    pivo_y, pivo_z = 820.0, 340.0   # pivô à frente do peito
     assento_y = 420.0
     peito_z = 950.0                 # plano do apoio de peito
 
@@ -215,17 +222,19 @@ def gerar_pecas_maquina(
         else:
             fabrica(nome, 0)
 
-    # ---- Etapa 1: chassi da base (tubos ovais platinados) ---------------
+    # ---- Etapa 1: chassi da base em V (150 x 120 cm, perfil retangular) --
     e = 1
-    pc.append(_tubo("Longarina central", e, COR_ACO, [(0, 46, -140), (0, 46, prof)], 40, (0, -1, 0), oval=1.5))
-    pc.append(_tubo("Pe dianteiro", e, COR_ACO, [(-470, 42, 60), (470, 42, 60)], 34, (0, -1, -1), oval=1.0))
-    pc.append(_tubo("Pe traseiro", e, COR_ACO, [(-400, 42, 1430), (400, 42, 1430)], 34, (0, -1, 1), oval=1.0))
+    rb = min(r_tubo, 42.0)
+    pc.append(_tubo("Longarina central", e, COR_ACO, [(0, rb + 4, 60), (0, rb + 4, prof)], rb, (0, -1, 0), oval=oval_t * 1.4))
+    pc.append(_tubo("Braco V esquerdo", e, COR_ACO, [(0, rb + 4, 1380), (-larg_v, rb + 4, 90)], rb, (-1, -1, 0), oval=oval_t * 1.4))
+    pc.append(_tubo("Braco V direito", e, COR_ACO, [(0, rb + 4, 1380), (larg_v, rb + 4, 90)], rb, (1, -1, 0), oval=oval_t * 1.4))
+    pc.append(_tubo("Travessa frontal", e, COR_ACO, [(-larg_v, rb + 4, 90), (larg_v, rb + 4, 90)], rb, (0, -1, -1), oval=oval_t * 1.4))
 
     # ---- Etapa 2: estrutura dianteira do pivô ---------------------------
     e = 2
-    pc.append(_tubo("Montante do pivo", e, COR_ACO, [(0, 60, 430), (0, 500, 395), (0, 720, 345)], 36, (0, 0, -1), oval=1.25))
-    pc.append(_tubo("Escora frontal", e, COR_ACO_2, [(0, 60, 120), (0, 700, 328)], 26, (0, 0, -1)))
-    pc.append(_tubo("Tirante traseiro", e, COR_ACO_2, [(0, 60, 950), (0, 712, 352)], 26, (0, 1, 1)))
+    pc.append(_tubo("Montante do pivo", e, COR_ACO, [(0, 60, 460), (0, 560, 415), (0, 800, 355)], r_tubo, (0, 0, -1), oval=oval_t))
+    pc.append(_tubo("Escora frontal", e, COR_ACO_2, [(0, 60, 130), (0, 780, 338)], 26, (0, 0, -1)))
+    pc.append(_tubo("Tirante traseiro", e, COR_ACO_2, [(0, 60, 950), (0, 792, 362)], 26, (0, 1, 1)))
     pc.append(_cilindro("Cubo do eixo", e, COR_ACO_2, (0, pivo_y, pivo_z), "x", 44, 620, (0, 1, -1), lados=16))
 
     # ---- Etapa 3: assento, apoio de peito e apoios de pés ---------------
@@ -236,6 +245,7 @@ def gerar_pecas_maquina(
                rot={"eixo": "x", "graus": -8, "centro": [0, 960, peito_z]})
     )
     pc.append(_tubo("Coluna do assento", e, COR_ACO, [(0, 60, 1290), (0, assento_y, 1290)], 34, (0, 1, 1), oval=1.25))
+    pc.append(_caixa("Cremalheira inox (ajuste)", e, COR_INOX, (-8, 140, 1252), (16, 260, 14), (0, 1, 1)))
     pc.append(_caixa("Banco estofado", e, COR_PAD, (-170, assento_y, 1120), (340, 65, 340), (0, 1, 1)))
 
     def _apoio_pe(nome, sx):
@@ -246,12 +256,23 @@ def gerar_pecas_maquina(
     par("Apoio de pe", _apoio_pe)
 
     # ---- Etapa 4: eixos de pivô e cames ---------------------------------
+    def _berco(nome, sx):
+        # Chapa de tensão SAE 1020 de 3/8" (9,525 mm), corte a laser — um par
+        # abraça cada braço no cubo do eixo.
+        for dx in (-32, 32):
+            pc.append(
+                _caixa(f"{nome} {'int' if dx < 0 else 'ext'}", 4, COR_CHAPA,
+                       (sx * 330 + dx - 4.76, pivo_y - 85, pivo_z - 75),
+                       (9.525, 175, 150), (sx, 1, 0))
+            )
+
     def _pivo(nome, sx):
         pc.append(_cilindro(nome, 4, COR_EIXO, (sx * 345, pivo_y, pivo_z), "x", 18, 90, (sx, 1, 0)))
 
     def _came(nome, sx):
         pc.append(_cilindro(nome, 4, COR_CAME, (sx * 245, pivo_y, pivo_z), "x", 88, 16, (sx, 1, 0), lados=18))
 
+    par("Berco de articulacao", _berco)
     par("Eixo de pivo", _pivo)
     par("Came", _came)
 
@@ -270,7 +291,7 @@ def gerar_pecas_maquina(
 
     def _braco(nome, sx):
         bx = sx * bx_abs
-        pc.append(_tubo(nome, 5, COR_ACO, _alavanca_pts(bx), 32, (sx, 1, 1), oval=1.2, lados=12))
+        pc.append(_tubo(nome, 5, COR_BRACO, _alavanca_pts(bx), 32, (sx, 1, 1), oval=1.2, lados=12))
 
     def _pega_h(nome, sx):
         # Travessa/pega pronada: da alavanca para dentro, na ponta superior.
@@ -295,7 +316,7 @@ def gerar_pecas_maquina(
         bx = sx * bx_abs
         fim_y = base_lv_y + 430 * math.cos(a_ch)
         fim_z = base_lv_z - 430 * math.sin(a_ch)
-        pc.append(_tubo(nome, 6, COR_ACO_2, [(bx, base_lv_y, base_lv_z), (bx, fim_y, fim_z)], 24, (sx, 0, -1)))
+        pc.append(_tubo(nome, 6, COR_BRACO, [(bx, base_lv_y, base_lv_z), (bx, fim_y, fim_z)], 24, (sx, 0, -1)))
 
     def _anilhas(nome, sx):
         bx = sx * bx_abs
@@ -340,7 +361,7 @@ def gerar_pecas_maquina(
             )
 
     specs = {
-        "perfil_mm": perfil,
+        "perfil_mm": f"{int(perfil_b)}x{int(perfil_h)}",
         "alavanca_mm": alavanca,
         "altura_pivo_mm": pivo_y,
         "diametro_pega_mm": d_pega,

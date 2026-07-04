@@ -148,15 +148,18 @@ def projetar_maquina(requisicao: RequisicaoProjeto) -> dict[str, Any]:
     ][-1]
 
     # 4) Geometria (nasce alinhada à ergonomia + estrutura validada) ------
-    lado = int(req.perfil.split("x")[0])
+    # Perfis retangulares ("40x80"): base = largura, altura = alma vertical.
+    base_mm, altura_mm = (int(v) for v in req.perfil.split("x"))
     parametros = parametros_geometria_de_ergonomia(
         ergonomia,
         extras={
             "comprimento_alavanca_mm": req.comprimento_alavanca_mm,
             "espessura_parede_mm": espessura,
-            "perfil_base_mm": lado,
-            "perfil_coluna_mm": lado,
-            "perfil_alavanca_mm": lado,
+            "perfil_nome": req.perfil,
+            "perfil_base_mm": base_mm,
+            "perfil_altura_mm": altura_mm,
+            "perfil_coluna_mm": base_mm,
+            "perfil_alavanca_mm": base_mm,
         },
     )
     scad = gerar_script_openscad(parametros)
@@ -170,6 +173,11 @@ def projetar_maquina(requisicao: RequisicaoProjeto) -> dict[str, Any]:
     came_svg = gerar_came_svg(perfil_came)
     came_scad = gerar_came_openscad(perfil_came, espessura_mm=12.0)
     prompt_imagem = montar_prompt_imagem_produto(parametros, envelope_ergonomico=ergonomia)
+
+    # 6) Plano de fabricação industrial ------------------------------------
+    from dechengym.fabricacao import gerar_plano_fabricacao
+
+    fabricacao = gerar_plano_fabricacao(req.to_dict(), iso_lateral=True)
 
     aprovado = estrutura["aprovado"] and avaliacao_came["pontuacao"] >= 90.0
 
@@ -186,7 +194,7 @@ def projetar_maquina(requisicao: RequisicaoProjeto) -> dict[str, Any]:
     return _montar_projeto(
         req, ergonomia, perfil_came, resistencia_came, avaliacao_came,
         came_scad, came_svg, estrutura, parametros, scad, memorial,
-        preview_svg, prompt_imagem, aprovado, resumo,
+        preview_svg, prompt_imagem, fabricacao, aprovado, resumo,
     )
 
 
@@ -202,7 +210,7 @@ def projetar_maquina_params(exercicio: str, **campos: Any) -> dict[str, Any]:
 def _montar_projeto(
     req, ergonomia, perfil_came, resistencia_came, avaliacao_came, came_scad,
     came_svg, estrutura, parametros, scad, memorial, preview_svg, prompt_imagem,
-    aprovado, resumo,
+    fabricacao, aprovado, resumo,
 ) -> dict[str, Any]:
     return {
         "requisicao": req.to_dict(),
@@ -224,6 +232,7 @@ def _montar_projeto(
             "preview_svg": preview_svg,
             "prompt_produto": prompt_imagem,
         },
+        "fabricacao": fabricacao,
         "aprovado": aprovado,
         "resumo": resumo,
     }

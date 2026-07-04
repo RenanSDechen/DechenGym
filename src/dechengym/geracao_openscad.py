@@ -260,7 +260,9 @@ def gerar_memorial_descritivo(
             return None  # perfil/espessura fora do catálogo
 
     def _peca(descricao: str, lado_mm, comprimento_mm: float, quantidade: int) -> dict:
-        perfil = f"{int(lado_mm)}x{int(lado_mm)}"
+        # Perfil retangular: se "perfil_nome" for informado (ex.: "40x80"),
+        # ele identifica o perfil real; senão assume quadrado lado x lado.
+        perfil = p.get("perfil_nome") or f"{int(lado_mm)}x{int(lado_mm)}"
         ppm = _peso_por_metro(perfil)
         estimado = ppm is not None
         if not estimado:

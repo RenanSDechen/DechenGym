@@ -396,9 +396,35 @@ def gerar_dossie_pdf(
     for aviso in mem.get("avisos", []):
         doc.paragrafo("⚠ " + aviso, cor=_ACC)
 
-    # ================= 5. MONTAGEM =================
+    # ================= 5. FABRICAÇÃO INDUSTRIAL =================
     doc._nova_pagina_interna()
-    doc.secao("5", "Sequência de montagem")
+    doc.secao("5", "Plano de fabricação industrial")
+    fab = projeto.get("fabricacao")
+    if fab:
+        est = fab["estrutura"]
+        doc.paragrafo(
+            f"Perfil principal: {est['perfil_principal']} — {est['observacao_perfil']} "
+            f"Footprint {est['footprint_mm'][0]} x {est['footprint_mm'][1]} mm; altura máxima "
+            f"das hastes {est['altura_maxima_hastes_mm']} mm. {est['base']}.",
+            cor=_INK,
+        )
+        linhas = [["Componente", "Material / processo", "Esp. (mm)", "Qtd"]]
+        for c_ in fab["componentes"]:
+            esp = f"{c_['espessura_mm']}" if c_["espessura_mm"] else "—"
+            linhas.append([c_["item"], f"{c_['material']} · {c_['processo']}"[:58], esp, str(c_["quantidade"])])
+        doc.tabela(linhas, [150, 253, 55, 45], alinh=["e", "e", "d", "d"], tam=8.0)
+        linhas = [["Processo", "Aplicação"]]
+        for pr in fab["processos"]:
+            linhas.append([pr["processo"], f"{pr['aplicacao']} — {pr['justificativa']}"[:74]])
+        doc.tabela(linhas, [170, 333], tam=8.0)
+        ac = fab["acabamento"]
+        doc.paragrafo(
+            f"Acabamento: {ac['preparacao']}. Pintura: {ac['pintura']}. Estofados: {ac['estofados']}."
+        )
+
+    # ================= 6. MONTAGEM =================
+    doc._nova_pagina_interna()
+    doc.secao("6", "Sequência de montagem")
     doc.paragrafo(
         "Renders gerados do modelo 3D paramétrico. A versão interativa "
         "(orbitar, explodir, avançar etapas) acompanha este dossiê no arquivo "
