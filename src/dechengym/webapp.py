@@ -26,6 +26,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
+from dechengym.academia import gerar_catalogo_academia, gerar_planta_academia
 from dechengym.data.exercicios_db import CATALOGO_EXERCICIOS
 from dechengym.data.metalon_db import perfis_disponiveis
 from dechengym.orquestrador import AdaptadorRegras, orquestrar
@@ -79,7 +80,7 @@ td.ok{color:var(--ok)}td.no{color:var(--err)}
 footer{padding:10px 26px;border-top:1px solid var(--line);color:var(--mut);font-size:11.5px}
 @media(max-width:860px){main{grid-template-columns:1fr}form{border-right:0;border-bottom:1px solid var(--line)}}
 </style></head><body>
-<header><h1><b>Dechen</b>Gym · Estúdio de Projeto</h1><span>briefing → ergonomia → came → estrutura → 3D → dossiê</span></header>
+<header><h1><b>Dechen</b>Gym · Estúdio de Projeto</h1><span>briefing → ergonomia → came → estrutura → 3D → dossiê</span><a href="/academia" style="margin-left:auto;color:var(--acc);text-decoration:none;font-weight:600">🏟 Academia Virtual →</a></header>
 <main>
 <form id="f" onsubmit="return false">
   <h2>Briefing livre (opcional)</h2>
@@ -108,6 +109,8 @@ footer{padding:10px 26px;border-top:1px solid var(--line);color:var(--mut);font-
 <footer>DechenGym — pipeline validado por 97 testes · artefatos em output/webapp/ · servidor local</footer>
 <script>
 const $=id=>document.getElementById(id);
+const qs=new URLSearchParams(location.search);
+if(qs.get('exercicio')){document.addEventListener('DOMContentLoaded',()=>{$('exercicio').value=qs.get('exercicio')});}
 $('bInterp').onclick=async()=>{
   const r=await fetch('/api/interpretar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({briefing:$('brief').value})});
   const d=await r.json();
@@ -216,6 +219,76 @@ def _projetar(corpo: dict) -> dict:
     }
 
 
+def _pagina_academia() -> str:
+    """Galeria da Academia Virtual + planta baixa em escala."""
+    cat = gerar_catalogo_academia()
+    res = cat["resumo"]
+    secoes = []
+    for bloco in cat["categorias"]:
+        cards = []
+        for e in bloco["equipamentos"]:
+            if e["projeto_completo"]:
+                selo = '<span class="tag ok">PROJETO COMPLETO</span>'
+                acao = (f'<a class="proj" href="/?exercicio={e["exercicio_pipeline"]}">'
+                        f'&#9881; Projetar esta maquina</a>')
+            else:
+                selo = '<span class="tag">ficha tecnica</span>'
+                acao = '<span class="proj off">pipeline em expansao</span>'
+            cards.append(f"""<div class="eq">
+              <div class="eq-top"><b>#{e['rank']} {e['nome']}</b>{selo}</div>
+              <p>{e['tipo']} · ref. {e['referencia']}</p>
+              <p class="mus">{', '.join(e['musculos'])}</p>
+              <p class="dim">{e['footprint_mm'][0]/1000:.2f} x {e['footprint_mm'][1]/1000:.2f} m
+                 · h {e['altura_mm']/1000:.2f} m · carga {e['carga_max_kg']} kg</p>
+              {acao}</div>""")
+        secoes.append(f'<h2>{bloco["categoria"]} ({len(bloco["equipamentos"])})</h2>'
+                      f'<div class="grade">{"".join(cards)}</div>')
+    return f"""<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DechenGym — Academia Virtual</title><style>
+:root{{--bg:#0f1216;--panel:#171b21;--line:#262c34;--txt:#e8ebef;--mut:#9aa4b0;--acc:#e0a422;--ok:#22c55e}}
+*{{box-sizing:border-box;margin:0}}
+body{{background:var(--bg);color:var(--txt);font:14px/1.5 'Segoe UI',system-ui,sans-serif}}
+header{{padding:16px 26px;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:baseline}}
+header h1{{font-size:19px}}header h1 b{{color:var(--acc)}}
+header a{{margin-left:auto;color:var(--acc);text-decoration:none;font-weight:600}}
+main{{max-width:1220px;margin:0 auto;padding:24px}}
+.resumo{{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:8px}}
+.chip{{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 16px}}
+.chip b{{font-size:18px;display:block}}
+.chip span{{color:var(--mut);font-size:11.5px}}
+h2{{font-size:14px;margin:26px 0 12px;color:var(--acc);text-transform:uppercase;letter-spacing:.06em}}
+.grade{{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:12px}}
+.eq{{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}}
+.eq-top{{display:flex;justify-content:space-between;gap:8px;align-items:start;margin-bottom:6px}}
+.eq b{{font-size:13.5px}}
+.eq p{{color:var(--mut);font-size:12px;margin:2px 0}}
+.eq .mus{{color:#c8d0da}}
+.tag{{font-size:9.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:3px 8px;color:var(--mut);white-space:nowrap}}
+.tag.ok{{color:var(--ok);border-color:rgba(34,197,94,.5);background:rgba(34,197,94,.1)}}
+.proj{{display:inline-block;margin-top:8px;background:var(--acc);color:#14161a;font-weight:700;font-size:12px;
+  border-radius:8px;padding:7px 11px;text-decoration:none}}
+.proj.off{{background:#232a33;color:var(--mut);font-weight:500}}
+.planta{{background:#fff;border-radius:14px;padding:8px;margin-top:14px}}
+.planta img{{width:100%;display:block}}
+footer{{padding:14px 26px;border-top:1px solid var(--line);color:var(--mut);font-size:11.5px}}
+</style></head><body>
+<header><h1><b>Dechen</b>Gym · Academia Virtual</h1><a href="/">&larr; Estudio de Projeto</a></header>
+<main>
+<div class="resumo">
+  <div class="chip"><b>{res['total_equipamentos']}</b><span>equipamentos mais usados</span></div>
+  <div class="chip"><b>{res['com_projeto_completo']}</b><span>com projeto completo DechenGym</span></div>
+  <div class="chip"><b>{res['area_ocupada_m2']} m&sup2;</b><span>area ocupada (footprints)</span></div>
+  <div class="chip"><b>{len(res['por_categoria'])}</b><span>zonas</span></div>
+</div>
+<h2>Planta baixa (escala real)</h2>
+<div class="planta"><img src="/academia/planta.svg" alt="planta da academia"/></div>
+{''.join(secoes)}
+</main>
+<footer>Base compilada de rankings do setor (Skelcore, WodGuru, Fitness Expo) e fichas de fabricantes topo de linha (Hammer Strength/Life Fitness, Technogym, Matrix). Dimensoes de referencia — confirme na ficha do fabricante.</footer>
+</body></html>"""
+
+
 class _Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args):  # silencioso
         pass
@@ -237,6 +310,25 @@ class _Handler(BaseHTTPRequestHandler):
             self.send_header("Content-Length", str(len(corpo)))
             self.end_headers()
             self.wfile.write(corpo)
+            return
+        if rota == "/academia":
+            corpo = _pagina_academia().encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(corpo)))
+            self.end_headers()
+            self.wfile.write(corpo)
+            return
+        if rota == "/academia/planta.svg":
+            corpo = gerar_planta_academia().encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "image/svg+xml")
+            self.send_header("Content-Length", str(len(corpo)))
+            self.end_headers()
+            self.wfile.write(corpo)
+            return
+        if rota == "/api/academia":
+            self._json(gerar_catalogo_academia())
             return
         if rota.startswith("/output/"):
             alvo = (RAIZ / unquote(rota).lstrip("/")).resolve()

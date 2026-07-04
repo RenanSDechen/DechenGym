@@ -41,6 +41,7 @@ from dechengym.sintese_came import (
     sintetizar_perfil_came,
 )
 from dechengym.orquestrador.pipeline import projetar_maquina_params
+from dechengym.academia import gerar_catalogo_academia, gerar_planta_academia
 from dechengym.montagem3d import (
     gerar_pecas_maquina,
     gerar_visualizador_html,
@@ -100,6 +101,9 @@ TOOLS: dict[str, Callable[..., Any]] = {
     "gerar_pecas_maquina": gerar_pecas_maquina,
     "renderizar_svg_3d": renderizar_svg_3d,
     "gerar_visualizador_html": gerar_visualizador_html,
+    # --- Academia virtual ---
+    "gerar_catalogo_academia": gerar_catalogo_academia,
+    "gerar_planta_academia": gerar_planta_academia,
 }
 
 
@@ -681,6 +685,28 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
                 "specs_extra": {"type": "object"},
             },
             "required": ["modelo"],
+        },
+    },
+    # ------------------------ Academia virtual ----------------------------
+    {
+        "name": "gerar_catalogo_academia",
+        "description": (
+            "Catalogo da academia virtual: os equipamentos mais usados do "
+            "mercado (dimensoes reais, musculos, referencia topo de linha) e "
+            "quais tem projeto completo no pipeline DechenGym."
+        ),
+        "input_schema": {"type": "object", "properties": {}, "required": []},
+    },
+    {
+        "name": "gerar_planta_academia",
+        "description": (
+            "Planta baixa (SVG, escala real) da academia virtual completa, "
+            "com zonas, folgas de circulacao e footprints de mercado."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {"largura_px": {"type": "integer"}},
+            "required": [],
         },
     },
 ]

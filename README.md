@@ -143,6 +143,13 @@ python examples/exemplo_braco_articulado.py
 | `renderizar_svg_3d`               | Render sombreado (câmera orbitável, etapa, explosão).  |
 | `gerar_visualizador_html`         | Visualizador 3D interativo auto-contido (HTML).        |
 
+### Academia Virtual
+
+| Tool                              | Descrição                                              |
+|-----------------------------------|--------------------------------------------------------|
+| `gerar_catalogo_academia`         | Catálogo dos equipamentos mais usados (por zona).      |
+| `gerar_planta_academia`           | Planta baixa em escala da academia virtual (SVG).      |
+
 ### Ergonomia
 
 | Tool                              | Descrição                                              |
@@ -299,6 +306,28 @@ autocorreção, pivô, pega, massa), o render 3D e os botões para o
 **visualizador 3D interativo**, o **dossiê PDF**, o `.scad` e o memorial.
 Artefatos ficam em `output/webapp/<exercicio>/`.
 
+## Academia Virtual (base dos equipamentos mais usados)
+
+O DechenGym inclui uma **base pesquisada dos 27 equipamentos mais usados**
+em academias comerciais (rankings do setor: Skelcore, WodGuru, Fitness Expo)
+com ficha técnica de mercado — footprint real, altura, carga de trabalho e a
+linha topo de referência (Hammer Strength, Life Fitness, Technogym, Matrix,
+Panatta, Concept2) — organizada em **5 zonas**: articuladas plate-loaded,
+seletorizadas, pernas, peso livre e cardio.
+
+- **`/academia` na interface web** — galeria por zona com a planta baixa em
+  escala real (folgas de 0,60 m entre máquinas e 1,20 m entre zonas). Os
+  **8 equipamentos cobertos pelo pipeline** têm o botão *Projetar esta
+  máquina*, que abre o Estúdio já configurado.
+- **`gerar_catalogo_academia()` / `gerar_planta_academia()`** — as mesmas
+  informações via Tool Calling (JSON estruturado e SVG da planta).
+
+```python
+from dechengym.academia import gerar_catalogo_academia, gerar_planta_academia
+gerar_catalogo_academia()["resumo"]
+# {'total_equipamentos': 27, 'com_projeto_completo': 8, 'area_ocupada_m2': 45.5, ...}
+```
+
 ## Entregáveis: visualizador 3D e dossiê PDF
 
 Todo projeto orquestrado com `diretorio_saida` gera, além dos `.scad`/`.json`:
@@ -344,6 +373,12 @@ Contrato de aceite de referência já coberto:
 - [x] **Agente orquestrador** (briefing → design validado, provedor-agnóstico).
 - [x] Loop estrutura↔geometria (validação realimenta o `.scad`).
 - [x] **Visualizador 3D de montagem** (HTML interativo) e **dossiê PDF**.
+- [x] **Plano de fabricação industrial** (berços SAE 1020 3/8", eixos CNC,
+      cremalheira inox, solda MIG, pintura eletrostática a pó).
+- [x] **Academia Virtual**: base dos 27 equipamentos mais usados + planta
+      baixa em escala + galeria na interface web.
+- [ ] Expandir o pipeline completo para os 19 equipamentos restantes da
+      academia virtual (hoje: 8 com projeto completo).
 - [ ] Render PNG automático (instalar OpenSCAD no ambiente).
 - [ ] Custom components completos para **Langflow** (incl. orquestrador).
 - [ ] Bancos de dados a partir de fontes reais (metalon e antropometria).
