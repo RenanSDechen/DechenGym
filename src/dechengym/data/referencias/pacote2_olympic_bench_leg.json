@@ -548,5 +548,203 @@
   "dimensoes_principais_mm": [],
   "furos_e_interfaces": "-",
   "obs": "Passo 2: enfileirar as anilhas (da maior para a menor: 9/7/5/3/1,5 kg) nas duas extremidades da barra contra os Delimiters."
+ },
+ {
+  "pagina": 51,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem weight set - passo 3",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 3: travar as anilhas rosqueando a Dumbbell Nut (item 5) na rosca TR 32x3 de cada ponta. Barra completa."
+ },
+ {
+  "pagina": 52,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem dumbbell storage - passos 1-2",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 1: soldar Cover 50x50 (item 6) no tubo 250 mm (item 3). Passo 2: soldar o tubo 748,7 mm (item 2 - coluna inclinada com furos D25,4) chanfrando as bordas das juntas."
+ },
+ {
+  "pagina": 53,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem dumbbell storage - passos 3-4",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 3: soldar tubo 146 mm (item 1) no topo, chanfrando as juntas. Passo 4: soldar a perna 293,95 mm (item 4)."
+ },
+ {
+  "pagina": 54,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem dumbbell storage - passo 5",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 5: soldar os Attachments (item 8 - grampos em U com furos D8,5) nas duas extremidades de fixação da coluna."
+ },
+ {
+  "pagina": 55,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem dumbbell storage - passos 6-7",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 6: soldar Cover D25,4 (item 7) nas pontas dos pinos 300 mm (item 5); fazer 3. Passo 7: soldar os 3 pinos atravessando os furos da coluna inclinada."
+ },
+ {
+  "pagina": 56,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem dumbbell storage - passo 8",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 8: fazer 2 dessas colunas porta-anilhas completas (uma para cada lado do banco)."
+ },
+ {
+  "pagina": 57,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem dumbbell storage - passo 9 (fixação ao banco)",
+  "funcao": "Instrução de montagem com cotas de furação in-loco",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [722, 135, 30, 8.5],
+  "furos_e_interfaces": "Furar D8,5 TYP na longarina do banco: furos a 30 mm da face e pares distantes 722 mm entre si, a 135 mm da extremidade; fixar com parafuso M8x70 + arruela A-8 + porca M8",
+  "obs": "Interface parafusada storage-banco. As colunas ficam nas laterais traseiras do banco."
+ },
+ {
+  "pagina": 58,
+  "projeto": "olympic_bench_leg",
+  "peca": "Banco com storage montado + montagem leg weight passo 1",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Vista do banco + storage completos. Leg Weight passo 1: soldar Cover 40x40 (item 2) no tubo 445 mm (item 3 - montante com furo D20 do pivô)."
+ },
+ {
+  "pagina": 59,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem leg weight - passo 2",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 2: soldar tubo 119,45 mm (item 4) em ângulo ao montante 445 mm."
+ },
+ {
+  "pagina": 60,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem leg weight - passos 3-4",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 3: soldar tubo 87,28 mm (item 5), formando o joelho do braço. Passo 4: soldar o tubo horizontal 273,84 mm (item 6 - com furos para os rolos)."
+ },
+ {
+  "pagina": 61,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem leg weight - passo 5",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 5: soldar Cover 40x40 na ponta do braço horizontal. Braço em Z com furos prontos."
+ },
+ {
+  "pagina": 62,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem leg weight - passos 6-7",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 6: soldar a diagonal 159,35 mm (item 7) travando o triângulo do braço. Passo 7: soldar o primeiro rolo D25,4 x 400 mm (item 8) atravessando o braço horizontal."
+ },
+ {
+  "pagina": 63,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem leg weight - passo 8",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 8: soldar Cover D25,4 (item 10) nas pontas do rolo."
+ },
+ {
+  "pagina": 64,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem leg weight - passos 9-10",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 9: soldar o pino vertical 280 mm (item 9 - pino porta-anilhas do contrapeso/carga). Passo 10: soldar Cover D25,4 na ponta."
+ },
+ {
+  "pagina": 65,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem leg weight - passos 11-12",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 11: soldar o segundo rolo 400 mm (item 8) no montante. Passo 12: soldar Cover D25,4 nas pontas. Braço em T completo com 2 rolos + pino de carga."
+ },
+ {
+  "pagina": 66,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem leg weight - passos 13-14",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Passo 13: soldar o Cilinder (item 11 - bucha do pivô) no vértice do braço. Passo 14: soldar o Sheet Support (item 12) junto à bucha."
+ },
+ {
+  "pagina": 67,
+  "projeto": "olympic_bench_leg",
+  "peca": "Montagem leg weight - passos 15-16 (acoplamento ao banco)",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "Passo 15: parafusar as 2 chapas Support (item 1) ao nariz do banco com M8x70 + arruela A-8 + porca M8. Passo 16: montar o braço entre as chapas com Axle (item 13) + arruela A-20 + porca M20",
+  "obs": "Articulação parafusada e desmontável - o eixo M20 é a única ligação móvel do equipamento."
+ },
+ {
+  "pagina": 68,
+  "projeto": "olympic_bench_leg",
+  "peca": "Leg Weight montado no banco - vista final",
+  "funcao": "Ilustração final do módulo de pernas acoplado",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Vista isométrica do leg weight pivotado no nariz do banco: 2 rolos para as pernas + pino superior para anilhas de carga. Fim do dossiê."
  }
 ]
