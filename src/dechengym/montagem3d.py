@@ -203,12 +203,17 @@ def gerar_pecas_maquina(
     assento_y = 420.0
     peito_z = 950.0                 # plano do apoio de peito
 
-    # Direções da alavanca em C (ângulos a partir da vertical)
-    a_sup = math.radians(42.0)      # ponta superior: para cima e para trás
+    # Direções da alavanca em C (ângulos a partir da vertical).
+    # Ergonomia da pega: em repouso ela fica LOGO ABAIXO do ombro sentado
+    # (~1060 mm) e à frente do apoio de peito — braços estendidos. Por isso
+    # o alcance pivô→pega (r_sup) é curto e quase horizontal; o braço de
+    # momento estrutural (``alavanca``) é o lado da carga.
+    a_sup = math.radians(64.0)      # ponta superior: para trás, pouco acima
     a_inf = math.radians(18.0)      # ponta inferior: para baixo e para frente
     r_inf = 470.0                   # raio do pivô à ponta inferior (pesos)
-    topo_y = pivo_y + alavanca * math.cos(a_sup)
-    topo_z = pivo_z + alavanca * math.sin(a_sup)
+    r_sup = min(max(alavanca * 0.6, 380.0), 540.0)  # raio pivô→pega
+    topo_y = pivo_y + r_sup * math.cos(a_sup)
+    topo_z = pivo_z + r_sup * math.sin(a_sup)
     base_lv_y = pivo_y - r_inf * math.cos(a_inf)
     base_lv_z = pivo_z - r_inf * math.sin(a_inf)
 
@@ -285,8 +290,8 @@ def gerar_pecas_maquina(
         pts = [(bx, base_lv_y, base_lv_z), (bx, pivo_y - 210, pivo_z - 65), (bx, pivo_y, pivo_z)]
         for f, bow in ((0.45, 26.0), (0.78, 18.0), (1.0, 0.0)):
             pts.append((bx,
-                        pivo_y + alavanca * f * du_y + bow * perp_y,
-                        pivo_z + alavanca * f * du_z + bow * perp_z))
+                        pivo_y + r_sup * f * du_y + bow * perp_y,
+                        pivo_z + r_sup * f * du_z + bow * perp_z))
         return pts
 
     def _braco(nome, sx):
@@ -300,14 +305,14 @@ def gerar_pecas_maquina(
 
     def _pega_v(nome, sx):
         # Pega neutra vertical na extremidade interna da travessa.
-        pc.append(_cilindro(nome, 5, COR_PEGA, (sx * 225, topo_y + 60, topo_z + 12), "y",
+        pc.append(_cilindro(nome, 5, COR_PEGA, (sx * 225, topo_y + 35, topo_z + 12), "y",
                             d_pega / 2, 300, (sx, 1, 1)))
 
     par("Braco articulado", _braco)
     par("Pega pronada", _pega_h)
     par("Pega neutra", _pega_v)
 
-    pega_cy, pega_cz = topo_y + 60, topo_z + 12   # alvo do manequim
+    pega_cy, pega_cz = topo_y + 35, topo_z + 12   # alvo do manequim
 
     # ---- Etapa 6: chifres de anilha (ponta inferior) e anilhas ----------
     a_ch = math.radians(42.0)   # chifre sobe para a frente a ~42°
