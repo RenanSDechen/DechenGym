@@ -349,5 +349,93 @@
     "dimensoes_principais_mm": { "posicoes_suportes": "75 e 180 mm" },
     "furos_e_interfaces": "8x M6x30 escareados na madeira",
     "obs": "Unica uniao parafusada da estrutura do apoio de peito"
+  },
+  {
+    "pagina": 31,
+    "projeto": "remada_cavalinho",
+    "peca": "Assemblage - passo 14",
+    "funcao": "Soldar o montante 40x40x2,9 de 250mm (item 8) na longarina e o Support em U (19) no topo dele",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Support 19 vira o berco de descanso do main bar",
+    "obs": "Estrutura fixa concluida nesta etapa"
+  },
+  {
+    "pagina": 32,
+    "projeto": "remada_cavalinho",
+    "peca": "Assemblage - passos 15-16 (pegas)",
+    "funcao": "Soldar pipe D25,4 de 200mm (9) no Main Bar (18) com ponta chanfrada, depois a pega transversal de 600mm (10) no topo",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Pipe 9 encaixa no furo D25,4 do main bar; pipe 10 soldado em T (boca de lobo)",
+    "obs": "Forma o T das pegas"
+  },
+  {
+    "pagina": 33,
+    "projeto": "remada_cavalinho",
+    "peca": "Assemblage - passos 17-18",
+    "funcao": "Soldar as pegas paralelas de 150mm (11, 2x) chanfradas na pega transversal; soldar Covers D25,4 (21) nas pontas",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Boca de lobo nas juntas tubo-tubo; 5 tampas D25,4",
+    "obs": "Pegas neutras (paralelas) alem da pega larga"
+  },
+  {
+    "pagina": 34,
+    "projeto": "remada_cavalinho",
+    "peca": "Assemblage - passos 19-20 (porta-anilhas)",
+    "funcao": "Soldar Cover D31,8 (23) no tubo redondo D31,8x3,2 de 360mm (7); soldar Limiter D85 (34) e Inside Limiter (22) no tubo",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": { "mandril_porta_anilhas": 360 },
+    "furos_e_interfaces": "Tubo 7 = mandril das anilhas; Limiter D85 e o batente das anilhas",
+    "obs": ""
+  },
+  {
+    "pagina": 35,
+    "projeto": "remada_cavalinho",
+    "peca": "Assemblage - passos 21-22",
+    "funcao": "Soldar o mandril porta-anilhas no conjunto main bar+pegas; soldar Shell (24) no furo da ponta do main bar",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Shell D22/D16,2 soldado na ponta arredondada do main bar = olhal do 1o eixo do pivo",
+    "obs": "Alavanca movel completa"
+  },
+  {
+    "pagina": 36,
+    "projeto": "remada_cavalinho",
+    "peca": "Assemblage - passos 23-25 (garfo articulado intermediario)",
+    "funcao": "Soldar bucha 40x40 (16) + Plates 2 (17) formando garfo; soldar Shell (24) no furo D22; unir garfo ao main bar com Pin 16h11x65 + contrapino",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Articulacao 1: pino D16 atraves das Plates 2 (furo D16) e do Shell do main bar, travado por Split Pin 3,2x28",
+    "obs": "Garfo intermediario liga a alavanca ao suporte do quadro"
+  },
+  {
+    "pagina": 37,
+    "projeto": "remada_cavalinho",
+    "peca": "Assemblage - passo 26 (montagem final da articulacao)",
+    "funcao": "Fixar o conjunto alavanca+garfo nas Plates 1 do quadro com o segundo Pin 16h11x65 + contrapino",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Articulacao 2: pino D16 vertical atraves das Plates 1 (furo D16,5) e do Shell do garfo - 2 eixos ortogonais tipo cardan",
+    "obs": "Os 2 pinos perpendiculares dao a liberdade angular tipo landmine"
+  },
+  {
+    "pagina": 38,
+    "projeto": "remada_cavalinho",
+    "peca": "Vista final do conjunto montado",
+    "funcao": "Render do equipamento completo montado",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "-",
+    "obs": "Sem cotas novas"
   }
 ]

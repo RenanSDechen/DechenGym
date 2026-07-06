@@ -435,5 +435,146 @@
     "dimensoes_principais_mm": {},
     "furos_e_interfaces": "Passo 7: solda do subconjunto do passo 4 ao do passo anterior (no da base); passo 8: cover 60x40 soldado no tubo 1186,14 mm (1.03)",
     "obs": "Somente ilustracoes"
+  },
+  {
+    "pagina": 31,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passo 9",
+    "funcao": "Solda da coluna inclinada (1.04) ao quadro, fechando o triangulo do stand",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Juntas soldadas em angulo entre coluna inclinada, montante e base",
+    "obs": "Quadro em A completo, ainda sem berços e pinos"
+  },
+  {
+    "pagina": 32,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passo 10 (weigh holders na coluna)",
+    "funcao": "Solda dos 5 berços (weigh holders) na coluna inclinada",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {
+      "passo_entre_bercos": 150,
+      "distancia_primeiro_ao_topo": 288
+    },
+    "furos_e_interfaces": "5 weigh holders soldados na face superior da coluna inclinada, passo 150 mm, primeiro a 288 mm do topo",
+    "obs": "Confirma a escada de apoios da barra em 5 alturas"
+  },
+  {
+    "pagina": 33,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passo 11a (weigh holder na base)",
+    "funcao": "Solda de weigh holder adicional no tubo horizontal da base",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {
+      "posicao_no_tubo_base": 450
+    },
+    "furos_e_interfaces": "1 weigh holder soldado a 450 mm no tubo da base (apoio de barra em posicao baixa)",
+    "obs": "Fecha os 7 weigh holders por stand listados na BOM"
+  },
+  {
+    "pagina": 34,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passo 11b (pinos porta-anilhas)",
+    "funcao": "Solda dos covers D25,4 nas pontas dos tubos redondos (pinos de armazenagem de anilhas)",
+    "material": "n/a",
+    "secao_ou_espessura": "Tubo redondo D25,4x3,2",
+    "dimensoes_principais_mm": {
+      "comprimento_pino": 340.0
+    },
+    "furos_e_interfaces": "Cover D25,4 soldado nas duas pontas de cada tubo redondo (item 8); fazer 2 desses subconjuntos",
+    "obs": "Texto confirma cut length 340,00 mm (p.6 trazia 350,00 - divergencia do dossie)"
+  },
+  {
+    "pagina": 35,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passo 12",
+    "funcao": "Solda dos 2 pinos porta-anilhas atravessando a coluna inclinada",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Pinos D25,4 soldados perpendiculares a coluna inclinada; fazer 2 stands identicos",
+    "obs": "Stand completo ao final do passo"
+  },
+  {
+    "pagina": 36,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passo 13 (crossbar)",
+    "funcao": "Solda das chapas 120x40 nas pontas do tubo da crossbar",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {
+      "tubo_crossbar": 1050
+    },
+    "furos_e_interfaces": "Chapa 2.02 (furos O10,5) soldada em cada ponta do tubo 60x40x4 de 1050 mm; fazer 3 crossbars",
+    "obs": "Pagina mostra tambem os 2 stands prontos lado a lado"
+  },
+  {
+    "pagina": 37,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passo 14 (uniao aparafusada)",
+    "funcao": "Fixacao das 3 crossbars aos 2 stands",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Parafusos M10x80 atravessam a chapa 120x40 e a coluna (furos O10,5); arruela de pressao A-10 + porca M10 no lado oposto; 4 conjuntos por crossbar",
+    "obs": "Unica uniao desmontavel da gaiola"
+  },
+  {
+    "pagina": 38,
+    "projeto": "squat_cage",
+    "peca": "Gaiola montada (frame completo)",
+    "funcao": "Ilustracoes do frame final: 2 stands + 3 crossbars aparafusadas",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Crossbars conectando colunas e montantes dos dois stands",
+    "obs": "Sem cotas novas"
+  },
+  {
+    "pagina": 39,
+    "projeto": "squat_cage",
+    "peca": "Weight Set Subassembly - passo 1 (delimiter)",
+    "funcao": "Solda dos delimiters na barra D31,8",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Delimiter (anel O70/O32) soldado na barra, um em cada lado, delimitando o vao central",
+    "obs": "2 delimiters por barra, 2 barras"
+  },
+  {
+    "pagina": 40,
+    "projeto": "squat_cage",
+    "peca": "Weight Set - passo 2 (anilhas)",
+    "funcao": "Enfiar as anilhas nas duas pontas da barra",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Anilhas 9/7/5/3/1,5 kg empilhadas da maior para a menor contra o delimiter",
+    "obs": "Somente ilustracoes"
+  },
+  {
+    "pagina": 41,
+    "projeto": "squat_cage",
+    "peca": "Weight Set - passo 3 (dumbbell nut)",
+    "funcao": "Travamento das anilhas com a porca roscada",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Dumbbell nut rosca TR32x3 apertando a pilha de anilhas na ponta da barra",
+    "obs": "Somente ilustracoes"
+  },
+  {
+    "pagina": 42,
+    "projeto": "squat_cage",
+    "peca": "Weight Set completo",
+    "funcao": "Ilustracao final da barra montada com anilhas e porcas",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "n/a",
+    "obs": "Pagina final do dossie"
   }
 ]
