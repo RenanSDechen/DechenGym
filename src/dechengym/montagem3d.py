@@ -234,6 +234,12 @@ def gerar_pecas_maquina(
     pc.append(_tubo("Braco V esquerdo", e, COR_ACO, [(0, rb + 4, 1380), (-larg_v, rb + 4, 90)], rb, (-1, -1, 0), oval=oval_t * 1.4))
     pc.append(_tubo("Braco V direito", e, COR_ACO, [(0, rb + 4, 1380), (larg_v, rb + 4, 90)], rb, (1, -1, 0), oval=oval_t * 1.4))
     pc.append(_tubo("Travessa frontal", e, COR_ACO, [(-larg_v, rb + 4, 90), (larg_v, rb + 4, 90)], rb, (0, -1, -1), oval=oval_t * 1.4))
+    # Calços de borracha nervurados nas pontas (ref. PDR014)
+    for nome, fx, fz in (("Pe borracha diant esq", -larg_v, 90),
+                         ("Pe borracha diant dir", larg_v, 90),
+                         ("Pe borracha traseiro", 0.0, prof - 30)):
+        pc.append(_cilindro(nome, e, "#101114", (fx, 6, fz), "y", rb * 0.9, 14,
+                            (1 if fx >= 0 else -1, -1, 0), lados=14))
 
     # ---- Etapa 2: estrutura dianteira do pivô ---------------------------
     e = 2
@@ -277,9 +283,22 @@ def gerar_pecas_maquina(
     def _came(nome, sx):
         pc.append(_cilindro(nome, 4, COR_CAME, (sx * 245, pivo_y, pivo_z), "x", 88, 16, (sx, 1, 0), lados=18))
 
+    def _disco_regulagem(nome, sx):
+        # Disco de regulagem Ø300 (furos a cada 15°) — ref. 201-06.
+        pc.append(_cilindro(nome, 4, COR_CHAPA, (sx * 296, pivo_y, pivo_z), "x",
+                            150, 12.7, (sx, 1, 0), lados=24))
+
+    def _pino_trava(nome, sx):
+        # Pino trava + manípulo no raio R114 do disco — ref. 201-08.
+        py, pz = pivo_y - 114, pivo_z + 30
+        pc.append(_cilindro(f"{nome} (haste)", 4, COR_EIXO, (sx * 335, py, pz), "x", 7.5, 78, (sx, 1, 0)))
+        pc.append(_cilindro(f"{nome} (manipulo)", 4, "#0d0e10", (sx * 385, py, pz), "x", 16, 26, (sx, 1, 0), lados=14))
+
     par("Berco de articulacao", _berco)
+    par("Disco de regulagem", _disco_regulagem)
     par("Eixo de pivo", _pivo)
     par("Came", _came)
+    par("Pino trava", _pino_trava)
 
     # ---- Etapa 5: alavancas em C e pegas ---------------------------------
     bx_abs = 330.0

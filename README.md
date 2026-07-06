@@ -143,6 +143,15 @@ python examples/exemplo_braco_articulado.py
 | `renderizar_svg_3d`               | Render sombreado (câmera orbitável, etapa, explosão).  |
 | `gerar_visualizador_html`         | Visualizador 3D interativo auto-contido (HTML).        |
 
+### Projetos de referência (desenhos reais de fábrica)
+
+| Tool                              | Descrição                                              |
+|-----------------------------------|--------------------------------------------------------|
+| `get_projeto_referencia`          | Projeto real (201-Abdutor … 210-Arco): arquitetura e articulação. |
+| `listar_padroes_construtivos`     | Padrões transversais (articulação usinada, regulagens…). |
+| `get_padrao_biblioteca`           | Componente-padrão de fábrica (01-PADROES).             |
+| `listar_biblioteca_padroes`       | Biblioteca completa, filtrável por categoria.          |
+
 ### Academia Virtual
 
 | Tool                              | Descrição                                              |
@@ -306,6 +315,26 @@ autocorreção, pivô, pega, massa), o render 3D e os botões para o
 **visualizador 3D interativo**, o **dossiê PDF**, o `.scad` e o memorial.
 Artefatos ficam em `output/webapp/<exercicio>/`.
 
+## Projetos de referência (nível projetista)
+
+O gerador é calibrado por **desenhos reais de fabricação** fornecidos pelo
+cliente (pranchas A2/A4: 201-Abdutor, 202-Estação, 203-Agachamento 60°,
+204-Peck Deck, 205/206/207-suportes, 210-Arco, mais a biblioteca 01-PADROES
+com ~40 componentes de fábrica). Deles vêm os padrões que o plano de
+fabricação e o modelo 3D reproduzem:
+
+- **articulação usinada**: bucha Ø42 +0,05/−0,02, flange mancal aparafusada,
+  eixo SAE 1045 com canal para anel elástico — nunca furo no tubo;
+- **regulagens**: disco de furos Ø300 (passo 15°) + pino trava torneado com
+  bucha-guia; fileiras de furos Ø13 passo 30–50 mm em inox;
+- **reforços e acabamento**: gussets 3,18 mm, calços de borracha nervurados,
+  protetores de polia, estofados anatômicos (30→80 mm);
+- **lista de corte com ângulos** (8°/8°, 45°/53°, 2°30′…) para encaixe sem
+  fresta na solda MIG.
+
+Os dados extraídos peça a peça estão em `docs/referencias/*.json`; a base
+estruturada em `data/projetos_referencia_db.py` e `data/padroes_db.py`.
+
 ## Academia Virtual (base dos equipamentos mais usados)
 
 O DechenGym inclui uma **base pesquisada dos 27 equipamentos mais usados**
@@ -377,6 +406,9 @@ Contrato de aceite de referência já coberto:
       cremalheira inox, solda MIG, pintura eletrostática a pó).
 - [x] **Academia Virtual**: base dos 27 equipamentos mais usados + planta
       baixa em escala + galeria na interface web.
+- [x] **Projetos de referência reais** (desenhos 201–210 + 01-PADROES):
+      base estruturada + pacote de articulação usinada no plano de
+      fabricação e no modelo 3D.
 - [ ] Expandir o pipeline completo para os 19 equipamentos restantes da
       academia virtual (hoje: 8 com projeto completo).
 - [ ] Render PNG automático (instalar OpenSCAD no ambiente).

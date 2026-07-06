@@ -42,6 +42,14 @@ from dechengym.sintese_came import (
 )
 from dechengym.orquestrador.pipeline import projetar_maquina_params
 from dechengym.academia import gerar_catalogo_academia, gerar_planta_academia
+from dechengym.data.padroes_db import (
+    get_padrao_biblioteca,
+    listar_biblioteca_padroes,
+)
+from dechengym.data.projetos_referencia_db import (
+    get_projeto_referencia,
+    listar_padroes_construtivos,
+)
 from dechengym.montagem3d import (
     gerar_pecas_maquina,
     gerar_visualizador_html,
@@ -104,6 +112,11 @@ TOOLS: dict[str, Callable[..., Any]] = {
     # --- Academia virtual ---
     "gerar_catalogo_academia": gerar_catalogo_academia,
     "gerar_planta_academia": gerar_planta_academia,
+    # --- Projetos de referência (desenhos reais) ---
+    "get_projeto_referencia": get_projeto_referencia,
+    "listar_padroes_construtivos": listar_padroes_construtivos,
+    "get_padrao_biblioteca": get_padrao_biblioteca,
+    "listar_biblioteca_padroes": listar_biblioteca_padroes,
 }
 
 
@@ -706,6 +719,60 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
         "input_schema": {
             "type": "object",
             "properties": {"largura_px": {"type": "integer"}},
+            "required": [],
+        },
+    },
+    # ---------------- Projetos de referência (desenhos reais) -------------
+    {
+        "name": "get_projeto_referencia",
+        "description": (
+            "Projeto de referencia real (desenhos de fabricacao 201-ABDUTOR, "
+            "202-ESTACAO, 203-AGACHAMENTO 60, 204-PECK DECK): arquitetura, "
+            "articulacao usinada, regulagens e dimensoes."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {"nome": {
+                "type": "string",
+                "enum": ["abdutor_201", "estacao_202", "agachamento_203",
+                         "peck_deck_204", "suporte_dumbbells_205",
+                         "suporte_barras_206", "suporte_barras_vertical_207",
+                         "arco_210"],
+            }},
+            "required": ["nome"],
+        },
+    },
+    {
+        "name": "listar_padroes_construtivos",
+        "description": (
+            "Padroes construtivos transversais extraidos dos projetos reais "
+            "(articulacao usinada, regulagem disco+pino, gussets, borracha, "
+            "protecoes, itens comerciais, cortes em angulo)."
+        ),
+        "input_schema": {"type": "object", "properties": {}, "required": []},
+    },
+    {
+        "name": "get_padrao_biblioteca",
+        "description": (
+            "Componente-padrao da biblioteca de fabrica (01-PADROES: polias, "
+            "protetores, buchas, pinos, cremalheiras, estofados, calcos)."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {"chave": {"type": "string"}},
+            "required": ["chave"],
+        },
+    },
+    {
+        "name": "listar_biblioteca_padroes",
+        "description": (
+            "Lista a biblioteca de componentes-padrao (opcionalmente por "
+            "categoria: articulacao, polia, protecao, regulagem, engate, "
+            "estofado, acabamento, estrutura, came)."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {"categoria": {"type": "string"}},
             "required": [],
         },
     },
