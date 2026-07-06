@@ -1,0 +1,305 @@
+[
+  {
+    "pagina": 1,
+    "projeto": "back_extension",
+    "peca": "Capa / vista 3D geral",
+    "funcao": "Apresentacao do projeto Back Extension Bench (hiperextensao 45 graus)",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "-",
+    "obs": "PDF de 32 paginas (nao 85). Projeto craftsmanspace.com; cotas em mm e polegadas; construcao soldada"
+  },
+  {
+    "pagina": 2,
+    "projeto": "back_extension",
+    "peca": "Parts List (BOM) + vista explodida",
+    "funcao": "Lista completa de 28 itens com detalhes A, B e C de montagem",
+    "material": "Aco (estrutura), madeira (item 15)",
+    "secao_ou_espessura": "ver itens",
+    "dimensoes_principais_mm": {
+      "item1_tubo_ret_60x40x4_L": 700,
+      "item2_tubo_ret_60x40x4_L_x2": 200,
+      "item3_tubo_ret_60x40x4_L": 820,
+      "item4_tubo_40x40x2.9_L": 220,
+      "item5_tubo_40x40x2.9_L": 320,
+      "item6_pipe_D25.4x3.2_L_x2": 150,
+      "item7_pipe_D25.4x3.2_L": 610,
+      "item8_pipe_D25.4x3.2_L": 300,
+      "item9_pipe_D25.4x3.2_L_x2": 78.54,
+      "item16_tubo_40x40x2.9_L": 480,
+      "item17_tubo_40x40x2.9_L": 400
+    },
+    "furos_e_interfaces": "Fixadores padrao: 4x parafuso sextavado M8x80 (19), 4x arruela pressao A8 (20), 4x porca M8 (21), 2x pino 8h11x60mm (24), 8x parafuso M6x30 fenda (26), 8x arruela pressao 6mm (27), 8x porca M6 (28)",
+    "obs": "Demais itens: 10 Holder (2x), 11 Leg 1 50x50x4, 12 Leg 2 50x50x4, 13 Cover 40x40 furado (2x), 14 Plate Holder (2x), 15 Wooden Plate (madeira), 18 Cover 60x40 (4x), 22 Cover 25.4 (4x), 23 Cover 40x40 (1x), 25 Sheet Support"
+  },
+  {
+    "pagina": 3,
+    "projeto": "back_extension",
+    "peca": "Conjunto geral - 2D (vistas lateral, frontal, superior, isometrica)",
+    "funcao": "Dimensoes gerais do banco e secoes A-A, B-B, C-C",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {
+      "altura_total": 701,
+      "comprimento_entre_pes": 800,
+      "comprimento_total": 1207,
+      "largura_base_traseira": 820,
+      "largura_apoio_maos": 735,
+      "largura_rolos_pes": 710,
+      "largura_apoio_quadril": 310,
+      "angulo_coluna_principal_com_solo": 45,
+      "angulo_entre_colunas": 90,
+      "profundidade_pe_traseiro": 205
+    },
+    "furos_e_interfaces": "Secao B-B: tubo apoio 80x40(?) com detalhe 50 e 5/0.20; secao C-C no pino do rolo dos pes",
+    "obs": "Geometria classica de hiperextensao 45 graus: duas colunas a 45 do solo formando 90 entre si"
+  },
+  {
+    "pagina": 4,
+    "projeto": "back_extension",
+    "peca": "Frame Components - conjunto soldado (itens 1-9, 16, 17)",
+    "funcao": "Estrutura soldada principal: coluna, base, apoio de maos e garfo do rolo de pes",
+    "material": "Aco - tubos retangulares e pipes",
+    "secao_ou_espessura": "60x40x4, 40x40x2.9, pipe D25.4x3.2",
+    "dimensoes_principais_mm": {
+      "coluna_furada_espacamento_furos": 40,
+      "furos_regulagem_diam": 8.5,
+      "apoio_maos_largura_total": 610,
+      "apoio_maos_pegada": 400,
+      "base_traseira_largura": 820,
+      "raio_dobra_pipe_maos": 65,
+      "braco_pes_comprimento_150": 150,
+      "angulos_corte": 45
+    },
+    "furos_e_interfaces": "Furos diam 8.5 typ na coluna inclinada (serie de 40 em 40: 200 a 440); Detalhe A: furo diam 8 na base; secoes D-D, E-E (300 de largura)",
+    "obs": "Pagina resume a soldagem do quadro; cotas parciais 160/120/80/40 na regiao superior da coluna"
+  },
+  {
+    "pagina": 5,
+    "projeto": "back_extension",
+    "peca": "10. Holder (grampo U)",
+    "funcao": "Suporte em U que fixa o tubo do rolo de pes / regulagem (2 pecas)",
+    "material": "Aco chapa dobrada",
+    "secao_ou_espessura": "3 mm",
+    "dimensoes_principais_mm": {
+      "comprimento": 100,
+      "largura_externa": 66,
+      "altura": 35,
+      "raio_dobra": 9
+    },
+    "furos_e_interfaces": "4 furos diam 8 (15 da borda, 13 da base) para parafusos M8 (?) / pinos",
+    "obs": "Perfil U 66x35, abas com 2 furos por lado"
+  },
+  {
+    "pagina": 6,
+    "projeto": "back_extension",
+    "peca": "11. Leg 1 e 12. Leg 2 - Rectangular Tubing 50x50x4",
+    "funcao": "Pernas telescopicas: Leg 1 (furada, regulagem) desliza externamente e Leg 2 interna",
+    "material": "Aco tubo 50x50x4",
+    "secao_ou_espessura": "50x50x4",
+    "dimensoes_principais_mm": {
+      "leg1_comprimento": 631,
+      "leg1_comprimento_lado_curto": 611,
+      "leg1_furos_espacamento": 40,
+      "leg2_comprimento": 581,
+      "leg2_comprimento_lado_curto": 562,
+      "corte_ponta": 45
+    },
+    "furos_e_interfaces": "Leg 1: 7 furos diam 8.5 typ espacados 40 mm para pino de regulagem; ambas com ponta chanfrada 45 (bisel 40.5/39.5), R9",
+    "obs": "Sistema de regulagem de altura/comprimento do apoio por pino"
+  },
+  {
+    "pagina": 7,
+    "projeto": "back_extension",
+    "peca": "13. Cover 40x40 mm HOLE",
+    "funcao": "Tampa de tubo 40x40 com furo passante para pipe D25.4 (2 pecas)",
+    "material": "Aco",
+    "secao_ou_espessura": "5 mm (chanfro 3x45)",
+    "dimensoes_principais_mm": {
+      "lado": 40,
+      "furo_central_diam": 25.4,
+      "espessura": 5
+    },
+    "furos_e_interfaces": "Furo central diam 25.4 para passagem do tubo do rolo",
+    "obs": "Peca repetida (2x)"
+  },
+  {
+    "pagina": 8,
+    "projeto": "back_extension",
+    "peca": "14. Plate Holder",
+    "funcao": "Chapa de fixacao do Wooden Plate na estrutura (2 pecas)",
+    "material": "Aco chapa",
+    "secao_ou_espessura": "5 mm",
+    "dimensoes_principais_mm": {
+      "comprimento": 100,
+      "largura": 40,
+      "raio_cantos": 10
+    },
+    "furos_e_interfaces": "4 furos diam 6.5 (10x10 dos cantos) para parafusos M6x30",
+    "obs": "Peca repetida (2x)"
+  },
+  {
+    "pagina": 9,
+    "projeto": "back_extension",
+    "peca": "15. Wooden Plate",
+    "funcao": "Prancha de apoio do quadril/coxas (recebe estofado)",
+    "material": "Madeira",
+    "secao_ou_espessura": "20 mm",
+    "dimensoes_principais_mm": {
+      "comprimento": 400,
+      "largura": 200,
+      "espessura": 20,
+      "raio_cantos": 20
+    },
+    "furos_e_interfaces": "8 furos escareados: diam 6 com rebaixo diam 12 x 5 prof; grupos a 20/80 mm e 60 mm das referencias, para parafusos M6",
+    "obs": "Fixada aos 2 Plate Holders por 8 parafusos M6x30"
+  },
+  {
+    "pagina": 10,
+    "projeto": "back_extension",
+    "peca": "16. Rectangular Tubing 40x40x2.9 - L=480",
+    "funcao": "Tubo horizontal furado da regulagem do rolo de pes (recebe Holder + pinos)",
+    "material": "Aco tubo 40x40x2.9",
+    "secao_ou_espessura": "40x40x2.9",
+    "dimensoes_principais_mm": {
+      "comprimento": 480,
+      "espacamento_furos": 40,
+      "furos_diam": 8.5
+    },
+    "furos_e_interfaces": "11 furos diam 8.5 typ espacados 40 mm em toda a extensao",
+    "obs": "Regulagem horizontal por pino 8h11x60"
+  },
+  {
+    "pagina": 11,
+    "projeto": "back_extension",
+    "peca": "18. Cover 60x40",
+    "funcao": "Tampa soldada nas extremidades dos tubos 60x40 (4 pecas)",
+    "material": "Aco",
+    "secao_ou_espessura": "5 mm (chanfro 2x45)",
+    "dimensoes_principais_mm": {
+      "comprimento": 60,
+      "largura": 40,
+      "raio_cantos": 8
+    },
+    "furos_e_interfaces": "Sem furos; soldada na ponta do tubo",
+    "obs": "Peca repetida (4x)"
+  },
+  {
+    "pagina": 12,
+    "projeto": "back_extension",
+    "peca": "22. Cover D25.4",
+    "funcao": "Tampa circular das pontas dos pipes D25.4 (4 pecas)",
+    "material": "Aco",
+    "secao_ou_espessura": "5 mm (chanfro 2x45, R1)",
+    "dimensoes_principais_mm": {
+      "diametro": 25.4,
+      "espessura": 5
+    },
+    "furos_e_interfaces": "Sem furos; soldada na ponta do pipe",
+    "obs": "Peca repetida (4x)"
+  },
+  {
+    "pagina": 13,
+    "projeto": "back_extension",
+    "peca": "23. Cover 40x40",
+    "funcao": "Tampa da ponta do tubo 40x40 (1 peca)",
+    "material": "Aco",
+    "secao_ou_espessura": "5 mm (chanfro 3x45)",
+    "dimensoes_principais_mm": {
+      "lado": 40,
+      "espessura": 5
+    },
+    "furos_e_interfaces": "Sem furos",
+    "obs": "Versao sem furo do item 13"
+  },
+  {
+    "pagina": 14,
+    "projeto": "back_extension",
+    "peca": "24. Pin 8h11 x 60mm",
+    "funcao": "Pino de regulagem das pernas telescopicas e do tubo do rolo (2 pecas)",
+    "material": "Aco",
+    "secao_ou_espessura": "diam 8 h11",
+    "dimensoes_principais_mm": {
+      "comprimento_total": 63,
+      "comprimento_util": 60,
+      "diametro_corpo": 8,
+      "diametro_cabeca": 14
+    },
+    "furos_e_interfaces": "Encaixa nos furos diam 8.5 das colunas/pernas furadas",
+    "obs": "Cabeca diam 14; tolerancia h11"
+  },
+  {
+    "pagina": 15,
+    "projeto": "back_extension",
+    "peca": "25. Sheet Support",
+    "funcao": "Chapa dobrada em L que apoia/protege sob o Wooden Plate",
+    "material": "Aco chapa dobrada",
+    "secao_ou_espessura": "3 mm",
+    "dimensoes_principais_mm": {
+      "desenvolvimento_planificado": "440 x 307",
+      "altura_apos_dobra": 257,
+      "aba": 50,
+      "recorte_superior": "40 x 85",
+      "recorte_inferior": "50 x 42",
+      "raio_dobra": 6
+    },
+    "furos_e_interfaces": "2 recortes centrais para passagem da coluna; 2 dobras 90 (flange 1 e 2, R3, para cima)",
+    "obs": "Tabela de dobras: 2 flanges 90 graus R3 mm; cantos R20, recortes R6.9/R8"
+  },
+  {
+    "pagina": 16,
+    "projeto": "back_extension",
+    "peca": "Standard Parts (itens 19-21, 24, 26-28)",
+    "funcao": "Fixadores comerciais do projeto",
+    "material": "Aco",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "19 Parafuso sext. M8x80; 20 arruela pressao A8; 21 porca M8; 24 pino 8h11x60; 26 parafuso fenda cab. panela M6x30; 27 arruela pressao 6; 28 porca M6",
+    "obs": "Pagina ilustrativa 3D dos itens padrao"
+  },
+  {
+    "pagina": 17,
+    "projeto": "back_extension",
+    "peca": "Montagem passo 1",
+    "funcao": "Soldar Cover 60x40 (18) nas pontas dos tubos 60x40x4 L=200 (item 2)",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Solda perimetral tampa-tubo",
+    "obs": "Inicio das instrucoes de montagem (Assemblage Instruction)"
+  },
+  {
+    "pagina": 18,
+    "projeto": "back_extension",
+    "peca": "Montagem passo 1b - base traseira",
+    "funcao": "Chanfrar e soldar tubos 60x40x4: 2x L=200 (item 2) nas pontas do L=820 (item 3) formando U da base traseira",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Juntas chanfradas 45 soldadas; item 3 tem 2 furos centrais",
+    "obs": "Forma o pe traseiro em U (820 de largura, abas de 200)"
+  },
+  {
+    "pagina": 19,
+    "projeto": "back_extension",
+    "peca": "Montagem passo 2",
+    "funcao": "Soldar Cover 60x40 (18) nas pontas do tubo 60x40x4 L=700 (item 1, pe dianteiro)",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Item 1 com 2 furos centrais para fixacao",
+    "obs": "Pe dianteiro reto de 700 mm"
+  },
+  {
+    "pagina": 20,
+    "projeto": "back_extension",
+    "peca": "Montagem passos 3 e 4",
+    "funcao": "Soldar Holder (10) na Leg 1 (11) e na Leg 2 (12)",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Holder em U soldado na ponta chanfrada de cada perna; furos do Holder alinhados para pino/parafuso",
+    "obs": "Holder abraca o tubo 40x40 da regulagem do rolo de pes"
+  }
+]
