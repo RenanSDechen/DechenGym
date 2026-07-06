@@ -261,6 +261,65 @@ PROJETOS_REFERENCIA: dict[str, dict[str, Any]] = {
         "footprint_mm": [1250, 1400],
         "altura_mm": 1385,
     },
+    "supino_reto_215": {
+        "nome": "Banco Supino Reto (projeto 215)",
+        "tipo": "banco com berços de barra",
+        "fonte": "215 (1 prancha A2 com BOM, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "planta": "1250 (115+920+115), trilho 1200, coluna 900",
+            "apoios": "tubo Ø38 dobrado a 5° (berço de barra)",
+            "estofado": "10 chapinhas 80x20 + barras 1200 com furos Ø9,5",
+        },
+        "footprint_mm": [1250, 1400],
+        "altura_mm": 900,
+    },
+    "suporte_anilhas_simples_216": {
+        "nome": "Suporte de Anilhas Simples (projeto 216)",
+        "tipo": "rack de piso, coluna",
+        "fonte": "216 (1 prancha com BOM, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "coluna": "40x40x1,5 x930 com base em T (400 + 2x300)",
+            "pinos": "3x Ø25,4x400 horizontais (espaçados 280/350/250)",
+        },
+        "footprint_mm": [400, 600],
+        "altura_mm": 930,
+    },
+    "suporte_anilhas_217": {
+        "nome": "Suporte de Anilhas em A (projeto 217)",
+        "tipo": "rack de piso, cavalete",
+        "fonte": "217 (1 prancha com BOM completa, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "cavalete": "pernas 30x50x1155 a 32,5°, travessas com cortes "
+                        "25°/25°, pés Ø60",
+            "pinos": "8x Ø25,4x400 em dois níveis",
+        },
+        "footprint_mm": [1300, 400],
+        "altura_mm": 1100,
+    },
+    "suporte_halteres_218": {
+        "nome": "Rack de Halteres (projeto 218)",
+        "tipo": "rack de piso, 2 trilhos",
+        "fonte": "218 (1 prancha com BOM, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "trilhos": "2x 30x50 furados Ø6,5 (passos 60/40/65/40)",
+            "separadores": "40 peças de chapa dobrada 155x30 (aba 20) "
+                           "PARAFUSADAS nos trilhos — substituíveis",
+        },
+        "footprint_mm": [1000, 500],
+        "altura_mm": 750,
+    },
+    "suporte_10_barras_219": {
+        "nome": "Suporte p/ 10 Barras Montadas (projeto 219)",
+        "tipo": "rack de piso, cavalete A",
+        "fonte": "219 (1 prancha com BOM, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "cavalete": "4 pernas 50x50x1570 a 15° (cortes 15°/15°)",
+            "pinos": "20x Ø25,4x150 perpendiculares às pernas "
+                     "(5 níveis por face, passo 300)",
+        },
+        "footprint_mm": [1000, 900],
+        "altura_mm": 1500,
+    },
     "arco_210": {
         "nome": "Arco / apoio abdominal (projeto 210)",
         "tipo": "banco em arco",
