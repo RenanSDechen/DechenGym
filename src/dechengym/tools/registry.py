@@ -50,6 +50,10 @@ from dechengym.data.projetos_referencia_db import (
     get_projeto_referencia,
     listar_padroes_construtivos,
 )
+from dechengym.data.referencias_loader import (
+    get_desenhos_projeto,
+    listar_projetos_extraidos,
+)
 from dechengym.montagem3d import (
     gerar_pecas_maquina,
     gerar_visualizador_html,
@@ -117,6 +121,8 @@ TOOLS: dict[str, Callable[..., Any]] = {
     "listar_padroes_construtivos": listar_padroes_construtivos,
     "get_padrao_biblioteca": get_padrao_biblioteca,
     "listar_biblioteca_padroes": listar_biblioteca_padroes,
+    "listar_projetos_extraidos": listar_projetos_extraidos,
+    "get_desenhos_projeto": get_desenhos_projeto,
 }
 
 
@@ -782,6 +788,26 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
             "type": "object",
             "properties": {"categoria": {"type": "string"}},
             "required": [],
+        },
+    },
+    {
+        "name": "listar_projetos_extraidos",
+        "description": (
+            "Resumo da base de desenhos de fabrica extraidos prancha a "
+            "prancha (pacote completo): projetos, n. de desenhos e fontes."
+        ),
+        "input_schema": {"type": "object", "properties": {}, "required": []},
+    },
+    {
+        "name": "get_desenhos_projeto",
+        "description": (
+            "Todos os desenhos extraidos de um projeto da fabrica (pecas, "
+            "cotas, buchas, eixos, BOMs) — ex.: remada, adutor, cross_over."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {"projeto": {"type": "string"}},
+            "required": ["projeto"],
         },
     },
 ]
