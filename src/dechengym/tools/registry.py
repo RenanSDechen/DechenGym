@@ -737,7 +737,7 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
                 "enum": ["abdutor_201", "estacao_202", "agachamento_203",
                          "peck_deck_204", "suporte_dumbbells_205",
                          "suporte_barras_206", "suporte_barras_vertical_207",
-                         "arco_210"],
+                         "leg_press_45_208", "hack_45_209", "arco_210"],
             }},
             "required": ["nome"],
         },

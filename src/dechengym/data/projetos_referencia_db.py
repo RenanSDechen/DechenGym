@@ -117,6 +117,55 @@ PROJETOS_REFERENCIA: dict[str, dict[str, Any]] = {
         "footprint_mm": [1700, 700],
         "altura_mm": 1280,
     },
+    "leg_press_45_208": {
+        "nome": "Leg Press 45° (projeto 208)",
+        "tipo": "anilhada guiada, carrinho deslizante",
+        "fonte": "208 (3 pranchas, BOM de 36 itens, SAE 1020/1045/inox)",
+        "arquitetura": {
+            "trilhos": "viga U 3\" x2000 a 45°, cortes 45°",
+            "torre": "largura 700, vão interno 535, altura ~1800",
+            "carrinho": "quadro 800x515; placa dos pés 500x480 com pivô "
+                        "Ø20 0/−0,05; eixos SAE 1045 Ø20x680-690",
+            "porta_anilhas": "tubo oblongo 40x115x1,5 x1810 (2x)",
+        },
+        "deslizamento": {
+            "buchas": "nylon Ø66x30, rebaixo Ø42, conicidade 8° (4x) — correm "
+                      "DENTRO da viga U; sem rodízios",
+            "eixos": "SAE 1045 Ø20/Ø28 escalonados",
+        },
+        "seguranca": {
+            "trava": "alavanca de destrave em chapa (chanfro 15x45°) + "
+                     "manípulo Ø25,4 curvado R80",
+            "regulagem": "chapa INOX 40x200 com 3 furos Ø13 passo 30",
+            "guia": "porca 3/4\" soldada em guia (fuso de batente)",
+        },
+        "footprint_mm": [1200, 2200],
+        "altura_mm": 1800,
+    },
+    "hack_45_209": {
+        "nome": "Agachamento/Hack 45° (projeto 209)",
+        "tipo": "anilhada guiada, carrinho de ombros",
+        "fonte": "209 (3 pranchas, BOM de 33 linhas, SAE 1020/ABNT-1010/inox)",
+        "arquitetura": {
+            "trilhos": "viga U 3\" x1950 a 45°, buchas afastadas 700",
+            "carrinho": "1300 mm, quadro 750 (travessas 3x250), ombreiras a "
+                        "10°, 3 almofadas de encosto + apoio lombar",
+            "apoio_pes": "plataforma 500x500 em chapa corrugada 3 mm",
+            "porta_anilhas": "tubo oblongo 40x115 x1595 (2x)",
+        },
+        "deslizamento": {
+            "buchas": "nylon Ø66/Ø42 +0,05 x30, cônicas ~6° (4x)",
+            "eixos": "Ø22x380 pontas Ø20 (2x) + Ø20x390 rosca 3/8\" (1x)",
+        },
+        "seguranca": {
+            "trava": "braços de destrave dir+esq em tubo Ø25,4 (corpo 700, "
+                     "dobra 90°, pega 100) com ganchos 5x31 que apoiam nos "
+                     "batentes das colunas",
+            "regulagem": "chapa INOX 40x200 com furos Ø13 passo 30",
+        },
+        "footprint_mm": [1585, 900],
+        "altura_mm": 1690,
+    },
     "suporte_dumbbells_205": {
         "nome": "Suporte de Dumbbells (projeto 205)",
         "tipo": "rack de piso, 2 níveis",
@@ -207,6 +256,20 @@ PADROES_CONSTRUTIVOS: dict[str, dict[str, Any]] = {
         "especificacao": "Protetores de polia dedicados (biblioteca 01-PADROES, "
                          "5 variantes) e carenagem da coluna de tijolos",
         "origem": "01-PADROES (PROTEÇÃO POLIA 3/4/5, PROTETOR ROLDANA)",
+    },
+    "deslizamento_viga_u": {
+        "descricao": "Deslizamento linear por buchas cônicas de nylon em viga U",
+        "especificacao": "Buchas nylon Ø66x30 (rebaixo Ø42 +0,05, conicidade "
+                         "6-8°) sobre eixos SAE 1045, correndo dentro de viga "
+                         "U 3\" — sem rodízios nem trilho comercial",
+        "origem": "208-02 item 8, 209-01 det. bucha",
+    },
+    "trava_seguranca": {
+        "descricao": "Destrave de segurança por braço rotativo com ganchos",
+        "especificacao": "Braços dir+esq em tubo Ø25,4 (dobra 90°, pega 100) "
+                         "com ganchos de barra 5x31 apoiando em batentes; "
+                         "alavanca com chanfro 15x45° no leg press",
+        "origem": "209-01 braço destrave, 208-01 trava",
     },
     "itens_comerciais": {
         "descricao": "Itens de mercado especificados, não fabricados",
