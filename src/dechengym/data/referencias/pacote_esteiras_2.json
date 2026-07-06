@@ -1,0 +1,200 @@
+[
+  {
+    "arquivo": "esteira_2_2_c_U00e3o/esteira 2.2 c#U00e3o/4501-DESENHO.pdf",
+    "projeto": "esteira_2_2",
+    "peca": "Chassi (Esteira Dobravel 2)",
+    "funcao": "Estrutura principal soldada da esteira dobravel: quadro do pe, chassi vertical de levante/coluna e suporte do painel.",
+    "material": "ABNT-1010 (tubos, cantoneira e ferro chato); suporte painel e detalhes em chapa",
+    "secao_ou_espessura": "Tubo retangular 30x50x1,5; tubo quadrado 40x40x1,5 e 25x25x1,5; tubo redondo D25,4x1,5; cantoneira 20x15; ferro chato 5x1 1/4\"; chapas 2 mm e 5 mm",
+    "dimensoes_principais_mm": {
+      "chassi_coluna": "largura 605 (vao interno 525) x altura ~1100; montante inclinado 10 graus, comprimento 1100 com curva superior R80",
+      "pe_base": "1350 x 500 (longarinas 30x50x1,5x1350; travessas 40x40x1,5x525/400); entre-eixos internos 718 e 960; recuo 135 e 765",
+      "suporte_painel": "535 x 200, chapa 2 mm, cantos chanfrados 30x45",
+      "cantoneira_deck": "20x15x960 (2 pecas)",
+      "tubo_curvado_corrimao_painel": "D25,4x1,5x320, curvar R80"
+    },
+    "furos_e_interfaces": "Furos D8,5 (fixacao coluna), D26 (articulacao dobra), D13,5, D18,5 e D11,5 no pe; D11 e D5 na longarina; D10 no detalhe 3; rebite 3/8\"; rosca 3/8\" no detalhe 2 (ferro chato 5 mm); perfil dobrado 25x500 (detalhe 1, chapa 2 mm, aba 51/25 a 60 graus)",
+    "dobra_ou_curva": "1a operacao: curvar tubo D25,4 em R80; montante a 10 graus; detalhes 1 e 3 em chapa dobrada 2 mm; suporte painel com dobra 20x60",
+    "obs": "BOM com 8 itens: cantoneira 20x15x960 (2), ferro chato 5x1 1/4\"x60 (2), tubo ret. 30x50x1,5x1350 (2), tubo ret. 30x50x1,5x1100 (2, corte 10 graus), tubo quad. 40x40x1,5x525 (1), tubo quad. 25x25x1,5x498 (2), tubo quad. 40x40x1,5x400 (2), tubo red. D25,4x1,5x320 (2). Folha A3."
+  },
+  {
+    "arquivo": "esteira_2_2_c_U00e3o/esteira 2.2 c#U00e3o/4502-DESENHO.pdf",
+    "projeto": "esteira_2_2",
+    "peca": "Bucha pino guia trava",
+    "funcao": "Bucha plastica que guia o pino da trava de dobra da esteira.",
+    "material": "PVC",
+    "secao_ou_espessura": "Peca torneada macica com colar",
+    "dimensoes_principais_mm": {
+      "diametro_externo_corpo": "10,8 +/-0,2",
+      "furo_interno": "8,2 +0,3/-0",
+      "colar": "D13 +/-0,5",
+      "comprimento": "43 total (corpo 38)"
+    },
+    "furos_e_interfaces": "Furo passante D8,2 para o pino guia; colar D13 de encosto",
+    "dobra_ou_curva": "Nenhuma; chanfro nos cantos 0,5x45 graus",
+    "obs": "2 pecas. Folha A4, escala 1:1."
+  },
+  {
+    "arquivo": "esteira_2_2_c_U00e3o/esteira 2.2 c#U00e3o/4503-DESENHO.pdf",
+    "projeto": "esteira_2_2",
+    "peca": "Bucha nylon (pino)",
+    "funcao": "Bucha de articulacao em nylon para o pino de dobra do chassi.",
+    "material": "Nylon",
+    "secao_ou_espessura": "Bucha tubular com flange",
+    "dimensoes_principais_mm": {
+      "flange": "D28 +/-0,5 x 5",
+      "corpo_externo": "D25 +/-0,2",
+      "furo": "D18 +0,3/-0,2",
+      "comprimento": "45"
+    },
+    "furos_e_interfaces": "Furo D18 casa com pino/eixo de articulacao; corpo D25 entra no tubo do chassi",
+    "dobra_ou_curva": "Nenhuma",
+    "obs": "1 peca. Folha A4, escala 1:1."
+  },
+  {
+    "arquivo": "esteira_2_2_c_U00e3o/esteira 2.2 c#U00e3o/4504-DESENHO.pdf",
+    "projeto": "esteira_2_2",
+    "peca": "Roldana",
+    "funcao": "Roldana metalica com canal em V para apoio/deslocamento da esteira dobrada.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Peca torneada",
+    "dimensoes_principais_mm": {
+      "diametro_externo": "42",
+      "diametro_fundo_canal": "30",
+      "largura_total": "23 (cubo 21, canal 10)",
+      "furo": "D6,5 (cubo D14)"
+    },
+    "furos_e_interfaces": "Furo central D6,5 para eixo/parafuso; canal com flancos a 10 graus",
+    "dobra_ou_curva": "Nenhuma",
+    "obs": "1 peca. Folha A4, escala 1:1."
+  },
+  {
+    "arquivo": "esteira_2_2_c_U00e3o/esteira 2.2 c#U00e3o/4505-DESENHO.pdf",
+    "projeto": "esteira_2_2",
+    "peca": "Cilindro retorno + eixo retorno",
+    "funcao": "Rolo traseiro (de retorno) da lona e seu eixo.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo do rolo D41 externo com buchas usinadas D35 +0,025/-0 nas pontas (25 mm); eixo macico D15",
+    "dimensoes_principais_mm": {
+      "rolo_retorno": "D41 x 385 de comprimento (coroamento 0,5 graus no centro, faixa 180)",
+      "eixo_retorno": "D15 x 440 (ressaltos 27,5 em cada lado, faixa util 385)"
+    },
+    "furos_e_interfaces": "Eixo com furo/rosca 5/16\" a 8 mm da ponta e rebaixos de 2 mm nas extremidades; chanfro 30 graus; eixo fixa no chassi pelas pontas",
+    "dobra_ou_curva": "Nenhuma; rolo com conicidade/coroamento 0,5 graus",
+    "obs": "1 peca de cada. Folha A4."
+  },
+  {
+    "arquivo": "esteira_2_2_c_U00e3o/esteira 2.2 c#U00e3o/4506-DESENHO.pdf",
+    "projeto": "esteira_2_2",
+    "peca": "Cilindro motor + eixo cilindro motor",
+    "funcao": "Rolo dianteiro tracionado pelo motor (rolo motriz) da lona e seu eixo.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo D1 1/2\" sch 80 x 412 (D48 externo, pontas D46, assento D42 -0,01/-0,025); eixo macico D20",
+    "dimensoes_principais_mm": {
+      "rolo_motor": "D48 x 400 de comprimento (trechos 70 + 269; ponta 33/30 e 25/12)",
+      "eixo": "D20 x 440 0/-2"
+    },
+    "furos_e_interfaces": "Assentos usinados D42 nas extremidades para buchas/rolamentos; eixo D20 atravessa o rolo e recebe a polia",
+    "dobra_ou_curva": "Nenhuma; rolo com perfil levemente coroado",
+    "obs": "1 peca de cada; BOM indica tubo D1 1/2\" sch 80x412 ABNT-1010. Folha A4."
+  },
+  {
+    "arquivo": "esteira_2_2_c_U00e3o/esteira 2.2 c#U00e3o/4507-DESENHO.pdf",
+    "projeto": "esteira_2_2",
+    "peca": "Polia 1 A 90",
+    "funcao": "Polia raiada de canal em V (perfil A) montada no rolo motriz para transmissao por correia do motor.",
+    "material": "Nao indicado no desenho",
+    "secao_ou_espessura": "Polia raiada, canal V 38 graus, largura de canal 13/17, aro 20 de largura",
+    "dimensoes_principais_mm": {
+      "diametro_externo": "190",
+      "cubo": "D60 externo, furo D46, comprimento 30",
+      "raio_raios": "R70",
+      "furo_lateral": "D20 com rasgo (corte A: 7x5, D16)"
+    },
+    "furos_e_interfaces": "Furo do cubo D46 estriado internamente (nota ESTRIAR D INTERNO) para acoplar ao rolo motor; furo D20/D16 no disco",
+    "dobra_ou_curva": "Nenhuma",
+    "obs": "Desenho com vista, corte A e isometrico; BOM sem material/quantidade preenchidos. Folha A4."
+  },
+  {
+    "arquivo": "esteira_2_2_c_U00e3o/esteira 2.2 c#U00e3o/4508-DESENHO.pdf",
+    "projeto": "esteira_2_2",
+    "peca": "Eixo (conjunto tubo + bucha + pino)",
+    "funcao": "Conjunto do eixo/pino em L da trava de dobra: tubo guia, bucha e pino dobrado.",
+    "material": "Nao indicado no desenho (tubo DIN 2440 3/8\")",
+    "secao_ou_espessura": "Tubo DIN 2440 3/8\" (D17,2 externo, furo D13,5); bucha D13 com ponta D6; pino D5/16\"",
+    "dimensoes_principais_mm": {
+      "tubo": "80 +0,5/-0 de comprimento (furo transversal a 20), 2 pecas",
+      "bucha": "20 0/-2 de comprimento, furo D3 +0,5/-0",
+      "pino_em_L": "braco 95 x perna 35, D5/16\", furo D3,2 a 5 da ponta"
+    },
+    "furos_e_interfaces": "Pino em L passa no tubo-guia soldado ao chassi e trava a dobra; furo D3,2 para contrapino; bucha com furo D3",
+    "dobra_ou_curva": "Pino dobrado em L (95 x 35)",
+    "obs": "Tubo 2 pecas, bucha 1, pino 1. Folha A4, escala 1:1."
+  },
+  {
+    "arquivo": "esteira_2_2_c_U00e3o/esteira 2.2 c#U00e3o/4509-DESENHO.pdf",
+    "projeto": "esteira_2_2",
+    "peca": "Montagem geral (Esteira Dobravel 2)",
+    "funcao": "Vista explodida e isometrica da montagem completa da esteira dobravel.",
+    "material": "Nao aplicavel (desenho de conjunto)",
+    "secao_ou_espessura": "Nao aplicavel",
+    "dimensoes_principais_mm": {
+      "observacao": "Sem cotas; mostra pe/base, chassi-coluna com corrimaos curvos, painel com console, motor com polia e correia, tampa do motor, deck com lona, rolos dianteiro e traseiro e eixos"
+    },
+    "furos_e_interfaces": "Sequencia de montagem em 3 estagios: conjunto motor/rolo motriz sobre a base, coluna com painel e corrimaos, deck+lona com eixos de retorno",
+    "dobra_ou_curva": "Nao aplicavel",
+    "obs": "Sem BOM preenchida. Folha A2 (594x420)."
+  },
+  {
+    "arquivo": "esteira_2_2_c_U00e3o/esteira 2.2 c#U00e3o/para c#U00e3es-4501.pdf",
+    "projeto": "esteira_2_2",
+    "peca": "Chassi (versao 'para caes' do desenho 4501)",
+    "funcao": "Mesmo desenho do chassi 4501 (Esteira Dobravel 2) reaproveitado/rotulado para a esteira de caes; conteudo identico ao 4501.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo retangular 30x50x1,5; tubo quadrado 40x40x1,5 e 25x25x1,5; tubo redondo D25,4x1,5; cantoneira 20x15; ferro chato 5x1 1/4\"; chapas 2 e 5 mm",
+    "dimensoes_principais_mm": {
+      "chassi_coluna": "605 x 525 de largura, altura ~1100, vista lateral 400/145 com inclinacao 10 graus (cota de topo 219,31)",
+      "pe_base": "1350 x 500; entre-eixos 718 e 960; recuos 135 e 765; furos D13,5/D18,5/D11,5",
+      "suporte_painel": "535 x 200, chapa 2 mm"
+    },
+    "furos_e_interfaces": "Identicos ao 4501: D8,5, D26, D5, D11, D10, rebite 3/8\", rosca 3/8\", perfil 25x500",
+    "dobra_ou_curva": "Curva R (tubo do corrimao), montante 10 graus, detalhes em chapa dobrada",
+    "obs": "Mesma BOM de 8 itens do 4501; folha A3 impressa rotacionada (retrato). Numero 4501."
+  },
+  {
+    "arquivo": "ELETRICA/ELETRICA/ESQUEMA ELETRICO 01-DESENHO.pdf",
+    "projeto": "eletrica",
+    "peca": "Esquema eletrico p/ rede 220V (esteira monofasica)",
+    "funcao": "Diagrama de ligacao da alimentacao 220V ate a placa de potencia, display e chave de seguranca da esteira.",
+    "material": "Nao aplicavel (esquema eletrico)",
+    "secao_ou_espessura": "Nao aplicavel",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Conectores da placa WEG: X1(L), X2(N), jumper J2 (posicoes 110V/220V, X7/X8), saida conexao motor (X4/X5/X6/X9)",
+    "dobra_ou_curva": "Nao aplicavel",
+    "obs": "Componentes: (1) disjuntor SICA sobrecarga liga/desliga, (2) trafo 110/220-12V, (3) placa WEG, (4) display, (5) chave de seguranca; cabo de forca com fio verde de aterramento na estrutura. Ligacoes: preto/branco da rede ao disjuntor e placa; trafo alimentado por preto (0) e vermelho (220) ou azul (110); saidas 12V do trafo (vermelho/preto) e fios marrons ao display; display liga a chave de seguranca; branco/azul/laranja entre placa e display. Notas p/ 110V: trocar fio vermelho pelo azul no trafo e mudar jumper J2 da placa WEG de 220 p/ 110V."
+  },
+  {
+    "arquivo": "ELETRICA/ELETRICA/ESQUEMA ELETRICO 02-DESENHO.pdf",
+    "projeto": "eletrica",
+    "peca": "Esquema eletrico Esteira 3.5 (com inclinacao)",
+    "funcao": "Diagrama da esteira com sistema de inclinacao motorizada: placa WEG, placa de inclinacao ProVol, displays, motor de inclinacao e fim de curso.",
+    "material": "Nao aplicavel (esquema eletrico)",
+    "secao_ou_espessura": "Nao aplicavel",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Placa WEG: X1(L), X2(N), jumper J2 110/220V (X7/X8), saida motor X4/X5/X6/X9; placa inclinacao ProVol ELV-P 2-03-7007-0 com F1, J1, J2, J4, J6, J7, reles K1/K2, T1, diodos D1-D6, bornes Mot_V/Cap_V/Mot_W/Cap_W e entrada Micro/Elevacao",
+    "dobra_ou_curva": "Nao aplicavel",
+    "obs": "Componentes: (1) disjuntor SICA, (2) trafo 110/220-12V, (3) placa WEG, (4) display, (5) placa inclinacao ProVol, (6) display inclinacao, (7) micro fim de curso, (8) capacitor do motor, (9) motor inclinacao (bornes U/V/W), (10) trafo auxiliar 0/110/220 (usar quando alimentacao 110V; mudar jumper 10 p/ 110V da placa inclinacao). Ligacoes: rede -> disjuntor -> placa WEG; placa inclinacao comanda motor de inclinacao via reles K1/K2 com capacitor de partida e limite por micro fim de curso; displays de velocidade e de inclinacao ligados as placas."
+  },
+  {
+    "arquivo": "ELETRICA/ELETRICA/ESQUEMA ELETRICO 03-DESENHO.pdf",
+    "projeto": "eletrica",
+    "peca": "Esquema eletrico 380V trifasico (esteira profissional)",
+    "funcao": "Diagrama de comando e forca trifasico 380V para motor principal (M1) e motor de levante (M2) com contatores e reles termicos.",
+    "material": "Nao aplicavel (esquema eletrico)",
+    "secao_ou_espessura": "Nao aplicavel",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Rede R/S/T 380V -> chave geral -> K1 -> FT1 -> M1 (3~); K2/K3 (reversao sobe/desce) -> FT2 -> M2 (3~); comando com contatos FT 95/96, selo K1 13/14, botoes B0/B1 (0/I) e B2/B3 (NA/NF) via microcontatos MC1/MC2, bobinas A1/A2",
+    "dobra_ou_curva": "Nao aplicavel",
+    "obs": "Nota: M1 = motor principal, M2 = motor levante (inclinacao). Principais componentes: K1,K2,K3 contator Siemens 3RT 1015 1NA 380V; FT1,FT2 rele de sobrecarga Siemens 3RU 1116 1,8 a 2,5A; B0,B1,B2,B3 botoes de comando pulsador 1NA+1NF ref 11/01 Cutler-Hammer; chave geral Kraus & Naimer CA10 LD3F. K2/K3 intertravados para inversao do motor de levante."
+  }
+]

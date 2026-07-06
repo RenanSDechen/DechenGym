@@ -1,0 +1,237 @@
+[
+  {
+    "arquivo": "ESTEIRA_2_0/ESTEIRA 2.0/4501-DESENHO.pdf",
+    "projeto": "esteira_2_0",
+    "peca": "Chassi (des. 4501) - Esteira Caseira",
+    "funcao": "Estrutura principal soldada da esteira: quadro do pé, colunas curvadas do corrimão/painel e suporte do painel.",
+    "material": "ABNT-1010 (tubos e perfis); suporte painel e detalhes em chapa 2 mm e 5 mm",
+    "secao_ou_espessura": "Tubos parede 1,5 mm (30x50, 40x40, 25x25, Ø25,4); chapas 2 mm (det.1/3, suporte painel) e 5 mm (det.2); cantoneira 20x15; ferro chato 5x1 1/4\"",
+    "dimensoes_principais_mm": {
+      "chassi": "Pé (base): 1350 x 500; largura frontal 605 (vão interno 525); longarinas 30x50x1,5x1350; travessas 40x40",
+      "corrimaos": "Coluna curvada Ø25,4x1,5x320 desenvolvido, altura montante ~1100, inclinação 10°, curva R80, topo 190/200 com tubo 50x30",
+      "deck": "Vãos internos 718 e 960 entre travessas; cantoneiras 20x15x960 de apoio",
+      "suporte_painel": "Chapa 2 mm, 535 x 200, cantos 30x45°"
+    },
+    "furos_e_interfaces": "Furos Ø8,5 / Ø11 / Ø11,5 / Ø13,5 / Ø18,5 / Ø26 / Ø5 / Ø10; rebite 3/8\"; rosca 3/8\" no detalhe 2 (ferro chato 1 1/4\"); rasgo 25x500 na cantoneira",
+    "dobra_ou_curva": "1ª operação: curvar tubo Ø25,4 em R80; detalhe 1 dobrado a 60°; corte a 10° nos tubos 30x50",
+    "obs": "BOM 8 itens: tubo redondo Ø25,4x1,5x320 (2), tubo quad. 40x40x1,5x400 (2), quad. 25x25x1,5x498 (2), quad. 40x40x1,5x525 (1), ret. 30x50x1,5x1100 (2, corte 10°), ret. 30x50x1,5x1350 (2), ferro chato 5x1 1/4\"x60 (2), cantoneira 20x15x960 (2) - todos ABNT-1010. Folha A3."
+  },
+  {
+    "arquivo": "ESTEIRA_2_0/ESTEIRA 2.0/4502-DESENHO.pdf",
+    "projeto": "esteira_2_0",
+    "peca": "Bucha pino trava (des. 4502)",
+    "funcao": "Bucha plástica guia do pino trava do sistema de dobra/trava da esteira.",
+    "material": "PVC",
+    "secao_ou_espessura": "Peça torneada maciça com furo passante",
+    "dimensoes_principais_mm": {
+      "bucha": "Ø10,8±0,2 externo do corpo, furo Ø8,2 +0,3/-0, comprimento 43 (corpo 38), colar Ø13±0,5"
+    },
+    "furos_e_interfaces": "Furo passante Ø8,2 +0,3/-0 para o pino trava; encaixa em furo Ø10,8 do chassi",
+    "dobra_ou_curva": "Nenhuma; chanfro nos cantos 0,5x45°",
+    "obs": "2 peças. Escala 1:1, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_0/ESTEIRA 2.0/4503-DESENHO.pdf",
+    "projeto": "esteira_2_0",
+    "peca": "Bucha nylon / pino (des. 4503)",
+    "funcao": "Bucha de deslizamento em nylon para articulação (pino) da estrutura.",
+    "material": "NYLON",
+    "secao_ou_espessura": "Bucha torneada com flange",
+    "dimensoes_principais_mm": {
+      "bucha": "Ø28±0,5 flange x 5 de espessura; corpo Ø25±0,2, furo Ø18 +0,3/-0,2, comprimento total 45"
+    },
+    "furos_e_interfaces": "Furo interno Ø18 +0,3/-0,2 (eixo de articulação); corpo Ø25 entra no tubo do chassi",
+    "dobra_ou_curva": "Nenhuma",
+    "obs": "1 peça. Escala 1:1, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_0/ESTEIRA 2.0/4504-DESENHO.pdf",
+    "projeto": "esteira_2_0",
+    "peca": "Roldana (des. 4504)",
+    "funcao": "Roldana de apoio/transporte usinada com canal em V a 10° nas faces.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Peça torneada maciça, larguras 23 (total) / 21 e cubo 10",
+    "dimensoes_principais_mm": {
+      "roldana": "Ø42 externo, Ø30 fundo do canal, furos Ø14 e Ø6,5, larguras 23/21, faces do canal a 10°"
+    },
+    "furos_e_interfaces": "Furo central escalonado Ø14 / Ø6,5 para eixo/parafuso",
+    "dobra_ou_curva": "Nenhuma",
+    "obs": "1 peça. Escala 1:1, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_0/ESTEIRA 2.0/4505-DESENHO.pdf",
+    "projeto": "esteira_2_0",
+    "peca": "Cilindro e eixo de retorno (des. 4505, título CHASSI)",
+    "funcao": "Rolo traseiro (retorno) da lona e seu eixo.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Cilindro tubular usinado Ø41 externo, sedes internas Ø35 +0,025/-0 x 25 nas pontas; eixo maciço Ø15",
+    "dimensoes_principais_mm": {
+      "rolos": "Cilindro retorno: Ø41 x 385 de comprimento, conicidade 0,5°, sedes 25 em cada ponta, faixa central 180; eixo retorno: Ø15 x 440 (ressaltos a 27,5 de cada lado, corpo 385)"
+    },
+    "furos_e_interfaces": "Eixo com furo/rosca 5/16\" a 8 da ponta (chanfro 30°) e rebaixos de 2 mm nas extremidades; sedes Ø35 para buchas/rolamentos",
+    "dobra_ou_curva": "Nenhuma; leve conicidade 0,5° no cilindro (coroamento)",
+    "obs": "1 peça de cada. Escalas 1:2.5 e 1:5, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_0/ESTEIRA 2.0/4506-DESENHO.pdf",
+    "projeto": "esteira_2_0",
+    "peca": "Cilindro motor e eixo (des. 4506)",
+    "funcao": "Rolo dianteiro tracionado pelo motor e seu eixo.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo Ø1 1/2\" sch 80 x 412 (BOM); usinado Ø46/Ø48 com ponta Ø42 -0,01/-0,025",
+    "dimensoes_principais_mm": {
+      "rolos": "Cilindro motor: comprimento 400, Ø46 na ponta, Ø48 no centro (coroamento), trechos 70 + 269, ponta usinada Ø42 x 25 (detalhe 12); eixo: Ø20 x 440 0/-2",
+      "motor": "Ponta Ø42 recebe polia/acoplamento do acionamento"
+    },
+    "furos_e_interfaces": "Ponta Ø42 -0,01/-0,025 para montagem da polia; extremidade oposta 30/33 usinada",
+    "dobra_ou_curva": "Nenhuma; perfil abaulado (coroamento) Ø46-Ø48",
+    "obs": "BOM: 1x tubo Ø1 1/2\" sch 80x412, ABNT-1010. Escala 1:2.5, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_0/ESTEIRA 2.0/4507-DESENHO.pdf",
+    "projeto": "esteira_2_0",
+    "peca": "Polia 1 A 90 (des. 4507)",
+    "funcao": "Polia movida (canal V) raiada que aciona o cilindro motor pela correia.",
+    "material": "Não indicado no desenho",
+    "secao_ou_espessura": "Largura total 20 (canal 13), cubo 30 de largura, aro R70 com raios",
+    "dimensoes_principais_mm": {
+      "motor": "Polia Ø190 externo, canal V 38°, profundidade do canal 13/17, cubo Ø60 com furo Ø46 (estriar Ø interno), detalhe corte A: Ø20/Ø16, chaveta 7x5"
+    },
+    "furos_e_interfaces": "Furo do cubo Ø46 a estriar; furo Ø20/Ø16 com rasgo de chaveta 7x5 (corte A)",
+    "dobra_ou_curva": "Nenhuma",
+    "obs": "BOM vazio; nota ESTRIAR Ø INTERNO. Escala 1:2.5, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_0/ESTEIRA 2.0/4508-DESENHO.pdf",
+    "projeto": "esteira_2_0",
+    "peca": "Eixo - tubo, bucha e pino (des. 4508)",
+    "funcao": "Conjunto de articulação: tubos espaçadores, bucha e pino em L para o sistema de dobra/trava.",
+    "material": "Não indicado no desenho (tubo DIN 2440 3/8\")",
+    "secao_ou_espessura": "Tubo Ø17,2 ext (DIN 2440 3/8\") x Ø13,5 int; bucha Ø13 com corpo Ø6; pino Ø5/16\"",
+    "dimensoes_principais_mm": {
+      "sistema_levante": "Tubo: Ø17,2 x 80 +0,5/-0 (furo a 20); bucha: Ø13 x 20 0/-2, corpo Ø6, furo Ø3 +0,5/-0; pino em L: Ø5/16\", braço 95, perna 35, furo Ø3,2 a 5 da ponta"
+    },
+    "furos_e_interfaces": "Furo Ø3,2 no pino para contrapino; bucha com furo Ø3; tubo com furo transversal a 20 da ponta",
+    "dobra_ou_curva": "Pino dobrado em L (95 x 35)",
+    "obs": "Tubo 2 peças, bucha 1, pino 1. Escala 1:1, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_5/ESTEIRA 2.5/3401-DESENHO.pdf",
+    "projeto": "esteira_2_5",
+    "peca": "Pé apoio e suporte painel (título CHASSI, folha numerada 3401C)",
+    "funcao": "Pé de apoio tubular traseiro e chapa do suporte do painel do chassi.",
+    "material": "Não indicado na tabela (chassi geral em ABNT-1010)",
+    "secao_ou_espessura": "Pé apoio: tubo Ø60 parede 1,5; travessa 20x50; suporte painel em chapa (espessura não indicada)",
+    "dimensoes_principais_mm": {
+      "chassi": "Pé apoio: comprimento 620 (entre pinos 515), tubo Ø60x1,5, montantes 155 com rasgo 20x50 a 15; suporte painel: 710 x 235, topo 405, laterais a 17°"
+    },
+    "furos_e_interfaces": "Pinos/espigas Ø10 verticais para encaixe no chassi; chanfro 10x45° no rasgo",
+    "dobra_ou_curva": "Suporte painel com laterais chanfradas a 17° (trapézio)",
+    "obs": "Arquivo 3401-DESENHO.pdf traz a folha 3401C; título do projeto na legenda é ESTEIRA 1.8. Escala 1:10, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_5/ESTEIRA 2.5/3401A-DESENHO.pdf",
+    "projeto": "esteira_2_5",
+    "peca": "Chassi - vista lateral e frontal (des. 3401A)",
+    "funcao": "Define a geometria das colunas oblongas, base e cabeçote do painel do chassi.",
+    "material": "ABNT-1010 (conforme BOM da folha 3401D)",
+    "secao_ou_espessura": "Colunas em tubo oblongo 40x115x1,9; base tubo quadrado 50; suporte rodinha 50x50",
+    "dimensoes_principais_mm": {
+      "chassi": "Coluna oblonga 1145 de comprimento inclinada 10°; base 500 (trecho frontal 100); largura frontal 710 / vão 700; cabeçote 430 no topo (furos a 120 e 135)",
+      "corrimaos": "Pega superior em tubo Ø38 com 200 de comprimento por lado",
+      "sistema_levante": "Furos Ø26 na coluna a 200/30 da base e no topo para eixos de articulação; rasgo oblongo na coluna"
+    },
+    "furos_e_interfaces": "Furos Ø26 (articulações), Ø18,5, Ø10; rodinha suporte 50x50 na traseira da base; painel 3.4 fixado no cabeçote",
+    "dobra_ou_curva": "Corte das colunas a 10°; topo do cabeçote a 50°/ângulo A",
+    "obs": "Título ESTEIRA 1.8 na legenda. Escala 1:10, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_5/ESTEIRA 2.5/3401B-DESENHO.pdf",
+    "projeto": "esteira_2_5",
+    "peca": "Chassi - base/planta (des. 3401B)",
+    "funcao": "Define a base inferior do chassi em planta e vista lateral com posições de furos e travessas.",
+    "material": "ABNT-1010 (conforme BOM da folha 3401D)",
+    "secao_ou_espessura": "Longarinas tubo quadrado 50x50x1,5; travessas 25x25x1,5; alça/gancho R15 em barra 30",
+    "dimensoes_principais_mm": {
+      "chassi": "Base 1550 x 620 (vão interno 618); travessas 25x620 e 25x520; traseira com rebaixo 210/160/95, alturas 68/86; frente 400 com pé a 125",
+      "deck": "Travessas 25x620 (a 310 da frente) e 25x520 apoiam o deck"
+    },
+    "furos_e_interfaces": "Furos Ø18,5 nos 4 cantos (pés/rodinhas), Ø10 diversos, furo Ø11 traseiro a 17,5, porca 3/8\" soldada, suporte 25x25 e gancho R15x30",
+    "dobra_ou_curva": "Gancho em U dobrado R15 (30x30); ponta traseira cortada a 40°",
+    "obs": "Título ESTEIRA 1.8. Escala 1:10, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_5/ESTEIRA 2.5/3401D-DESENHO.pdf",
+    "projeto": "esteira_2_5",
+    "peca": "Chassi - isométrica e lista de materiais (des. 3401D)",
+    "funcao": "Vista isométrica do chassi soldado completo com BOM de 18 itens.",
+    "material": "ABNT-1010 (todos os itens)",
+    "secao_ou_espessura": "Tubos quadrados 50x50x1,5 e 25x25x1,5; oblongos 40x115x1,9; retangulares 30x50x1,5 e 20x50x1,5; redondos Ø60x1,5 e Ø38x1,5; ferro chato 5x38",
+    "dimensoes_principais_mm": {
+      "chassi": "Longarinas 50x50x1,5x1550 (2), 50x50x1,5x700 (1), 50x50x1,5x500 (2), 50x50x1,5x400 (2); colunas oblongas 40x115x1,9x1150 (2, corte 10°); cabeçote oblongo 40x115x1,9x430 (2) e 710 (1)",
+      "corrimaos": "Tubo redondo Ø38x1,5x200 (2)",
+      "deck": "Travessas 25x25x1,5x620 e x520 (1 cada), 25x25x1,5x40 e x70 (2 cada)"
+    },
+    "furos_e_interfaces": "Suporte painel conforme desenho TRG03401C; suporte rodinha (2); ferro chato 5x38x50 (2)",
+    "dobra_ou_curva": "Corte a 10° nas colunas oblongas (item 3)",
+    "obs": "BOM 18 itens, todos ABNT-1010; inclui tubo redondo Ø60x1,5x620 (1, pé apoio) e tubo ret. 20x50x1,5x360 (1). Título ESTEIRA 1.8. Folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_5/ESTEIRA 2.5/3402-DESENHO.pdf",
+    "projeto": "esteira_2_5",
+    "peca": "Eixo e cilindro (des. 3402)",
+    "funcao": "Rolos dianteiro e traseiro da lona (tubos sch 80) com seus eixos trefilados.",
+    "material": "Não indicado na tabela (tubos 1 1/2\" sch 80; eixos trefilados)",
+    "secao_ou_espessura": "Tubos Ø48 externo (1 1/2\" sch 80), sedes internas Ø42 +0,02/-0 x 12; eixos trefilados Ø20",
+    "dimensoes_principais_mm": {
+      "rolos": "Rolo motor: tubo sch 80 x 485 (Ø48, ponta Ø47 +0,02/-0,02 x 39); rolo retorno: tubo sch 80 x 443 (Ø48); eixo Ø20x590 (corpo 481, ponta 35, furo Ø7 a 30) e eixo Ø20x515 (corpo 440,5, rosca 5/16\" na ponta, 37,2 no outro lado)"
+    },
+    "furos_e_interfaces": "Sedes Ø42 +0,02/-0 nas pontas dos tubos (rolamentos/buchas); eixo 590 com furo Ø7; eixo 515 com rosca 5/16\" a 10 da ponta",
+    "dobra_ou_curva": "Nenhuma",
+    "obs": "1 peça de cada (4 peças na folha). Título ESTEIRA 1.8. Escala 1:5, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_5/ESTEIRA 2.5/3403-DESENHO.pdf",
+    "projeto": "esteira_2_5",
+    "peca": "Polia e pino (des. 3403)",
+    "funcao": "Polia multicanal (poly-V, 8 canais) do rolo motor e pino tubular.",
+    "material": "Não indicado na tabela (pino em tubo 1/2\" DIN 2440)",
+    "secao_ou_espessura": "Polia largura 34 (pista 20); pino tubo 1/2\" DIN 2440 x 140",
+    "dimensoes_principais_mm": {
+      "motor": "Polia Ø125 externo, cubo Ø80±0,5, furo Ø47 0/-0,03 (encaixa na ponta Ø47 do rolo motor), 8 canais V 60° passo 2,34",
+      "sistema_levante": "Pino: tubo 1/2\" DIN 2440 x 140"
+    },
+    "furos_e_interfaces": "Furo Ø47 0/-0,03 com rebaixos laterais 20±0,25; canais poly-V 60°/2,34",
+    "dobra_ou_curva": "Nenhuma",
+    "obs": "Notas: LADO 1 PROG.=124, LADO 2 PROG.=125 (programas CNC). Título ESTEIRA 1.8. Escala 1:2, folha A4."
+  },
+  {
+    "arquivo": "ESTEIRA_2_5/ESTEIRA 2.5/3404-DESENHO.pdf",
+    "projeto": "esteira_2_5",
+    "peca": "Montagem geral (des. 3404)",
+    "funcao": "Vista explodida e isométrica da esteira completa: chassi, deck, lona, rolos, motor com polia e painel.",
+    "material": "Não indicado (desenho de montagem, sem BOM preenchida)",
+    "secao_ou_espessura": "Não aplicável",
+    "dimensoes_principais_mm": {
+      "chassi": "Sem cotas nesta folha (ver 3401A/B/D)",
+      "motor": "Detalhe ampliado mostra motor elétrico montado na frente da base acionando o rolo por correia poly-V"
+    },
+    "furos_e_interfaces": "Mostra sequência de montagem: base + colunas, deck sobre travessas, rolos com lona, roldana/tensor, painel com pegas no topo",
+    "dobra_ou_curva": "Não aplicável",
+    "obs": "Folha A2 (594x420); BOM vazia. Título ESTEIRA 1.8."
+  },
+  {
+    "arquivo": "ESTEIRA_2_5/ESTEIRA 2.5/3405-DESENHO.pdf",
+    "projeto": "esteira_2_5",
+    "peca": "Volante de inércia (des. 3405)",
+    "funcao": "Volante acoplado ao eixo do motor para uniformizar a rotação, com pista poly-V de 9 canais no cubo.",
+    "material": "Não indicado na tabela",
+    "secao_ou_espessura": "Disco de 20 de espessura, cubo total 50 de largura",
+    "dimensoes_principais_mm": {
+      "motor": "Volante Ø160 x 20; cubo Ø32±0,25 x 50, furo Ø15,8 +0,05/-0 (eixo do motor); 9 canais V 60° passo 2,34 no cubo; raio R3, chanfro 2x45°"
+    },
+    "furos_e_interfaces": "Furo Ø15,8 +0,05/-0 para eixo do motor; pista poly-V 9 canais aciona a correia",
+    "dobra_ou_curva": "Nenhuma",
+    "obs": "1 peça. Título ESTEIRA 1.8. Escala 1:1, folha A4."
+  }
+]
