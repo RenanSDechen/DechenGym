@@ -1,0 +1,439 @@
+[
+  {
+    "pagina": 1,
+    "projeto": "squat_cage",
+    "peca": "Capa - Squat Cage",
+    "funcao": "Capa do dossie; render do conjunto e notas gerais",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "n/a",
+    "obs": "Projeto craftsmanspace.com; cotas em mm com polegadas entre parenteses; montagem por solda com gabaritos/grampos"
+  },
+  {
+    "pagina": 2,
+    "projeto": "squat_cage",
+    "peca": "Subassembly list (BOM de subconjuntos)",
+    "funcao": "Lista de subconjuntos do produto",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Item 1 Stand x2; Item 2 Crossbar x3; Item 3 Weigh Set x1. Detalhe A: crossbar aparafusada ao stand (parafusos passantes)",
+    "obs": "Arquitetura: 2 stands (quadros laterais em A) ligados por 3 crossbars aparafusadas + conjunto de anilhas/barras"
+  },
+  {
+    "pagina": 3,
+    "projeto": "squat_cage",
+    "peca": "Assembly drawing (conjunto geral)",
+    "funcao": "Vistas gerais cotadas do conjunto montado",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {
+      "vao_interno_entre_stands": 1060,
+      "largura_total": 1800,
+      "altura_total": 1649.5,
+      "profundidade_total_base": 1688.5
+    },
+    "furos_e_interfaces": "Crossbars horizontais ligam os dois stands; barras com anilhas apoiam nos suportes (weigh holders) das colunas inclinadas",
+    "obs": "Equivalentes em polegadas: 41.73 / 70.87 / 64.94 / 66.47 in"
+  },
+  {
+    "pagina": 4,
+    "projeto": "squat_cage",
+    "peca": "1. Stand - vista explodida + parts list",
+    "funcao": "Quadro lateral em A (coluna frontal inclinada + montante traseiro + pes)",
+    "material": "Aco",
+    "secao_ou_espessura": "Tubo retangular 60x40x4; tubo redondo D25,4x3,2; chapas 4-5",
+    "dimensoes_principais_mm": {
+      "corte_item_1": 588.45,
+      "corte_item_2": 1138.45,
+      "corte_item_3": 1186.14,
+      "corte_item_4": 1287.55,
+      "corte_item_8_tubo_redondo": 340.0
+    },
+    "furos_e_interfaces": "9 itens: 4 tubos retangulares 60x40x4 (1.01-1.04), Cover 60x40 x2 (1.05), Bottom Sheet x2 (1.06), Weigh Holder x7 (1.07), tubo redondo D25,4x3,2 x2 (1.08), Cover D25,4 x4 (1.09)",
+    "obs": "Sao 2 stands identicos por gaiola. Cut length do item 8: 340,00 mm na tabela desta pagina (p.6 indica 350,00 mm - divergencia no dossie)"
+  },
+  {
+    "pagina": 5,
+    "projeto": "squat_cage",
+    "peca": "1. Stand - desenho 2D soldado",
+    "funcao": "Geometria e furacao do quadro lateral soldado",
+    "material": "Aco",
+    "secao_ou_espessura": "Tubo retangular 60x40x4",
+    "dimensoes_principais_mm": {
+      "altura_total": 1649.5,
+      "comprimento_base": 1688.5,
+      "passo_weigh_holders_na_coluna": 150,
+      "trecho_superior_sem_suporte": 296,
+      "largura_pes_travessa": 350,
+      "altura_travessa_horizontal": 490
+    },
+    "furos_e_interfaces": "Furos Ø10,5 Typ (Detalhe A) na coluna para fixacao das crossbars; 5 weigh holders espacados de 150 mm na coluna frontal inclinada; cotas de posicao 250, 561, 635, 115, 90, 30",
+    "obs": "Coluna inclinada com escada de suportes (berco em multiplas alturas); demais cotas 546, 839, 470/770, 203"
+  },
+  {
+    "pagina": 6,
+    "projeto": "squat_cage",
+    "peca": "1.01-1.04 e 1.08 Frame Components",
+    "funcao": "Tubos cortados do quadro (coluna, montante, base, pe) e pinos redondos",
+    "material": "Aco",
+    "secao_ou_espessura": "Tubo retangular 60x40x4; tubo redondo D25,4x3,2",
+    "dimensoes_principais_mm": {
+      "cortes_60x40x4": [588.45, 1138.45, 1186.14, 1287.55],
+      "corte_tubo_redondo": 350.0,
+      "angulo_coluna": 51,
+      "angulo_cortes_extremos": 60
+    },
+    "furos_e_interfaces": "Furos Ø10,5 Typ nos tubos para uniao aparafusada das crossbars; extremidades em meia-esquadria 60 graus",
+    "obs": "Tabela desta pagina da item 8 = 350,00 mm (p.4 dizia 340,00 mm); cotas de posicionamento 561, 635, 273, 1138/44.82, 115, 90"
+  },
+  {
+    "pagina": 7,
+    "projeto": "squat_cage",
+    "peca": "1.05 Cover 60x40 mm",
+    "funcao": "Tampa de fechamento das extremidades do tubo 60x40",
+    "material": "Aco",
+    "secao_ou_espessura": "5 mm",
+    "dimensoes_principais_mm": {
+      "largura": 60,
+      "altura": 40,
+      "espessura": 5,
+      "raio_canto": 8
+    },
+    "furos_e_interfaces": "Sem furos; soldada/encaixada no topo dos tubos; chanfro 2x45",
+    "obs": "2 por stand"
+  },
+  {
+    "pagina": 8,
+    "projeto": "squat_cage",
+    "peca": "1.06 Bottom Sheet",
+    "funcao": "Sapata/chapa de apoio no piso (base dos pes)",
+    "material": "Aco",
+    "secao_ou_espessura": "5 mm",
+    "dimensoes_principais_mm": {
+      "comprimento": 100,
+      "largura": 66,
+      "espessura": 5,
+      "raio_canto": 5
+    },
+    "furos_e_interfaces": "Sem furos; soldada na extremidade inferior dos pes; raio de borda R1",
+    "obs": "2 por stand"
+  },
+  {
+    "pagina": 9,
+    "projeto": "squat_cage",
+    "peca": "1.07 Weigh Holder (berco/gancho da barra)",
+    "funcao": "Suporte em L dobrado que recebe a barra em varias alturas (berco tipo J simplificado)",
+    "material": "Aco (chapa dobrada)",
+    "secao_ou_espessura": "Chapa 4 mm",
+    "dimensoes_principais_mm": {
+      "aba_horizontal": 46.5,
+      "aba_inclinada": 50,
+      "largura": 44,
+      "raio_dobra": 8,
+      "espessura": 4
+    },
+    "furos_e_interfaces": "Sem furos; soldado na face da coluna inclinada com passo de 150 mm (5 por coluna + extras)",
+    "obs": "7 por stand (tabela p.4); chanfros 0,5x45 nas bordas, R5 nos cantos"
+  },
+  {
+    "pagina": 10,
+    "projeto": "squat_cage",
+    "peca": "1.09 Cover D25,4",
+    "funcao": "Tampa circular de fechamento dos pinos de tubo redondo",
+    "material": "Aco",
+    "secao_ou_espessura": "5 mm",
+    "dimensoes_principais_mm": {
+      "diametro": 25.4,
+      "espessura": 5
+    },
+    "furos_e_interfaces": "Sem furos; encaixa/solda nas pontas do tubo D25,4; chanfro 2x45, R1",
+    "obs": "4 por stand"
+  },
+  {
+    "pagina": 11,
+    "projeto": "squat_cage",
+    "peca": "2. Crossbar - vista explodida + parts list",
+    "funcao": "Barra fixa horizontal que trava/liga os dois stands (3 por gaiola)",
+    "material": "Aco",
+    "secao_ou_espessura": "Tubo retangular 60x40x4; chapa 5",
+    "dimensoes_principais_mm": {
+      "corte_tubo": 1050.0
+    },
+    "furos_e_interfaces": "Itens: 1 tubo 60x40x4 (1050 mm), 2 chapas de extremidade 120x40 (2.02), 4 arruelas de pressao A-10, 4 porcas M10, 4 parafusos sextavados M10x80. Detalhe A: chapa soldada na ponta com 2 parafusos M10 atravessando a coluna do stand",
+    "obs": "Uniao parafusada = gaiola desmontavel; funciona tambem como barra de apoio/trava entre stands"
+  },
+  {
+    "pagina": 12,
+    "projeto": "squat_cage",
+    "peca": "2. Crossbar - desenho 2D montado",
+    "funcao": "Cotas do subconjunto crossbar soldado com placas de ponta",
+    "material": "Aco",
+    "secao_ou_espessura": "Tubo 60x40x4; chapa 5",
+    "dimensoes_principais_mm": {
+      "comprimento_tubo": 1050,
+      "comprimento_parafuso_saliente": 60,
+      "placa_ponta": [120, 39],
+      "secao_tubo": [60, 40]
+    },
+    "furos_e_interfaces": "Placas 120x40 esp.5 soldadas nas duas pontas; parafusos M10x80 pre-montados atravessando as placas (2 por ponta), passo vertical dos furos compativel com furos O10,5 da coluna",
+    "obs": "Vista frontal da placa mostra largura 39 mm e altura 120 mm"
+  },
+  {
+    "pagina": 13,
+    "projeto": "squat_cage",
+    "peca": "2.01 Rectangular Tubing 60x40x4 (crossbar)",
+    "funcao": "Corpo da crossbar",
+    "material": "Aco",
+    "secao_ou_espessura": "60x40x4",
+    "dimensoes_principais_mm": {
+      "comprimento": 1050,
+      "secao": [60, 40],
+      "parede": 4
+    },
+    "furos_e_interfaces": "Sem furos; pontas retas recebem as chapas 2.02 soldadas",
+    "obs": "1 por crossbar, 3 crossbars por gaiola"
+  },
+  {
+    "pagina": 14,
+    "projeto": "squat_cage",
+    "peca": "2.02 Sheet 120x40 mm (placa de fixacao)",
+    "funcao": "Placa de extremidade da crossbar; interface aparafusada com a coluna do stand",
+    "material": "Aco",
+    "secao_ou_espessura": "5 mm",
+    "dimensoes_principais_mm": {
+      "comprimento": 120,
+      "largura": 40,
+      "espessura": 5,
+      "furos_diametro": 10.5,
+      "furo_ao_bordo": 15
+    },
+    "furos_e_interfaces": "2 furos O10,5, centros a 15 mm das bordas (entre-centros 90 mm); recebe parafusos M10x80; R5 nos cantos, chanfro 1x45",
+    "obs": "2 por crossbar"
+  },
+  {
+    "pagina": 15,
+    "projeto": "squat_cage",
+    "peca": "2.03/2.04/2.05 Standard Parts",
+    "funcao": "Fixadores da uniao crossbar-stand",
+    "material": "Aco",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Parafuso sextavado M10x80 (2.05), porca M10 (2.04), arruela de pressao A-10 (2.03); 4 conjuntos por crossbar",
+    "obs": "Pecas comerciais padrao"
+  },
+  {
+    "pagina": 16,
+    "projeto": "squat_cage",
+    "peca": "3. Weigh Set - vista explodida + parts list",
+    "funcao": "Conjunto de barras e anilhas de treino guardadas na gaiola",
+    "material": "Aco",
+    "secao_ou_espessura": "Tubo redondo D31,8x6,3 (barra)",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Itens: 2 barras (tubo D31,8x6,3), 4 delimiters, 4 dumbbell nuts (porcas TR32x3), anilhas: 6x7kg, 6x5kg, 6x9kg, 6x3kg, 6x1,5kg",
+    "obs": "Anilhas empilhadas por tamanho nas barras; fixadas por porca roscada TR32x3"
+  },
+  {
+    "pagina": 17,
+    "projeto": "squat_cage",
+    "peca": "Weigh Set - barra montada 2D",
+    "funcao": "Cotas da barra completa com anilhas",
+    "material": "Aco",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {
+      "comprimento_barra": 1800,
+      "vao_livre_entre_anilhas": 1400,
+      "diametro_maior_pilha": 248,
+      "larguras_pilha": [50, 80, 110, 140, 170]
+    },
+    "furos_e_interfaces": "Anilhas encaixam na barra e sao travadas pelo dumbbell nut roscado",
+    "obs": "Secao A-A mostra empilhamento decrescente das anilhas"
+  },
+  {
+    "pagina": 18,
+    "projeto": "squat_cage",
+    "peca": "3.01 Round Tubing D31,8x6,3 (barra)",
+    "funcao": "Barra de pesos (barbell) do conjunto",
+    "material": "Aco",
+    "secao_ou_espessura": "Tubo redondo D31,8 parede 6,3",
+    "dimensoes_principais_mm": {
+      "comprimento": 1800,
+      "diametro": 31.8,
+      "rosca_nas_pontas": 200
+    },
+    "furos_e_interfaces": "Rosca trapezoidal TR32x3 em 200 mm de cada extremidade para os dumbbell nuts",
+    "obs": "2 unidades"
+  },
+  {
+    "pagina": 19,
+    "projeto": "squat_cage",
+    "peca": "3.02 Delimiter",
+    "funcao": "Anel batente que delimita a posicao das anilhas na barra",
+    "material": "Aco",
+    "secao_ou_espessura": "10 mm",
+    "dimensoes_principais_mm": {
+      "diametro_externo": 70,
+      "diametro_interno": 32,
+      "espessura": 10
+    },
+    "furos_e_interfaces": "Furo central O32 desliza na barra D31,8; R2 nas bordas",
+    "obs": "4 unidades"
+  },
+  {
+    "pagina": 20,
+    "projeto": "squat_cage",
+    "peca": "3.03 Dumbbell 7kg",
+    "funcao": "Anilha de 7 kg",
+    "material": "Aco",
+    "secao_ou_espessura": "Largura 30",
+    "dimensoes_principais_mm": {
+      "diametro_externo": 225,
+      "furo_central": 32.5,
+      "largura": 30,
+      "alma": 10,
+      "cubo_diametros": [70, 150]
+    },
+    "furos_e_interfaces": "Furo O32,5 para a barra; perfil rebaixado com R5 Typ",
+    "obs": "6 unidades"
+  },
+  {
+    "pagina": 21,
+    "projeto": "squat_cage",
+    "peca": "3.04 Dumbbell 5kg",
+    "funcao": "Anilha de 5 kg",
+    "material": "Aco",
+    "secao_ou_espessura": "Largura 30",
+    "dimensoes_principais_mm": {
+      "diametro_externo": 200,
+      "furo_central": 32.5,
+      "largura": 30
+    },
+    "furos_e_interfaces": "Furo O32,5; mesmo perfil das demais anilhas (alma 10, cubo O70/O150, R5)",
+    "obs": "6 unidades"
+  },
+  {
+    "pagina": 22,
+    "projeto": "squat_cage",
+    "peca": "3.05 Dumbbell Nut",
+    "funcao": "Porca roscada de aperto das anilhas na barra",
+    "material": "Aco",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {
+      "flange_diametro": 60,
+      "corpo_quadrado": 40,
+      "comprimento_total": 30,
+      "flange_espessura": 5
+    },
+    "furos_e_interfaces": "Rosca interna TR32x3 (casa com a barra 3.01); corpo quadrado 40x40 R5 para aperto manual, chanfros 1x45",
+    "obs": "4 unidades"
+  },
+  {
+    "pagina": 23,
+    "projeto": "squat_cage",
+    "peca": "3.06 Dumbbell 9kg",
+    "funcao": "Anilha de 9 kg",
+    "material": "Aco",
+    "secao_ou_espessura": "Largura 30",
+    "dimensoes_principais_mm": {
+      "diametro_externo": 248,
+      "furo_central": 32.5,
+      "largura": 30
+    },
+    "furos_e_interfaces": "Furo O32,5; perfil com alma 10, cubo O70/O150, R5 Typ",
+    "obs": "6 unidades; maior anilha do conjunto"
+  },
+  {
+    "pagina": 24,
+    "projeto": "squat_cage",
+    "peca": "3.07 Dumbbell 3kg",
+    "funcao": "Anilha de 3 kg",
+    "material": "Aco",
+    "secao_ou_espessura": "Largura 30",
+    "dimensoes_principais_mm": {
+      "diametro_externo": 155,
+      "furo_central": 32.5,
+      "largura": 30,
+      "cubo_diametros": [70, 120]
+    },
+    "furos_e_interfaces": "Furo O32,5; alma 10, R5 Typ",
+    "obs": "6 unidades"
+  },
+  {
+    "pagina": 25,
+    "projeto": "squat_cage",
+    "peca": "3.08 Dumbbell 1,5kg",
+    "funcao": "Anilha de 1,5 kg",
+    "material": "Aco",
+    "secao_ou_espessura": "Largura 30",
+    "dimensoes_principais_mm": {
+      "diametro_externo": 111,
+      "furo_central": 33,
+      "largura": 30,
+      "cubo_diametros": [60, 90]
+    },
+    "furos_e_interfaces": "Furo O33; alma 10, R3 Typ",
+    "obs": "6 unidades; menor anilha"
+  },
+  {
+    "pagina": 26,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passo 1 (furacao)",
+    "funcao": "Instrucao: furar antes de soldar",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {
+      "furos_diametro": 10.5,
+      "item_1.04_posicoes": [90, 710, 90, 202.55],
+      "item_1.02_posicoes": [635, 90]
+    },
+    "furos_e_interfaces": "Furos O10,5 nos tubos 1.02 (1138,45) e 1.04 (1287,55) para as crossbars; pares de furos com passo 90 mm",
+    "obs": "Posicoes ao longo do tubo 1.04: 90 / 710 / 90 / 202,55; no 1.02: 635 depois par a 90"
+  },
+  {
+    "pagina": 27,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passos 2 a 4",
+    "funcao": "Solda de cover, weigh holders e bottom sheet",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {
+      "recuo_primeiro_weigh_holder": 30
+    },
+    "furos_e_interfaces": "Passo 2: cover 60x40 no tubo 1.02; passo 3: weigh holders soldados na face do tubo (primeiro a 30 mm do topo); passo 4: bottom sheet no tubo 1.01",
+    "obs": "Sequencia de soldagem do stand"
+  },
+  {
+    "pagina": 28,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passo 5",
+    "funcao": "Solda do tubo com weigh holders (1.02) ao pe traseiro (1.01)",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Junta soldada em angulo entre montante e pe",
+    "obs": "Somente ilustracoes de solda"
+  },
+  {
+    "pagina": 29,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passo 6",
+    "funcao": "Solda do bottom sheet ao tubo 1.04 (coluna inclinada)",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Chapa 100x66 soldada na base do tubo 1287,55 mm",
+    "obs": "Somente ilustracoes"
+  },
+  {
+    "pagina": 30,
+    "projeto": "squat_cage",
+    "peca": "Assemblage Instruction - passos 7 e 8",
+    "funcao": "Uniao dos subconjuntos e cover no tubo 1.03",
+    "material": "n/a",
+    "secao_ou_espessura": "n/a",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Passo 7: solda do subconjunto do passo 4 ao do passo anterior (no da base); passo 8: cover 60x40 soldado no tubo 1186,14 mm (1.03)",
+    "obs": "Somente ilustracoes"
+  }
+]
