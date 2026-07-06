@@ -8,7 +8,7 @@
   "secao_ou_espessura": "-",
   "dimensoes_principais_mm": [],
   "furos_e_interfaces": "-",
-  "obs": "Projeto craftsmanspace.com; cotas em mm e polegadas (entre parênteses); construção soldada. Rodapé indica 'Page x of 50' embora PDF tenha 102 páginas."
+  "obs": "Projeto craftsmanspace.com; cotas em mm e polegadas (entre parênteses); construção soldada. PDF tem 50 páginas (não 102): pág. 1-29 desenhos/BOMs, 30-50 instruções de montagem."
  },
  {
   "pagina": 2,
@@ -644,6 +644,6 @@
   "secao_ou_espessura": "-",
   "dimensoes_principais_mm": [],
   "furos_e_interfaces": "-",
-  "obs": "Fixar anilhas com Dumbbell Nut (item 5) rosca TR32x3; conjunto final barra montada. Fim do documento 'of 50'"
+  "obs": "Fixar anilhas com Dumbbell Nut (item 5) rosca TR32x3; conjunto final da barra montada. Última página do documento (50 de 50)."
  }
 ]
