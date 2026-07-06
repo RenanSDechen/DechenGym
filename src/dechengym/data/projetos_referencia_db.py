@@ -320,6 +320,76 @@ PROJETOS_REFERENCIA: dict[str, dict[str, Any]] = {
         "footprint_mm": [1000, 900],
         "altura_mm": 1500,
     },
+    "supino_vertical_220": {
+        "nome": "Supino Vertical (projeto 220)",
+        "tipo": "máquina de braço articulado com cabo e pilha de pesos",
+        "fonte": "220 (2 pranchas A2, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "base": "quadro curvado em U de tubo Ø60 (1130x1000)",
+            "colunas": "tubo oblongo 40x115x1,5, comprimento total 2200",
+            "braco": "dobras de 15°, segmentos 550/900, gancho na ponta",
+            "transmissao": "cabo de aço com roldanas protegidas + pilha de "
+                           "pesos com hastes-guia e esticador",
+        },
+        "articulacao": {
+            "bucha": "Ø48 ext / Ø40 +0,05 int x200, rebaixos 12/12",
+            "eixo": "Ø20x200 rosca 3/8\"",
+        },
+        "footprint_mm": [1130, 1000],
+        "altura_mm": 2200,
+    },
+    "kit_body_pump_221": {
+        "nome": "Suporte Kit Body Pump (projeto 221)",
+        "tipo": "rack de piso, 12 pinos",
+        "fonte": "221 (1 prancha com BOM, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "quadro": "40x40x1,5 integral (1800x720), cortes a 45°",
+            "pinos": "14x 40x40x350 inclinados 45° com batentes recortados",
+        },
+        "footprint_mm": [1800, 800],
+        "altura_mm": 750,
+    },
+    "banco_desenvolvimento_222": {
+        "nome": "Banco p/ Desenvolvimento (projeto 222)",
+        "tipo": "banco com encosto alto",
+        "fonte": "222 (1 prancha A2, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "encosto": "quadro 730x500 a ~10° com dobra R150",
+            "base": "tubo oblongo 40x115, planta 1250 (920+2x115)",
+            "estofado": "longarinas 750 com furos Ø10 a cada 150 (a 5°) + "
+                        "8 chapinhas 80x38",
+        },
+        "footprint_mm": [1250, 1100],
+        "altura_mm": 1200,
+    },
+    "abdominal_vertical_059": {
+        "nome": "Abdominal Vertical (projeto 059)",
+        "tipo": "torre de peso corporal",
+        "fonte": "059 (2 pranchas A2 com BOM de 13 itens, ABNT-1010)",
+        "arquitetura": {
+            "torre": "colunas Ø50x1,5 (1400/1550) sobre bases oblongas "
+                     "40x115 curvadas (curva ~300 de altura)",
+            "apoios": "antebraços estofados a 410 entre si, encosto chapa "
+                      "3x280x400, pegas Ø25,4",
+        },
+        "footprint_mm": [870, 1018],
+        "altura_mm": 1450,
+    },
+    "academy_house_078": {
+        "nome": "Academy House — estação doméstica (projeto 078)",
+        "tipo": "multiestação compacta",
+        "fonte": "078 (2 pranchas A2 com BOMs de 24+14 itens, ABNT-1010)",
+        "arquitetura": {
+            "torre": "40x40x1,5 x1160, montante inclinado 1475, largura 700",
+            "regulagem": "longarina dentada TQ40x900 com 12 suportes 5x25 "
+                         "(cremalheira) + reguladores com olhal Ø20",
+            "movimentos": "carro móvel 370x410 (eixo Ø25,4), suporte de "
+                          "roldana 985 a 45°, puxadores com mosquetão",
+            "articulacao": "bucha aço Ø37x42, furo Ø30 +0,05/−0",
+        },
+        "footprint_mm": [1422, 700],
+        "altura_mm": 1475,
+    },
     "arco_210": {
         "nome": "Arco / apoio abdominal (projeto 210)",
         "tipo": "banco em arco",

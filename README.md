@@ -317,11 +317,13 @@ Artefatos ficam em `output/webapp/<exercicio>/`.
 
 ## Projetos de referência (nível projetista)
 
-O gerador é calibrado por **19 projetos reais de fabricação** fornecidos pelo
+O gerador é calibrado por **24 projetos reais de fabricação** fornecidos pelo
 cliente (pranchas A2/A4: 201-Abdutor, 202-Estação, 203-Agachamento 60°,
 204-Peck Deck, 205/206/207-suportes, 208-Leg Press 45°, 209-Hack 45°,
-210-Arco, 211–215-bancos, 216–219-suportes de anilhas/halteres/barras, mais
-a biblioteca 01-PADROES com ~40 componentes de fábrica). Deles vêm os padrões que o plano de
+210-Arco, 211–215-bancos, 216–219-suportes de anilhas/halteres/barras,
+220-Supino Vertical, 221-Kit Body Pump, 222-Banco de Desenvolvimento,
+059-Abdominal Vertical, 078-Academy House, mais a biblioteca 01-PADROES
+com ~40 componentes de fábrica). Deles vêm os padrões que o plano de
 fabricação e o modelo 3D reproduzem:
 
 - **articulação usinada**: bucha Ø42 +0,05/−0,02, flange mancal aparafusada,
