@@ -203,6 +203,64 @@ PROJETOS_REFERENCIA: dict[str, dict[str, Any]] = {
         "footprint_mm": [550, 400],
         "altura_mm": 860,
     },
+    "banco_reto_211": {
+        "nome": "Banco Reto (projeto 211)",
+        "tipo": "banco fixo",
+        "fonte": "211 (1 prancha com BOM, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "estrutura": "longarina 50x50x1,5 x1100, pernas 250, "
+                         "pés Ø60,3x1,5 x400",
+            "estofado": "5 travessas de ferro chato 1/4\"x1 1/4\"x250 com "
+                        "furos Ø6 (estofado aparafusado, nunca colado)",
+        },
+        "footprint_mm": [1100, 400],
+        "altura_mm": 430,
+    },
+    "banco_dorsal_212": {
+        "nome": "Banco Dorsal 90° (projeto 212)",
+        "tipo": "banco fixo de extensão lombar",
+        "fonte": "212 (1 prancha com BOM, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "estrutura": "montantes 50x50 (850/800/750), base em tubo "
+                         "oblongo 40x115x1,5 x1060, largura 600",
+            "apoio_quadril": "355 mm inclinado 10° (cortes em "
+                             "meia-esquadria de 10°)",
+            "trava_pes": "2 tubos Ø25,4x250 em balanço a 450 do solo",
+        },
+        "footprint_mm": [1060, 600],
+        "altura_mm": 850,
+    },
+    "supino_inclinado_213": {
+        "nome": "Supino Inclinado 35° (projeto 213)",
+        "tipo": "banco com berços de barra regulável",
+        "fonte": "213 (1 prancha A2 com BOM, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "encosto": "trilho 50x50x1500 a 35°; assento 200 a 5°",
+            "montantes": "2x 50x50x1650 com berços de barra reguláveis",
+            "colunas_frontais": "Ø38x1,5 dobradas a 45° (vertical 500)",
+            "base": "tubo oblongo 40x115 (1250 frontal + espinha 835)",
+        },
+        "regulagens": ["altura do berço da barra: 3 furos Ø10 passantes "
+                       "(100 do topo + passos de 150)"],
+        "footprint_mm": [1250, 1400],
+        "altura_mm": 1385,
+    },
+    "supino_inclinado_reforcado_214": {
+        "nome": "Supino Inclinado 35° Reforçado (projeto 214)",
+        "tipo": "banco com berços de barra regulável (linha pesada)",
+        "fonte": "214 (1 prancha A2 com BOM, SAE 1020/ABNT-1010)",
+        "arquitetura": {
+            "upgrade": "mesma geometria do 213 com estrutura principal em "
+                       "tubo retangular 50x70x1,5 (montantes 1385, trilho "
+                       "1500 corte 35°, espinha 965)",
+            "licao": "linha comercial vs linha pesada = mesma geometria, "
+                     "seção maior — exatamente o loop de autocorreção "
+                     "estrutural do DechenGym",
+        },
+        "regulagens": ["altura do berço: 3 furos Ø10 (passos de 150)"],
+        "footprint_mm": [1250, 1400],
+        "altura_mm": 1385,
+    },
     "arco_210": {
         "nome": "Arco / apoio abdominal (projeto 210)",
         "tipo": "banco em arco",
