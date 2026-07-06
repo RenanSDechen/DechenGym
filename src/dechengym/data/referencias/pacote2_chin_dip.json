@@ -1,0 +1,144 @@
+[
+  {
+    "pagina": 1,
+    "projeto": "chin_dip",
+    "peca": "Capa / vista geral",
+    "funcao": "Apresentacao do projeto Chin Dip (torre chin-up + dip)",
+    "material": "aco (estrutura) + chapa/madeira (encosto)",
+    "secao_ou_espessura": null,
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": null,
+    "obs": "Projeto de craftsmanspace.com; medidas em mm e polegadas; montagem por solda + parafusos. PDF tem 30 paginas (nao 50)."
+  },
+  {
+    "pagina": 2,
+    "projeto": "chin_dip",
+    "peca": "Subassembly List (BOM geral)",
+    "funcao": "Lista de subconjuntos e vista explodida da montagem",
+    "material": "aco",
+    "secao_ou_espessura": null,
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Uniao dos 2 lados por 4 travessas horizontais parafusadas (Detail A: parafusos passantes; Detail B: chapa suporte com 2 furos + porcas)",
+    "obs": "BOM: 1-Horizontal x4; 2-Side x2; 3-Back Sheet x1; 4-Fastener system x16"
+  },
+  {
+    "pagina": 3,
+    "projeto": "chin_dip",
+    "peca": "Assembly Drawing (conjunto)",
+    "funcao": "Cotas gerais da torre montada",
+    "material": "aco + encosto",
+    "secao_ou_espessura": null,
+    "dimensoes_principais_mm": {
+      "comprimento_total": 2280,
+      "largura_total_base": 1510,
+      "largura_externa_frontal": 698,
+      "entre_lados_topo": 580,
+      "back_sheet": "550 x 350, furos 300 x 130",
+      "vao_horizontal": 1389.5
+    },
+    "furos_e_interfaces": "Detail A: fixacao das horizontais nos montantes por parafusos passantes",
+    "obs": "Vista lateral: barra chin a 2225 do chao com pegas +175/-30; braco dip a 900 do montante traseiro; pegas dip 175; barras dip descem 179; painel traseiro inclinado 200x~200"
+  },
+  {
+    "pagina": 4,
+    "projeto": "chin_dip",
+    "peca": "1. Horizontal (subconjunto) - parts list",
+    "funcao": "Travessa de ligacao entre os dois lados (4x no conjunto)",
+    "material": "aco",
+    "secao_ou_espessura": "tubo retangular 50x30x2,6",
+    "dimensoes_principais_mm": {
+      "cut_length_tubo": 578
+    },
+    "furos_e_interfaces": "2 chapas Support (item 2) soldadas nas extremidades para aparafusar nos montantes",
+    "obs": "BOM: 1-tubo ret 50x30x2,6 L=578 x1; 2-Support x2"
+  },
+  {
+    "pagina": 5,
+    "projeto": "chin_dip",
+    "peca": "1.01 Rectangular Tubing 50x30x2,6",
+    "funcao": "Corpo da travessa horizontal",
+    "material": "aco",
+    "secao_ou_espessura": "tubo retangular 50x30x2,6 mm",
+    "dimensoes_principais_mm": {
+      "comprimento": 578,
+      "secao": "50 x 30"
+    },
+    "furos_e_interfaces": "extremidades soldadas nas chapas 1.02",
+    "obs": null
+  },
+  {
+    "pagina": 6,
+    "projeto": "chin_dip",
+    "peca": "1.02 Support (chapa da travessa)",
+    "funcao": "Chapa de fixacao aparafusada da travessa ao montante",
+    "material": "aco",
+    "secao_ou_espessura": "chapa 6 mm",
+    "dimensoes_principais_mm": {
+      "comprimento": 120,
+      "largura": 50,
+      "espessura": 6,
+      "furo_ao_centro": 40
+    },
+    "furos_e_interfaces": "2 furos D10,5 espacados 80 (40 do centro cada); raio de canto R3",
+    "obs": "2 por travessa; 8 no total"
+  },
+  {
+    "pagina": 7,
+    "projeto": "chin_dip",
+    "peca": "2. Side (subconjunto) - parts list",
+    "funcao": "Quadro lateral completo: montantes, base, barra chin, braco dip",
+    "material": "aco",
+    "secao_ou_espessura": "tubo quadrado 50x50x4 + tubo redondo D31,8x3,2",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "recebe 4 travessas horizontais aparafusadas",
+    "obs": "BOM (cut lengths): 1-SQ50x50x4 L1500; 2-SQ50x50x4 L2675; 3-SQ50x50x4 L275; 4-SQ50x50x4 L500; 5-SQ50x50x4 L389,43 x2; 6-SQ50x50x4 L288,68 x2; 7-tubo red D31,8x3,2 L175; 8-Cover 50x50 x3; 9-Cover 50x50 c/ furo x2; 10-cover 31,8 x3; 11-Limiter x2; 12-tubo red D31,8x3,2 L350 x2; 13-SQ50x50x4 L279 x2"
+  },
+  {
+    "pagina": 8,
+    "projeto": "chin_dip",
+    "peca": "2. Side - FRAME (quadro soldado)",
+    "funcao": "Desenho de fabricacao do quadro lateral soldado",
+    "material": "aco",
+    "secao_ou_espessura": "tubo quadrado 50x50x4",
+    "dimensoes_principais_mm": {
+      "comprimento_total": 2225,
+      "altura_montante_frontal": 1500,
+      "base": 1200,
+      "braco_dip_do_montante": 900,
+      "pega_dip": 175,
+      "diagonais_60graus": "560 / 388,4"
+    },
+    "furos_e_interfaces": "10 furos D10,5 (fixacao das travessas: pares a 80 entre si, grupos a 270); Section A-A e Detail B: barra chin telescopica embutida 350/275 com ressalto 65/25; ponta dip desce 105",
+    "obs": "Extremos chin: +175 acima e desnivel; distancia entre furos 270 e 80"
+  },
+  {
+    "pagina": 9,
+    "projeto": "chin_dip",
+    "peca": "2.08 Cover 50x50",
+    "funcao": "Tampa de extremidade dos tubos quadrados 50x50",
+    "material": "aco",
+    "secao_ou_espessura": "5 mm",
+    "dimensoes_principais_mm": {
+      "lado": 50,
+      "espessura": 5,
+      "chanfro": "3 x 45 graus"
+    },
+    "furos_e_interfaces": "soldada/encaixada na ponta do tubo; R8 cantos, R1 borda",
+    "obs": "3 por lado"
+  },
+  {
+    "pagina": 10,
+    "projeto": "chin_dip",
+    "peca": "2.09 Cover 50x50 com furo",
+    "funcao": "Tampa 50x50 com furo de passagem do tubo redondo (pega)",
+    "material": "aco",
+    "secao_ou_espessura": "5 mm",
+    "dimensoes_principais_mm": {
+      "lado": 50,
+      "espessura": 5,
+      "furo_central": 31.8
+    },
+    "furos_e_interfaces": "furo central D31,8 para passagem/solda da pega redonda; chanfro 3x45, R8 cantos",
+    "obs": "2 por lado"
+  }
+]
