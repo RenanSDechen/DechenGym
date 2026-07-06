@@ -338,6 +338,13 @@ fabricação e o modelo 3D reproduzem:
 Os dados extraídos peça a peça estão em `docs/referencias/*.json`; a base
 estruturada em `data/projetos_referencia_db.py` e `data/padroes_db.py`.
 
+Além disso, o **pacote completo do acervo** foi extraído prancha a prancha
+para `data/referencias/*.json` — **49 projetos e 464 desenhos** indexados
+(máquinas articuladas, polias/cross over, guiadas, bancos, racks, esteiras
+e bikes com detalhes de usinagem, mais dossiês internacionais de construção
+aparafusada). Consulta via `listar_projetos_extraidos()` e
+`get_desenhos_projeto("remada")` (também expostos como tools).
+
 ## Academia Virtual (base dos equipamentos mais usados)
 
 O DechenGym inclui uma **base pesquisada dos 27 equipamentos mais usados**
