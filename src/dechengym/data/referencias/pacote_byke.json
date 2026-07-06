@@ -1,0 +1,211 @@
+[
+  {
+    "arquivo": "3301-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "CHASSI (BYKE ELITE)",
+    "funcao": "Estrutura principal da bicicleta de spinning, unindo base, coluna do selim, coluna do guidao e alojamento do eixo central.",
+    "material": "Nao indicado na legenda (tubos de aco; ver BOM detalhada na folha 3314)",
+    "secao_ou_espessura": "Tubo oblongo 40x115x1,9; tubo Ø38; tubo Ø38,10x700 (braco frontal); bucha Ø42x70",
+    "dimensoes_principais_mm": {
+      "chassi": "Base (planta) 790 de comprimento x 450 de largura; altura total 760, altura da coluna 630; angulo principal do quadro 50,5 graus; colunas do selim/guidao inclinadas 15 graus; vista frontal com cotas 275, 300, 410, 450, 60",
+      "braco_frontal": "Tubo Ø38,10x700, curvado 45 graus (encosto = 580), corte 45 graus, cotas 95, 560, 50"
+    },
+    "furos_e_interfaces": "Bucha Ø42x70 no alojamento do eixo central; furos Ø10 e Ø16 (cota 80) nos pes; furos Ø30/Ø50; suportes soldados com rasgos oblongos nas colunas",
+    "dobra_ou_curva": "Braco frontal curvado a 45 graus; pes em tubo oblongo com cortes a 37,5 graus (detalhes 1 e 2, comprimento 350); corte 45 graus",
+    "obs": "Folha A2 1:5/1:10. Detalhe 1 e 2: tubo oblongo 40x115x1,9x350 com cortes 37,5 graus e furos Ø10/Ø16. Notas do braco frontal: 1-TUBO Ø38,10x700; 2-CURVAR 45 (ENCOSTO=580); 3-CORTE 45; 4-PECA PRONTA."
+  },
+  {
+    "arquivo": "3302-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "BUCHA",
+    "funcao": "Bucha usinada do alojamento do eixo central (caixa do movimento central) soldada ao chassi.",
+    "material": "Nao indicado",
+    "secao_ou_espessura": "Peca cilindrica macica usinada",
+    "dimensoes_principais_mm": {
+      "transmissao": "Ø externo 48; furo Ø42 +0,05/-0; comprimento 70; rebaixos internos de 12 em cada extremidade"
+    },
+    "furos_e_interfaces": "Furo passante Ø42 +0,05/-0 com rebaixos de 12 mm para rolamentos/caixa do eixo central 3308",
+    "dobra_ou_curva": "Nao ha",
+    "obs": "1 peca, escala 1:1, folha A4."
+  },
+  {
+    "arquivo": "3303-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "CUBO",
+    "funcao": "Disco central fundido do volante de inercia, acopla a roda ao eixo e recebe fixacoes roscadas.",
+    "material": "Ferro fundido",
+    "secao_ou_espessura": "Disco com alma de 10 mm (borda 2 mm) e cubo central de altura 65",
+    "dimensoes_principais_mm": {
+      "volante_de_inercia": "Ø externo 340 0/-0,2; ressalto Ø324; circulo de furos Ø300 +/-1; cubo Ø70; rebaixo Ø43; furo central Ø35 +0,02/-0; altura do cubo 65; profundidade 22"
+    },
+    "furos_e_interfaces": "4 furos Ø8,5 no circulo Ø300 (uniao com a roda 3304); 3 roscas M6 no cubo; furo central Ø35 +0,02/-0 para o eixo; chanfros 2x45 e 10x45",
+    "dobra_ou_curva": "Nao ha (peca fundida usinada)",
+    "obs": "FERRO FUNDIDO - 1 peca, escala 1:2.5."
+  },
+  {
+    "arquivo": "3304-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "RODA",
+    "funcao": "Aro externo fundido do volante de inercia, parafusado ao cubo 3303 para concentrar massa na periferia.",
+    "material": "Ferro fundido",
+    "secao_ou_espessura": "Largura do aro 32 +/-1; alma de 19",
+    "dimensoes_principais_mm": {
+      "volante_de_inercia": "Ø externo 450 +/-1; Ø interno 340,2 +0,25/-0 (encaixe no cubo); ressalto Ø324 +/-0,2; circulo de furos Ø302 +/-1; largura 32 +/-1"
+    },
+    "furos_e_interfaces": "4 furos Ø8,5 para uniao com o cubo; encaixe Ø340,2 +0,25 sobre o cubo Ø340 0/-0,2; chanfro 2x45",
+    "dobra_ou_curva": "Nao ha (peca fundida usinada)",
+    "obs": "FERRO FUNDIDO - 1 peca, escala 1:2.5. Conjunto cubo+roda forma o volante de Ø450."
+  },
+  {
+    "arquivo": "3305-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "PINO GUIA",
+    "funcao": "Pino tubular guia (sistema de regulagem/freio) usinado a partir de tubo de conducao.",
+    "material": "Tubo 1/4\" sch40",
+    "secao_ou_espessura": "Tubo Ø13,7 externo x Ø10 interno; ponta reduzida a Ø13,2",
+    "dimensoes_principais_mm": {
+      "selim_regulagem": "Comprimento 140; Ø13,7 ext; Ø13,2 na ponta (rebaixo de 2); furo Ø10"
+    },
+    "furos_e_interfaces": "Furo interno Ø10; extremidade rebaixada Ø13,2x2",
+    "dobra_ou_curva": "Nao ha",
+    "obs": "1 peca, escala 1:1."
+  },
+  {
+    "arquivo": "3306-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "SUPORTE BANCO (guia + suporte)",
+    "funcao": "Conjunto de regulagem do selim: guia vertical furada que desliza na coluna do chassi e suporte horizontal do banco com regulagem longitudinal.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 40x40x2,0; tubo quadrado 50x50x2,0; tubo redondo Ø22",
+    "dimensoes_principais_mm": {
+      "selim_regulagem": "GUIA: tubo 40x40x2,0x500 com furos Ø13 espacados de 30 (trecho de 140), corte 15 graus, luva 50x50x2,0x150 com furo Ø22,5 a 20 da borda; SUPORTE BANCO: tubo 40x40x2,0x300 com furos Ø13 espacados de 35 (5x), tubo redondo Ø22x350 curvado (projecao 200, altura 50), cota 125"
+    },
+    "furos_e_interfaces": "Furos Ø13 em passo de 30 (altura do selim) e de 35 (avanco do selim); furo Ø22,5 e tubo Ø22 para articulacao/encaixe",
+    "dobra_ou_curva": "Tubo redondo Ø22 curvado em L (200 x 50); cortes a 15 graus",
+    "obs": "BOM: 1-tubo redondo Ø22x350; 2-tubo quadrado 40x40x2,0x300; 3-tubo quadrado 40x40x2,0x500 (corte 15 graus); 4-tubo quadrado 50x50x2,0x150; todos ABNT-1010, 1 peca cada."
+  },
+  {
+    "arquivo": "3307-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "GUIDAO",
+    "funcao": "Guidao multi-pegada em tubo curvado com haste quadrada furada para regulagem de altura no chassi.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo redondo Ø25,4x1,5; haste em tubo quadrado 40x40x2,0",
+    "dimensoes_principais_mm": {
+      "guidao": "Planta: largura 440, profundidade 250+150; alca central em U (tubo Ø25,4x1,5x480); arco principal tubo Ø25,4x1,5x870 com curvas R=80 (cotas 215 e 110); haste vertical 40x40x2,0x350 com furos espacados de 30 (cotas 350, 70, 90, 40); pontas inclinadas 15 graus"
+    },
+    "furos_e_interfaces": "Furos de regulagem na haste quadrada em passo de 30; encaixe da haste na coluna frontal do chassi",
+    "dobra_ou_curva": "Curvas R=80 (notas 2, 3 e 5); pontas a 15 graus",
+    "obs": "BOM: 1-tubo redondo Ø25,4x1,5x480; 2-tubo redondo Ø25,4x1,5x870; 3-tubo quadrado 40x40x2,0x350; ABNT-1010, 1 peca cada. Notas: 1-TUBO Ø25,4x1,5x870; 2/3/5-CURVA R=80; 4-TUBO Ø25,4x1,5x480."
+  },
+  {
+    "arquivo": "3308-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "EIXO CENTRAL",
+    "funcao": "Eixo do movimento central (pedivela) usinado com pontas quadradas conicas para fixacao dos pedivelas.",
+    "material": "Nao indicado (aco usinado)",
+    "secao_ou_espessura": "Eixo torneado Ø20 nominal",
+    "dimensoes_principais_mm": {
+      "pedivela": "Comprimento total 168; corpo Ø19,9 0/-0,2; assentos Ø20 -0,005/-0,02 e Ø20 -0,01/-0,02 (larguras 13); colar Ø22 +/-0,5 (4,5); distancia entre assentos 70 +0/-0,1; pontas Ø16 +/-0,05 com rosca M-10x1,25 (12) e trecho 19; quadrado conico frezado 12,4 com conicidade 2 graus, altura 16,5"
+    },
+    "furos_e_interfaces": "Roscas M-10x1,25 nas duas pontas; assentos de rolamento Ø20 toleranciados; quadrados frezados nas duas extremidades defasados no maximo +/-0,5 graus",
+    "dobra_ou_curva": "Nao ha",
+    "obs": "1 peca, escala 1:1. Notas: quebrar cantos 0,5x45; DETALHE 01: frezado nas duas extremidades, defasado max +/-0,5 graus; R5."
+  },
+  {
+    "arquivo": "3309-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "EIXO",
+    "funcao": "Eixo curto do volante de inercia com roscas internas 3/8\" nas pontas para fixacao ao garfo do chassi.",
+    "material": "Nao indicado (aco usinado)",
+    "secao_ou_espessura": "Eixo Ø15 0/-0,05",
+    "dimensoes_principais_mm": {
+      "volante_de_inercia": "Comprimento 135 (trechos 52,6 + 32,1 + 50,3); Ø15 0/-0,05; canais de 1,6 com profundidade 1"
+    },
+    "furos_e_interfaces": "Roscas internas 3/8\" nas duas extremidades; dois canais (aneis) de 1,6; chanfro 1x45",
+    "dobra_ou_curva": "Nao ha",
+    "obs": "1 peca, escala 1:1."
+  },
+  {
+    "arquivo": "3310-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "HASTE",
+    "funcao": "Haste roscada do sistema de freio/regulagem de carga sobre o volante.",
+    "material": "Nao indicado (barra de aco)",
+    "secao_ou_espessura": "Barra redonda 3/8\"",
+    "dimensoes_principais_mm": {
+      "transmissao_freio": "Comprimento 220; rosca 3/8\" x 50 em cada extremidade"
+    },
+    "furos_e_interfaces": "Roscas 3/8\" nas duas pontas (50 mm cada)",
+    "dobra_ou_curva": "Nao ha",
+    "obs": "1 peca, escala 1:1."
+  },
+  {
+    "arquivo": "3311-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "ENG. 20 D. ASA 35 (engrenagem/coroa)",
+    "funcao": "Engrenagem de 20 dentes padrao ASA 35 da transmissao por corrente entre pedivela e volante.",
+    "material": "Nao indicado",
+    "secao_ou_espessura": "Largura total 15; espessura do dente/flange 4,5",
+    "dimensoes_principais_mm": {
+      "transmissao": "Ø externo 60; Ø primitivo/referencias 55 e 50; cubo Ø43; encaixe Ø35 0/-0,05; furo central Ø25; largura 15; flange 4,5"
+    },
+    "furos_e_interfaces": "Furo central Ø25; encaixe Ø35 0/-0,05; 3 furos Ø6,3 defasados a 30 graus para fixacao",
+    "dobra_ou_curva": "Nao ha",
+    "obs": "Titulo da legenda: HASTE (aparente erro de preenchimento); peca identificada como ENG. 20 D. ASA 35, 1 peca, escala 1:1."
+  },
+  {
+    "arquivo": "3312-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "SUPORTE / GUIA DO FREIO",
+    "funcao": "Chapas do mecanismo de freio: suporte oblongo furado e guia em U que conduz a sapata/haste do freio sobre o volante.",
+    "material": "Nao indicado (chapa de aco)",
+    "secao_ou_espessura": "Chapas finas (espessura nao cotada)",
+    "dimensoes_principais_mm": {
+      "transmissao_freio": "SUPORTE DO FREIO: chapa oblonga 75x25, furo central Ø13,5, furos laterais Ø5, cota 10; GUIA DO FREIO: chapa dobrada em U 52 de altura x 30 de vao x 25 de largura, furo Ø13,5, ponta arredondada"
+    },
+    "furos_e_interfaces": "Furos Ø13,5 (passagem da haste 3310) e Ø5 (fixacao)",
+    "dobra_ou_curva": "Guia dobrada em U (30 de vao, pernas de 52)",
+    "obs": "1 peca de cada, escala 1:1."
+  },
+  {
+    "arquivo": "3313-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "MONTAGEM",
+    "funcao": "Vista explodida e isometricas da bicicleta completa (marca TRG) mostrando a ordem de montagem de chassi, volante, transmissao com corrente e carenagem, selim, guidao e freio.",
+    "material": "Nao aplicavel",
+    "secao_ou_espessura": "Nao aplicavel",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra interfaces: guidao e suporte do banco encaixados nas colunas furadas, volante entre o garfo do chassi, transmissao por corrente com protetor, manipulos de regulagem e freio sobre o volante",
+    "dobra_ou_curva": "Nao aplicavel",
+    "obs": "Folha A2, sem cotas; desenho de conjunto 3313."
+  },
+  {
+    "arquivo": "3314-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "DETALHES (componentes do chassi)",
+    "funcao": "Folha de detalhes e BOM dos cortes de tubo e chapas que compoem o chassi da bike.",
+    "material": "ABNT-1010 (todos os itens)",
+    "secao_ou_espessura": "Tubo oblongo 40x115x1,5; tubo retangular 60x30x3; tubo quadrado 50x50x1,5; tubo redondo Ø60x1,5 e Ø38,10x1,5; ferro chato 5x38",
+    "dimensoes_principais_mm": {
+      "chassi": "DET.1: tubo 50x50x220, furo Ø22 a 30 da ponta; DET.2: tubo 50x50x300, furo Ø22 a 30; DET.3: tubo oblongo 40x115x1,5x950 com cortes 37,5 graus, furo Ø50 a 350, furos Ø10 e Ø16 (cotas 80 e 42); DET.4 (2 pecas): ferro chato 38x25, furo Ø10 (19x10); DET.5 (2 pecas): 60x38 com furo Ø3,2 e rosca M-10x1,25 (cotas 15, 5, 19); peca com rasgo oblongo 95x38 (rasgo 30x5, cota 10)"
+    },
+    "furos_e_interfaces": "Furos Ø22 (eixos/bucha), Ø50, Ø16, Ø10, Ø3,2; rosca M-10x1,25; rasgo oblongo 30",
+    "dobra_ou_curva": "Cortes de tubo oblongo a 37,5 graus; itens 1 e 3/4 remetem a VER NOTAS / VER DET.1 e DET.2 - TRG03301",
+    "obs": "BOM: 1-tubo redondo Ø38,10x1,5x700 (2, ver notas); 2-tubo redondo Ø60x1,5x450 (2); 3-tubo oblongo 40x115x1,5x350 (1, ver det.2-TRG03301); 4-tubo oblongo 40x115x1,5x950 (1, ver det.1-TRG03301); 5-tubo quadrado 50x50x1,5x300 (1); 6-tubo quadrado 50x50x1,5x220 (1); 7-tubo retangular 60x30x3x790 (1); 8-ferro chato 5x38x60 (2); 9-ferro chato 5x38x120 (2). Todos ABNT-1010."
+  },
+  {
+    "arquivo": "3315-DESENHO.pdf",
+    "projeto": "byke",
+    "peca": "MESA DE APOIO",
+    "funcao": "Mesa/bancada de apoio em chapa dobrada e tubos para suporte na fabricacao ou apoio do equipamento.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Chapa 2,0 mm dobrada; tubo quadrado 50x50x1,5",
+    "dimensoes_principais_mm": {
+      "estrutura": "Tampo 1100 x 700; pes tubo 50x50x1,5x300 (4); longarinas chapa 2x100x1100 (2) e 2x100x700 (2) dobradas em U 100x20 (detalhe 2); travessa chapa 2x140x600; espacamentos 240/210/200/210/240 e 190/160/160/190; detalhe 1: dobra em L 70x30 com furo Ø10"
+    },
+    "furos_e_interfaces": "Furos Ø10 nos suportes dobrados (det.1); reforcos chapa 2,0x100x100 (6) nos cantos; cortes a 45 graus nas extremidades das chapas",
+    "dobra_ou_curva": "Chapas 2 mm dobradas em U (100x20) e em L (70x30); cortes 45 graus",
+    "obs": "BOM: 1-tubo quadrado 50x50x1,5x300 (4); 2-chapa 2x100x700 (2, corte 45/45); 3-chapa 2x100x1100 (2, corte 45/45); 4-chapa 2x140x600 (1); 5-chapa 2x100x100 (6, corte 45). Todos ABNT-1010."
+  }
+]

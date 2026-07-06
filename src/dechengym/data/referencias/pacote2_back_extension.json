@@ -301,5 +301,141 @@
     "dimensoes_principais_mm": {},
     "furos_e_interfaces": "Holder em U soldado na ponta chanfrada de cada perna; furos do Holder alinhados para pino/parafuso",
     "obs": "Holder abraca o tubo 40x40 da regulagem do rolo de pes"
+  },
+  {
+    "pagina": 21,
+    "projeto": "back_extension",
+    "peca": "Montagem passos 5 e 6",
+    "funcao": "Soldar Leg 1 + Leg 2 formando o V de 90 graus; soldar tubo 40x40x2.9 L=220 (item 4) ao conjunto",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Juntas chanfradas 45 no topo do V; item 4 soldado no Holder da Leg 2",
+    "obs": "Forma o A-frame das colunas (frontal furada, traseira lisa)"
+  },
+  {
+    "pagina": 22,
+    "projeto": "back_extension",
+    "peca": "Montagem passo 7",
+    "funcao": "Soldar tubo 40x40x2.9 L=320 (item 5) na outra ponta do item 4, com chanfro previo das bordas",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Junta soldada chanfrada entre itens 4 e 5 (formam L do suporte do apoio)",
+    "obs": "Itens 4+5 formam o braco em L paralelo a coluna para o rolo dos pes"
+  },
+  {
+    "pagina": 23,
+    "projeto": "back_extension",
+    "peca": "Montagem passos 8 e 9",
+    "funcao": "Soldar Cover 40x40 (23) na ponta do item 5; soldar Covers 25.4 (22) no pipe L=300 (item 8)",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Item 5 tem furo lateral para o pipe; tampas soldadas",
+    "obs": "Pipe 300 mm = travessa do apoio de maos curto/pega frontal"
+  },
+  {
+    "pagina": 24,
+    "projeto": "back_extension",
+    "peca": "Montagem passos 10 e 11",
+    "funcao": "Soldar pipe L=300 atravessado no braco em L; soldar Sheet Support (25) ao conjunto",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Pipe atravessa furo do item 5; Sheet Support soldado sob as duas colunas do V",
+    "obs": "Sheet Support serve de bandeja/apoio entre as colunas"
+  },
+  {
+    "pagina": 25,
+    "projeto": "back_extension",
+    "peca": "Montagem passos 12 e 13",
+    "funcao": "Soldar Covers 40x40 HOLE (13) nas pontas do tubo 40x40 L=400 (item 17); passar e soldar pipe L=610 (item 7) pelos furos",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Pipe D25.4 L=610 atravessa as tampas furadas (diam 25.4) do tubo 400",
+    "obs": "Subconjunto do apoio de maos/braco superior"
+  },
+  {
+    "pagina": 26,
+    "projeto": "back_extension",
+    "peca": "Montagem passo 14",
+    "funcao": "Soldar os 2 Plate Holders (14) sobre o tubo 400 com pipe 610",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {
+      "distancia_entre_holders": 180,
+      "offset_holder_borda": 75,
+      "largura_holder": 40
+    },
+    "furos_e_interfaces": "Plate Holders soldados no topo do tubo; furos M6 voltados para o Wooden Plate",
+    "obs": "Cotas de posicionamento: 180 entre chapas, 40 e 75 ate a extremidade"
+  },
+  {
+    "pagina": 27,
+    "projeto": "back_extension",
+    "peca": "Montagem passo 15",
+    "funcao": "Soldar pipes curvados (item 9, R~78.54 desenvolvido) nas pontas do pipe 610 formando pegas curvas",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Solda topo-a-topo pipe-pipe nas duas extremidades",
+    "obs": "Item 9 (2x) sao segmentos curvos de 90 graus do corrimao"
+  },
+  {
+    "pagina": 28,
+    "projeto": "back_extension",
+    "peca": "Montagem passos 16 e 17",
+    "funcao": "Soldar pipes L=150 (item 6) nas pontas curvas e Covers 25.4 (22) nas extremidades",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Solda topo-a-topo; tampas D25.4 fechando as pegas",
+    "obs": "Completa o guidao do apoio de maos (610 + curvas + 2x150)"
+  },
+  {
+    "pagina": 29,
+    "projeto": "back_extension",
+    "peca": "Montagem passo 18",
+    "funcao": "Soldar tubo furado 40x40x2.9 L=480 (item 16) perpendicular ao centro do subconjunto do apoio de maos",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Tubo 480 (11 furos diam 8.5) soldado ao tubo 400 formando T",
+    "obs": "Este T desliza dentro do Holder e regula a posicao do apoio de maos/prancha"
+  },
+  {
+    "pagina": 30,
+    "projeto": "back_extension",
+    "peca": "Montagem passos 19 e 20",
+    "funcao": "Parafusar Wooden Plate (15) nos Plate Holders com M6x30+arruela+porca; parafusar pes dianteiro e traseiro ao A-frame com M8x80+arruela A8+porca M8",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "8x M6x30 (26/27/28) na prancha; 4x M8x80 (19/20/21) fixando itens 1 e 2+3 nas pernas",
+    "obs": "Pes sao aparafusados (desmontaveis), nao soldados"
+  },
+  {
+    "pagina": 31,
+    "projeto": "back_extension",
+    "peca": "Montagem passo 20 (continuacao)",
+    "funcao": "Vistas do conjunto pes + A-frame + Sheet Support montados",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Parafusos M8 atraves dos furos dos pes (itens 1 e 3) e das pernas 50x50",
+    "obs": "Estrutura base completa sem o modulo do apoio superior"
+  },
+  {
+    "pagina": 32,
+    "projeto": "back_extension",
+    "peca": "Montagem passo 21 - final",
+    "funcao": "Encaixar o T do apoio de maos (passo 19) na coluna furada e travar com Pin 8h11x60 (item 24)",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Tubo 40x40 L=480 desliza dentro do tubo/Holder da coluna; pino diam 8 em furos diam 8.5 define a regulagem (7-11 posicoes de 40 mm)",
+    "obs": "Banco completo: regulagem por pino em 2 eixos (altura da prancha via coluna furada, posicao do apoio via tubo 480). Faltam apenas estofados (nao detalhados no PDF)"
   }
 ]
