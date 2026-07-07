@@ -113,7 +113,13 @@ def _tubo(nome, etapa, cor, pontos, raio, explode, oval=1.0, lados=10,
             b = _norm([pts[i + 1][k] - pts[i][k] for k in range(3)])
             t = _norm([a[k] + b[k] for k in range(3)])
         # Seção: eixo largo ~X (projetado ⊥ t), eixo estreito = t × u.
-        u = [1.0 - t[0] * t[0], -t[0] * t[1], -t[0] * t[2]]
+        # Quando o tubo corre quase paralelo a X (arcos de torre), o eixo de
+        # referência degenera — usa Z como referência (tubos redondos não
+        # têm torção visível).
+        if abs(t[0]) > 0.9:
+            u = [-t[2] * t[0], -t[2] * t[1], 1.0 - t[2] * t[2]]
+        else:
+            u = [1.0 - t[0] * t[0], -t[0] * t[1], -t[0] * t[2]]
         u = _norm(u)
         v = _norm([t[1] * u[2] - t[2] * u[1], t[2] * u[0] - t[0] * u[2],
                    t[0] * u[1] - t[1] * u[0]])
@@ -148,7 +154,11 @@ def gerar_pecas_maquina(
 ) -> dict[str, Any]:
     """Gera a lista de peças 3D da máquina a partir dos parâmetros do projeto.
 
-    A arquitetura segue a Hammer Strength Iso-Lateral Row (IL-ROW,
+    Com ``parametros["arquitetura"] == "remada_frontal"`` delega para o
+    modelo 1:1 dos desenhos 901–904 do acervo do cliente
+    (:func:`gerar_pecas_remada_frontal`).
+
+    A arquitetura padrão segue a Hammer Strength Iso-Lateral Row (IL-ROW,
     ~155×127×132 cm) e a cinemática da patente de Gary Jones ("a pair of
     levers pivotally connected to the frame in front of the brace and seat,
     each lever having a lower end adapted to support the weight and a
@@ -184,6 +194,8 @@ def gerar_pecas_maquina(
     (0 = frente da máquina; o usuário senta em Z alto).
     """
     p = dict(parametros or {})
+    if p.get("arquitetura") == "remada_frontal":
+        return gerar_pecas_remada_frontal(p, incluir_manequim=incluir_manequim)
     perfil_b = float(p.get("perfil_base_mm", 40))    # largura do perfil
     perfil_h = float(p.get("perfil_altura_mm", p.get("perfil_base_mm", 80)))
     r_tubo = perfil_h / 2.0                           # semieixo vertical
@@ -395,6 +407,211 @@ def gerar_pecas_maquina(
         "referencia": "layout Hammer Strength Iso-Lateral Row",
     }
     return {"pecas": pc, "etapas": ETAPAS_MONTAGEM, "specs": specs}
+
+
+ETAPAS_REMADA_FRONTAL: list[str] = [
+    "Base e pes de borracha",
+    "Torre da coluna de pesos (tubo Ø60 dobrado)",
+    "Coluna de tijolos, guias e seletor",
+    "Coluna inclinada, banco e apoios de pes",
+    "Bucha, eixo e braco em U (pegas em cruz)",
+    "Polias e cabo de aco",
+    "Posicao do usuario (referencia)",
+]
+
+
+def gerar_pecas_remada_frontal(
+    parametros: dict[str, Any] | None = None,
+    incluir_manequim: bool = True,
+) -> dict[str, Any]:
+    """Remada Frontal seletorizada — 1:1 com os desenhos 901–904 do acervo.
+
+    Cotas do desenho 901 (BANCO REMADA FRENTE, A2): torre em tubo redondo
+    Ø60x1,5 dobrado em U invertido (altura 1700, topo 580, C=1350/ENC=580);
+    coluna inclinada de 1000 mm a 15° da vertical (130 de largura, chanfro
+    30x30); braço em U de 550x500 com pegas em cruz Ø25,4x140; bucha de
+    pivô Ø48 ext / Ø42 +0,05/−0,02 x148 com tampas de 12; eixo Ø20x150 com
+    rosca 3/8"; suporte do banco de 1020 com oblongos 5x38/5x50; base em
+    planta de 880x780; travessa 480 com furos Ø26/Ø30 a 185.
+    """
+    p = dict(parametros or {})
+    d_pega = float(p.get("diametro_pega_mm", 25.4))
+    n_tijolos = int(p.get("n_tijolos", 10))
+
+    pc: list[dict[str, Any]] = []
+
+    # ---- Etapa 1: base (planta 880x780) ----------------------------------
+    e = 1
+    rb = 24.0
+    for sx in (-1, 1):
+        pc.append(_tubo(f"Longarina {'esq' if sx < 0 else 'dir'}", e, COR_ACO,
+                        [(sx * 375, rb + 3, 40), (sx * 375, rb + 3, 860)], rb,
+                        (sx, -1, 0), oval=1.5))
+    pc.append(_tubo("Travessa frontal", e, COR_ACO,
+                    [(-375, rb + 3, 80), (375, rb + 3, 80)], rb, (0, -1, -1), oval=1.5))
+    pc.append(_tubo("Travessa traseira", e, COR_ACO,
+                    [(-375, rb + 3, 820), (375, rb + 3, 820)], rb, (0, -1, 1), oval=1.5))
+    pc.append(_tubo("Longarina central", e, COR_ACO,
+                    [(0, rb + 3, 80), (0, rb + 3, 820)], rb, (0, -1, 0), oval=1.5))
+    for nome, fx, fz in (("Pe borracha DE", -375, 60), ("Pe borracha DD", 375, 60),
+                         ("Pe borracha TE", -375, 840), ("Pe borracha TD", 375, 840)):
+        pc.append(_cilindro(nome, e, "#101114", (fx, 5, fz), "y", rb * 0.95, 12,
+                            (1 if fx > 0 else -1, -1, 0), lados=12))
+
+    # ---- Etapa 2: torre Ø60 em U invertido (1700 x 580) ------------------
+    e = 2
+    zt = 760.0                       # plano das pernas da torre
+    rt = 30.0                        # Ø60
+    arco = [(-260, 55, zt), (-260, 1380, zt), (-252, 1520, zt),
+            (-213, 1618, zt), (-138, 1680, zt), (-48, 1700, zt),
+            (48, 1700, zt), (138, 1680, zt), (213, 1618, zt),
+            (252, 1520, zt), (260, 1380, zt), (260, 55, zt)]
+    pc.append(_tubo("Torre Ø60 (U invertido)", e, COR_ACO, arco, rt,
+                    (0, 1, 1), oval=1.0, lados=12))
+    pc.append(_caixa("Travessa superior das guias", e, COR_ACO_2,
+                     (-240, 1430, zt - 25), (480, 45, 50), (0, 1, 1)))
+    pc.append(_caixa("Travessa inferior (furos Ø26/Ø30)", e, COR_ACO_2,
+                     (-240, 130, zt - 25), (480, 45, 50), (0, -1, 1)))
+
+    # ---- Etapa 3: coluna de tijolos, guias e seletor ---------------------
+    e = 3
+    for sx in (-1, 1):
+        pc.append(_cilindro(f"Haste-guia {'esq' if sx < 0 else 'dir'}", e,
+                            COR_INOX, (sx * 92, 807, zt), "y", 9, 1265,
+                            (sx, 1, 1), lados=10))
+    y0 = 205.0
+    for i in range(n_tijolos):
+        pc.append(_caixa(f"Tijolo {i + 1}", e, COR_ANILHA,
+                         (-125, y0 + i * 27, zt - 58), (250, 25, 116), (0, 1, 1)))
+    pc.append(_caixa("Placa-guia superior", e, COR_ANILHA_ARO,
+                     (-125, y0 + n_tijolos * 27 + 2, zt - 58), (250, 25, 116), (0, 1, 1)))
+    pc.append(_cilindro("Seletor central (pino Ø22)", e, COR_EIXO,
+                        (0, y0 + (n_tijolos * 27 + 55) / 2, zt), "y", 11,
+                        n_tijolos * 27 + 55, (0, 1, 1), lados=10))
+
+    # ---- Etapa 4: coluna inclinada 15°, banco e apoios -------------------
+    e = 4
+    rot_col = {"eixo": "x", "graus": 15, "centro": [0, 55, 170]}
+    pc.append(_caixa("Coluna inclinada (1000 x 130, 15°)", e, COR_ACO,
+                     (-65, 55, 142), (130, 1000, 56), (0, 1, -1), rot=rot_col))
+    pc.append(_caixa("Apoio de peito (estofado)", e, COR_PAD,
+                     (-160, 580, 198), (320, 420, 85), (0, 1, -1), rot=rot_col))
+    pc.append(_caixa("Gusset da coluna (chapa 3,18)", e, COR_CHAPA,
+                     (-4, 55, 198), (8, 150, 130), (0, 1, -1)))
+    pc.append(_tubo("Suporte do banco (1020)", e, COR_ACO,
+                    [(0, 55, 560), (0, 745, 560)], 25, (0, 1, 1), oval=1.0))
+    pc.append(_caixa("Cremalheira inox (oblongos 5x38)", e, COR_INOX,
+                     (-8, 300, 578), (16, 320, 12), (0, 1, 1)))
+    pc.append(_caixa("Banco (assento)", e, COR_PAD,
+                     (-210, 745, 440), (420, 70, 300), (0, 1, 1)))
+    for sx in (-1, 1):
+        lado = "esq" if sx < 0 else "dir"
+        pc.append(_tubo(f"Montante apoio de pe {lado}", e, COR_ACO_2,
+                        [(sx * 180, 40, 215), (sx * 180, 235, 215)], 18, (sx, -1, -1)))
+        pc.append(_cilindro(f"Apoio de pe {lado} (Ø32)", e, COR_PEGA,
+                            (sx * 245, 245, 215), "x", 16, 260, (sx, -1, -1), lados=12))
+
+    # ---- Etapa 5: bucha Ø48x148, eixo Ø20 e braço em U -------------------
+    e = 5
+    pv_y, pv_z = 1035.0, 405.0       # topo da coluna inclinada
+    pc.append(_cilindro("Bucha Ø48 x148 (furo Ø42 +0,05)", e, COR_ACO_2,
+                        (0, pv_y, pv_z), "x", 24, 148, (0, 1, -1), lados=14))
+    for sx in (-1, 1):
+        pc.append(_cilindro(f"Tampa da bucha {'esq' if sx < 0 else 'dir'}", e,
+                            COR_CHAPA, (sx * 77, pv_y, pv_z), "x", 27, 6, (sx, 1, -1), lados=14))
+    pc.append(_cilindro("Eixo Ø20 x150 (rosca 3/8\")", e, COR_EIXO,
+                        (0, pv_y, pv_z), "x", 10, 200, (0, 1, -1), lados=10))
+
+    a_br = math.radians(28.0)        # braço em U: 28° da vertical, p/ cima-trás
+    du_y, du_z = math.cos(a_br), math.sin(a_br)
+    g_y = pv_y + 550 * du_y          # ponta das pegas (haste de 550)
+    g_z = pv_z + 550 * du_z
+    bru = [(250, g_y, g_z),
+           (250, pv_y + 90 * du_y, pv_z + 90 * du_z),
+           (165, pv_y + 22 * du_y, pv_z + 22 * du_z),
+           (84, pv_y, pv_z), (-84, pv_y, pv_z),
+           (-165, pv_y + 22 * du_y, pv_z + 22 * du_z),
+           (-250, pv_y + 90 * du_y, pv_z + 90 * du_z),
+           (-250, g_y, g_z)]
+    pc.append(_tubo("Braco em U (550 x 500)", e, COR_BRACO, bru, 17,
+                    (0, 1, 1), oval=1.0, lados=12))
+    for sx in (-1, 1):
+        lado = "esq" if sx < 0 else "dir"
+        pc.append(_cilindro(f"Pega cruz lateral {lado}", e, COR_PEGA,
+                            (sx * 250, g_y, g_z), "x", d_pega / 2, 150, (sx, 1, 1), lados=10))
+        pc.append(_cilindro(f"Pega cruz frontal {lado}", e, COR_PEGA,
+                            (sx * 250, g_y, g_z), "y", d_pega / 2, 150, (sx, 1, 1), lados=10,
+                            rot={"eixo": "x", "graus": 118, "centro": [sx * 250, g_y, g_z]}))
+    pc.append(_caixa("Olhal do cabo (chapa)", e, COR_CHAPA,
+                     (-20, pv_y - 92, pv_z - 40), (40, 55, 8), (0, 1, -1)))
+
+    # ---- Etapa 6: polias e cabo de aço ------------------------------------
+    e = 6
+    pc.append(_tubo("Suporte polia dianteira", e, COR_ACO_2,
+                    [(0, 40, 420), (0, 152, 420)], 14, (0, -1, -1)))
+    pc.append(_tubo("Suporte polia traseira", e, COR_ACO_2,
+                    [(0, 40, 845), (0, 152, 845)], 14, (0, -1, 1)))
+    for nome, cy, cz, r in (("Polia dianteira Ø190", 150.0, 420.0, 60.0),
+                            ("Polia traseira Ø190", 150.0, 845.0, 60.0),
+                            ("Polia do topo Ø190", 1585.0, zt, 95.0)):
+        pc.append(_cilindro(nome, e, COR_CAME, (0, cy, cz), "x", r, 20, (0, 1, 1), lados=18))
+        for sx in (-1, 1):
+            pc.append(_cilindro(f"Protetor {nome.split()[1]} {'esq' if sx < 0 else 'dir'}",
+                                e, COR_CHAPA, (sx * 15, cy, cz), "x", r + 12, 4,
+                                (sx, 1, 1), lados=18))
+    cabo = [(0, pv_y - 90, pv_z - 45),
+            (0, 235, 355), (0, 165, 395), (0, 150, 480),
+            (0, 150, 785), (0, 172, 872), (0, 250, 905),
+            (0, 1500, 905), (0, 1595, 890), (0, 1665, 830),
+            (0, 1680, 760), (0, 1650, 715), (0, 1560, 730),
+            (0, y0 + n_tijolos * 27 + 55, zt)]
+    pc.append(_tubo("Cabo de aco 3/16\"", e, "#15171a", cabo, 4.0,
+                    (0, 1, 1), oval=1.0, lados=6))
+
+    # ---- Etapa 7: manequim (posição de uso) ------------------------------
+    if incluir_manequim:
+        e = 7
+        topo_banco = 815.0
+        pc.append(_caixa("Pelve (ref)", e, COR_HUMANO, (-150, topo_banco, 445),
+                         (300, 190, 270), (0, 1, 1)))
+        pc.append(_caixa("Tronco (ref)", e, COR_HUMANO, (-165, topo_banco + 175, 370),
+                         (330, 440, 175), (0, 1, 1),
+                         rot={"eixo": "x", "graus": 10,
+                              "centro": [0, topo_banco + 180, 455]}))
+        pc.append(_cilindro("Cabeca (ref)", e, COR_HUMANO, (0, 1470, 490), "y",
+                            85, 190, (0, 1, 1), lados=12))
+        ombro_y, ombro_z = 1350.0, 470.0
+        for sx in (-1, 1):
+            lado = "esq" if sx < 0 else "dir"
+            dy, dz = g_y - ombro_y, g_z - ombro_z
+            comp = math.hypot(dy, dz) + 25
+            ang = math.degrees(math.atan2(dz, dy))
+            pc.append(_caixa(f"Braco {lado} (ref)", e, COR_HUMANO,
+                             (sx * 195 - 34, ombro_y, ombro_z - 34),
+                             (68, comp, 68), (sx, 1, 1),
+                             rot={"eixo": "x", "graus": ang,
+                                  "centro": [sx * 195, ombro_y, ombro_z]}))
+            pc.append(_caixa(f"Coxa {lado} (ref)", e, COR_HUMANO,
+                             (sx * 135 - 58, topo_banco + 5, 205),
+                             (116, 135, 390), (sx, 1, 1)))
+            pc.append(_caixa(f"Canela {lado} (ref)", e, COR_HUMANO,
+                             (sx * 135 - 48, 265, 175), (96, topo_banco - 245, 100),
+                             (sx, 1, 1),
+                             rot={"eixo": "x", "graus": -8,
+                                  "centro": [sx * 135, topo_banco + 5, 235]}))
+
+    specs = {
+        "arquitetura": "Remada Frontal seletorizada (des. 901-904 do acervo)",
+        "torre_mm": "Ø60x1,5 dobrado, altura 1700, topo 580",
+        "braco_u_mm": "550 x 500, pegas em cruz Ø25,4 x140",
+        "bucha_pivo": 'Ø48 ext / Ø42 +0,05/-0,02 x148, eixo Ø20 rosca 3/8"',
+        "coluna_inclinada": "1000 x 130 a 15 graus",
+        "diametro_pega_mm": d_pega,
+        "n_tijolos": n_tijolos,
+        "base_mm": [880, 900],
+        "referencia": "REMADA FRENTE — desenhos 901/902/903/904 (acervo do cliente)",
+    }
+    return {"pecas": pc, "etapas": ETAPAS_REMADA_FRONTAL, "specs": specs}
 
 
 # ==========================================================================

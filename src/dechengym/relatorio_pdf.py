@@ -430,23 +430,35 @@ def gerar_dossie_pdf(
         "(orbitar, explodir, avançar etapas) acompanha este dossiê no arquivo "
         "montagem_3d.html.",
     )
-    inst = [
-        "Nivele a longarina central e solde os pés dianteiro e traseiro.",
-        "Levante o pilar dianteiro do pivô, a travessa do eixo e as escoras.",
-        "Fixe assento, coluna e pad de peito; solde os apoios de pés inclinados.",
-        "Instale os eixos de pivô no cabeçote e chavete as cames sintetizadas.",
-        "Monte as manivelas (braço + chifre) nos eixos; fixe as pegas.",
-        "Enfie as anilhas nos chifres inclinados e faça o teste de carga.",
-        "Posição de uso: sente atrás, peito no pad, pés nos apoios, puxe as pegas.",
-    ]
+    etapas = modelo.get("etapas", ETAPAS_MONTAGEM)
+    if etapas is ETAPAS_MONTAGEM or etapas == ETAPAS_MONTAGEM:
+        inst = [
+            "Nivele a longarina central e solde os pés dianteiro e traseiro.",
+            "Levante o pilar dianteiro do pivô, a travessa do eixo e as escoras.",
+            "Fixe assento, coluna e pad de peito; solde os apoios de pés inclinados.",
+            "Instale os eixos de pivô no cabeçote e chavete as cames sintetizadas.",
+            "Monte as manivelas (braço + chifre) nos eixos; fixe as pegas.",
+            "Enfie as anilhas nos chifres inclinados e faça o teste de carga.",
+            "Posição de uso: sente atrás, peito no pad, pés nos apoios, puxe as pegas.",
+        ]
+    else:
+        inst = [
+            "Solde o quadro da base (880x780), travessas e pés de borracha.",
+            "Levante a torre Ø60 dobrada em U invertido e as travessas das guias.",
+            "Monte hastes-guia inox, coluna de tijolos e o pino seletor central.",
+            "Fixe a coluna inclinada (15°), o pad de peito, o banco e os apoios de pés.",
+            "Instale a bucha Ø48 (furo Ø42 +0,05), o eixo Ø20 e o braço em U com as pegas em cruz.",
+            "Passe o cabo de aço pelas polias Ø190 (dianteira, traseira e topo) até o seletor.",
+            "Posição de uso: sente, peito no pad, alcance as pegas em cruz e reme.",
+        ]
     col_w = (doc.W - 2 * doc.m - 16) / 2
     img_h = 150.0
-    for i in range(0, len(ETAPAS_MONTAGEM), 2):
+    for i in range(0, len(etapas), 2):
         doc.precisa(img_h + 58)
         y_topo = doc.y
         for j in (0, 1):
             k = i + j
-            if k >= len(ETAPAS_MONTAGEM):
+            if k >= len(etapas):
                 break
             x = doc.m + j * (col_w + 16)
             svg = renderizar_svg_3d(modelo, largura_px=640, yaw_graus=55, pitch_graus=12, etapa_max=k + 1)
@@ -463,7 +475,7 @@ def gerar_dossie_pdf(
             doc.c.drawCentredString(x + 12, y_topo - img_h - 15, str(k + 1))
             doc.c.setFillColor(_cor(_INK))
             doc.c.setFont("Helvetica-Bold", 9.5)
-            doc.c.drawString(x + 26, y_topo - img_h - 16, ETAPAS_MONTAGEM[k])
+            doc.c.drawString(x + 26, y_topo - img_h - 16, etapas[k])
             doc.c.setFillColor(_cor(_MUT))
             doc.c.setFont("Helvetica", 8)
             # instrução em até 2 linhas

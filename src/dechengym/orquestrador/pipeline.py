@@ -162,6 +162,9 @@ def projetar_maquina(requisicao: RequisicaoProjeto) -> dict[str, Any]:
             "perfil_alavanca_mm": base_mm,
         },
     )
+    if req.exercicio == "remada_maquina":
+        # Modelo 3D 1:1 com os desenhos 901-904 do acervo (remada frontal).
+        parametros["arquitetura"] = "remada_frontal"
     scad = gerar_script_openscad(parametros)
     memorial = gerar_memorial_descritivo(parametros)
 
