@@ -1,0 +1,256 @@
+[
+  {
+    "arquivo": "REMADA/REMADA/901-DESENHO.pdf",
+    "projeto": "remada",
+    "peca": "BANCO REMADA FRENTE (des. 901) - chassi completo com torre, banco inclinado, suporte e detalhes de bucha/eixo",
+    "funcao": "Conjunto principal (chassi) da remada frente com torre de coluna de pesos, banco/encosto inclinado e ponto de articulacao do braco.",
+    "material": "Nao indicado na legenda desta folha (materiais na lista 903, ABNT-1010)",
+    "secao_ou_espessura": "Torre em tubo redondo Ø60 dobrado; estrutura em tubo quadrado/retangular (30x50 indicado na base)",
+    "dimensoes_principais_mm": {
+      "altura_total_torre": 1700,
+      "largura_topo_curvo_torre": 580,
+      "entre_furos_topo": [185, 27, "furo Ø10"],
+      "banco_inclinado": ["comprimento 1000", "inclinacao 15 graus", "chanfro 30x30", "largura 130"],
+      "corte_inferior_montante": "22 graus",
+      "corte_A-A_travessa": [480, "furos Ø26 e Ø30 a 185 entre si"],
+      "braco_vista_U": ["altura 550", "largura 500", "pegas Ø25.4 x 140", "haste 50"],
+      "bucha_pivo": ["Ø42 +0,05/-0,02 interno", "Ø48 externo", "comprimento 148", "tampas 12"],
+      "eixo": ["Ø20 x 150", "rosca 3/8 pol nas pontas"],
+      "suporte_vertical": ["altura 1020", "furos oblongos 5x38 e 5x50", "furo Ø10", "tubo Ø20", "base 250"],
+      "planta_base": [880, 780, 420, 405, 570, 190, 175, 92],
+      "apoio_pes": [250, 115, 210, 800, 900]
+    },
+    "furos_e_interfaces": "Furos Ø26/Ø30 na travessa (corte A-A) para cabo/guias; furo Ø10 no topo da torre; bucha Ø42+0,05 soldada no chassi recebendo eixo do braco; furos oblongos 5x38/5x50 no suporte para regulagem",
+    "dobra_ou_curva": "Torre Ø60 dobrada em U invertido (topo curvo); braco em U com pegas soldadas; corte de montante a 22 graus",
+    "obs": "Notas: C.=1350, ENC.=580 (comprimento e encosto do tubo dobrado). Folha A2. BOM completa esta no des. 903."
+  },
+  {
+    "arquivo": "REMADA/REMADA/902-DESENHO.pdf",
+    "projeto": "remada",
+    "peca": "DETALHES REMADA FRENTE (des. 902) - 9 detalhes de furacao de pecas avulsas",
+    "funcao": "Folha de detalhes de corte e furacao das pecas soltas (travessas, chapas, suportes) da remada frente.",
+    "material": "Nao indicado nesta folha (ABNT-1010 conforme lista 903); detalhes 5 e 6 marcados #3mm (chapa)",
+    "secao_ou_espessura": "Tubos Ø50; chapas 3 mm; ferro chato 38x50",
+    "dimensoes_principais_mm": {
+      "detalhe_1": ["1 peca", "comprimento 480", "furos Ø26 e Ø30 a 185 entre si"],
+      "detalhe_2": ["1 peca", "tubo Ø50 x 980", "furo passante Ø26 a 180 da ponta (800 restante)"],
+      "detalhe_3": ["1 peca", "chapa 80x50", "furo Ø10 a 40x25"],
+      "detalhe_4": ["4 pecas", "chapa 50x90", "2 furos Ø10 a 10 das bordas, 25 do lado"],
+      "detalhe_5": ["2 pecas #3mm", "chapa 130 x 1048", "furos Ø10 a 70/60 do topo e 90 da base"],
+      "detalhe_6": ["1 peca #3mm", "chapa 175x250", "4 furos Ø10 (17 e 109 na horizontal, 20 e 250 na vertical)"],
+      "detalhe_7": ["1 peca", "tubo Ø50 x 200", "furo Ø22 a 30 da ponta"],
+      "detalhe_8": ["1 peca", "tubo Ø50 x 150", "2 furos Ø22 a 30 das pontas"],
+      "detalhe_9": ["2 pecas", "ferro chato 38x50 com topo raiado", "furo Ø10"]
+    },
+    "furos_e_interfaces": "Furos Ø26/Ø30 (guias de cabo), Ø22 (buchas/pinos), Ø10 (parafusos) e furo passante Ø26 no tubo Ø50",
+    "dobra_ou_curva": "Sem dobras; apenas cortes e furacoes",
+    "obs": "Folha A3, so detalhes de furacao; quantidades por detalhe indicadas em verde no desenho."
+  },
+  {
+    "arquivo": "REMADA/REMADA/903-DESENHO.pdf",
+    "projeto": "remada",
+    "peca": "LISTA REMADA FRENTE (des. 903) - lista de materiais (BOM)",
+    "funcao": "Lista de materiais completa da remada frente, com 32 itens, dimensoes de corte e angulos de corte.",
+    "material": "ABNT-1010 (todos os itens com material indicado)",
+    "secao_ou_espessura": "Tubos redondos, quadrados 50x50x1,5, retangulares 30x50x1,5, oblongos 40x115x1,5, ferro chato 5,0 e chapa 5,0",
+    "dimensoes_principais_mm": {
+      "cortes_angulares": ["item 20 (30x50x1,5x170): 22 graus", "item 18 (30x50x1,5x980): 15 graus", "item 10 (50x50x1,5x700): 45 graus", "item 9 (50x50x1,5x1030): 15 graus"]
+    },
+    "furos_e_interfaces": "Itens comprados/padronizados: MANCAL P204 (2x), SUPORTE POLIA CABO ACO (PDR008, 2x), SUPORTE POLIA SUPERIOR (PDR006, 2x), PROTETOR ROLDANA PLANO (PDR003, 2x)",
+    "dobra_ou_curva": "Angulos de corte indicados na coluna CORTE (15, 22 e 45 graus)",
+    "obs": "BOM completa: 1 TUBO REDONDO Ø60x3700 (1); 2 TUBO REDONDO Ø38x1350 (1); 3 TUBO REDONDO Ø25,4x1,5x90 (1); 4 TUBO REDONDO Ø25,4x1,5x140 (6); 5 TUBO OBLONGO 40x115x1,5x250 (1); 6 TUBO OBLONGO 40x115x1,5x415 (1); 7 TUBO OBLONGO 40x115x1,5x880 (2); 8 TUBO OBLONGO 40x115x1,5x425 (1); 9 TUBO QUADRADO 50x50x1,5x1030 (1, corte 15); 10 TUBO QUADRADO 50x50x1,5x700 (1, corte 45); 11 TUBO QUADRADO 50x50x1,5x480 (1); 12 TUBO QUADRADO 50x50x1,5x200 (1); 13 TUBO QUADRADO 50x50x1,5x150 (1); 14 TUBO QUADRADO 50x50x1,5x105 (1); 15 TUBO QUADRADO 50x50x1,5x1000 (2); 16 TUBO QUADRADO 50x50x1,5x60 (1); 17 TUBO QUADRADO 50x50x1,5x900 (1); 18 TUBO RETANGULAR 30x50x1,5x980 (1, corte 15); 19 TUBO RETANGULAR 30x50x1,5x550 (2); 20 TUBO RETANGULAR 30x50x1,5x170 (2, corte 22); 21 FERRO CHATO 5,0x38x50 (2); 22 FERRO CHATO 5,0x50x80 (1); 23 FERRO CHATO 5,0x50x90 (4); 24 FERRO CHATO 5,0x50x160 (1); 25 CHAPA 5,0x175x250 (1); 26 BUCHA 1 1/2 pol sch 80x151 (1); 27 EIXO Ø20x250 (1); 28 PROTETOR ROLDANA PLANO PDR003 (2); 29 SUPORTE POLIA SUPERIOR PDR006 (2); 30 SUPORTE POLIA CABO ACO PDR008 (2); 31 MANCAL P204 (2); 32 SUPORTE BANCO ABNT-1010 (2). Folha A4."
+  },
+  {
+    "arquivo": "REMADA/REMADA/904-DESENHO.pdf",
+    "projeto": "remada",
+    "peca": "BANCO REMADA FRONTAL (des. 904) - montagem (vistas explodida e montada)",
+    "funcao": "Folha de montagem isometrica mostrando a sequencia de montagem do banco de remada frontal (chassi, braco em X, coluna de pesos, assento, encosto).",
+    "material": "Nao indicado (folha de montagem)",
+    "secao_ou_espessura": "Nao indicado",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra visualmente: coluna de 10 placas com pino seletor, cabo com polias, braco em X com 4 pegas, assento e encosto estofados, eixo de articulacao do braco",
+    "dobra_ou_curva": "Nao cotado",
+    "obs": "Folha de montagem sem cotas e sem BOM preenchida. Folha A2."
+  },
+  {
+    "arquivo": "SUPINO_ARTICULADO/SUPINO ARTICULADO/01901-DESENHO.pdf",
+    "projeto": "supino_articulado",
+    "peca": "CHASSI SUPINO SENTADO (des. 01901) - chassi, braco articulado, eixo, bucha e suportes",
+    "funcao": "Chassi do supino articulado sentado com torre de pesos, montantes inclinados, braco de empurrar em U articulado e suportes de banco/encosto.",
+    "material": "Nao indicado nesta folha (materiais na lista 01902, ABNT-1010 e inox)",
+    "secao_ou_espessura": "Torre tubo redondo Ø60 dobrado; montantes tubo retangular 50x30x1,5 (comprimento 2240); estrutura 50x50x1,5",
+    "dimensoes_principais_mm": {
+      "altura_total": 2200,
+      "altura_torre_reta": 1700,
+      "montante_inclinado": ["comprimento 2234/2240", "cortes a 10 graus nas duas pontas", "largura topo 530", "offset topo 302"],
+      "braco_U": ["largura interna 700", "raio de dobra R175", "altura total 900", "queda lateral 650", "pegas Ø25.4 descendo 150", "apoio 150 a 45"],
+      "corte_A-A": [480, "furos Ø26 e Ø30 a 185"],
+      "bucha_pivo": ["Ø42 +0,05 interno", "Ø48 externo", "comprimento 150", "tampas 12"],
+      "eixo": ["Ø20 x 159 (150 util)", "rosca 3/8 pol"],
+      "suporte_banco_encosto": ["2 pecas", "comprimento 300", "furos a cada 50", "chapa 200x180"],
+      "planta": [840, 405, 540, 830, 900, 177.5],
+      "fixacoes_intermediarias": ["ferro chato 5x60x110", "porca 3/8 pol soldada", "porca 3/4 pol", "chapa 50x200"]
+    },
+    "furos_e_interfaces": "Bucha Ø42+0,05 no topo dos montantes recebe eixo Ø20 do braco articulado; furos Ø26/Ø30 na travessa para guias; suportes de banco/encosto com furos em passo de 50 para regulagem; porcas 3/8 e 3/4 soldadas",
+    "dobra_ou_curva": "Torre Ø60 em U invertido; braco em U com R175; montantes retos inclinados (corte 10 graus)",
+    "obs": "Nota do braco: COMP.: 1950, ENC.: 780. Folha A2. BOM completa no des. 01902."
+  },
+  {
+    "arquivo": "SUPINO_ARTICULADO/SUPINO ARTICULADO/01902-DESENHO.pdf",
+    "projeto": "supino_articulado",
+    "peca": "DETALHES DE FURACAO / LISTA DE MATERIAIS SUPINO ARTICULADO (des. 01902)",
+    "funcao": "Folha combinada com 5 detalhes de furacao e a lista de materiais completa (26 itens) do supino articulado.",
+    "material": "ABNT-1010 (estrutura) e INOX (item 23, tubo 40x40x1,5x320)",
+    "secao_ou_espessura": "Tubos 50x50x1,5, 50x30x1,5, 30x50x1,5, oblongo 40x115x1,5, chapa 3, ferro chato 5",
+    "dimensoes_principais_mm": {
+      "detalhe_1": ["1 peca", "480 com furos Ø26 e Ø30 a 185"],
+      "detalhe_2": ["1 peca", "tubo Ø40 x 300", "furos Ø13 em passo de 50"],
+      "detalhe_3": ["2 pecas", "chapa Ø150 x 200 (aba 30)", "furos Ø13 e Ø22"],
+      "detalhe_4": ["2 pecas", "tubo 30x50 x 500", "furo Ø10 a 30 do topo"],
+      "detalhe_5": ["2 pecas", "chapa 200x200", "4 furos Ø10 a 10 das bordas"],
+      "cortes_angulares": ["item 19 (50x30x1,5x2240): 10 graus nas duas pontas"]
+    },
+    "furos_e_interfaces": "Furos Ø13 de regulagem em passo 50; furos Ø10 de fixacao de chapas 200x200; furos Ø26/Ø30 para guias de cabo",
+    "dobra_ou_curva": "So cortes angulares (10 graus no montante)",
+    "obs": "BOM completa: 1 TUBO REDONDO Ø25,4x1,5x150 (2); 2 TUBO REDONDO Ø60x1950 (1); 3 TUBO REDONDO Ø60x3700 (1); 4 EIXO Ø20x159 (1); 5 BUCHA 1 1/2 pol sch80x150 (1); 6 TUBO OBLONGO 40x115x1,5x250 (1); 7 TUBO OBLONGO 40x115x1,5x500 (1); 8 TUBO OBLONGO 40x115x1,5x545 (1); 9 TUBO OBLONGO 40x115x1,5x850 (2); 10 TUBO QUADRADO 50x50x1,5x110 (1); 11 TUBO QUADRADO 50x50x1,5x160 (1); 12 TUBO QUADRADO 50x50x1,5x200 (3); 13 TUBO QUADRADO 50x50x1,5x470 (2); 14 TUBO QUADRADO 50x50x1,5x530 (1); 15 TUBO QUADRADO 50x50x1,5x480 (1); 16 TUBO QUADRADO 50x50x1,5x2150 (1); 17 TUBO RETANGULAR 30x50x1,5x220 (1); 18 TUBO RETANGULAR 50x30x1,5x500 (2); 19 TUBO RETANGULAR 50x30x1,5x2240 (2, corte 10/10 graus); 20 FERRO CHATO 5x50x110 (1); 21 FERRO CHATO 5x50x120 (1); 22 CHAPA 3x200x200 (2); 23 TUBO QUADRADO 40x40x1,5x320 INOX (2); 24 PROTETOR ROLDANA PLANO PDR003 (6); 25 SUPORTE POLIA SUPERIOR PDR006 (2); 26 SUPORTE POLIA CABO ACO PDR008 (2). Folha A3."
+  },
+  {
+    "arquivo": "SUPINO_ARTICULADO/SUPINO ARTICULADO/01903-DESENHO.pdf",
+    "projeto": "supino_articulado",
+    "peca": "MONTAGEM SUPINO ARTICULADO (des. 01903)",
+    "funcao": "Folha de montagem isometrica (explodida e montada) do supino articulado, mostrando torre, coluna de 10 placas, braco em U articulado, banco e encosto.",
+    "material": "Nao indicado (folha de montagem)",
+    "secao_ou_espessura": "Nao indicado",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra visualmente eixo/roldanas do cabo, pino seletor da coluna de pesos, articulacao do braco no topo dos montantes e regulagem do assento",
+    "dobra_ou_curva": "Nao cotado",
+    "obs": "Folha de montagem sem cotas e sem BOM preenchida (titulo grafado 'MOTANGEM'). Folha A2."
+  },
+  {
+    "arquivo": "DESENVOLVIMENTO/DESENVOLVIMENTO/701-DESENHO.pdf",
+    "projeto": "desenvolvimento",
+    "peca": "CHASSI DESENVOLVIMENTO (des. 701) - chassi, braco em U, eixo, bucha e suporte de encosto",
+    "funcao": "Chassi da maquina de desenvolvimento de ombros com torre de pesos, braco articulado em U com duplas pegas e assento com encosto regulavel.",
+    "material": "Nao indicado nesta folha (materiais na lista 702, ABNT-1010 e inox)",
+    "secao_ou_espessura": "Torre tubo redondo Ø60 dobrado; estrutura em tubo quadrado 50x50 e retangular 30x50",
+    "dimensoes_principais_mm": {
+      "altura_torre": 1900,
+      "largura_topo_curvo": 580,
+      "furos_topo": ["Ø10 a 185/27"],
+      "estrutura_assento": ["altura chassi de apoio 1300", "braco de suporte 500", "montante 850", "cota 290", "recuo 320"],
+      "banco_encosto": ["encosto 900 com apoio 450", "assento 250/270", "angulos de corte 40 e 220 indicados no conjunto"],
+      "braco_planta": ["largura 800", "profundidade 620 + 500", "raio R175", "pegas internas a 125/300", "travessas com passo 160"],
+      "braco_vista": ["altura 800", "queda 200", "pega 30/25", "tubo Ø60"],
+      "bucha_pivo": ["Ø42 +0,05/-0 interno", "Ø48 externo", "comprimento 150", "tampas 12"],
+      "eixo": ["Ø20 x 159 (150 util)", "rosca 3/8 pol"],
+      "furo_pivo_chassi": "Ø11,5 e Ø10 no suporte do braco, cota 220 do braco de apoio, Ø48 da bucha",
+      "corte_A-A": [480, "furos Ø26 e Ø30 a 185"],
+      "suporte_encosto": ["comprimento 350", "furos Ø13 em passo de 50", "chapa 200x180", "tubo Ø40"],
+      "planta_base": [835, 315, 500, 540, 830]
+    },
+    "furos_e_interfaces": "Bucha Ø42+0,05 com eixo Ø20x159 rosca 3/8 pol para articulacao do braco; furos Ø26/Ø30 na travessa (guias de cabo); suporte do encosto com furos Ø13 em passo 50 para regulagem",
+    "dobra_ou_curva": "Torre Ø60 em U invertido; braco em U duplo com R175 (planta) formando as duas pegas frontais",
+    "obs": "Folha A2. BOM completa no des. 702."
+  },
+  {
+    "arquivo": "DESENVOLVIMENTO/DESENVOLVIMENTO/702-DESENHO.pdf",
+    "projeto": "desenvolvimento",
+    "peca": "DETALHES DE FURACAO DESENVOLVIMENTO (des. 702) + lista de materiais",
+    "funcao": "Folha com 7 detalhes de furacao e a lista de materiais completa (28 itens) do desenvolvimento.",
+    "material": "ABNT-1010 (estrutura) e INOX (item 24, tubo 40x40x1,5x400)",
+    "secao_ou_espessura": "Tubos 50x50x1,5, 30x50x1,5, oblongo 40x115x1,5, redondo Ø60x1,5, ferro chato 5",
+    "dimensoes_principais_mm": {
+      "detalhe_1": ["1 peca", "tubo Ø50 x 450 com corte em angulo", "furo Ø22 a 30 do topo"],
+      "detalhe_2": ["1 peca", "tubo Ø50 x 180", "furo Ø22 a 30"],
+      "detalhe_3": ["1 peca", "tubo Ø50 x 380", "furo Ø10 a 50"],
+      "detalhe_4": ["1 peca", "480 com furos Ø26 e Ø30 a 185"],
+      "detalhe_5": ["1 peca", "tubo Ø40 x 250", "furos Ø13 em passo de 50"],
+      "detalhe_6": ["1 peca", "chapa 200x200", "4 furos Ø5 a 10 das bordas"],
+      "detalhe_7": ["2 pecas", "tubo Ø50 x 500", "furo Ø10 a 30"],
+      "cortes_angulares": ["item 20 (30x50x1,5x705): 8 graus", "item 17 (50x50x1,5x900): 9/18 graus", "item 16 (50x50x1,5x900): 10 graus", "item 15 (50x50x1,5x525): 20 graus", "item 14 (50x50x1,5x500): 9 graus", "item 12 (50x50x1,5x465): 22 graus 30 min / 27 graus 30 min", "item 11 (50x50x1,5x450): 10 graus", "item 8 (50x50x1,5x200): 22 graus 30 min"]
+    },
+    "furos_e_interfaces": "Furos Ø22 (buchas/pinos), Ø13 regulagem em passo 50, Ø10 e Ø5 de fixacao, Ø26/Ø30 guias de cabo",
+    "dobra_ou_curva": "So cortes angulares (8 a 27,5 graus) listados na coluna CORTE",
+    "obs": "BOM completa: 1 TUBO REDONDO Ø25,4x200 (2); 2 TUBO REDONDO Ø60x1,5x1890 (1); 3 TUBO REDONDO Ø60x1,5x4230 (1); 4 TUBO OBLONGO 40x115x1,5x500 (1); 5 TUBO OBLONGO 40x115x1,5x550 (1); 6 TUBO OBLONGO 40x115x1,5x850 (2); 7 TUBO QUADRADO 50x50x1,5x180 (2); 8 TUBO QUADRADO 50x50x1,5x200 (1, corte 22g30); 9 TUBO QUADRADO 50x50x1,5x250 (1); 10 TUBO QUADRADO 50x50x1,5x380 (1); 11 TUBO QUADRADO 50x50x1,5x450 (1, corte 10); 12 TUBO QUADRADO 50x50x1,5x465 (1, corte 22g30/27g30); 13 TUBO QUADRADO 50x50x1,5x480 (1); 14 TUBO QUADRADO 50x50x1,5x500 (1, corte 9); 15 TUBO QUADRADO 50x50x1,5x525 (1, corte 20); 16 TUBO QUADRADO 50x50x1,5x900 (1, corte 10); 17 TUBO QUADRADO 50x50x1,5x900 (1, corte 9/18); 18 TUBO RETANGULAR 30x50x1,5x160 (2); 19 TUBO RETANGULAR 30x50x1,5x500 (2); 20 TUBO RETANGULAR 30x50x1,5x705 (1, corte 8); 21 FERRO CHATO 5x50x50 (1); 22 EIXO Ø20x163 (1); 23 BUCHA Ø1 1/2 pol sch 80x155 (1); 24 TUBO QUADRADO 40x40x1,5x400 INOX (1); 25 PROTETOR ROLDANA PLANO PDR003 (2); 26 PROTETOR R. T. OBLONGO PDR004 (2); 27 SUPORTE POLIA SUPERIOR PDR006 (2); 28 SUPORTE POLIA CABO ACO PDR008 (2). Folha A3."
+  },
+  {
+    "arquivo": "DESENVOLVIMENTO/DESENVOLVIMENTO/703-DESENHO.pdf",
+    "projeto": "desenvolvimento",
+    "peca": "MONTAGEM DESENVOLVIMENTO (des. 703)",
+    "funcao": "Folha de montagem isometrica (explodida e montada) do desenvolvimento, mostrando torre, coluna de placas, braco em U com pegas duplas, assento e encosto.",
+    "material": "Nao indicado (folha de montagem)",
+    "secao_ou_espessura": "Nao indicado",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra visualmente cabo/roldanas, pino seletor, articulacao do braco atras do encosto, sapatas e apoios de pes",
+    "dobra_ou_curva": "Nao cotado",
+    "obs": "Folha de montagem sem cotas e sem BOM preenchida. Folha A2."
+  },
+  {
+    "arquivo": "DELTOIDE/DELTOIDE/6901 DESENHO (1).pdf",
+    "projeto": "deltoide",
+    "peca": "CHASSI DELTOIDE (des. 6901) - chassi horizontal com bracos articulados laterais",
+    "funcao": "Chassi da maquina de deltoide (elevacao lateral) com estrutura horizontal baixa, montante e dois bracos dobrados espelhados (esquerdo e direito) com chapas de fixacao.",
+    "material": "Nao indicado nesta folha (lista no des. 6903, ABNT-1010 e inox)",
+    "secao_ou_espessura": "Bracos em tubo redondo dobrado com chapa soldada; estrutura em tubo quadrado/retangular; ferro chato indicado na vista frontal",
+    "dimensoes_principais_mm": {
+      "planta": ["comprimento total 950", "travessa frontal 500 (furos a 400/150)", "vao interno 660", "cota 285", "profundidade 800", "largura braco 405"],
+      "vista_lateral": ["comprimento total 1700", "cotas encadeadas 880 / 1110 / 1150 / 1190", "altura montante 890", "altura frontal 500", "cotas verticais 300 / 310 / 330 / 450 / 530", "apoios 220 / 265", "pega superior 130 com tubo inclinado", "espacamentos 25 / 40 / 50 / 70", "pega Ø?: cotas Ø10 indicadas nas pontas"],
+      "detalhe_braco": ["2 pecas (1 esquerdo e 1 direito, espelhados)", "braco dobrado em S com chapa retangular furada soldada no meio", "quedas verticais 140 e 160 nas pontas"],
+      "detalhe_braco_dobra": "dobra fechada em U na ponta do braco (angulo indicado no detalhe)"
+    },
+    "furos_e_interfaces": "Chapa furada (multiplos furos) soldada em cada braco para fixacao da almofada/apoio; furos na travessa frontal; ferro chato de reforco na vista frontal; chassi montado mostra rodinhas de transporte na base",
+    "dobra_ou_curva": "Bracos com dupla dobra em S e retorno em U na ponta; par espelhado esquerdo/direito",
+    "obs": "Folha A2 em orientacao retrato girada; parte das cotas pequenas de dificil leitura no PDF. BOM no des. 6903."
+  },
+  {
+    "arquivo": "DELTOIDE/DELTOIDE/6902 DESENHO (1).pdf",
+    "projeto": "deltoide",
+    "peca": "BUCHA GUIA DO CABO DELTOIDE (des. 6902) - prendedor de cabo, bucha e roldana",
+    "funcao": "Detalhes usinados do sistema de cabo do deltoide: prendedor de cabo, bucha de articulacao e roldana (roudana).",
+    "material": "Nao indicado na folha",
+    "secao_ou_espessura": "Pecas usinadas (barra redonda / tarugo)",
+    "dimensoes_principais_mm": {
+      "prendedor_cabo": ["2 pecas", "Ø15 x 20", "furo passante Ø7", "rosca 5/16 pol radial", "escala 1:1"],
+      "bucha": ["1 peca", "Ø externo 48", "Ø interno 42 +0,05/-0", "comprimento 120 entre tampas", "tampas de 12 em cada lado"],
+      "roldana": ["2 pecas", "Ø externo 270", "largura total 50, cubo 48", "canal do cabo: largura 13, fundo 8", "furo do cubo Ø20,05 +0,05", "rosca 5/16 pol para prisioneiro a 10 da face", "cubo Ø? com ressalto 30"]
+    },
+    "furos_e_interfaces": "Furo Ø20,05+0,05 da roldana ajusta em eixo Ø20; bucha Ø42+0,05 recebe pino/eixo do braco; rosca 5/16 pol trava cabo e roldana",
+    "dobra_ou_curva": "Sem dobras (pecas torneadas)",
+    "obs": "Folha A4, sem BOM (campos vazios); tolerancias de ajuste explicitas (+0,05) na bucha e na roldana."
+  },
+  {
+    "arquivo": "DELTOIDE/DELTOIDE/6903 DESENHO (1).pdf",
+    "projeto": "deltoide",
+    "peca": "LISTA DELTOIDE (des. 6903) - lista de materiais + detalhes de pecas",
+    "funcao": "Folha combinada com a lista de materiais do deltoide (cerca de 28 itens) e detalhes de banco, suportes, punho, eixo, braco, roldana e bucha.",
+    "material": "ABNT-1010 na maioria dos itens; 1 item em INOX (coluna material da lista)",
+    "secao_ou_espessura": "Tubos quadrados 50x50 e 80x40, tubos oblongos 40x115, tubos redondos, chapas 3 mm",
+    "dimensoes_principais_mm": {
+      "banco": ["tubo 300 com furos Ø13 em passo de 50", "chapa topo 200x3 / Ø180", "furo Ø13,5"],
+      "tubo_quadrado_80x40x400": ["comprimento 400 (ou 285+2x57,5 = 400 total)", "2 furos Ø26 grandes", "furos Ø? a 97,5", "largura 80"],
+      "corte_A-A": ["comprimento 480", "furos Ø26 e Ø30 a 185", "cotas 147,5 nas pontas"],
+      "suporte_espuma_bracos": ["2 pecas", "chapa 230x120", "furos Ø5,5 em linhas com passo 70", "aba 10/25"],
+      "punho": ["2 pecas", "tubo dobrado em J: 232 x 260", "raio interno R180 aprox (Ø180)", "nota: 1 peca dobra 4x4+45 e 1 peca dobra 80 angulo 180 graus"],
+      "eixo": ["2 pecas", "Ø20 x 240"],
+      "tubo_apoio_almofada_costas": ["1 peca", "tubo 200 com furos Ø13 em passo de 30", "chapa 200x3 / 180", "furo Ø5,5", "base 40"],
+      "detalhe_braco": ["2 pecas", "tubo Ø60 dobrado em L: 660 x 310", "furo Ø26 a 27 da ponta", "pino/tubo Ø20 x 50 na base"],
+      "tubo_quadrado_50x50x200": ["furo Ø22 a 25 do topo (2 versoes de detalhe, uma com tubo de 450/650 associado)"],
+      "roldana_e_bucha": "iguais ao des. 6902 (roldana Ø270 furo Ø20,05+0,05, bucha Ø42+0/-0,05 x 120, prendedor cabo Ø15x20 rosca 5/16 pol)"
+    },
+    "furos_e_interfaces": "Furos Ø13 de regulagem (passo 50 no banco, passo 30 no apoio das costas); furos Ø26/Ø30 para guias; furos Ø5,5 para fixacao das espumas; furo Ø22 para bucha; rosca 5/16 pol",
+    "dobra_ou_curva": "Punho dobrado 180 graus (R180); braco Ø60 dobrado em L (660x310); indicacoes de corte 45 graus em itens da lista",
+    "obs": "BOM presente na folha (aprox. 28 itens: chapas, tubos retangulares, redondos, oblongos 40x115, quadrados 40x40 e 50x50, eixo, buchas; material ABNT-1010 e 1 item INOX), porem a tabela esta girada e com texto pequeno no PDF - linhas individuais parcialmente ilegiveis; nao transcrita integralmente para nao inventar valores."
+  },
+  {
+    "arquivo": "DELTOIDE/DELTOIDE/6904 DESENHO (1).pdf",
+    "projeto": "deltoide",
+    "peca": "MONTAGEM DELTOIDE (des. 6904)",
+    "funcao": "Folha de montagem isometrica em multiplas etapas do deltoide, mostrando chassi, bracos com almofadas, roldanas Ø270, coluna/anilhas, punhos e cabos.",
+    "material": "Nao indicado (folha de montagem)",
+    "secao_ou_espessura": "Nao indicado",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra visualmente a sequencia: fixacao dos bracos articulados nas buchas, montagem das roldanas grandes nas laterais, passagem dos cabos, encaixe das almofadas de braco e do encosto",
+    "dobra_ou_curva": "Nao cotado",
+    "obs": "Folha de montagem sem cotas e sem BOM preenchida; pecas novas de cada etapa destacadas em cores. Folha A2."
+  }
+]

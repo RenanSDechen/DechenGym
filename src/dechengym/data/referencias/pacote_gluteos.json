@@ -1,0 +1,247 @@
+[
+  {
+    "arquivo": "GLUTEOS_4_APOIOS/GLUTEOS 4 APOIOS/00101-DESENHO.pdf",
+    "projeto": "gluteos_4_apoios",
+    "peca": "CHASSI",
+    "funcao": "Estrutura principal soldada da maquina de gluteos quatro apoios, integrando torre da coluna de pesos em arco, base e mesa de apoios.",
+    "material": "ABNT-1010 (tubos quadrados, retangular, oblongos, redondos e chapa)",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; tubo oblongo 40x115x1,5; tubo retangular 30x50x1,5; tubo redondo Ø25,4x1,5 e Ø1.1/2\" SCH.80; chapa #3mm",
+    "dimensoes_principais_mm": {
+      "altura_total": 1400,
+      "torre_arco_largura_topo": 580,
+      "torre_raio_arco": "R145",
+      "torre_altura_reta_ate_arco": 560,
+      "profundidade_base": 730,
+      "largura_planta": 700,
+      "vao_frontal_base": "280 + 300",
+      "apoio_inclinado_angulo": "15 graus",
+      "coluna_apoio_altura": 545,
+      "montante_700": 700,
+      "montante_500": 500,
+      "pes_oblongos": "40x115x1,5 x730 (2x) e x700 (2x)",
+      "bucha_pivo": "Ø48 ext x Ø42 +0,05/0 int x 100 compr, posicao do furo 12"
+    },
+    "furos_e_interfaces": "Detalhe 1: travessa Ø50 compr 460 com furos Ø26 e Ø30 (entre centros 185) p/ polia; Detalhe 2: tubo Ø50 compr 900 com furo Ø22 a 30 do topo; Detalhe 3: tubo Ø50 compr 700 com furo Ø22 a 30 do topo; Detalhe 4: chapa 100x220 com furos a 20 das bordas e furo a 60 graus (2 pecas); furos Ø10 no arco (dist. 185/27) e Ø6 na base; bucha Ø42 +0,05/0 p/ eixo do disco/came",
+    "dobra_ou_curva": "Arco da torre R145; corte de tubos em 15 graus (itens 5 e 12) e 10 graus (item 7)",
+    "obs": "BOM: 15-CHAPA #3mm 100x220 (2); 14-TUBO RETANGULAR 30x50x1,5x200 (1); 13-TQ 50x50x1,5x700 (1); 12-TQ 50x50x1,5x545 (1, corte 15gr); 11-TQ 50x50x1,5x500 (1); 10-TQ 50x50x1,5x480 (1); 9-TQ 50x50x1,5x450 (1); 8-TQ 50x50x1,5x440 (1); 7-TQ 50x50x1,5x385 (2, corte 10gr); 6-TQ 50x50x1,5x300 (1); 5-TQ 50x50x1,5x200 (1, corte 15gr); 4-TUBO OBLONGO 40x115x1,5x730 (2); 3-TUBO OBLONGO 40x115x1,5x700 (2); 2-TUBO REDONDO Ø1.1/2\" SCH.80x105 (2); 1-TUBO REDONDO Ø25,4x1,5x150 (2). Folha A2."
+  },
+  {
+    "arquivo": "GLUTEOS_4_APOIOS/GLUTEOS 4 APOIOS/00102-DESENHO.pdf",
+    "projeto": "gluteos_4_apoios",
+    "peca": "DISCO",
+    "funcao": "Disco/came de regulagem do braco de carga, com furacao radial para selecao de posicao do pino.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Disco Ø373 x 1/2\" (12,7 mm de espessura)",
+    "dimensoes_principais_mm": {
+      "diametro_disco": 370,
+      "espessura": 12.7,
+      "raio_furos_regulagem": "R130",
+      "passo_angular_furos": "15 graus",
+      "espacamento_furos_no_arco": 35,
+      "braco_pino_batente": "150 do centro",
+      "cubo": "Ø38 ext / Ø30, altura 35",
+      "furo_central": "Ø20,05 +0,05/0",
+      "eixo_item2": "Ø38,1x50 com rosca 3/8\", altura 35 e batente 10",
+      "eixo_item3_pino_batente": "Ø20x68, altura 65, a 10 da borda, raio de alivio R3, rosca 5/16\", furo Ø7"
+    },
+    "furos_e_interfaces": "Furos de regulagem Ø13 em R130 a cada 15 graus; furo central Ø20,05 +0,05/0 no cubo Ø38/Ø30 com rosca 3/8\"; pino batente Ø20 roscado 5/16\" com furo Ø7; rasgo periferico largura 6 com R1 (profundidades 3,2 e 3,5) - Detalhe A; chanfro 2x2 na borda - Detalhe B",
+    "dobra_ou_curva": "Nao ha dobra; peca usinada/torneada",
+    "obs": "BOM: 3-EIXO Ø20x68 ABNT-1010 (1); 2-EIXO Ø38,1x50 ABNT-1010 (1); 1-DISCO Ø373x1/2\" ABNT-1010 (1). Folha A3. Identico ao disco 05402 do gluteos vertical."
+  },
+  {
+    "arquivo": "GLUTEOS_4_APOIOS/GLUTEOS 4 APOIOS/00103-DESENHO.pdf",
+    "projeto": "gluteos_4_apoios",
+    "peca": "SUPORTE DO APOIO",
+    "funcao": "Coluna vertical com cabecote em tubo quadrado que recebe e fixa o apoio (antebraco/joelho) regulavel.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; eixo Ø25; ferro chato 5 mm",
+    "dimensoes_principais_mm": {
+      "cabecote_tubo_quadrado": "50x50x1,5 x 150 de comprimento",
+      "furo_porca_no_cabecote": "a 30 da extremidade",
+      "eixo_coluna": "Ø25 x 550, centrado a 50 da extremidade do cabecote",
+      "flange_ferro_chato": "5x50x50",
+      "rosca_ponta_inferior": "3/8\""
+    },
+    "furos_e_interfaces": "Porca 3/4\" soldada no cabecote (trava do apoio); furo passante no tubo quadrado a 30 da ponta; ponta inferior do eixo Ø25 com rosca interna 3/8\"; ferro chato 5x50x50 soldado entre tubo e eixo",
+    "dobra_ou_curva": "Nao ha; conjunto soldado",
+    "obs": "BOM: 3-EIXO Ø25x550 ABNT-1010 (1); 2-FERRO CHATO 5x50x50 ABNT-1010 (1); 1-TUBO QUADRADO 50x50x1,5x150 ABNT-1010 (1). Folha A4."
+  },
+  {
+    "arquivo": "GLUTEOS_4_APOIOS/GLUTEOS 4 APOIOS/00104-DESENHO.pdf",
+    "projeto": "gluteos_4_apoios",
+    "peca": "BASE PARA SUPORTE",
+    "funcao": "Braco/tubo telescopico inox com furacao de regulagem que sustenta o suporte do apoio, com pino e bucha de guia.",
+    "material": "ACO INOX",
+    "secao_ou_espessura": "Tubo quadrado 40x40x1,5; pino Ø7/8\"; bucha Ø7/8\"",
+    "dimensoes_principais_mm": {
+      "tubo": "40x40x1,5 x 650",
+      "furos_pino": "Ø19 a 40 e a 130 da extremidade",
+      "furos_regulagem": "6x Ø13 com passo 50 na outra extremidade",
+      "pino": "Ø20 -0,05/0 x 150 (corpo), comprimento total 205, colar a 155, ponta Ø19 x 45",
+      "bucha_de_guia": "Ø22,2 ext x Ø19 -0,2/0 int, altura total 63, guia 40/42, furo Ø10, ressalto 12,5 +/-0,2"
+    },
+    "furos_e_interfaces": "Dois furos Ø19 (40 e 130 da ponta) recebem pino e bucha; fileira de 6 furos Ø13 espacados 50 para regulagem de posicao; bucha de guia prensada com furo transversal Ø10",
+    "dobra_ou_curva": "Nao ha dobra",
+    "obs": "BOM: 3-TUBO QUADRADO 40x40x1,5x650 ACO INOX (1); 2-BUCHA Ø7/8\"x65 ACO INOX (1); 1-PINO Ø7/8\"x208 ACO INOX (1). Folha A4. Versao vertical (05404) usa tubo de 900 mm."
+  },
+  {
+    "arquivo": "GLUTEOS_4_APOIOS/GLUTEOS 4 APOIOS/00105-DESENHO.pdf",
+    "projeto": "gluteos_4_apoios",
+    "peca": "PINO DO CORPO",
+    "funcao": "Pino de engate rapido com mola (arame) para selecao de posicao nas regulagens da maquina.",
+    "material": "Nao indicado no desenho (BOM vazia)",
+    "secao_ou_espessura": "Pino Ø12 / Ø9; arame Ø1",
+    "dimensoes_principais_mm": {
+      "comprimento_total_pino": 90,
+      "corpo": "Ø12 x 30, chanfro 2 x 30 graus na ponta",
+      "haste": "Ø9 +/-0,2 x 45",
+      "rosca": "W 1/4\" x 15",
+      "mola": "arame Ø1, comprimento 33, Ø externo 11,6 0/-0,5, passo Ø5"
+    },
+    "furos_e_interfaces": "Rosca W 1/4\" na extremidade para manipulo; mola trabalha sobre a haste Ø9",
+    "dobra_ou_curva": "Mola helicoidal em arame Ø1 (passo 5)",
+    "obs": "Duas pecas detalhadas: PINO (1 peca) e ARAME Ø1 / mola (1 peca). Tabela BOM sem itens preenchidos. Folha A4. Identico ao 05405 do gluteos vertical."
+  },
+  {
+    "arquivo": "GLUTEOS_4_APOIOS/GLUTEOS 4 APOIOS/00106-DESENHO.pdf",
+    "projeto": "gluteos_4_apoios",
+    "peca": "MONTAGEM",
+    "funcao": "Desenho de montagem geral (vista explodida + conjunto montado) da maquina gluteos quatro apoios.",
+    "material": "Nao aplicavel (conjunto)",
+    "secao_ou_espessura": "Nao aplicavel",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra a ordem de montagem: plataforma/mesa de apoios, suportes de apoio com manipulos, coluna de pesos com placas na torre em arco, disco/came de regulagem com braco furado, rolo de espuma do braco de carga e sapatas da base",
+    "dobra_ou_curva": "Nao aplicavel",
+    "obs": "Sem cotas e sem BOM preenchida; apenas vistas isometricas explodida e montada. Folha A2."
+  },
+  {
+    "arquivo": "GLUTEOS_VERTICAL/GLUTEOS VERTICAL/05401-DESENHO.pdf",
+    "projeto": "gluteos_vertical",
+    "peca": "CHASSI",
+    "funcao": "Estrutura principal soldada da maquina de gluteos vertical (em pe), com torre de pesos em arco, coluna inclinada do encosto e suportes de encosto regulaveis.",
+    "material": "Indicado por item na lista 05407 (ABNT-1010 e INOX); bucha em ABNT-1010",
+    "secao_ou_espessura": "Tubo redondo Ø60x1,5 (torre) e Ø38 (coluna inclinada); tubos Ø40 e Ø25,4 nos suportes de encosto; bucha Ø48/Ø42",
+    "dimensoes_principais_mm": {
+      "altura_total": 1700,
+      "altura_intermediaria": "926 / 1000",
+      "torre_arco_largura_topo": 580,
+      "torre_entre_furos_topo": 185,
+      "coluna_inclinada": "Ø38, curva R135, trecho 400, suporte 50x30 a 200 do topo",
+      "planta_base": "900 x (500+115+115), quadro interno 570 x 500, plataforma xadrez",
+      "base_profundidade": 210,
+      "suporte_encosto_superior": "tubo Ø25,4 curvado, balanco 187, altura da curva 213, coluna Ø40 x 400 com furos",
+      "suporte_encosto_chapa": "chapa 200x200 esp. 10, coluna Ø40 x 600 (trecho reto inferior 250)",
+      "bucha_pivo": "Ø48 ext x Ø42 +0,05/0 int x 100 compr, furo a 12"
+    },
+    "furos_e_interfaces": "Furos Ø10 no arco do topo (dist. 185); furos Ø13 espacados 30 nas colunas Ø40 dos dois suportes de encosto (regulagem de altura); furos Ø13 na base; bucha Ø42 +0,05/0 para eixo do disco; suporte 50x30 com furo Ø50 na coluna inclinada",
+    "dobra_ou_curva": "Arco da torre em tubo Ø60; curva R135 na coluna inclinada Ø38; tubo Ø25,4 do encosto curvado em C (213 x 187)",
+    "obs": "Sem BOM propria na folha (ver lista 05407); inclui DETALHE BUCHA (Ø42 +0,05/0 x 100, ext Ø48) e dois SUPORTE ENCOSTO detalhados em 1:5. Folha A2."
+  },
+  {
+    "arquivo": "GLUTEOS_VERTICAL/GLUTEOS VERTICAL/05402-DESENHO.pdf",
+    "projeto": "gluteos_vertical",
+    "peca": "DISCO",
+    "funcao": "Disco/came de regulagem do braco de carga, com furacao radial para selecao de posicao do pino.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Disco Ø373 x 1/2\" (12,7 mm)",
+    "dimensoes_principais_mm": {
+      "diametro_disco": 370,
+      "espessura": 12.7,
+      "raio_furos_regulagem": "R130",
+      "passo_angular_furos": "15 graus",
+      "espacamento_furos_no_arco": 35,
+      "braco_pino_batente": "150 do centro",
+      "cubo": "Ø38 ext / Ø30, altura 35",
+      "furo_central": "Ø20,05 +0,05/0",
+      "eixo_item2": "Ø38,1x50 com rosca 3/8\"",
+      "eixo_item3_pino_batente": "Ø20x68, altura 65, a 10 da borda, R3, rosca 5/16\", furo Ø7"
+    },
+    "furos_e_interfaces": "Furos de regulagem Ø13 em R130 a cada 15 graus; furo central Ø20,05 +0,05/0; pino batente Ø20 com rosca 5/16\" e furo Ø7; rasgo periferico largura 6 R1 (3,2/3,5); chanfro 2x2",
+    "dobra_ou_curva": "Nao ha; peca usinada",
+    "obs": "BOM: 3-EIXO Ø20x68 ABNT-1010 (1); 2-EIXO Ø38,1x50 ABNT-1010 (1); 1-DISCO Ø373x1/2\" ABNT-1010 (1). Folha A3. Identico ao 00102 do quatro apoios."
+  },
+  {
+    "arquivo": "GLUTEOS_VERTICAL/GLUTEOS VERTICAL/05403-DESENHO.pdf",
+    "projeto": "gluteos_vertical",
+    "peca": "SUPORTE NO APOIO",
+    "funcao": "Coluna vertical com cabecote em tubo quadrado que fixa o apoio regulavel do usuario.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; eixo Ø25; ferro chato 5 mm",
+    "dimensoes_principais_mm": {
+      "cabecote_tubo_quadrado": "50x50x1,5 x 150",
+      "furo_porca_no_cabecote": "a 30 da extremidade",
+      "eixo_coluna": "Ø25 x 550, a 50 da extremidade do cabecote",
+      "flange_ferro_chato": "50x50x5",
+      "rosca_ponta_inferior": "3/8\""
+    },
+    "furos_e_interfaces": "Porca 3/4\" soldada no cabecote; ponta inferior do eixo com rosca 3/8\"; ferro chato 50x50x5 soldado entre tubo e eixo",
+    "dobra_ou_curva": "Nao ha; conjunto soldado",
+    "obs": "BOM: 3-EIXO Ø25x550 ABNT-1010 (1); 2-FERRO CHATO 50x50x5 ABNT-1010 (1); 1-TUBO QUADRADO 50x50x1,5x150 ABNT-1010 (1). Folha A4. Identico ao 00103 do quatro apoios."
+  },
+  {
+    "arquivo": "GLUTEOS_VERTICAL/GLUTEOS VERTICAL/05404-DESENHO.pdf",
+    "projeto": "gluteos_vertical",
+    "peca": "BASE PARA SUPORTE",
+    "funcao": "Braco/tubo telescopico inox com furacao de regulagem que sustenta o suporte do apoio, com pino e bucha de guia.",
+    "material": "ACO INOX",
+    "secao_ou_espessura": "Tubo quadrado 40x40x1,5; pino Ø7/8\"; bucha Ø7/8\"",
+    "dimensoes_principais_mm": {
+      "tubo": "40x40x1,5 x 900",
+      "furos_pino": "Ø19 a 40 e a 130 da extremidade",
+      "furos_regulagem": "6x Ø13 com passo 50 na outra extremidade",
+      "pino": "Ø20 -0,05/0 x 150 (corpo), total 205, colar a 155, ponta Ø19 x 45",
+      "bucha_de_guia": "Ø22,2 ext x Ø19 -0,2/0 int, altura 63, guia 40/42, furo Ø10, ressalto 12,5 +/-0,2"
+    },
+    "furos_e_interfaces": "Dois furos Ø19 (40 e 130) para pino/bucha; 6 furos Ø13 espacados 50 para regulagem; bucha de guia com furo transversal Ø10",
+    "dobra_ou_curva": "Nao ha dobra",
+    "obs": "BOM: 3-TUBO QUADRADO 40x40x1,5x900 ACO INOX (1); 2-BUCHA Ø7/8\"x65 ACO INOX (1); 1-PINO Ø7/8\"x208 ACO INOX (1). Folha A4. Igual ao 00104 exceto comprimento do tubo (900 vs 650)."
+  },
+  {
+    "arquivo": "GLUTEOS_VERTICAL/GLUTEOS VERTICAL/05405-DESENHO.pdf",
+    "projeto": "gluteos_vertical",
+    "peca": "PINO DO CORPO",
+    "funcao": "Pino de engate rapido com mola (arame) para selecao de posicao nas regulagens da maquina.",
+    "material": "Nao indicado no desenho (BOM vazia)",
+    "secao_ou_espessura": "Pino Ø12 / Ø9; arame Ø1",
+    "dimensoes_principais_mm": {
+      "comprimento_total_pino": 90,
+      "corpo": "Ø12 x 30, chanfro 2 x 30 graus",
+      "haste": "Ø9 +/-0,2 x 45",
+      "rosca": "W 1/4\" x 15",
+      "mola": "arame Ø1, comprimento 33, Ø externo 11,6 0/-0,5, passo Ø5"
+    },
+    "furos_e_interfaces": "Rosca W 1/4\" para manipulo; mola sobre a haste Ø9",
+    "dobra_ou_curva": "Mola helicoidal em arame Ø1",
+    "obs": "PINO (1 peca) + ARAME Ø1/mola (1 peca). BOM sem itens. Folha A4. Identico ao 00105 do quatro apoios."
+  },
+  {
+    "arquivo": "GLUTEOS_VERTICAL/GLUTEOS VERTICAL/05406-DESENHO.pdf",
+    "projeto": "gluteos_vertical",
+    "peca": "MONTAGEM",
+    "funcao": "Desenho de montagem geral da maquina gluteos vertical: cinco vistas do conjunto montado e uma vista explodida.",
+    "material": "Nao aplicavel (conjunto)",
+    "secao_ou_espessura": "Nao aplicavel",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra encosto/almofada superior, chapa do encosto, suportes de encosto, torre com coluna de placas, disco/came com braco furado, rolo de espuma do braco de carga, pino do corpo e sapatas",
+    "dobra_ou_curva": "Nao aplicavel",
+    "obs": "Sem cotas e sem BOM preenchida; apenas vistas isometricas. Folha A2."
+  },
+  {
+    "arquivo": "GLUTEOS_VERTICAL/GLUTEOS VERTICAL/05407-DESENHO.pdf",
+    "projeto": "gluteos_vertical",
+    "peca": "LISTA DE MATERIAIS / DETALHES DE FURACAO",
+    "funcao": "Folha de lista de materiais completa do gluteos vertical e detalhes de furacao dos tubos do chassi.",
+    "material": "ABNT-1010 (maioria) e INOX (itens 17 e 18)",
+    "secao_ou_espessura": "Ø60x1,5; Ø38x1,5; Ø25,4x1,5; oblongo 40x115x1,5; quadrado 50x50x1,5 e 40x40x1,5; retangular 30x50x1,5; chapas 5 e 3 mm",
+    "dimensoes_principais_mm": {
+      "detalhe_1": "tubo Ø50 compr 200 com furo Ø22 a 30 do topo (2 pecas)",
+      "detalhe_2": "tubo Ø40 compr 600, fileira de furos passo 30 no trecho superior, trecho inferior liso 250 (1 peca)",
+      "detalhe_3": "tubo Ø40 compr 400, furos passo 30 no trecho superior 200 (1 peca)",
+      "detalhe_4": "travessa Ø50 compr 460 com furos Ø26 e Ø30, entre centros 185 (1 peca)",
+      "detalhe_5": "chapa 200x200 com 4 furos Ø5 a 10 das bordas (1 peca)"
+    },
+    "furos_e_interfaces": "Furos Ø22 (pivos), fileiras de furos passo 30 (regulagem dos encostos), Ø26/Ø30 (polia superior), Ø5 (fixacao da chapa do encosto)",
+    "dobra_ou_curva": "Cortes angulares na BOM: item 10 corte 12,5 graus; item 8 corte 10 graus",
+    "obs": "BOM completa: 18-TQ 40x40x1,5x600 INOX (1); 17-TQ 40x40x1,5x400 INOX (1); 16-SUPORTE POLIA SUPERIOR VER PDR006 (2); 15-CHAPA 5x245x610 ABNT-1010 (1); 14-CHAPA 3x200x200 (1); 13-BUCHA VER DES. TRG05401 (1); 12-TUBO RETANGULAR 30x50x1,5x200 (1); 11-TQ 50x50x1,5x480 (1); 10-TQ 50x50x1,5x465 (1, corte 12,5gr); 9-TQ 50x50x1,5x200 (2); 8-TUBO OBLONGO 40x115x1,5x930 (1, corte 10gr); 7-TUBO OBLONGO 40x115x1,5x900 (2); 6-TUBO OBLONGO 40x115x1,5x580 (1); 5-TUBO OBLONGO 40x115x1,5x510 (2); 4-TUBO OBLONGO 40x115x1,5x400 (1); 3-TUBO REDONDO Ø25,4x1,5x340 (2); 2-TUBO REDONDO Ø38x1,5x635 (1); 1-TUBO REDONDO Ø60x1,5x3700 (1). Folha A3."
+  }
+]

@@ -1,0 +1,258 @@
+[
+  {
+    "arquivo": "GAIOLA_AGACHAMENTO/GAIOLA AGACHAMENTO/6001-DESENHO.pdf",
+    "projeto": "gaiola",
+    "peca": "Chassi (estrutura lateral e vista frontal da gaiola)",
+    "funcao": "Estrutura principal da gaiola de agachamento com colunas verticais, montante diagonal com pinos porta-anilhas/apoios de barra e base em tubo oblongo.",
+    "material": "ABNT-1010 (conforme BOM da folha 6003)",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; tubo oblongo 40x115x1,5; tubo redondo Ø25,4x1,5 (pinos); chapas 5 mm",
+    "dimensoes_principais_mm": {
+      "coluna_vertical": "50x50, altura 1850",
+      "montante_diagonal": "50x50, comprimento 2136, inclinado 30 graus, com pinos Ø25,4 espacados de 150",
+      "travessa_superior_frontal": "1080 (largura entre colunas), vao interno 1100",
+      "travessa_horizontal_lateral": "702, a 950/930 do piso",
+      "pinos_apoio": "Ø25,4, comprimento util 250, projetados 25 alem da coluna",
+      "base_oblongo_lateral": "40x115x1750, balancos 150 e 50",
+      "base_oblongo_traseira": "40x115x1015",
+      "poste_traseiro": "altura 950",
+      "furos_coluna": "furo Ø25,4 lateral a 500 e campo de 600 na coluna; rasgo/furacao a 200 do topo"
+    },
+    "furos_e_interfaces": "Chapas de uniao parafusadas: Detalhe 1 (5x50x100, 2 furos Ø10, afastados 10 das bordas), Detalhe 2 (5x38x200, furos Ø10 a 20 das pontas), Detalhe 3 (5x50x100, rosca 3/8), Detalhe 4 (5x38x200, rosca 3/8) - pares furo passante + rosca para montagem desmontavel das travessas; furos Ø25,4 nas colunas para pinos.",
+    "dobra_ou_curva": "Sem dobras; cortes em meia-esquadria 30 graus nas extremidades do montante diagonal (coluna 2136) e da travessa 702 (conforme coluna CORTE da BOM).",
+    "obs": "Vista frontal mostra largura total 1080/1100 e base traseira 1015. BOM completa na folha 6003."
+  },
+  {
+    "arquivo": "GAIOLA_AGACHAMENTO/GAIOLA AGACHAMENTO/6002-DESENHO.pdf",
+    "projeto": "gaiola",
+    "peca": "Montagem (vista explodida)",
+    "funcao": "Mostra a sequencia de montagem: dois quadros laterais soldados unidos por travessa superior 50x50 e base oblonga traseira, ambas aparafusadas nas chapas com furo/rosca.",
+    "material": "nao indicado na folha (pecas conforme 6003)",
+    "secao_ou_espessura": "nao cotado nesta folha",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Detalhes ampliados mostram travessa superior com chapas de ponta e 2 parafusos por lado, e base oblonga traseira com chapas de ponta parafusadas nas laterais; ponteiras/tampas plasticas nos tubos e sapatas nas bases.",
+    "dobra_ou_curva": "nao aplicavel (folha de montagem)",
+    "obs": "Sem cotas nem BOM; folha A2 apenas com isometricas explodidas e conjunto final."
+  },
+  {
+    "arquivo": "GAIOLA_AGACHAMENTO/GAIOLA AGACHAMENTO/6003-DESENHO.pdf",
+    "projeto": "gaiola",
+    "peca": "Detalhes e lista de materiais",
+    "funcao": "Folha de detalhes das chapas de fixacao, furacao das bases oblongas e coluna, com BOM completa da gaiola.",
+    "material": "ABNT-1010 (todos os itens)",
+    "secao_ou_espessura": "Chapas 5 mm (ferro chato 5x50 e 5x38); tubos 1,5 mm de parede",
+    "dimensoes_principais_mm": {
+      "detalhe_1_chapa": "50x100, 2 furos Ø10 a 10 das bordas",
+      "detalhe_2_chapa": "38x200, furos Ø10 a 20 das pontas",
+      "detalhe_3_chapa": "50x100, rosca 3/8",
+      "detalhe_4_chapa": "38x200, rosca 3/8 a 20 das pontas",
+      "detalhe_5_base_oblonga": "40x115x1750, furos Ø10 a 95 e 160+95 da ponta, a 20 da face",
+      "detalhe_6_coluna": "50x50x1850, furos Ø10 a 10/80 do topo (afastamento 250 do eixo)"
+    },
+    "furos_e_interfaces": "Furos Ø10 passantes casando com roscas 3/8 das chapas correspondentes.",
+    "dobra_ou_curva": "Cortes 30/30 graus no item 10 (tubo 2136) e corte 30 graus nos itens 5 e 6 (conforme coluna CORTE).",
+    "obs": "BOM completa: 1) Tubo redondo Ø25,4x1,5x100 (12); 2) Tubo redondo Ø25,4x1,5x300 (6); 3) Tubo oblongo 40x115x1,5x1015 (1); 4) Tubo oblongo 40x115x1,5x1750 (2); 5) Tubo quadrado 50x50x1,5x200 (2); 6) Tubo quadrado 50x50x1,5x702 (2); 7) Tubo quadrado 50x50x1,5x950 (2); 8) Tubo quadrado 50x50x1,5x1080 (1); 9) Tubo quadrado 50x50x1,5x1850 (2); 10) Tubo quadrado 50x50x1,5x2136 (2); 11) Ferro chato 5x38x200 (4); 12) Ferro chato 5x50x100 (4). Todos ABNT-1010."
+  },
+  {
+    "arquivo": "agachamento_barra_guiada/agachamento barra guiada/01801-DESENHO.pdf",
+    "projeto": "barra_guiada",
+    "peca": "Chassi (multiforca / smith)",
+    "funcao": "Estrutura do smith machine: quadros laterais em tubo retangular com coluna-guia tubular Ø60 curvada no topo, cremalheira de pinos de engate e bases oblongas.",
+    "material": "ABNT-1010 (conforme BOM da folha 01807)",
+    "secao_ou_espessura": "Tubo retangular 70x50x1,5 (montantes); tubo redondo Ø60x1,5 (coluna-guia); tubo oblongo 40x115x1,5 (bases); ferro chato 5x38; chapas 5 mm; cantoneira 5x38x38",
+    "dimensoes_principais_mm": {
+      "montante_vertical_traseiro": "70x50, altura 2100",
+      "montante_vertical_frontal": "70x50, altura 1920",
+      "coluna_guia": "tubo Ø60, comprimento desenvolvido 2300, encosto 860, angulo de dobra 60 graus, marcacao 71, raio de curva R175, altura reta 1427,17/1557,17",
+      "base_lateral": "1000 de comprimento, apoios a 300 e 150, largura 88/50",
+      "suporte_cremalheira": "ferro chato com 1100 de altura e pinos Ø25,4 espacados de 100 (passo dos ganchos)",
+      "oblongo_superior": "40x115x1570 com furos Ø10 (padrao 200/160/20)",
+      "oblongo_inferior": "40x115x1515 com furos Ø10 (padrao 200/160/115/40)",
+      "apoios_porta_anilhas": "comprimento 180, tubo Ø25,4"
+    },
+    "furos_e_interfaces": "Ferro chato 5x38x200 com furos Ø10 a 20/160 para aparafusar travessas oblongas; cantoneira 38x50 com furo Ø10 (fixacao ao piso/base); Chapa 1 184x100 com rasgo 22 de largura x45 de profundidade e chanfro 10x10 (batente/encaixe do gancho da barra); Chapa 2 184x100 chanfro 10x10; Chapa 3 184x100 com furo Ø10 (4 pecas); detalhe de solda entre coluna-guia (oblongo Ø3/8) e ferro chato.",
+    "dobra_ou_curva": "Coluna-guia Ø60 curvada no topo: R175, angulo 60 graus, comprimento total 2300 com trecho de encosto 860 e marcacao de dobra a 71.",
+    "obs": "Ganchos da barra engatam nos pinos Ø25,4 da cremalheira (passo 100); folha traz detalhes de CHAPA 1/2/3, cantoneira, suporte-cremalheira e oblongos superior/inferior."
+  },
+  {
+    "arquivo": "agachamento_barra_guiada/agachamento barra guiada/01802-DESENHO.pdf",
+    "projeto": "barra_guiada",
+    "peca": "Suporte corrente (flange do carro da barra)",
+    "funcao": "Chapa circular com orelhas que abraca a bucha-guia (furo central Ø70,5) e ancora a corrente/contrapeso e o gancho.",
+    "material": "chapa 1/4 pol. x 115 (aco, material nao especificado nesta folha)",
+    "secao_ou_espessura": "1/4 pol. (6,35 mm)",
+    "dimensoes_principais_mm": {
+      "furo_central": "Ø70,5 (+0,3/-0) - encaixa na bucha de nylon da coluna-guia Ø60",
+      "circulo_de_referencia": "Ø84",
+      "orelha_superior": "largura 20, raio R10, furo Ø3,2 a 5 da borda",
+      "orelha_inferior": "furo Ø10 a 10 da borda"
+    },
+    "furos_e_interfaces": "Furo central Ø70,5 +0,3 (interface com bucha nylon Ø70,5 do desenho 01803); furo Ø3,2 (contrapino/trava) e furo Ø10 (pino do gancho/corrente).",
+    "dobra_ou_curva": "Peca plana, sem dobra.",
+    "obs": "2 pecas; escala 1:1."
+  },
+  {
+    "arquivo": "agachamento_barra_guiada/agachamento barra guiada/01803-DESENHO.pdf",
+    "projeto": "barra_guiada",
+    "peca": "Pino, buchas de nylon, distanciador e eixo",
+    "funcao": "Conjunto do carro deslizante: buchas de nylon que deslizam sobre a coluna-guia Ø60, pino de engate, distanciadores e eixos roscados dos ganchos.",
+    "material": "Nylon (buchas); demais pecas metalicas sem material indicado",
+    "secao_ou_espessura": "nao aplicavel (pecas usinadas)",
+    "dimensoes_principais_mm": {
+      "bucha_nylon_guia": "Ø100 externo com corpo Ø84,5 (-0,2), furo Ø70,5 (+0,2) - desliza na coluna Ø60 via bucha 01804 -, comprimento 27, colar de 7, chanfros 2x2 (4 pecas)",
+      "bucha_nylon_pequena": "Ø75 externo, ressalto Ø65, furo Ø35 (+0,05), largura 30 com canal (15/11) (2 pecas)",
+      "pino": "Ø28x300 com cabeca Ø50/Ø45 (-0,2) x10 (4 pecas)",
+      "distanciador": "Ø35 externo, furo Ø30 (+0,2), comprimento 39 (4 pecas)",
+      "eixo": "Ø15x68, trecho 19+30, rosca 3/8 nas pontas, rebaixo 1,6x1 (4 pecas)"
+    },
+    "furos_e_interfaces": "Bucha Ø70,5 casa com furo do suporte corrente (01802); bucha Ø35 casa com eixo/tubos do carro; eixos rosca 3/8 fixam ganchos.",
+    "dobra_ou_curva": "nao aplicavel",
+    "obs": "Tolerancias apertadas indicadas (+0,05 a +0,2); buchas de nylon sao o mancal deslizante do mecanismo de guia."
+  },
+  {
+    "arquivo": "agachamento_barra_guiada/agachamento barra guiada/01804-DESENHO.pdf",
+    "projeto": "barra_guiada",
+    "peca": "Buchas usinadas (2 tipos)",
+    "funcao": "Buchas do conjunto guia: bucha grande que recebe a barra/eixo Ø45 dentro do tubo Ø70 e bucha longa escalonada para o eixo Ø16/Ø25,3.",
+    "material": "nao indicado na folha",
+    "secao_ou_espessura": "nao aplicavel (pecas usinadas)",
+    "dimensoes_principais_mm": {
+      "bucha_grande": "Ø75 no colar, corpo Ø70 (0/-0,1), furo escalonado Ø45 (+0,02) e Ø55 (+0,05), comprimento 110 (furo Ø45 em 80), colar 7, paredes 1,5/1,8, chanfros 2x2 (2 pecas)",
+      "bucha_longa": "comprimento 97 (corpo 72 + ponta 10), Ø30 (0/-0,05) e Ø26 na ponta, furo Ø16, trecho maior Ø35/Ø31 com furo Ø25,3 (+0,1), corpo 85, furo radial Ø5/16, chanfros 2x2 (2 pecas)"
+    },
+    "furos_e_interfaces": "Furo radial Ø5/16 pol. para pino/parafuso de fixacao; diametros com tolerancia para ajuste deslizante (Ø25,3 sobre eixo Ø25; Ø45 sobre ponta do eixo da barra).",
+    "dobra_ou_curva": "nao aplicavel",
+    "obs": "Interfaces coerentes com eixos do desenho 01805 (ponta Ø25 e corpo Ø28/Ø45)."
+  },
+  {
+    "arquivo": "agachamento_barra_guiada/agachamento barra guiada/01805-DESENHO.pdf",
+    "projeto": "barra_guiada",
+    "peca": "Eixos e engrenagem (barra e eixo do contrapeso)",
+    "funcao": "Barra do smith (eixo Ø28 x 1690) e eixo secundario com engrenagens ASA para o sistema de corrente/contrapeso.",
+    "material": "nao indicado na folha",
+    "secao_ou_espessura": "nao aplicavel (pecas usinadas)",
+    "dimensoes_principais_mm": {
+      "eixo_barra": "Ø28 (1 1/8 pol.) x 1690, pontas torneadas Ø25 (0/-0,25) x 80 (1 peca)",
+      "eixo_secundario": "comprimento 1650, corpo com trecho de 1450, pontas 100 e 25, Ø20 nas pontas com rebaixo Ø8x4ch, colar Ø38, furo Ø10 transversal, rasgos 15/20/50 (1 peca)",
+      "engrenagem": "ASA 35, 22 dentes, furo Ø20 (+0,02), rasgo de chaveta 8x4, largura 5/16 pol. (2 pecas)"
+    },
+    "furos_e_interfaces": "Engrenagem chavetada (ch 8x4) no eixo Ø20; furo Ø10 no eixo para pino; pontas Ø25 da barra rodam nas buchas Ø25,3 (01804).",
+    "dobra_ou_curva": "nao aplicavel",
+    "obs": "Engrenagens ASA 35 com 22 dentes acionam correntes que sincronizam/contrabalancam o carro da barra."
+  },
+  {
+    "arquivo": "agachamento_barra_guiada/agachamento barra guiada/01806-DESENHO.pdf",
+    "projeto": "barra_guiada",
+    "peca": "Gancho de seguranca/engate da barra",
+    "funcao": "Gancho em chapa que gira solidario a barra e engata nos pinos Ø25,4 da cremalheira para estacionar a barra.",
+    "material": "chapa esp. 1/4 pol. (material nao especificado)",
+    "secao_ou_espessura": "1/4 pol. (6,35 mm)",
+    "dimensoes_principais_mm": {
+      "altura_total": "150 (entre centros dos raios extremos 150, com 25+25 alem dos centros)",
+      "largura": "50",
+      "bico_do_gancho": "R25 externo e R14 interno (boca do gancho), ressalto 5",
+      "furo_do_eixo": "Ø32 com olhal R25"
+    },
+    "furos_e_interfaces": "Furo Ø32 monta no eixo/bucha do carro da barra; boca R14 engata nos pinos Ø25,4 do suporte-cremalheira (passo 100).",
+    "dobra_ou_curva": "Peca plana recortada, sem dobra.",
+    "obs": "2 pecas (uma por extremidade da barra); escala 1:1."
+  },
+  {
+    "arquivo": "agachamento_barra_guiada/agachamento barra guiada/01807-DESENHO.pdf",
+    "projeto": "barra_guiada",
+    "peca": "Detalhes de furacao e lista de materiais",
+    "funcao": "Folha com isometrica do chassi, detalhes de furacao das chapas/cantoneiras e BOM completa da estrutura do smith.",
+    "material": "ABNT-1010 (todos os itens)",
+    "secao_ou_espessura": "Tubos 1,5 mm de parede; chapas 5 mm",
+    "dimensoes_principais_mm": {
+      "detalhe_1_ferro_chato": "5x38x200, furos Ø10 a 20/160 (8 pecas)",
+      "detalhe_2_cantoneira": "38x50 com furo Ø10 (4 pecas)",
+      "detalhe_3_chapa": "184x100 com rasgo 22x45 central (a 90 da borda) e chanfro 10x10 (2 pecas)",
+      "detalhe_4_chapa": "184x100 com furo Ø10 a 60 da borda (4 pecas)"
+    },
+    "furos_e_interfaces": "Rasgo 22 mm das chapas superiores recebe o gancho/pino; furos Ø10 para parafusos de montagem das travessas e fixacao.",
+    "dobra_ou_curva": "Item 4 (tubo Ø60x1,5x2300) com corte/dobra 30 graus indicado na coluna CORTE.",
+    "obs": "BOM completa: 1) Tubo redondo Ø25,4x1,5x40 (22); 2) Tubo redondo Ø25,4x1,5x180 (4); 3) Tubo redondo Ø50x1,5x510 (2); 4) Tubo redondo Ø60x1,5x2300 (1); 5) Tubo oblongo 40x115x1,5x1000 (2); 6) Tubo oblongo 40x115x1,5x1515 (1); 7) Tubo oblongo 40x115x1,5x1570 (1); 8) Tubo retangular 70x50x1,5x1920 (2); 9) Tubo retangular 70x50x1,5x2100 (2); 10) Ferro chato 5x38x200 (8); 11) Chapa 1 5x100x184 (2); 12) Chapa 2 5x100x184 (2); 13) Chapa 3 5x100x184 (4); 14) Cantoneira 5x38x38x50 (4); 15) Cantoneira 5x38x38x1100 (2). Todos ABNT-1010. Obs: 22 pinos Ø25,4x40 formam a cremalheira de engate."
+  },
+  {
+    "arquivo": "agachamento_barra_guiada/agachamento barra guiada/01808-DESENHO.pdf",
+    "projeto": "barra_guiada",
+    "peca": "Coluna alternativa (coluna-guia)",
+    "funcao": "Versao alternativa da coluna-guia da barra em tubo Ø60, com trecho superior inclinado a 45 graus em vez da curva a 60 graus.",
+    "material": "nao indicado na folha",
+    "secao_ou_espessura": "Tubo redondo Ø60",
+    "dimensoes_principais_mm": {
+      "trecho_vertical": "1438",
+      "trecho_inclinado": "795 a 45 graus",
+      "cortes": "meia-esquadria 22,5 graus + 22,5 graus na juncao, ponta a 45 graus"
+    },
+    "furos_e_interfaces": "Sem furos cotados; junta soldada em meia-esquadria (22,5/22,5 graus) entre os dois trechos.",
+    "dobra_ou_curva": "Sem curvamento: uniao soldada a 45 graus (alternativa a dobra R175 do desenho 01801).",
+    "obs": "Escala 1:10; 'COLUNA ALTERNATIVA' para fabricacao sem calandra/dobradeira de tubo."
+  },
+  {
+    "arquivo": "agachamento_barra_guiada/agachamento barra guiada/01809-DESENHO.pdf",
+    "projeto": "barra_guiada",
+    "peca": "Suporte corrente (versao corte a laser)",
+    "funcao": "Mesma flange do 01802 (furo central Ø70,5 e orelhas de ancoragem da corrente), especificada para corte a laser sem rebarbas.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "chapa 1/4 pol. x 115",
+    "dimensoes_principais_mm": {
+      "furo_central": "Ø70,5 (+0,3/-0)",
+      "circulo_de_referencia": "Ø84",
+      "orelhas": "largura 20 no topo, raios R10"
+    },
+    "furos_e_interfaces": "Furo central Ø70,5 (bucha nylon da coluna-guia); orelhas superior e inferior para corrente (sem os furos Ø3,2/Ø10 da versao 01802).",
+    "dobra_ou_curva": "Peca plana, corte a laser, sem rebarbas.",
+    "obs": "Quantidade 1 na BOM da folha; nota '# 1/4 - CORTE LAZER - SEM REBARBAS'."
+  },
+  {
+    "arquivo": "agachamento_barra_guiada/agachamento barra guiada/01810-DESENHO.pdf",
+    "projeto": "barra_guiada",
+    "peca": "Montagem (vista explodida)",
+    "funcao": "Sequencia de montagem do smith: quadros laterais com coluna-guia e cremalheira, travessas oblongas, colunas-guia com flanges, e a barra com buchas, ganchos, distanciadores e engrenagens montados nas pontas.",
+    "material": "nao indicado na folha",
+    "secao_ou_espessura": "nao cotado nesta folha",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Explosao mostra a ordem de montagem do eixo da barra: bucha, suporte corrente, bucha nylon, distanciador, gancho e engrenagem em cada extremidade, deslizando sobre as colunas-guia Ø60.",
+    "dobra_ou_curva": "nao aplicavel (folha de montagem)",
+    "obs": "Folha A2 sem cotas nem BOM (titulo 'MOTANGEM' [sic])."
+  },
+  {
+    "arquivo": "ESPALDAR/ESPALDAR/03201-DESENHO.pdf",
+    "projeto": "espaldar",
+    "peca": "Chassi 2.45 x 1",
+    "funcao": "Espaldar de parede 2400x1000 com 12 degraus redondos entre dois montantes quadrados, fixado por chapas com furos.",
+    "material": "ABNT-1010 (todos os itens)",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; tubo redondo Ø25,4x1,5; ferro chato 5x50",
+    "dimensoes_principais_mm": {
+      "montantes": "50x50x1,5x2400 (2 pecas)",
+      "degraus": "Ø25,4x1,5x1000 (12 pecas), passo 200, primeiro campo 212,3 e afastamento superior 300",
+      "afastadores_parede": "tubo quadrado 50x50x1,5x500 (2 pecas), na vertical a 500 do topo",
+      "chapas_fixacao": "ferro chato 5x50x130 com furo Ø7 a 15 das bordas (4 pecas)",
+      "furos_parede": "Ø26 no afastador superior a 50 da ponta; furos Ø25,4 nos montantes para os degraus",
+      "posicao_horizontal": "furos a 175/175 da extremidade"
+    },
+    "furos_e_interfaces": "Chapas 5x50x130 soldadas nas pontas dos montantes com furos Ø7 (buchas/parafusos de parede); furo Ø26 nos suportes superiores; degraus Ø25,4 atravessam os montantes.",
+    "dobra_ou_curva": "Sem dobras.",
+    "obs": "BOM completa: 1) Tubo redondo Ø25,4x1,5x1000 (12); 2) Tubo quadrado 50x50x1,5x500 (2); 3) Tubo quadrado 50x50x1,5x2400 (2); 4) Ferro chato 5x50x130 (4). Todos ABNT-1010."
+  },
+  {
+    "arquivo": "ESPALDAR/ESPALDAR/03202-DESENHO.pdf",
+    "projeto": "espaldar",
+    "peca": "Chassi 2.5 x 1",
+    "funcao": "Variante mais alta do espaldar (montantes 2450) com os mesmos 12 degraus Ø25,4x1000 e fixacao por chapas furadas.",
+    "material": "ABNT-1010 (todos os itens)",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; tubo redondo Ø25,4x1,5; ferro chato 5x50",
+    "dimensoes_principais_mm": {
+      "montantes": "50x50x1,5x2450 (2 pecas)",
+      "degraus": "Ø25,4x1,5x1000 (12 pecas), passo 200, campo superior 262,3 e afastamento 300",
+      "afastadores_parede": "tubo quadrado 50x50x1,5x500 (2 pecas) a 500 do topo",
+      "chapas_fixacao": "ferro chato 5x50x130 com furo Ø7 a 15 das bordas (4 pecas)",
+      "furos_parede": "Ø26 no afastador superior a 50 da ponta",
+      "posicao_horizontal": "furos a 175/175 da extremidade"
+    },
+    "furos_e_interfaces": "Identico ao 03201: chapas com furos Ø7 para fixacao, furo Ø26 no suporte superior, degraus Ø25,4 nos montantes.",
+    "dobra_ou_curva": "Sem dobras.",
+    "obs": "BOM completa: 1) Tubo redondo Ø25,4x1,5x1000 (12); 2) Tubo quadrado 50x50x1,5x500 (2); 3) Tubo quadrado 50x50x1,5x2450 (2); 4) Ferro chato 5x50x130 (4). Todos ABNT-1010. Difere do 03201 apenas na altura (2450 vs 2400) e no campo superior (262,3 vs 212,3)."
+  }
+]
