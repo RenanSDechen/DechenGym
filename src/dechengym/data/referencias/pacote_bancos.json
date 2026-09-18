@@ -1,0 +1,343 @@
+[
+  {
+    "arquivo": "MULTIBANCO/MULTIBANCO/3801-DESENHO.pdf",
+    "projeto": "multibanco",
+    "peca": "Chassi",
+    "funcao": "Estrutura base do multibanco com duas cremalheiras dentadas para regulagem de assento e encosto.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5 e 40x40x1,5; chapa #3mm; ferro chato 5x50",
+    "dimensoes_principais_mm": {
+      "longarina_central": 950,
+      "montantes_verticais": 750,
+      "pe_traseiro": 700,
+      "travessa_pe": 250,
+      "pes_transversais": 200,
+      "cremalheira": "GREMALHERA conforme desenho PDR019 (1 un), trechos dentados na longarina de 140 e 390 mm",
+      "posicao_chapa_cremalheira": "chapa a 240 da extremidade, largura 120",
+      "alturas_ref": "325 / 225 / 50",
+      "batentes_40x40": "tubo 40x40x1,5x45 (2 un) sobre a longarina"
+    },
+    "furos_e_interfaces": "Furo Ø10 na chapa 3x120x150 (2 un) com chanfro 5x45°; ferro chato 5x50x120 com furo Ø10 na ponta da longarina; encaixes para suportes de assento/encosto via cremalheira",
+    "dobra_ou_curva": "Sem dobras; estrutura soldada em esquadro",
+    "obs": "BOM: 7-GREMALHERA VER DESENHO PDR019 (1); 6-CHAPA 3x120x150 (2); 8-FERRO CHATO 5x50x120 (2); 7-TUBO QUADRADO 50x50x1,5x950 (1); 6-TUBO QUADRADO 50x50x1,5x750 (2); 5-TUBO QUADRADO 50x50x1,5x700 (1); 4-TUBO QUADRADO 50x50x1,5x250 (1); 3-TUBO QUADRADO 50x50x1,5x225 (2); 2-TUBO QUADRADO 50x50x1,5x200 (2); 1-TUBO QUADRADO 40x40x1,5x45 (2). Todos ABNT-1010. Folha A4, escalas 1:10."
+  },
+  {
+    "arquivo": "MULTIBANCO/MULTIBANCO/3802-DESENHO.pdf",
+    "projeto": "multibanco",
+    "peca": "Haste barra (berço da barra)",
+    "funcao": "Haste vertical regulável em altura que forma o berço de apoio da barra de supino.",
+    "material": "INOX (nota '2 PEÇAS - INOX' no desenho; BOM lista ABNT-1010)",
+    "secao_ou_espessura": "Tubo quadrado 40x40x1,5; gancho em ferro chato #5mm",
+    "dimensoes_principais_mm": {
+      "comprimento_haste": 500,
+      "regulagem": "4 furos Ø11 passantes espaçados de 100 em 100 mm (pino de regulagem de altura)",
+      "berco_barra": "gancho de ferro chato #5mm com aba de 70 mm inclinada 15° no topo, boca a 100 mm do topo"
+    },
+    "furos_e_interfaces": "Furos Ø11 passantes (4x, passo 100) para pino; encaixa telescopicamente nos montantes do chassi 3801",
+    "dobra_ou_curva": "Gancho do berço dobrado com abertura a 15° e aba de 70 mm",
+    "obs": "BOM: 1-TUBO QUADRADO 40x40x1,5x500 (2); 2-FERRO CHATO #5mm (2). 2 peças. Escala 1:5."
+  },
+  {
+    "arquivo": "MULTIBANCO/MULTIBANCO/3803-DESENHO.pdf",
+    "projeto": "multibanco",
+    "peca": "Reguladores do suporte (assento e encosto)",
+    "funcao": "Alavancas/dedos que engatam na cremalheira do chassi para regular a inclinacao de assento e encosto.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Ferro chato 5x38; bucha Ø20x46",
+    "dimensoes_principais_mm": {
+      "regulador_suporte_assento": "ferro chato 5x38x80 + bucha Ø20x46 (1 peça)",
+      "regulador_suporte_encosto": "ferro chato 5x38x260 + bucha Ø20x46 (1 peça)"
+    },
+    "furos_e_interfaces": "Furo Ø10 na bucha Ø20 (articulacao por pino); ponta do ferro chato engata nos dentes da cremalheira PDR019",
+    "dobra_ou_curva": "Sem dobra",
+    "obs": "BOM: 3-BUCHA Ø20x46 (2); 2-FERRO CHATO 5x38x80 (1); 1-FERRO CHATO 5x38x260 (1). Escala 1:5."
+  },
+  {
+    "arquivo": "MULTIBANCO/MULTIBANCO/3804-DESENHO.pdf",
+    "projeto": "multibanco",
+    "peca": "Suporte do assento",
+    "funcao": "Braco articulado que sustenta a prancha do assento e apoia na cremalheira via regulador.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; ferro chato 5x25; bucha Ø15x52",
+    "dimensoes_principais_mm": {
+      "comprimento_tubo": 275,
+      "travessas_fixacao_estofado": "ferro chato 5x25x200 (2) e 5x25x75 (2), largura total 200",
+      "pivo": "bucha Ø15x52 na extremidade (furo Ø15,5 no tubo a 70/15 da ponta)",
+      "posicao_furos": "furo Ø10 a 125 da ponta; travessas a 50 e 70 das extremidades"
+    },
+    "furos_e_interfaces": "Furo Ø15,5 para pino-pivo com bucha Ø15x52; furo Ø10 (regulador); furos Ø5 nas travessas (25 da borda, 10 da lateral) para parafusar estofado",
+    "dobra_ou_curva": "Sem dobra",
+    "obs": "BOM: 4-BUCHA Ø15x52 (1); 3-FERRO CHATO 5x25x75 (2); 2-FERRO CHATO 5x25x200 (2); 1-TUBO QUADRADO 50x50x1,5x275 (1). Escala 1:5."
+  },
+  {
+    "arquivo": "MULTIBANCO/MULTIBANCO/3805-DESENHO.pdf",
+    "projeto": "multibanco",
+    "peca": "Suporte do encosto",
+    "funcao": "Braco articulado que sustenta a prancha do encosto com inclinacao regulada pela cremalheira.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; ferro chato 5x25; bucha Ø15x52",
+    "dimensoes_principais_mm": {
+      "comprimento_tubo": 600,
+      "travessas_fixacao_estofado": "ferro chato 5x25x200 (2) e 5x25x75 (2), largura total 200",
+      "pivo": "bucha Ø15x52 (furo Ø15,5 a 70/20 da ponta, 15 de altura)",
+      "posicao_furos": "furo Ø10 a 225 da ponta (10 abaixo da face); travessa intermediaria a 225, travessa da ponta a 50"
+    },
+    "furos_e_interfaces": "Furo Ø15,5 (pino-pivo com bucha Ø15x52); furo Ø10 para o regulador do encosto; furos Ø5 nas travessas para o estofado",
+    "dobra_ou_curva": "Sem dobra",
+    "obs": "BOM: 4-BUCHA Ø15x52 (1); 3-FERRO CHATO 5x25x75 (2); 2-FERRO CHATO 5x25x200 (2); 1-TUBO QUADRADO 50x50x1,5x600 (1). Escala 1:5."
+  },
+  {
+    "arquivo": "MULTIBANCO/MULTIBANCO/3806-DESENHO.pdf",
+    "projeto": "multibanco",
+    "peca": "Montagem geral",
+    "funcao": "Vista isometrica da montagem completa do multibanco (chassi + hastes berco + suportes articulados).",
+    "material": "N/A (desenho de conjunto, sem BOM)",
+    "secao_ou_espessura": "N/A",
+    "dimensoes_principais_mm": {
+      "conteudo": "Mostra as 2 hastes berco com furos de regulagem, cremalheiras dentadas na longarina, suportes de assento e encosto articulados com reguladores e porcas/manipulos"
+    },
+    "furos_e_interfaces": "Hastes telescopicas nos montantes; reguladores engatados na cremalheira; pinos de pivo",
+    "dobra_ou_curva": "N/A",
+    "obs": "Sem lista de materiais. Folha A4."
+  },
+  {
+    "arquivo": "BANCO_DESENVOLVIMENTO/BANCO DESENVOLVIMENTO/02401-DESENHO.pdf",
+    "projeto": "banco_desenvolvimento",
+    "peca": "Chassi (com detalhes de furacao e lista de materiais)",
+    "funcao": "Estrutura completa do banco fixo para desenvolvimento (ombro) com encosto alto inclinado.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; tubo oblongo 40x115x1,5; tubo redondo Ø38x1,5; ferro chato 5x38",
+    "dimensoes_principais_mm": {
+      "angulo_encosto": "montantes do encosto com inclinacao de 10° (cortes a 5° e 10° na BOM)",
+      "curva_frontal": "tubo redondo Ø38 curvado a 45° com raio 150",
+      "altura_encosto": "802,21 (total), montantes 750 e 500",
+      "assento": "profundidade 350, apoio a 290 do chao, largura base 300+440",
+      "base": "pes em tubo oblongo 40x115x1,5 de 1250 (longitudinal) e 225/300/335 (transversais)",
+      "planta": "1250 x (218+115), travessas a 325"
+    },
+    "furos_e_interfaces": "Detalhe 1 (2 pecas, montante 750): furo Ø10 a 50 do topo e furacao a 150; Detalhe 2 (8 pecas, ferro chato 5x38x80): furo Ø5 a 19/10/80 — orelhas de fixacao do estofado",
+    "dobra_ou_curva": "Curva 45° R150 no tubo Ø38; cortes de tubo em 5°, 10° e 45° conforme coluna CORTE",
+    "obs": "BOM: 12-FERRO CHATO 5x38x80 (8); 11-TUBO QUADRADO 50x50x1,5x985 (1); 10-TUBO QUADRADO 50x50x1,5x800 (2, corte 5°); 9-TUBO QUADRADO 50x50x1,5x750 (2, corte 5°); 8-TUBO QUADRADO 50x50x1,5x700 (1, corte 10°); 7-TUBO QUADRADO 50x50x1,5x440 (1); 6-TUBO QUADRADO 50x50x1,5x290 (1); 5-TUBO OBLONGO 40x115x1,5x1250 (1); 4-TUBO OBLONGO 40x115x1,5x335 (1); 3-TUBO OBLONGO 40x115x1,5x300 (1); 2-TUBO OBLONGO 40x115x1,5x225 (2); 1-TUBO REDONDO Ø38x1,5x800 (2, corte 45°). Folha A2."
+  },
+  {
+    "arquivo": "BANCO_DESENVOLVIMENTO_REGULAVEL/BANCO DESENVOLVIMENTO  REGULAVEL/03701-DESENHO.pdf",
+    "projeto": "banco_desenvolvimento_regulavel",
+    "peca": "Chassi (Banco Simples Regulavel)",
+    "funcao": "Estrutura base do banco regulavel com cremalheira dentada dupla para inclinar assento e encosto.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5 e 40x40x1,5; chapa #3mm",
+    "dimensoes_principais_mm": {
+      "longarina_central": 1000,
+      "pes_transversais": 400,
+      "montantes_pes": 225,
+      "cremalheira": "GREMALHERA conforme desenho PDR019 (1 un); trechos dentados de 140 e 390 mm na longarina; batente 40x40x1,5x45 (2)",
+      "chapa_pivo": "chapa 3x120x150 (Detalhe 1, 2 pecas) a 240 da extremidade",
+      "cotas_ref": "390 / 200 / 130 na regiao do encosto"
+    },
+    "furos_e_interfaces": "Detalhe 1: chapa 3x120x150 com 2 furos Ø10 (a 20 e 15 das bordas) e chanfro 5x45° — pivos dos suportes",
+    "dobra_ou_curva": "Sem curvas; estrutura soldada",
+    "obs": "BOM: 6-GREMALHERA VER DESENHO PDR019 (1); 5-CHAPA 3x120x150 (2); 4-TUBO QUADRADO 50x50x1,5x1000 (1); 3-TUBO QUADRADO 50x50x1,5x400 (2); 2-TUBO QUADRADO 50x50x1,5x225 (2); 1-TUBO QUADRADO 40x40x1,5x45 (2). Folha A4, escala 1:10."
+  },
+  {
+    "arquivo": "BANCO_DESENVOLVIMENTO_REGULAVEL/BANCO DESENVOLVIMENTO  REGULAVEL/03702-DESENHO.pdf",
+    "projeto": "banco_desenvolvimento_regulavel",
+    "peca": "Reguladores do suporte (assento e encosto)",
+    "funcao": "Dedos articulados que engatam na cremalheira para travar a inclinacao de assento e encosto.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Ferro chato 5x38; bucha Ø20x46",
+    "dimensoes_principais_mm": {
+      "regulador_suporte_assento": "ferro chato 5x38x80 + bucha Ø20x46 (1 peça)",
+      "regulador_suporte_encosto": "ferro chato 5x38x260 + bucha Ø20x46 (1 peça)"
+    },
+    "furos_e_interfaces": "Furo Ø10 na bucha Ø20x46; ponta engata nos dentes da cremalheira PDR019",
+    "dobra_ou_curva": "Sem dobra",
+    "obs": "BOM: 3-BUCHA Ø20x46 (2); 2-FERRO CHATO 5x38x80 (1); 1-FERRO CHATO 5x38x260 (1). Identico ao 3803 do multibanco. Escala 1:5."
+  },
+  {
+    "arquivo": "BANCO_DESENVOLVIMENTO_REGULAVEL/BANCO DESENVOLVIMENTO  REGULAVEL/03703-DESENHO.pdf",
+    "projeto": "banco_desenvolvimento_regulavel",
+    "peca": "Suporte do assento",
+    "funcao": "Braco articulado curto que sustenta o estofado do assento e apoia no regulador da cremalheira.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; ferro chato 5x25; bucha Ø15x52",
+    "dimensoes_principais_mm": {
+      "comprimento_tubo": 275,
+      "travessas": "ferro chato 5x25x200 (2) e 5x25x75 (2), largura 200",
+      "pivo": "bucha Ø15x52 (furo Ø15,5 a 70/15/20 da ponta)",
+      "furo_regulador": "Ø10 a 125"
+    },
+    "furos_e_interfaces": "Furo Ø15,5 (pivo/bucha Ø15x52), furo Ø10 (regulador), furos Ø5 nas travessas (25/10) para estofado",
+    "dobra_ou_curva": "Sem dobra",
+    "obs": "BOM: 4-BUCHA Ø15x52 (1); 3-FERRO CHATO 5x25x75 (2); 2-FERRO CHATO 5x25x200 (2); 1-TUBO QUADRADO 50x50x1,5x275 (1). Identico ao 3804 do multibanco. Escala 1:5."
+  },
+  {
+    "arquivo": "BANCO_DESENVOLVIMENTO_REGULAVEL/BANCO DESENVOLVIMENTO  REGULAVEL/03704-DESENHO.pdf",
+    "projeto": "banco_desenvolvimento_regulavel",
+    "peca": "Suporte do encosto",
+    "funcao": "Braco articulado longo que sustenta o estofado do encosto com inclinacao regulavel.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; ferro chato 5x25; bucha Ø15x52",
+    "dimensoes_principais_mm": {
+      "comprimento_tubo": 600,
+      "travessas": "ferro chato 5x25x200 (2) e 5x25x75 (2), largura 200",
+      "pivo": "bucha Ø15x52 (furo Ø15,5 a 70/20, 15 de altura)",
+      "furo_regulador": "Ø10 a 225"
+    },
+    "furos_e_interfaces": "Furo Ø15,5 (pivo/bucha), furo Ø10 (regulador do encosto), furos Ø5 nas travessas para estofado",
+    "dobra_ou_curva": "Sem dobra",
+    "obs": "BOM: 4-BUCHA Ø15x52 (1); 3-FERRO CHATO 5x25x75 (2); 2-FERRO CHATO 5x25x200 (2); 1-TUBO QUADRADO 50x50x1,5x600 (1). Identico ao 3805 do multibanco. Escala 1:5."
+  },
+  {
+    "arquivo": "BANCO_DESENVOLVIMENTO_REGULAVEL/BANCO DESENVOLVIMENTO  REGULAVEL/03705-DESENHO.pdf",
+    "projeto": "banco_desenvolvimento_regulavel",
+    "peca": "Montagem geral",
+    "funcao": "Vista isometrica do banco simples regulavel montado, mostrando encosto inclinado e assento sobre a cremalheira.",
+    "material": "N/A (desenho de conjunto, sem BOM)",
+    "secao_ou_espessura": "N/A",
+    "dimensoes_principais_mm": {
+      "conteudo": "Encosto longo inclinado apoiado no regulador de 260; assento curto apoiado no regulador de 80; dois trechos de cremalheira dentada na longarina; manipulos/porcas serrilhadas nos pinos"
+    },
+    "furos_e_interfaces": "Pivos em chapa 3x120x150; reguladores engatados nos dentes da cremalheira",
+    "dobra_ou_curva": "N/A",
+    "obs": "Sem lista de materiais. Folha A4."
+  },
+  {
+    "arquivo": "BANCO_SUPINO_DECLINADO/BANCO SUPINO DECLINADO/4701-DESENHO.pdf",
+    "projeto": "supino_declinado",
+    "peca": "Chassi",
+    "funcao": "Estrutura do banco supino declinado com montantes porta-barra e plataforma declinada com guia para os pes.",
+    "material": "ABNT-1010 com componentes em INOX (guia, suporte e rolos)",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5 e 40x40x1,5; tubo oblongo 40x115x1,5; tubo retangular 50x30x1,5; tubo redondo Ø38 e Ø25,4",
+    "dimensoes_principais_mm": {
+      "angulo_declinacao": "prancha declinada a 20° (cota 30° tambem indicada na vista da rampa); corte 20° no tubo 50x50x609",
+      "montantes_porta_barra": "altura 1200, furos Ø10 a 100/150/150 do topo para regulagem do berco",
+      "curva_montante": "45° com R150, tubo Ø38 a 800 de altura",
+      "base": "900 + 250 de comprimento; planta 1230 x (218+115); travessa 835",
+      "plataforma": "850 x 190 (vista 1:10) com prolongamento 350, furacao Ø na linha 20/200/150/320/140/20",
+      "guia_pes_inox": "vista 380/310 com furos Ø13 espacados 30/30 e 80 — regula posicao do rolo de pes",
+      "suporte_inox": "400 de comprimento, furos Ø13 a 130/50/50/50, ponta cortada a 45°/65°, furo Ø26 e detalhe 150/130/95",
+      "rolos_pes": "tubo redondo Ø25,4x1,5x380 INOX (2) atravessado no suporte (Ø26 de passagem)"
+    },
+    "furos_e_interfaces": "Furos Ø10 nos montantes (berco de barra regulavel); furos Ø13 na guia e suporte inox (pino de regulagem dos rolos); furo Ø26 para eixo dos rolos; furo Ø22 na plataforma",
+    "dobra_ou_curva": "Curva 45° R150 nos montantes Ø38; ponta do suporte cortada a 45°; rampa declinada 20°",
+    "obs": "BOM completa esta no desenho 4702 (DETALHES). Folha A2, escalas 1:5 e 1:10."
+  },
+  {
+    "arquivo": "BANCO_SUPINO_DECLINADO/BANCO SUPINO DECLINADO/4702-DESENHO.pdf",
+    "projeto": "supino_declinado",
+    "peca": "Detalhes de fabricacao + BOM",
+    "funcao": "Detalha furacoes das longarinas, suporte dos rolos de pes e montantes, com a lista de materiais completa do banco.",
+    "material": "ABNT-1010 e INOX",
+    "secao_ou_espessura": "Tubos 50x50x1,5, 40x40x1,5, 50x30x1,5, oblongo 40x115x1,5, redondos Ø38x1,5 / Ø25,4x1,5",
+    "dimensoes_principais_mm": {
+      "detalhe1_longarina_prancha": "50x30x850 (2 pecas), furos a 20/200/150/320/140/20",
+      "detalhe2_travessa": "50x50(?)x350 com furo Ø22 a 30 da ponta",
+      "detalhe3_montante_rolo": "40x?x300, furo Ø26 a 25 do topo, furos Ø13 a 30/30/80",
+      "detalhe4_suporte": "350 com furo Ø26 a 25 e furo Ø22 a 30 da base",
+      "detalhe5_guia_pes": "400, furos Ø13 a 130/50/50/50, corte 45°",
+      "detalhe6_montante_porta_barra": "50x50x1200 (2 pecas), furos Ø10 a 100/150/150 do topo",
+      "cortes": "Ø38x800 corte 45°; 50x50x609 corte 20°; 40x40x400 INOX corte 45°"
+    },
+    "furos_e_interfaces": "Furos Ø10 (regulagem berco), Ø13 (pino dos rolos de pes), Ø22 e Ø26 (eixos dos rolos)",
+    "dobra_ou_curva": "Cortes angulares 45° e 20° indicados na coluna CORTE",
+    "obs": "BOM: 14-TUBO QUADRADO 40x40x1,5x400 INOX (1, corte 45°); 13-TUBO REDONDO Ø25,4x1,5x380 INOX (2); 12-TUBO RETANGULAR 50x30x1,5x850 (2); 11-TUBO RETANGULAR 50x30x1,5x50 (2); 10-TUBO QUADRADO 50x50x1,5x609 (1, corte 20°); 9-TUBO QUADRADO 50x50x1,5x1200 (2); 8-TUBO QUADRADO 50x50x1,5x985 (1); 7-TUBO QUADRADO 50x50x1,5x350 (2); 6-TUBO QUADRADO 50x50x1,5x190 (2); 5-TUBO OBLONGO 40x115x1,5x1250 (1); 4-TUBO OBLONGO 40x115x1,5x845 (1); 3-TUBO OBLONGO 40x115x1,5x300 (1); 2-TUBO OBLONGO 40x115x1,5x225 (2); 1-TUBO REDONDO Ø38x1,5x800 (2, corte 45°). Folha A3."
+  },
+  {
+    "arquivo": "BANCO_SUPINO_RETO_INCLINADO/BANCO SUPINO RETO-INCLINADO/03001-DESENHO.pdf",
+    "projeto": "supino_reto_inclinado",
+    "peca": "Chassi",
+    "funcao": "Estrutura do banco supino reto/inclinado com hastes porta-barra regulaveis, guia inox e regulador de banco roscado.",
+    "material": "ABNT-1010 com hastes e guia em INOX",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5 e 40x40x1,5; tubo oblongo 40x115x1,5; tubo redondo Ø38; ferro chato 5x38; chapa 3mm",
+    "dimensoes_principais_mm": {
+      "curva_montante": "45° com R184, tubo Ø38, altura total 850, curva a 150",
+      "haste_barra_inox": "2 pecas 40x40x800, coluna de furos com passos de 50 (170 na base, 120 no topo), topo com berco cortado a 15°",
+      "guia_inox": "40x40x340, furos Ø13 espacados de 30 em 30 (4x) a 150 do topo, furo Ø10 no topo a 10/40",
+      "regulador_banco": "com PORCA 3/4\", tubo 210 com furo Ø23,4 e detalhe 25/30/100 — regulagem roscada da inclinacao do banco",
+      "suporte_banco": "montante 650 com base 290, travessa a 135, ferro chato 01 na base",
+      "assento": "encosto 610 + assento 390 (ferro chato 02 e 03 como orelhas), apoio a 290/280 do chao",
+      "planta": "1250 x (268+115), banco a 865+115, chapa 220x300 sob o assento",
+      "ferros_chatos": "FC01 5x38x70 furo Ø10 a 15; FC02 5x38x40 furo Ø10 a 15/15; FC03 5x38x40(19) furo Ø5 a 10"
+    },
+    "furos_e_interfaces": "Furos de regulagem passo 50 nas hastes porta-barra; furos Ø13 passo 30 na guia (pino do encosto); porca 3/4\" soldada no regulador; furo Ø27 e Ø10 no chassi; furos Ø5 para estofado",
+    "dobra_ou_curva": "Curva 45° R184 nos montantes Ø38; corte 15° no berco das hastes; corte 75° indicado na haste",
+    "obs": "BOM completa no desenho 03002. Folha A2, escalas 1:2 a 1:10."
+  },
+  {
+    "arquivo": "BANCO_SUPINO_RETO_INCLINADO/BANCO SUPINO RETO-INCLINADO/03002-DESENHO.pdf",
+    "projeto": "supino_reto_inclinado",
+    "peca": "Montagem / detalhes + BOM",
+    "funcao": "Detalha os ferros chatos, batentes e a guia furada, e consolida a lista de materiais do banco supino reto.",
+    "material": "ABNT-1010 e INOX",
+    "secao_ou_espessura": "Tubos 50x50x1,5 / 40x40x1,5, oblongo 40x115x1,5, redondos Ø38x1,5 e Ø25,4x1, ferro chato 5x38, chapa 3mm",
+    "dimensoes_principais_mm": {
+      "detalhe1": "ferro chato 5x38x40 furo Ø10 a 15/15 (2 pecas)",
+      "detalhe2": "ferro chato 5x38x40(19) furo Ø5 a 10/40 (4 pecas)",
+      "detalhe3": "ferro chato 5x38x70 furo Ø10 a 15 (2 pecas)",
+      "detalhe4": "ferro chato 5x38x80 furo Ø10 a 10, aba 38 (6 pecas)",
+      "detalhe5": "tubo 50x50x100 com furo Ø22 a 30 (1 peca) — alojamento da porca do regulador",
+      "detalhe6": "haste porta-barra 40x40x800 (1 peca detalhada), furos passo 50/170",
+      "detalhe7": "guia 40x40x340, furos Ø13 passo 30, furo Ø10 a 10/40, altura util 150"
+    },
+    "furos_e_interfaces": "Furos Ø10, Ø13, Ø22 e Ø5 conforme detalhes; hastes inox deslizam nos montantes; guia recebe pino do encosto inclinavel",
+    "dobra_ou_curva": "Corte 45° no tubo Ø38x800 (coluna CORTE)",
+    "obs": "BOM: 23-TUBO QUADRADO 40x40x1,5x800 INOX (2); 22-TUBO QUADRADO 40x40x1,5x340 INOX (1); 21-CHAPA 3x220x300 (1); 20-FERRO CHATO 5x38x120 (2); 19-FERRO CHATO 5x38x100 (2); 18-FERRO CHATO 5x38x80 (6); 17-FERRO CHATO 5x38x70 (2); 16-FERRO CHATO 5x38x40 (6); 15-TUBO QUADRADO 50x50x1,5x985 (1); 14-TUBO QUADRADO 50x50x1,5x850 (2); 13-TUBO QUADRADO 50x50x1,5x100 (1); 12-TUBO QUADRADO 40x40x1,5x650 (1); 11-TUBO QUADRADO 40x40x1,5x610 (1); 10-TUBO QUADRADO 40x40x1,5x390 (1); 9-TUBO QUADRADO 40x40x1,5x290 (3); 8-TUBO QUADRADO 40x40x1,5x250 (1); 7-TUBO OBLONGO 40x115x1,5x1250 (1); 6-TUBO OBLONGO 40x115x1,5x930 (1); 5-TUBO OBLONGO 40x115x1,5x875 (1); 4-TUBO OBLONGO 40x115x1,5x300 (1); 3-TUBO OBLONGO 40x115x1,5x250 (1); 2-TUBO REDONDO Ø38x1,5x800 (2, corte 45°); 1-TUBO REDONDO Ø25,4x1x210 (1). Folha A3."
+  },
+  {
+    "arquivo": "SUPINO_DEITADO/SUPINO DEITADO/6801-DESENHO.pdf",
+    "projeto": "supino_deitado",
+    "peca": "Chassi",
+    "funcao": "Estrutura da maquina de supino deitado guiado por coluna, com braco articulado de empurrar, encosto regulavel e torre de pesos.",
+    "material": "ABNT-1010 (itens especificos em INOX no 6802)",
+    "secao_ou_espessura": "Tubos redondos Ø60x1,5 / Ø48 / Ø42 / Ø25,4; tubos quadrados 50x50 e 40x40; retangular 30x50; oblongo 40x115x2",
+    "dimensoes_principais_mm": {
+      "torre": "quadro em tubo Ø60 com altura total 2300 e largura 580 (185 entre furos do topo, furos Ø10 e espacador 27)",
+      "base": "comprimento 1420 (planta 1400), furos a 320/320/320; bracos de base 500 de largura, travessas a 27",
+      "braco_articulado": "raio de curva R175, planta 530+500, alturas 900/100/160, tubo Ø40, pegadas a 125/300",
+      "suporte_encosto": "210 x 500 com fileira de furos Ø13 (regulagem)",
+      "eixo": "Ø20x150 (159 total) com rosca 3/8\" nas pontas — articulacao do braco",
+      "cremalheira_encosto": "vista 1:5: barra 700 com furos passo 50 (6x) + 300, dobrada a 15° na ponta, secao 210",
+      "bucha_base": "detalhe Ø48 x 150 com Ø42 +0,05/-0 interno (mancal do braco)",
+      "assento_altura": "apoios a 280/300 do chao, plano do banco a 608"
+    },
+    "furos_e_interfaces": "Furos Ø13 no suporte do encosto (pino de regulagem); furos Ø10 no topo da torre; furos Ø5,5 na base (passo 320); mancal Ø42/Ø48; roscas 3/8\" no eixo; ferro chato com furo Ø10 no batente",
+    "dobra_ou_curva": "Topo da torre em U (tubo Ø60 curvado); braco curvado R175; ponta da cremalheira dobrada 15°",
+    "obs": "BOM completa no desenho 6802. Folha A2, escalas 1:5 e 1:10."
+  },
+  {
+    "arquivo": "SUPINO_DEITADO/SUPINO DEITADO/6802-DESENHO.pdf",
+    "projeto": "supino_deitado",
+    "peca": "Detalhes de fabricacao + BOM",
+    "funcao": "Detalha longarinas furadas, apoios e a rampa de regulagem do encosto, com lista de materiais completa da maquina.",
+    "material": "ABNT-1010; item 7 (tubo 40x40x700) em INOX",
+    "secao_ou_espessura": "Tubo redondo Ø60x1,5 / Ø25,4x1 / Ø40; quadrado 50x50x1,5 e 40x40x1,5; retangular 30x50x1,5; oblongo 40x115x2; ferro chato 1/4\"x2\"",
+    "dimensoes_principais_mm": {
+      "longarinas_base": "30x50x1420 (2 pecas) com furos Ø5 a 50 e passo 320/320/320",
+      "longarina_lateral": "30x50x500 (2 pecas) com furo Ø10",
+      "travessa_350": "50x50x350 com furo Ø10 a 25",
+      "apoio_480": "50x50x480 com furos Ø26 e Ø30 (185 entre centros)",
+      "apoio_500": "50x50x500 com furo Ø22 a 30 da ponta",
+      "cremalheira_regulagem_encosto": "tubo 40x40x700 INOX, corte 15°, furos duplos passo 50 (6 posicoes) + trecho 300 — regula inclinacao/altura do encosto",
+      "ferro_chato": "1/4\"x2\"x50 com furo 5/16\"",
+      "guias_torre": "tubo redondo Ø60x1,5x4200 (1) — dobrado em U para a torre",
+      "cortes": "50x50x390 corte 45°/22°30'; 50x50x556 corte 22°30'; 40x40x300 e 40x40x700 corte 15°"
+    },
+    "furos_e_interfaces": "Furos Ø5 (fixacao carenagem/apoios), Ø10, Ø22, Ø26, Ø30 (eixos e mancais), furo 5/16\" no ferro chato; furacao passo 50 para pino de regulagem",
+    "dobra_ou_curva": "Cortes angulares 15°, 22°30' e 45° indicados na coluna CORTE",
+    "obs": "BOM: 21-FERRO CHATO 1/4x2x50 (1); 20-TUBO REDONDO Ø60x1,5 (1); 19-TUBO QUADRADO 50x50x1,5x130 (1); 18-TUBO QUADRADO 50x50x1,5x390 (1, corte 45°/22°30'); 17-TUBO QUADRADO 50x50x1,5x556 (1, corte 22°30'); 16-TUBO QUADRADO 50x50x1,5x350 (1); 15-TUBO QUADRADO 50x50x1,5x280 (2); 14-TUBO QUADRADO 50x50x1,5x500 (2); 13-TUBO QUADRADO 50x50x1,5x480 (1); 12-TUBO RETANGULAR 30x50x1,5x160 (2); 11-TUBO RETANGULAR 30x50x1,5x500 (2); 10-TUBO RETANGULAR 30x50x1,5x1420 (2); 9-TUBO QUADRADO 40x40x1,5x300 (1, corte 15°); 8-TUBO QUADRADO 40x40x1,5x230 (2); 7-TUBO QUADRADO 40x40x1,5x700 INOX (1, corte 15°); 6-TUBO OBLONGO 40x115x2x900 (1); 5-TUBO OBLONGO Ø40x115x2x500 (1); 4-TUBO OBLONGO 40x115x2x645 (1); 3-TUBO OBLONGO Ø40x115x2x1410 (1); 2-TUBO REDONDO Ø25,4x1,5x120 (2); 1-TUBO REDONDO Ø60x1,5x4200 (1). Folha A3."
+  },
+  {
+    "arquivo": "SUPINO_DEITADO/SUPINO DEITADO/6803-DESENHO.pdf",
+    "projeto": "supino_deitado",
+    "peca": "Montagem geral",
+    "funcao": "Quatro vistas isometricas da maquina montada com torre de placas de peso, polias, cabo e braco articulado.",
+    "material": "N/A (desenho de conjunto, sem BOM)",
+    "secao_ou_espessura": "N/A",
+    "dimensoes_principais_mm": {
+      "conteudo": "Mostra coluna de placas empilhadas com pino seletor, polias no topo e na base da torre, cabo (ciano), braco de empurrar articulado com pegadores, banco com estofados (assento + encosto) e rampa de regulagem do encosto com pino"
+    },
+    "furos_e_interfaces": "Cabo passando pelas polias da torre ate o braco; pino seletor de carga; pino de regulagem do encosto na rampa furada",
+    "dobra_ou_curva": "N/A",
+    "obs": "Sem lista de materiais. Folha A2."
+  }
+]

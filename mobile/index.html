@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--
+  DechenGym · Meu Treino — versão STANDALONE para celular/APK.
+  ============================================================
+  Um único arquivo, 100% offline: o motor de sugestão (o mesmo do
+  dechengym/treino.py, portado para JS) roda no aparelho e o histórico
+  fica no localStorage do próprio app. Botões de exportar/importar usam
+  o MESMO formato JSON do servidor (output/treino/historico.json), então
+  dá para migrar entre celular e desktop sem perder nada.
+
+  Para gerar o APK: aponte sua ferramenta de empacotamento WebView
+  (a mesma do primeiro APK — ex.: website2apk, WebViewGold, Capacitor)
+  para este arquivo. Não precisa de servidor nem de internet.
+-->
+<html lang="pt-BR"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="theme-color" content="#0f1216"/>
+<title>DechenGym — Meu Treino</title><style>
+:root{--bg:#0f1216;--panel:#171b21;--line:#262c34;--txt:#e8ebef;--mut:#9aa4b0;--acc:#e0a422;--ok:#22c55e;--warn:#f59e0b}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--txt);font:15px/1.5 'Segoe UI',system-ui,sans-serif}
+header{padding:calc(14px + env(safe-area-inset-top,0px)) 18px 12px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:10px;position:sticky;top:0;background:var(--bg);z-index:2}
+header h1{font-size:18px}header h1 b{color:var(--acc)}
+header small{color:var(--mut);margin-left:auto}
+main{max-width:720px;margin:0 auto;padding:16px 16px calc(110px + env(safe-area-inset-bottom,0px))}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:6px}
+.chip{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-align:center}
+.chip b{font-size:17px;display:block}.chip span{color:var(--mut);font-size:10.5px}
+select{width:100%;background:#0e1114;border:1px solid var(--line);border-radius:10px;color:var(--txt);padding:10px;font-size:14px;margin:8px 0 2px}
+h2{font-size:12px;margin:18px 0 8px;color:var(--acc);text-transform:uppercase;letter-spacing:.07em}
+.ciclo{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 13px 6px 7px}
+.pill .lt{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:#232a33;color:var(--mut);font-size:13px}
+.pill.feito .lt{background:rgba(34,197,94,.18);color:var(--ok);border:1px solid rgba(34,197,94,.45)}
+.pill small{color:var(--mut);display:block;font-size:10px}
+.pill b{font-size:13px}
+.tr{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;position:relative;margin-bottom:12px}
+.tr.rec{border-color:rgba(224,164,34,.65);box-shadow:0 0 0 1px rgba(224,164,34,.35)}
+.tr.feito{opacity:.62}
+.badge{position:absolute;top:-9px;right:12px;background:var(--acc);color:#14161a;font-size:10px;font-weight:800;border-radius:999px;padding:3px 10px;letter-spacing:.05em}
+.tr-top{display:flex;gap:11px;align-items:center;margin-bottom:4px}
+.tr-top .lt{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:19px;font-weight:800;background:#232a33;color:var(--acc);flex:none}
+.tr-top b{font-size:15px;display:block}
+.tr-top small{color:var(--mut);font-size:12px}
+.rec-l{list-style:none;margin:6px 0;font-size:12.5px}
+.rec-l li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:3px 0;color:var(--mut)}
+.rec-l .ok{color:var(--ok)}.rec-l .warn{color:var(--warn)}
+.motivo{font-size:12px;color:var(--mut);font-style:italic;margin:5px 0}
+.eqs{font-size:11.5px;color:#c8d0da;margin:5px 0 10px}
+button{background:var(--acc);border:0;border-radius:10px;color:#14161a;font-weight:700;font-size:14px;padding:12px;cursor:pointer;width:100%}
+.tr.feito button{background:#232a33;color:var(--mut);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:12.5px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+td,th{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--mut);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em}
+.fer{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+.fer button{background:#232a33;color:var(--mut);border:1px solid var(--line);font-weight:500;font-size:12px;padding:10px 6px}
+#msg{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ok);color:#08110b;font-weight:700;border-radius:10px;padding:10px 18px;display:none;z-index:3;white-space:nowrap}
+#imp{display:none}
+</style></head><body>
+<header><h1><b>Dechen</b>Gym · Meu Treino</h1><small id="vs">offline</small></header>
+<main id="app"></main>
+<div id="msg"></div>
+<input type="file" id="imp" accept="application/json,.json"/>
+<script>
+const DATA={"divisoes":{"abc":{"nome":"ABC (3 treinos por ciclo)","letras":{"A":{"nome":"Empurrar — Peito, Ombros e Tríceps","grupos":["peito","ombros","triceps"]},"B":{"nome":"Puxar — Costas e Bíceps","grupos":["costas","biceps"]},"C":{"nome":"Pernas completas","grupos":["pernas"]}}},"abcd":{"nome":"ABCD (4 treinos por ciclo)","letras":{"A":{"nome":"Peito e Tríceps","grupos":["peito","triceps"]},"B":{"nome":"Costas e Bíceps","grupos":["costas","biceps"]},"C":{"nome":"Ombros e Abdômen","grupos":["ombros","abdomen"]},"D":{"nome":"Pernas completas","grupos":["pernas"]}}},"abcde":{"nome":"ABCDE (5 treinos por ciclo)","letras":{"A":{"nome":"Peito","grupos":["peito"]},"B":{"nome":"Costas","grupos":["costas"]},"C":{"nome":"Pernas","grupos":["pernas"]},"D":{"nome":"Ombros e Abdômen","grupos":["ombros","abdomen"]},"E":{"nome":"Braços — Bíceps e Tríceps","grupos":["biceps","triceps"]}}}},"sinergias":{"costas":["biceps"],"peito":["triceps","ombros"],"ombros":["triceps"],"pernas":["lombar"]},"equip":{"peito":[{"nome":"Crossover / Estacao de Polias Duplas","rank":4},{"nome":"Supino Articulado (chest press plate-loaded)","rank":6},{"nome":"Crucifixo / Peck Deck (voador)","rank":9},{"nome":"Graviton (barra fixa/paralela assistida)","rank":15},{"nome":"Triceps Articulado (dip/extensao)","rank":19}],"costas":[{"nome":"Puxada Alta (lat pulldown)","rank":3},{"nome":"Crossover / Estacao de Polias Duplas","rank":4},{"nome":"Remada Baixa Sentada (seated cable row)","rank":7},{"nome":"Remada Iso-Lateral (plate-loaded)","rank":8},{"nome":"Desenvolvimento Articulado (shoulder press)","rank":12},{"nome":"Graviton (barra fixa/paralela assistida)","rank":15}],"ombros":[{"nome":"Crossover / Estacao de Polias Duplas","rank":4},{"nome":"Supino Articulado (chest press plate-loaded)","rank":6},{"nome":"Remada Iso-Lateral (plate-loaded)","rank":8},{"nome":"Crucifixo / Peck Deck (voador)","rank":9},{"nome":"Desenvolvimento Articulado (shoulder press)","rank":12}],"biceps":[{"nome":"Puxada Alta (lat pulldown)","rank":3},{"nome":"Remada Baixa Sentada (seated cable row)","rank":7},{"nome":"Remada Iso-Lateral (plate-loaded)","rank":8},{"nome":"Graviton (barra fixa/paralela assistida)","rank":15},{"nome":"Rosca Scott Articulada (biceps)","rank":18}],"triceps":[{"nome":"Supino Articulado (chest press plate-loaded)","rank":6},{"nome":"Desenvolvimento Articulado (shoulder press)","rank":12},{"nome":"Graviton (barra fixa/paralela assistida)","rank":15},{"nome":"Triceps Articulado (dip/extensao)","rank":19}],"pernas":[{"nome":"Leg Press 45 graus","rank":2},{"nome":"Cadeira Extensora (leg extension)","rank":5},{"nome":"Cadeira/Mesa Flexora (leg curl)","rank":10},{"nome":"Cadeira Abdutora","rank":11},{"nome":"Hack Squat / Agachamento Guiado","rank":13},{"nome":"Cadeira Adutora","rank":14},{"nome":"Panturrilha em Pe (standing calf)","rank":17},{"nome":"Elevacao Pelvica (hip thrust)","rank":20}],"abdomen":[{"nome":"Crossover / Estacao de Polias Duplas","rank":4},{"nome":"Abdominal Maquina (crunch)","rank":16}],"lombar":[{"nome":"Banco Romano 45 (lombar)","rank":23}]}};
+const DESCANSO_MIN=2, CHAVE='dechengym_treino_v1';
+const $=s=>document.querySelector(s);
+const hojeISO=()=>new Date().toISOString().slice(0,10);
+const dias=(a,b)=>Math.round((new Date(a+'T12:00')-new Date(b+'T12:00'))/864e5);
+
+// ---------------------------------------------------------------- estado --
+function carregar(){
+  try{const e=JSON.parse(localStorage.getItem(CHAVE));
+    if(e && DATA.divisoes[e.divisao] && Array.isArray(e.historico))return e;
+  }catch(_){}
+  return {divisao:'abcde',historico:[]};
+}
+function salvar(e){localStorage.setItem(CHAVE,JSON.stringify(e))}
+
+// ----------------------------------------------------------------- motor --
+// Espelho fiel de dechengym/treino.py (ciclo, recuperação e ranking).
+function cicloAtual(letras,hist){
+  const vistos=new Set(),ciclo=[];
+  for(let i=hist.length-1;i>=0;i--){const r=hist[i];
+    if(!letras.includes(r.letra)||vistos.has(r.letra))continue;
+    vistos.add(r.letra);ciclo.push(r);
+    if(vistos.size===letras.length)break;}
+  ciclo.reverse();
+  return vistos.size===letras.length?[]:ciclo;
+}
+function recuperacao(hist,letrasDef,hoje){
+  const rec={};
+  for(const r of hist){const det=letrasDef[r.letra];if(!det)continue;
+    for(const g of det.grupos){
+      rec[g]=rec[g]||{};
+      if(!rec[g].direto||r.data>rec[g].direto)rec[g].direto=r.data;
+      for(const gi of (DATA.sinergias[g]||[])){
+        rec[gi]=rec[gi]||{};
+        if(!rec[gi].indireto||r.data>rec[gi].indireto)rec[gi].indireto=r.data;}}}
+  const out={};
+  for(const g in rec){const d=rec[g];
+    const dd=d.direto?dias(hoje,d.direto):null, di=d.indireto?dias(hoje,d.indireto):null;
+    out[g]={dias_direto:dd,dias_indireto:di,
+            dias_efetivo:Math.min(...[dd,di].filter(x=>x!==null))};}
+  return out;
+}
+function visao(estado,hoje){
+  hoje=hoje||hojeISO();
+  const letrasDef=DATA.divisoes[estado.divisao].letras, letras=Object.keys(letrasDef);
+  const hist=estado.historico.filter(r=>r.data<=hoje).sort((a,b)=>a.data<b.data?-1:1);
+  const ciclo=cicloAtual(letras,hist);
+  const feitas=Object.fromEntries(ciclo.map(r=>[r.letra,r.data]));
+  const rec=recuperacao(hist,letrasDef,hoje);
+  const ultimo={};for(const r of hist)if(letrasDef[r.letra])ultimo[r.letra]=r.data;
+  const sug=letras.map((letra,idx)=>{
+    const det=letrasDef[letra], pendente=!(letra in feitas);
+    let pior=null;const grs=det.grupos.map(g=>{
+      const r=rec[g], d=r?r.dias_efetivo:null;
+      if(d!==null&&(pior===null||d<pior))pior=d;
+      return {grupo:g,dias:d,indireto:!!(r&&r.dias_indireto!==null&&r.dias_indireto!==undefined&&(r.dias_direto===null||r.dias_direto===undefined||r.dias_indireto<r.dias_direto))};});
+    const descansado=pior===null||pior>=DESCANSO_MIN;
+    const mot=[pendente?'pendente no ciclo atual':`já feito neste ciclo (${feitas[letra]})`];
+    if(pior===null)mot.push('grupos totalmente descansados');
+    else if(descansado)mot.push(`menor descanso: ${pior} dia(s) — recuperado`);
+    else mot.push('em recuperação: '+grs.filter(g=>g.dias!==null&&g.dias<DESCANSO_MIN)
+      .map(g=>g.grupo+(g.indireto?' (indireto)':'')).join(', '));
+    const eqs=[...new Map(det.grupos.flatMap(g=>DATA.equip[g]||[]).map(e=>[e.nome,e])).values()]
+      .sort((a,b)=>a.rank-b.rank).slice(0,6);
+    return {letra,nome:det.nome,grupos:det.grupos,pendente,recu:grs,descansado,
+      ultimo:ultimo[letra]||null,motivo:mot.join('; '),eqs,
+      score:[pendente?0:1,descansado?0:1,-(pior===null?999:pior),idx]};
+  });
+  sug.sort((a,b)=>{for(let i=0;i<4;i++)if(a.score[i]!==b.score[i])return a.score[i]-b.score[i];return 0});
+  sug.forEach((s,i)=>s.rec=(i===0));
+  return {hoje,divisao:estado.divisao,nomeDiv:DATA.divisoes[estado.divisao].nome,
+    ciclo:{feitos:ciclo,pendentes:letras.filter(l=>!(l in feitas)),
+           progresso:`${Object.keys(feitas).length}/${letras.length}`},
+    seq7:hist.filter(r=>letrasDef[r.letra]&&dias(hoje,r.data)<7).length,
+    sug, hist:hist.filter(r=>letrasDef[r.letra]).slice(-14).reverse()
+      .map(r=>({...r,nome:letrasDef[r.letra].nome,atras:dias(hoje,r.data)}))};
+}
+
+// -------------------------------------------------------------------- UI --
+function aviso(t){const m=$('#msg');m.textContent=t;m.style.display='block';
+  setTimeout(()=>m.style.display='none',2400)}
+function fmtRec(g){
+  if(g.dias===null)return `<li><span>${g.grupo}</span><span class="ok">descansado</span></li>`;
+  const cls=g.dias>=DESCANSO_MIN?'ok':'warn', ind=g.indireto?' (indireto)':'';
+  return `<li><span>${g.grupo}${ind}</span><span class="${cls}">${g.dias}d de descanso</span></li>`;
+}
+function render(){
+  const estado=carregar(), v=visao(estado);
+  const ops=Object.entries(DATA.divisoes).map(([k,d])=>
+    `<option value="${k}"${k===v.divisao?' selected':''}>${d.nome}</option>`).join('');
+  const feitos=Object.fromEntries(v.ciclo.feitos.map(f=>[f.letra,f.data]));
+  const letras=Object.keys(DATA.divisoes[v.divisao].letras);
+  const ciclo=letras.map(l=>{const ok=l in feitos;
+    return `<div class="pill${ok?' feito':''}"><div class="lt">${ok?'✓':l}</div><div><b>${l}</b><small>${ok?feitos[l]:'pendente'}</small></div></div>`}).join('');
+  const cards=v.sug.map(s=>`<div class="tr${s.rec?' rec':''}${s.pendente?'':' feito'}">
+    ${s.rec?'<div class="badge">RECOMENDADO HOJE</div>':''}
+    <div class="tr-top"><div class="lt">${s.letra}</div><div><b>${s.nome}</b><small>${s.ultimo?'último: '+s.ultimo:'nunca treinado'}</small></div></div>
+    <ul class="rec-l">${s.recu.map(fmtRec).join('')}</ul>
+    <p class="motivo">${s.motivo}</p>
+    <p class="eqs">🏋 ${s.eqs.map(e=>e.nome).join(' · ')}</p>
+    <button onclick="treinar('${s.letra}')">${s.pendente?'✓ Treinar este hoje':'↻ Repetir mesmo assim'}</button>
+  </div>`).join('');
+  const hist=v.hist.map(h=>`<tr><td>${h.data}</td><td><b>${h.letra}</b> — ${h.nome}</td><td>${h.atras===0?'hoje':h.atras+'d'}</td></tr>`).join('')
+    ||'<tr><td colspan="3" style="color:var(--mut)">Nenhum treino registrado — escolha um card acima.</td></tr>';
+  $('#app').innerHTML=`
+  <div class="chips">
+    <div class="chip"><b>${v.ciclo.progresso}</b><span>ciclo atual</span></div>
+    <div class="chip"><b>${v.seq7}</b><span>últimos 7 dias</span></div>
+    <div class="chip"><b>${v.hoje.slice(5)}</b><span>hoje</span></div>
+  </div>
+  <select onchange="mudarDiv(this.value)">${ops}</select>
+  <h2>Ciclo atual</h2><div class="ciclo">${ciclo}</div>
+  <h2>Próximos treinos (escolha ou troque)</h2>${cards}
+  <h2>Histórico recente</h2>
+  <table><tr><th>Data</th><th>Treino</th><th></th></tr>${hist}</table>
+  <div class="fer">
+    <button onclick="desfazer()">↶ desfazer</button>
+    <button onclick="exportar()">⬇ exportar</button>
+    <button onclick="$('#imp').click()">⬆ importar</button>
+  </div>`;
+}
+function treinar(l){const e=carregar();
+  e.historico.push({data:hojeISO(),letra:l});salvar(e);render();
+  aviso('Treino '+l+' registrado 💪')}
+function desfazer(){const e=carregar();
+  if(e.historico.length){e.historico.pop();salvar(e);render();aviso('Último registro removido')}}
+function mudarDiv(d){const e=carregar();e.divisao=d;salvar(e);render();
+  aviso('Divisão alterada — histórico preservado')}
+function exportar(){
+  const blob=new Blob([JSON.stringify(carregar(),null,1)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='dechengym_treino_backup.json';a.click();
+  aviso('Backup exportado')}
+$('#imp').addEventListener('change',ev=>{
+  const f=ev.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{try{
+    const e=JSON.parse(r.result);
+    if(!DATA.divisoes[e.divisao]||!Array.isArray(e.historico))throw 0;
+    if(!e.historico.every(x=>x&&typeof x.data==='string'&&typeof x.letra==='string'))throw 0;
+    salvar(e);render();aviso('Histórico importado ✓');
+  }catch(_){aviso('Arquivo inválido — use um backup exportado')}
+  ev.target.value='';};
+  r.readAsText(f);});
+render();
+</script></body></html>

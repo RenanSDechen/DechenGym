@@ -1,0 +1,458 @@
+[
+  {
+    "pagina": 1,
+    "projeto": "olympic_bench_ws",
+    "peca": "Capa - Olympic Flat Bench with Weight Set",
+    "funcao": "capa do dossiê; notas gerais (cotas em mm e polegadas, soldagem com gabaritos/grampos)",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "-",
+    "obs": "Dossiê craftsmanspace de 33 págs; render mostra banco reto olímpico com berços/uprights altos + barra com anilhas. É essencialmente o pacote2_olympic_bench SEM o subconjunto Dumbbell Storage."
+  },
+  {
+    "pagina": 2,
+    "projeto": "olympic_bench_ws",
+    "peca": "Subassembly List (conjunto geral)",
+    "funcao": "lista de subconjuntos",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "-",
+    "obs": "Apenas 2 subconjuntos: 1 Flat Bench (x1) e 2 Weight Set (x1). Diferença-chave vs pacote2_olympic_bench: não há Dumbbell Storage separado; os porta-barras (Dumbbell Holders) são chapas dobradas soldadas no topo dos montantes."
+  },
+  {
+    "pagina": 3,
+    "projeto": "olympic_bench_ws",
+    "peca": "Flat Bench Subassembly - BOM e vista explodida",
+    "funcao": "lista de peças do banco com montantes",
+    "material": "tubo quadrado 50x50x4; chapa aço; tampo madeira",
+    "secao_ou_espessura": "tubo 50x50x4",
+    "dimensoes_principais_mm": [
+      "cortes: 1285.36",
+      "190.42",
+      "390.36",
+      "950 (x2)",
+      "1100 (x2)",
+      "1370 / 400 / 200 (x2)"
+    ],
+    "furos_e_interfaces": "16 itens: 8 tubos, sheet (madeira), 2 dumbbell holders, 6 covers 50x50, 6 sheet supports, 6 triangle supports; fixação do tampo com 12x parafuso M6x35 fenda panela + arruela pressão A-6 + porca M6; Detail A mostra sheet support + triangle support sob o tampo",
+    "obs": "BOM idêntica ao Flat Bench do pacote2_olympic_bench (mesmos cut lengths). Diferenças: tampo em MADEIRA (Wood) e apenas 2 Dumbbell Holders (sem storage lateral)."
+  },
+  {
+    "pagina": 4,
+    "projeto": "olympic_bench_ws",
+    "peca": "Flat Bench - vistas 2D do subconjunto",
+    "funcao": "geometria geral do banco soldado com montantes porta-barra",
+    "material": "tubo 50x50x4 + tampo madeira",
+    "secao_ou_espessura": "tubo 50x50x4",
+    "dimensoes_principais_mm": [
+      "tampo 1335 (52.56 in) x 300",
+      "largura entre montantes ~1050 (41.73 in)",
+      "base do montante 400 (15.75 in)",
+      "comprimento total em planta ~2130 (~83.92 in)",
+      "grupos de furos do tampo espaçados ~427.5 (16.83)"
+    ],
+    "furos_e_interfaces": "3 grupos de furos em pares (passo 40) para fixar o tampo; montantes verticais com dumbbell holders no topo; travessa inferior 1370 ligando pé dianteiro aos montantes",
+    "obs": "Mesma arquitetura do pacote2_olympic_bench pág. 5. Pé dianteiro dobrado a 135° com sapata 400; montantes com pés 200 (x2)."
+  },
+  {
+    "pagina": 5,
+    "projeto": "olympic_bench_ws",
+    "peca": "Frame Components (1.01-1.08)",
+    "funcao": "tubos do quadro soldado (longarina, perna dianteira dobrada, montantes, travessas, pés)",
+    "material": "aço",
+    "secao_ou_espessura": "tubo quadrado 50x50x4",
+    "dimensoes_principais_mm": [
+      "1.01 longarina 1285.36",
+      "1.02 perna dianteira 190.42 + 1.03 trecho 390.36 (dobra 135°)",
+      "1.04 montantes 950 (x2) e 1.05 colunas 1100 (x2)",
+      "1.06 travessa 1370; 1.07 sapata 400; 1.08 pés 200 (x2)",
+      "altura montante ~1100 (43.31)"
+    ],
+    "furos_e_interfaces": "Detail A: furos na região da dobra dianteira; cortes a 45°/135° nas junções soldadas",
+    "obs": "Idêntico às Frame Components do pacote2_olympic_bench pág. 6 - compartilhado, sem diferenças."
+  },
+  {
+    "pagina": 6,
+    "projeto": "olympic_bench_ws",
+    "peca": "1.09 Sheet (tampo)",
+    "funcao": "prancha de assento/deitar",
+    "material": "madeira",
+    "secao_ou_espessura": "esp. 25",
+    "dimensoes_principais_mm": [
+      "1335 x 300 x 25",
+      "cantos R30",
+      "pares de furos passo 40",
+      "linhas de furos a 110 entre si (typ)",
+      "1º grupo a 115/625 do bordo; último a 160 do bordo"
+    ],
+    "furos_e_interfaces": "furos escareados: Ø13 x prof. rebaixo, passante Ø6.5 (Detail A/C, rebaixo 4) para parafusos M6",
+    "obs": "Mesmo tampo 1335x300x25 do pacote2_olympic_bench pág. 7; aqui BOM explicita material Wood."
+  },
+  {
+    "pagina": 7,
+    "projeto": "olympic_bench_ws",
+    "peca": "1.10 Dumbbell Holder (berço da barra)",
+    "funcao": "gancho/berço em chapa dobrada no topo dos montantes para apoiar a barra olímpica",
+    "material": "chapa aço",
+    "secao_ou_espessura": "chapa 3",
+    "dimensoes_principais_mm": [
+      "aba inferior 130",
+      "altura 70",
+      "aba superior 40",
+      "largura 60",
+      "dobras R10"
+    ],
+    "furos_e_interfaces": "soldado no topo dos montantes 950; perfil em C aberto que recebe a barra Ø31.8",
+    "obs": "Igual ao 1.10 do pacote2_olympic_bench pág. 8. 2 unidades."
+  },
+  {
+    "pagina": 8,
+    "projeto": "olympic_bench_ws",
+    "peca": "1.11 Cover 50x50mm",
+    "funcao": "tampa plástica/aço das extremidades dos tubos 50x50",
+    "material": "aço",
+    "secao_ou_espessura": "esp. 5",
+    "dimensoes_principais_mm": [
+      "50 x 50 x 5",
+      "cantos R8",
+      "chanfro 3x45°",
+      "R1"
+    ],
+    "furos_e_interfaces": "encaixe nas pontas abertas dos tubos (6 unidades)",
+    "obs": "Compartilhada com pacote2_olympic_bench (1.11) e flat_bench (1.13)."
+  },
+  {
+    "pagina": 9,
+    "projeto": "olympic_bench_ws",
+    "peca": "1.12 Sheet Support",
+    "funcao": "chapa soldada na longarina para aparafusar o tampo",
+    "material": "aço",
+    "secao_ou_espessura": "chapa 5",
+    "dimensoes_principais_mm": [
+      "60 x 30 x 5",
+      "furos a 10 da borda"
+    ],
+    "furos_e_interfaces": "2 furos Ø6.5 para parafusos M6x35; 6 unidades",
+    "obs": "Compartilhada com pacote2_olympic_bench (1.12) e flat_bench (1.08)."
+  },
+  {
+    "pagina": 10,
+    "projeto": "olympic_bench_ws",
+    "peca": "1.13 Triangle Support",
+    "funcao": "gusset triangular de reforço dos sheet supports",
+    "material": "aço",
+    "secao_ou_espessura": "chapa 5",
+    "dimensoes_principais_mm": [
+      "30 x 30 x 5 (triângulo retângulo)"
+    ],
+    "furos_e_interfaces": "soldado entre sheet support e longarina; 6 unidades",
+    "obs": "Compartilhada com pacote2_olympic_bench (1.13) e flat_bench (1.09)."
+  },
+  {
+    "pagina": 11,
+    "projeto": "olympic_bench_ws",
+    "peca": "Standard Parts (1.14-1.16)",
+    "funcao": "fixadores do tampo",
+    "material": "aço",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [
+      "parafuso M6x35 cabeça panela fendada",
+      "arruela pressão A-6",
+      "porca sextavada M6"
+    ],
+    "furos_e_interfaces": "12 conjuntos M6 fixam o tampo aos sheet supports",
+    "obs": "Igual ao pacote2_olympic_bench pág. 12."
+  },
+  {
+    "pagina": 12,
+    "projeto": "olympic_bench_ws",
+    "peca": "Weight Set Subassembly - BOM e explodida",
+    "funcao": "lista de peças do jogo barra + anilhas",
+    "material": "aço",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "8 itens: barra Ø31.8x6.3 (x1), delimiter (x2), anilhas 7kg/5kg/9kg/3kg/1.5kg (x2 cada), dumbbell nut (x2)",
+    "obs": "BOM idêntica ao Weight Set do pacote2_olympic_bench pág. 13 e flat_bench pág. 20."
+  },
+  {
+    "pagina": 13,
+    "projeto": "olympic_bench_ws",
+    "peca": "Weight Set - conjunto montado (vistas 2D)",
+    "funcao": "geometria do conjunto barra com anilhas empilhadas",
+    "material": "aço",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [
+      "comprimento total 1800",
+      "vão livre entre pilhas 1400",
+      "Ø máx da pilha 248",
+      "empilhamento por lado: 50/80/110/140/170",
+      "ordem: 9kg (externa após porca) ... delimiter interno"
+    ],
+    "furos_e_interfaces": "anilhas retidas entre delimiter (soldado/encostado) e dumbbell nut roscada TR32x3",
+    "obs": "Igual ao pacote2_olympic_bench pág. 14."
+  },
+  {
+    "pagina": 14,
+    "projeto": "olympic_bench_ws",
+    "peca": "2.01 Round Tubing D31.8x6.3 (barra)",
+    "funcao": "barra olímpica caseira",
+    "material": "aço",
+    "secao_ou_espessura": "tubo Ø31.8, parede 6.3",
+    "dimensoes_principais_mm": [
+      "comprimento 1800 (min 1600, max 1800)",
+      "rosca TR32x3 x 200 em cada extremidade"
+    ],
+    "furos_e_interfaces": "roscas trapezoidais TR32x3 recebem as dumbbell nuts; barra apoia nos dumbbell holders dos montantes",
+    "obs": "Compartilhada com pacote2_olympic_bench (2.01) e flat_bench (3.01)."
+  },
+  {
+    "pagina": 15,
+    "projeto": "olympic_bench_ws",
+    "peca": "2.02 Delimiter",
+    "funcao": "anel batente interno das pilhas de anilhas",
+    "material": "aço",
+    "secao_ou_espessura": "esp. 10",
+    "dimensoes_principais_mm": [
+      "Ø70 ext",
+      "Ø32 int",
+      "R2"
+    ],
+    "furos_e_interfaces": "desliza na barra Ø31.8; define o vão livre de 1400",
+    "obs": "Compartilhada com pacote2_olympic_bench (2.02). 2 unidades."
+  },
+  {
+    "pagina": 16,
+    "projeto": "olympic_bench_ws",
+    "peca": "2.03 Dumbbell 7kg (anilha)",
+    "funcao": "anilha de 7 kg",
+    "material": "aço",
+    "secao_ou_espessura": "esp. 30 (alma 10)",
+    "dimensoes_principais_mm": [
+      "Ø225 ext",
+      "furo Ø32.5",
+      "cubo Ø70",
+      "rebaixo Ø150",
+      "R5 typ"
+    ],
+    "furos_e_interfaces": "furo Ø32.5 desliza na barra",
+    "obs": "Igual ao pacote2_olympic_bench (2.03). 2 unidades."
+  },
+  {
+    "pagina": 17,
+    "projeto": "olympic_bench_ws",
+    "peca": "2.04 Dumbbell 5kg (anilha)",
+    "funcao": "anilha de 5 kg",
+    "material": "aço",
+    "secao_ou_espessura": "esp. 30 (alma 10)",
+    "dimensoes_principais_mm": [
+      "Ø200 ext",
+      "furo Ø32.5",
+      "cubo Ø70",
+      "rebaixo Ø150",
+      "R5 typ"
+    ],
+    "furos_e_interfaces": "furo Ø32.5 desliza na barra",
+    "obs": "Igual ao pacote2_olympic_bench (2.04). 2 unidades."
+  },
+  {
+    "pagina": 18,
+    "projeto": "olympic_bench_ws",
+    "peca": "2.05 Dumbbell Nut",
+    "funcao": "porca de aperto das anilhas",
+    "material": "aço",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [
+      "flange Ø60 x esp. 5",
+      "corpo quadrado 40x40 x comprimento 30",
+      "rosca interna TR32x3",
+      "chanfros 1x45°, R5"
+    ],
+    "furos_e_interfaces": "rosca TR32x3 na ponta da barra; corpo quadrado 40x40 para aperto manual/chave",
+    "obs": "Igual ao pacote2_olympic_bench (2.05). 2 unidades."
+  },
+  {
+    "pagina": 19,
+    "projeto": "olympic_bench_ws",
+    "peca": "2.06 Dumbbell 9kg (anilha)",
+    "funcao": "anilha de 9 kg (maior)",
+    "material": "aço",
+    "secao_ou_espessura": "esp. 30 (alma 10)",
+    "dimensoes_principais_mm": [
+      "Ø248 ext",
+      "furo Ø32.5",
+      "cubo Ø70",
+      "rebaixo Ø150",
+      "R5 typ"
+    ],
+    "furos_e_interfaces": "furo Ø32.5 desliza na barra",
+    "obs": "Igual ao pacote2_olympic_bench (2.06). 2 unidades."
+  },
+  {
+    "pagina": 20,
+    "projeto": "olympic_bench_ws",
+    "peca": "2.07 Dumbbell 3kg (anilha)",
+    "funcao": "anilha de 3 kg",
+    "material": "aço",
+    "secao_ou_espessura": "esp. 30 (alma 10)",
+    "dimensoes_principais_mm": [
+      "Ø155 ext",
+      "furo Ø32.5",
+      "cubo Ø70",
+      "rebaixo Ø120",
+      "R5 typ"
+    ],
+    "furos_e_interfaces": "furo Ø32.5 desliza na barra",
+    "obs": "Igual ao pacote2_olympic_bench (2.07). 2 unidades."
+  },
+  {
+    "pagina": 21,
+    "projeto": "olympic_bench_ws",
+    "peca": "2.08 Dumbbell 1.5kg (anilha)",
+    "funcao": "anilha de 1,5 kg (menor)",
+    "material": "aço",
+    "secao_ou_espessura": "esp. 30 (alma 10)",
+    "dimensoes_principais_mm": [
+      "Ø111 ext",
+      "furo Ø33",
+      "cubo Ø60",
+      "rebaixo Ø90",
+      "R3 typ"
+    ],
+    "furos_e_interfaces": "furo Ø33 (folga maior) desliza na barra",
+    "obs": "Igual ao pacote2_olympic_bench (2.08). 2 unidades."
+  },
+  {
+    "pagina": 22,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem banco - passo 1",
+    "funcao": "instrução de montagem",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "soldar covers 50x50 (item 11) nas pontas da sapata 400 (item 7)",
+    "obs": "-"
+  },
+  {
+    "pagina": 23,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem banco - passo 2",
+    "funcao": "instrução de montagem",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "soldar covers 50x50 nas pontas dos pés 200 (item 8); fazer 2 conjuntos",
+    "obs": "-"
+  },
+  {
+    "pagina": 24,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem banco - passo 3",
+    "funcao": "instrução de montagem",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "soldar coluna 1100 (item 5) no centro do pé 200 e o dumbbell holder (item 10) no topo; fazer 2 montantes",
+    "obs": "montante em T com berço da barra no topo - diferencial deste dossiê."
+  },
+  {
+    "pagina": 25,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem banco - passo 4",
+    "funcao": "instrução de montagem",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "soldar as 2 travessas 950 (item 4) entre os dois montantes, formando o pórtico traseiro",
+    "obs": "-"
+  },
+  {
+    "pagina": 26,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem banco - passos 5-6",
+    "funcao": "instrução de montagem",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "soldar tubo 390.36 (item 3) à sapata dianteira e o trecho 190.42 (item 2) com chanfro nas juntas soldadas (dobra 135°)",
+    "obs": "-"
+  },
+  {
+    "pagina": 27,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem banco - passos 7-8",
+    "funcao": "instrução de montagem",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "soldar a longarina 1285.36 (item 1) na perna dianteira dobrada; unir esse conjunto ao pórtico dos montantes (passo 4)",
+    "obs": "-"
+  },
+  {
+    "pagina": 28,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem banco - passo 9",
+    "funcao": "instrução de montagem",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "soldar a travessa inferior 1370 (item 6) entre a perna dianteira e o pórtico dos montantes",
+    "obs": "-"
+  },
+  {
+    "pagina": 29,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem banco - passos 10-11",
+    "funcao": "instrução de montagem",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "soldar sheet support (item 12) + triangle support (item 13) - 6 conjuntos - e soldá-los sobre a longarina e a travessa 950",
+    "obs": "-"
+  },
+  {
+    "pagina": 30,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem banco - passo 12",
+    "funcao": "instrução de montagem",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "aparafusar o tampo de madeira (item 9) com M6x35 + arruela pressão A-6 + porca M6 (12x); banco concluído",
+    "obs": "-"
+  },
+  {
+    "pagina": 31,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem weight set - passo 1",
+    "funcao": "instrução de montagem do jogo de anilhas",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "soldar os 2 delimiters (item 2) na barra Ø31.8x6.3 (item 1), definindo o vão livre de 1400",
+    "obs": "Mesma sequência do pacote2_olympic_bench."
+  },
+  {
+    "pagina": 32,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem weight set - passo 2",
+    "funcao": "instrução de montagem do jogo de anilhas",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "enfileirar as anilhas em cada extremidade contra o delimiter, da maior (9kg Ø248) para a menor (1.5kg Ø111)",
+    "obs": "-"
+  },
+  {
+    "pagina": 33,
+    "projeto": "olympic_bench_ws",
+    "peca": "Montagem weight set - passo 3",
+    "funcao": "instrução de montagem do jogo de anilhas",
+    "material": "-",
+    "secao_ou_espessura": "-",
+    "dimensoes_principais_mm": [],
+    "furos_e_interfaces": "rosquear as dumbbell nuts (item 5, TR32x3) travando as pilhas; conjunto final barra 1800 com anilhas nas duas pontas",
+    "obs": "Fim do dossiê (33/33)."
+  }
+]

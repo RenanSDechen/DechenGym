@@ -1,0 +1,282 @@
+[
+  {
+    "arquivo": "BICEPS/BICEPS/1701-DESENHO.pdf",
+    "projeto": "biceps",
+    "peca": "CHASSI BICEPS (desenho 1701, folha A2)",
+    "funcao": "Chassi completo da maquina de biceps com torre de peso, banco Scott integrado, braco articulado e pegador curvo.",
+    "material": "ABNT-1010 (aco carbono, conforme BOM do desenho 1703)",
+    "secao_ou_espessura": "Torre em tubo redondo Ø60x1,5; estrutura em tubo quadrado 50x50x1,5 e tubo oblongo 40x115x1,5; chapas/ferro chato 5 mm",
+    "dimensoes_principais_mm": {
+      "torre": "altura 1500, largura externa 580, curva superior em tubo Ø60; alturas intermediarias 800/640/500/400/100",
+      "base": "largura 400 na vista frontal; planta geral 750+115+115 de comprimento x 500/360 de profundidade",
+      "braco_articulado": "vista 440 de comprimento, extremidade com bucha Ø38 e furo Ø20,1 +0,1/-0; braco chato 2 pecas com furos Ø10,5 e rosca 5/16, largura 38",
+      "pegador_curvo": "tubo Ø25,4 (planta 530 entre pontas, cota 89,94), cortar com 830; 1a curva 90 graus Ø160, 2a curva 45 graus Ø160; rosca 3/8 nas pontas",
+      "disco": "Ø300x1/2 (BOM 1703), furo central Ø20,1 +0,1/-0, bucha lateral com rosca 3/8, cota 45",
+      "bucha_pequena": "Ø15 com rosca 5/16 e furo Ø6 (escala 1:1)",
+      "bucha_grande": "Ø48 externo, alojamento Ø42 +0,05/-0, comprimento 40, ressalto 12 (2 pecas)",
+      "travessa_corte_A-A": "comprimento 460, furos Ø26 e Ø30 espacados 185",
+      "suporte": "travessa 569/545/540 com pontas de 12, pes de 200, tubo Ø30, furos Ø10/Ø30,5, ferro chato 5x38"
+    },
+    "furos_e_interfaces": "Furos de pivo Ø20,1 +0,1/-0 no braco e no disco; furos Ø26 e Ø30 na travessa superior (roldanas); furos Ø10,5 com rosca 5/16 nos bracos chatos; furos Ø5 nos ferros chatos 5x50x80 e 5x25x40; furo Ø25 no topo da torre",
+    "dobra_ou_curva": "Pegador em tubo Ø25,4 com curvas de raio/diametro 160 (90 e 45 graus); torre em tubo Ø60 curvado em U (R aprox. no topo); apoio inclinado a 45 graus no banco Scott",
+    "obs": "Desenho de conjunto do chassi; detalhes e BOM completa no desenho 1703."
+  },
+  {
+    "arquivo": "BICEPS/BICEPS/1702-DESENHO.pdf",
+    "projeto": "biceps",
+    "peca": "MONTAGEM BICEPS (desenho 1702, folha A2)",
+    "funcao": "Vista explodida e conjunto montado da maquina de biceps mostrando a sequencia de montagem.",
+    "material": "nao especificado (desenho de montagem, sem BOM preenchida)",
+    "secao_ou_espessura": "nao especificado",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra empilhamento de aproximadamente 10 placas de peso com varao seletor, 2 roldanas no topo da torre, disco de came, braco articulado com pegador curvo e banco Scott aparafusado",
+    "dobra_ou_curva": "Torre em U de tubo curvado; pegador curvo",
+    "obs": "Sem cotas; apenas isometricas explodida e montada."
+  },
+  {
+    "arquivo": "BICEPS/BICEPS/1703-DESENHO.pdf",
+    "projeto": "biceps",
+    "peca": "DETALHES BICEPS (desenho 1703, folha A3)",
+    "funcao": "Detalhes de furacao das pecas chatas/travessas e lista de materiais completa da maquina de biceps.",
+    "material": "ABNT-1010 (todos os itens da BOM); protetores e suporte de banco por desenhos padrao PDR003/PDR024",
+    "secao_ou_espessura": "Tubos 50x50x1,5; oblongo 40x115x1,5; redondos Ø60x1,5 e Ø25,4x1,5; ferro chato 5 mm; disco 1/2 pol",
+    "dimensoes_principais_mm": {
+      "detalhe_1": "travessa 460, furos Ø26 e Ø30 espacados 185, tubo 50",
+      "detalhe_2": "braco chato 38x420, furo Ø16 e rosca 5/16 a 10 da ponta (2 pecas)",
+      "detalhe_3": "ferro chato 5x50x80 com furo Ø5 a 10 da borda (2 pecas)",
+      "detalhe_4": "ferro chato 5x25x40 com furo Ø5 a 10 (2 pecas)",
+      "detalhe_5": "chapa 38x200 com furos Ø21 e Ø10 (cotas 20 e 15) (2 pecas)",
+      "detalhe_6": "tubo Ø50x400 com furo Ø22 a 30 do topo",
+      "detalhe_7": "tubo Ø50x250 com furo Ø26 a 90, corte em bisel"
+    },
+    "furos_e_interfaces": "Furos Ø26/Ø30 (eixos de roldana), Ø21/Ø10, Ø22, Ø16 com rosca 5/16, Ø5 para fixacao de protetores",
+    "dobra_ou_curva": "Cortes a 45 graus indicados nos tubos quadrados itens 9 e 14",
+    "obs": "BOM completa: 27 PROTETOR ROLDANA PLANO VER PDR003 (4); 26 SUPORTE BANCO VER PDR024 (1); 25 DISCO Ø300x1/2 (1); 24 BUCHA Ø48 sch40x40 (2); 23 BUCHA Ø38x20 (2); 22 BUCHA Ø15x15 (1); 21 EIXO Ø15x130 (1); 20 EIXO Ø20x770 (1); 19 EIXO Ø20x569 (1); 18 FERRO CHATO 5x38x421 (2); 17 FERRO CHATO 5x38x200 (2); 16 FERRO CHATO 5x50x80 (2); 15 FERRO CHATO 5x25x40 (2); 14 TUBO QUADRADO 50x50x1,5x800 (2, corte 45); 13 50x50x1,5x480 (1); 12 50x50x1,5x400 (1); 11 50x50x1,5x375 (1); 10 50x50x1,5x360 (1); 9 50x50x1,5x250 (2, corte 45); 8 50x50x1,5x240 (1); 7 50x50x1,5x170 (1); 6 TUBO OBLONGO 40x115x1,5x815 (1); 5 40x115x1,5x755 (1); 4 40x115x1,5x500 (1); 3 40x115x1,5x345 (1); 2 TUBO REDONDO Ø60x1,5x3430 (1); 1 TUBO REDONDO Ø25,4x1,5x830 (1). Todos ABNT-1010."
+  },
+  {
+    "arquivo": "BANCO_BICEPS___SCOTT/BANCO BICEPS - SCOTT/03101-DESENHO.pdf",
+    "projeto": "banco_scott",
+    "peca": "CHASSI BANCO BICEPS BRACOS (desenho 03101, folha A3)",
+    "funcao": "Chassi do banco Scott independente com pulpito inclinado, coluna de banco regulavel e dois suportes de barra regulaveis.",
+    "material": "ABNT-1010 e tubos INOX nas colunas regulaveis (conforme BOM 03102)",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5 (estrutura), 40x40x1,5 inox (colunas regulaveis), tubo retangular 30x50x1,5, oblongo 40x115x1,5, chapas 3 mm",
+    "dimensoes_principais_mm": {
+      "vista": "altura da coluna do pulpito 880, colunas externas 450, entre-eixos 380 e 400, contraventamento a 300 de altura, cota 30 no topo",
+      "pulpito": "apoio inclinado de 250 com aba de 70 e angulo de 40 graus",
+      "planta": "comprimento 765 entre pes + pes de 115 de largura; profundidade 550/600; travessas 400x400",
+      "suporte_banco": "1 peca: chapa topo 200x3, coluna quadrada 40, curso com furos Ø13 espacados de 50, altura 450, engaste em tubo 50",
+      "suporte_barras": "2 pecas: altura 480, cabeca em tubo 30x50 de 150 com aba de 80, coluna 40 com furos Ø13 espacados de 50"
+    },
+    "furos_e_interfaces": "Furos Ø13 em serie (passo 50) nas tres colunas regulaveis para pino de regulagem de altura; encaixe telescopico tubo 40 inox dentro de tubo 50",
+    "dobra_ou_curva": "Pulpito inclinado a 40 graus; pes em tubo oblongo com pontas arredondadas",
+    "obs": "Regulagem de altura por pino em 3 pontos (banco + 2 suportes de barra); detalhes de furacao e BOM no desenho 03102."
+  },
+  {
+    "arquivo": "BANCO_BICEPS___SCOTT/BANCO BICEPS - SCOTT/03102-DESENHO.pdf",
+    "projeto": "banco_scott",
+    "peca": "DETALHES DE FURACAO - BANCO BICEPS BRACOS (desenho 03102, folha A4)",
+    "funcao": "Detalhes de furacao das colunas fixas do chassi e lista de materiais completa do banco Scott.",
+    "material": "ABNT-1010; colunas regulaveis 40x40x1,5 em INOX",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5 e 40x40x1,5; tubo retangular 30x50x1,5; oblongo 40x115x1,5; chapas 3 mm",
+    "dimensoes_principais_mm": {
+      "detalhe_1": "coluna tubo 40, comprimento 450, furos Ø13 escalonados com passos de 50 (1 peca)",
+      "detalhe_2": "coluna tubo 40, comprimento 450, furos Ø13 passo 50, primeira cota 80 (2 pecas)",
+      "detalhe_3": "coluna tubo 50, comprimento 450, furo Ø22 a 30 do topo (3 pecas)"
+    },
+    "furos_e_interfaces": "Furos Ø13 (pino de regulagem) nas colunas inox; furo Ø22 nas colunas externas 50x50 para eixo/manipulo",
+    "dobra_ou_curva": "Corte a 45 graus na chapa 3x100x100 (item 9); corte a 40 graus nos tubos 50x50x1,5x880 (item 7)",
+    "obs": "BOM completa: 12 TUBO QUADRADO 40x40x1,5x450 INOX (3); 11 CHAPA 3x400x350 (1); 10 CHAPA 3x200x200 (1); 9 CHAPA 3x100x100 (1, corte 45); 8 TUBO RETANGULAR 30x50x1,5x150 (2); 7 TUBO QUADRADO 50x50x1,5x880 (2, corte 40); 6 50x50x1,5x550 (1); 5 50x50x1,5x450 (3); 4 50x50x1,5x380 (1); 3 TUBO OBLONGO 40x115x1,5x850 (1); 2 40x115x1,5x775 (1); 1 40x115x1,5x400 (1). Itens 1-11 ABNT-1010."
+  },
+  {
+    "arquivo": "EXTENSOR_SENTADO/EXTENSOR SENTADO/02001-DESENHO.pdf",
+    "projeto": "extensor_sentado",
+    "peca": "CHASSI EXTENSOR SENTADO (desenho 02001, folha A2)",
+    "funcao": "Chassi da cadeira extensora com torre de peso em U, assento/encosto regulaveis e braco de rolo articulado.",
+    "material": "ABNT-1010; colunas de regulagem em INOX (conforme BOM 02002)",
+    "secao_ou_espessura": "Torre em tubo Ø60; estrutura 50x50x1,5 e oblongo 40x115x1,5; encosto em chapa 3 mm; suportes em ferro chato 50x1/4",
+    "dimensoes_principais_mm": {
+      "torre": "altura 1700, largura externa 580, furos Ø10 no topo com espacamento 185, cota 27",
+      "geral": "vista com assento a 690, cotas 488/380/350/120; planta 660 x 835, pes 115, entre-eixos 405",
+      "corte_A-A": "travessa 480, furos Ø26 e Ø30 espacados 185",
+      "suporte_inox": "coluna 500 (curso 300 furado), furos Ø13/Ø10 com passo 50, tubo 40, ponta a 45 graus com bucha, base 100",
+      "suporte_chato": "ferro chato 50x1/4 x200 com furo Ø10 e corte a 30 graus (2 pecas)",
+      "suporte_vertical": "barra Ø25,4 de 195 com porca 3/4 soldada a 70 do topo e ferro chato 5x38x50",
+      "suporte_encosto": "chapa 3 mm, 400 de comprimento, 7 furos com passo 50",
+      "eixo": "Ø15x60 (escala 1:2)",
+      "cantoneira": "2x2 pol x60 com furo Ø10",
+      "bucha": "Ø42 externo, Ø35 alojamento, comprimento 50, ressalto 12"
+    },
+    "furos_e_interfaces": "Furos Ø26/Ø30 na travessa das roldanas; furos Ø13/Ø10 passo 50 na coluna de regulagem do encosto; porca 3/4 para manipulo do rolo; furo Ø10 na cantoneira e suportes",
+    "dobra_ou_curva": "Torre em tubo Ø60 curvado em U; tubo do rolo curvado (peca com raio Ø35,4 e angulo 95 graus na planta); apoio inclinado 10/12 graus no assento",
+    "obs": "Angulos de assento/encosto de 10 a 60 graus indicados na vista; BOM completa no desenho 02002."
+  },
+  {
+    "arquivo": "EXTENSOR_SENTADO/EXTENSOR SENTADO/02002-DESENHO.pdf",
+    "projeto": "extensor_sentado",
+    "peca": "DETALHES DE FURACAO / LISTA DE MATERIAIS - EXTENSOR SENTADO (desenho 02002, folha A3)",
+    "funcao": "Detalhes de furacao das pecas e lista de materiais completa da cadeira extensora.",
+    "material": "ABNT-1010; 3 tubos 40x40x1,5 em INOX; suportes de polia por desenhos padrao PDR003/PDR006/PDR008",
+    "secao_ou_espessura": "Tubos 50x50x1,5, 40x40x1,5 inox, retangular 50x30x1,5, oblongo 40x115x1,5, redondos Ø60 e Ø25,4x1,5; ferro chato 5 mm e 1/4 pol; chapa 3 mm",
+    "dimensoes_principais_mm": {
+      "detalhe_1": "ferro chato 38x80 com furo Ø5 a 10 (6 pecas)",
+      "detalhe_2": "peca 50x200 com furo Ø22 a 30 (1 peca)",
+      "detalhe_3": "tubo 50, 70 de altura, furo Ø22, cota 35 (1 peca)",
+      "detalhe_4": "chapa 200x200 com 4 furos Ø5 a 20 das bordas (1 peca)",
+      "detalhe_5": "chapa 400 com 7 furos Ø10 passo 50 (1 peca)",
+      "detalhe_6": "ferro chato 50x1/4 x200, furo Ø10 a 20, corte a 30 graus (2 pecas)",
+      "detalhe_7": "cantoneira 2x2 pol x25 com furo Ø10 (1 peca)",
+      "detalhe_8": "coluna tubo 40x500, furos Ø13 passo 50 e furo Ø10 a 100 da base, cota 20, topo chanfrado (1 peca)",
+      "detalhe_9": "travessa 480, furos Ø26 e Ø30 espacados 185 (1 peca)"
+    },
+    "furos_e_interfaces": "Furos Ø13 e Ø10 para pino de regulagem; Ø26/Ø30 para eixos de roldana; Ø22 para eixo do braco; Ø5 para fixacao de estofados",
+    "dobra_ou_curva": "Cortes a 22,5 graus nos tubos inox itens 26 e 28; cortes a 15 graus nos itens 18, 19 e 20",
+    "obs": "BOM completa: 31 SUPORTE POLIA CABO ACO VER PDR008 (2); 30 SUPORTE POLIA SUPERIOR VER PDR006 (2); 29 PROTETOR ROLDANA PLANO VER PDR003 (4); 28 TUBO QUADRADO 40x40x1,5x500 INOX (1, corte 22,5); 27 40x40x1,5x400 INOX (1); 26 40x40x1,5x140 INOX (1, corte 22,5); 25 CANTONEIRA 1/4x2x60 (1); 24 CHAPA 3x200x200 (1); 23 FERRO CHATO 1/4x50x200 (2); 22 FERRO CHATO 5x38x80 (6); 21 FERRO CHATO 5x38x50 (2); 20 TUBO RETANGULAR 50x30x1,5x540 (2, corte 15); 19 TUBO QUADRADO 50x50x1,5x690 (1, corte 15); 18 50x50x1,5x660 (1, corte 15); 17 50x50x1,5x490 (1); 16 50x50x1,5x480 (1); 15 50x50x1,5x460 (1); 14 50x50x1,5x400 (1); 13 50x50x1,5x200 (1); 12 50x50x1,5x100 (1); 11 50x50x1,5x70 (1); 10 TUBO OBLONGO 40x115x1,5x835 (1); 9 40x115x1,5x670 (1); 8 40x115x1,5x583 (1); 7 40x115x1,5x400 (1); 6 BUCHA Ø42x50 (1); 5 EIXO Ø15x60 (1); 4 TUBO REDONDO Ø60x3700 (1); 3 TUBO REDONDO Ø25,4x1,5x1000 (1); 2 Ø25,4x1,5x480 (1); 1 Ø25,4x1,5x190 (2). Demais itens ABNT-1010."
+  },
+  {
+    "arquivo": "EXTENSOR_SENTADO/EXTENSOR SENTADO/02003-DESENHO.pdf",
+    "projeto": "extensor_sentado",
+    "peca": "MONTAGEM EXTENSOR SENTADO (desenho 02003, folha A2)",
+    "funcao": "Vista explodida e conjunto montado da cadeira extensora mostrando a sequencia de montagem.",
+    "material": "nao especificado (desenho de montagem, sem BOM preenchida)",
+    "secao_ou_espessura": "nao especificado",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra coluna de pesos com varao seletor, roldanas na torre em U, encosto regulavel, assento estofado, braco articulado com rolos de espuma (2 pares) e eixo de regulagem com manipulo",
+    "dobra_ou_curva": "Torre em U; braco do rolo curvado",
+    "obs": "Sem cotas; apenas isometricas explodida e montada."
+  },
+  {
+    "arquivo": "FLEXOR_SENTADO/FLEXOR SENTADO/01601-DESENHO.pdf",
+    "projeto": "flexor_sentado",
+    "peca": "CHASSI FLEXOR SENTADO (desenho 01601, folha A2)",
+    "funcao": "Chassi da cadeira flexora com torre de peso em U, disco setor de regulagem angular, banco e apoios de coxa/perna.",
+    "material": "ABNT-1010; colunas de regulagem em INOX (conforme BOM 01605)",
+    "secao_ou_espessura": "Torre em tubo Ø60; estrutura 50x50x1,5 e 40x40x1,5/2,0; oblongo 40x115x1,5; encosto em chapa 3 mm; travas em ferro chato",
+    "dimensoes_principais_mm": {
+      "torre": "altura 1700, largura externa 580, R175 na curva superior, furos Ø10 no topo espacados 185, cota 27",
+      "geral": "vista 965/680 e 690 de altura de mecanismo; base planta 835 x 658, pes 115, entre-eixos 405; cotas de mecanismo 200/120/200/660",
+      "disco_regulagem_vista_lateral": "disco de 220 com fileira de furos em arco para pino de regulagem, braco com cotas 30/20/50",
+      "vista_frontal": "travessa/eixo de 573 com chapa 1/4, tubo Ø25,4x1,5, detalhes Ø15/Ø10 na ponta",
+      "suporte_encosto": "chapa 3 mm, 400 de comprimento, 7 furos Ø10 com passo 50, aba 120x200",
+      "banco": "assento 555 com apoios inclinados a 15 graus, base 440, pes 200+200, furos Ø5 e chapa 5x25",
+      "coluna_apoio": "tubo com furos, altura 90, cotas 20, tubo Ø25,4",
+      "bracos": "angulos de trabalho 32/60 graus e comprimentos 200/120/660 na vista; bucha Ø42 no pivo; suporte com furos Ø13 passo 50 (600 de comprimento)"
+    },
+    "furos_e_interfaces": "Furos Ø10 no topo da torre (roldanas); arco de furos no disco de regulagem do apoio; furos Ø13/Ø10 passo 50 nos suportes regulaveis; furos Ø5 para estofados; pivo com bucha Ø42",
+    "dobra_ou_curva": "Torre em tubo Ø60 curvado em U com R175; apoios do banco a 15 graus; bracos do mecanismo inclinados (60 graus)",
+    "obs": "Conjunto do chassi; pecas do mecanismo detalhadas em 01602/01602A/01603/01604 e BOM completa em 01605."
+  },
+  {
+    "arquivo": "FLEXOR_SENTADO/FLEXOR SENTADO/01602-DESENHO.pdf",
+    "projeto": "flexor_sentado",
+    "peca": "BRACO REGULAGEM P/ FLEXOR (desenho 01602, folha A4)",
+    "funcao": "Braco de regulagem em barra chata curvada que liga o pivo do mecanismo ao rolo de apoio, com furo de pivo tolerenciado.",
+    "material": "nao especificado no desenho (barra chata; demais pecas do projeto em ABNT-1010)",
+    "secao_ou_espessura": "Espessura 3/4 pol (ESP.: 3/4\"), 1 peca",
+    "dimensoes_principais_mm": {
+      "segmentos": "trecho reto 200 + ponta Ø25 de 200",
+      "curva": "angulo de 60 graus entre o trecho reto e a base; offset 115; largura da base 50",
+      "furo_pivo": "Ø20,1 +0,1/-0",
+      "rosca": "furo com ROSCA 3/4 no meio do braco"
+    },
+    "furos_e_interfaces": "Furo de pivo Ø20,1 +0,1/-0 na base; furo roscado 3/4 para manipulo/trava; ponta torneada Ø25 para receber o rolo",
+    "dobra_ou_curva": "Curva unica com mudanca de direcao de 60 graus",
+    "obs": "Escala 1:5."
+  },
+  {
+    "arquivo": "FLEXOR_SENTADO/FLEXOR SENTADO/01602A-DESENHO.pdf",
+    "projeto": "flexor_sentado",
+    "peca": "BRACO REGULAGEM/FLEXOR (desenho 01602A, numero de folha 02902A, folha A4)",
+    "funcao": "Versao alternativa do braco de regulagem com extremidade em gancho (sem furo de pivo).",
+    "material": "nao especificado no desenho (barra chata)",
+    "secao_ou_espessura": "Espessura 3/4 pol (ESP.: 3/4\")",
+    "dimensoes_principais_mm": {
+      "segmento_reto": "200",
+      "curvas": "R150 na curva principal e R25 no gancho da ponta",
+      "base": "largura 50; angulo de 60 graus entre o trecho reto e a horizontal"
+    },
+    "furos_e_interfaces": "Sem furos cotados; extremidade em gancho fechado (R25) para engate",
+    "dobra_ou_curva": "Curva R150 a 60 graus mais gancho de retorno R25",
+    "obs": "Escala 1:2.5; inclui isometrica da peca."
+  },
+  {
+    "arquivo": "FLEXOR_SENTADO/FLEXOR SENTADO/01603-DESENHO.pdf",
+    "projeto": "flexor_sentado",
+    "peca": "FLANGE (desenho 01603, folha A4)",
+    "funcao": "Flange de mancal usinada (disco + tubo soldado) que aloja a bucha/eixo do mecanismo articulado.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Disco Ø103x5/16 pol + tubo Ø1 1/2 pol sch80 x 30",
+    "dimensoes_principais_mm": {
+      "externo": "Ø100 -0/-0,2 (disco), cubo Ø48/Ø47,5",
+      "alojamento": "Ø42 +0,05/-0,02 em dois rebaixos de 12+12 de profundidade",
+      "alturas": "altura total 27, espessura do flange 8",
+      "furacao": "4 furos Ø8,5 em circulo de furacao Ø80"
+    },
+    "furos_e_interfaces": "4x Ø8,5 em CDF Ø80 para parafusos; alojamento usinado Ø42 +0,05/-0,02 para bucha/rolamento",
+    "dobra_ou_curva": "nao ha (peca usinada de revolucao)",
+    "obs": "BOM do desenho: 2 TUBO Ø1 1/2 sch80x30 ABNT-1010 (1); 1 DISCO Ø103x5/16 ABNT-1010 (1). Escala 1:1."
+  },
+  {
+    "arquivo": "FLEXOR_SENTADO/FLEXOR SENTADO/01604-DESENHO.pdf",
+    "projeto": "flexor_sentado",
+    "peca": "DISCO (setor de regulagem) (desenho 01604, folha A4)",
+    "funcao": "Disco setor de regulagem angular do apoio de pernas, com furos de indexacao a cada 15 graus e batente soldado.",
+    "material": "ABNT-1010",
+    "secao_ou_espessura": "Disco Ø303 x 1/2 pol; eixo/bucha lateral Ø20x22",
+    "dimensoes_principais_mm": {
+      "diametros": "Ø300 externo (corte), circulo dos furos de regulagem Ø230, rebaixo central Ø100,1 +2/-0, CDF interno Ø80, furo/cubo central Ø50",
+      "batente": "bloco de 30 de altura x 10, raio R3, na borda",
+      "setor_regulagem": "furos Ø10 espacados a 15 graus em arco (circulo Ø230); furo Ø20 na periferia",
+      "bucha_lateral": "Ø20 x 20 com furo Ø7 e rosca 5/16",
+      "furos_centrais": "4 furos Ø10 em CDF Ø80",
+      "espessuras": "chapa 1/2 pol, rebaixos de 2 e 6"
+    },
+    "furos_e_interfaces": "Arco de furos Ø10 a cada 15 graus para pino indexador; furo periferico Ø20; 4x Ø10 em Ø80 para fixacao na flange; rebaixo Ø100,1 +2/-0 de encaixe; bucha roscada 5/16 lateral",
+    "dobra_ou_curva": "nao ha (peca plana usinada)",
+    "obs": "BOM do desenho: 2 EIXO Ø20x22 ABNT-1010 (1); 1 DISCO Ø303x1/2 ABNT-1010 (1). Escala 1:2.5."
+  },
+  {
+    "arquivo": "FLEXOR_SENTADO/FLEXOR SENTADO/01605-DESENHO.pdf",
+    "projeto": "flexor_sentado",
+    "peca": "DETALHES DE INSTALACAO / LISTA DE MATERIAIS - FLEXOR SENTADO (desenho 01605, folha A2)",
+    "funcao": "Detalhes de furacao de todas as pecas soltas (eixos, buchas, discos, chapas) e BOM completa de 50 itens da flexora.",
+    "material": "ABNT-1010; 4 itens em INOX (colunas 40x40x1,5); buchas de nylon Ø25x20; pecas padrao PDR003/PDR004/PDR006/PDR008 e TRG016002",
+    "secao_ou_espessura": "Tubos 50x50x1,5, 40x40x1,5 e 40x40x2,0; retangular 50x30x1,5; oblongo 40x115x1,5; redondos Ø60, Ø26,8, Ø25,4x1,5 e Ø1 1/4; chapas 3 mm; ferro chato 5 mm; disco 1/4 pol",
+    "dimensoes_principais_mm": {
+      "detalhe_1": "chapa 100x440, furos Ø5 nas cotas 20/60/200 (1 peca)",
+      "detalhe_2": "chapa 38x80 com furo Ø5 (4 pecas)",
+      "detalhe_3": "peca 50x200 com furo Ø22 a 30 (1 peca)",
+      "detalhe_4": "tubo 30x50x380 com furo Ø42 no topo, corte a 30 graus (1 peca)",
+      "detalhe_5": "chapa 150 com furos Ø10, cotas 90/30/40, corte 30 graus (1 peca)",
+      "detalhe_6": "chapa 150 com furo Ø22 a 30 (1 peca)",
+      "detalhe_7_8": "ferros chatos 31x120 e 31x205 com furos Ø10, cotas 20/40 (1 peca cada)",
+      "detalhe_9": "chapa 200x200, 4 furos Ø10 a 20 das bordas (1 peca)",
+      "detalhe_10": "chapa 400 com 7 furos Ø13 passo 50, altura 40 (1 peca)",
+      "detalhe_11": "chapa 265 com furos Ø10, cotas 110/20/40 (1 peca)",
+      "detalhe_12": "coluna 600 com furos Ø10 e Ø13, passos 50/90, rasgo na ponta com cota 30 (1 peca)",
+      "detalhe_13": "tubo 400 com furos Ø10, cota 20, tubo Ø40 (1 peca)",
+      "detalhe_14": "travessa 480, furos Ø26 e Ø30 espacados 185 (1 peca)",
+      "eixo_principal": "Ø15x610 (escala 1:10)",
+      "bucha_principal": "Ø42 externo, Ø35/Ø32 internos, comprimento 570, parede 11 (escala 1:10)",
+      "eixo_longo": "Ø3/8 x 605",
+      "disco_regulagem": "Ø200x1/4 com furos Ø15 +0,01/-0 em raio R70, setor a 18 graus, cubo Ø38, rebaixo 25, rosca 5/16 e chapa 1/4",
+      "bucha_nylon": "Ø25 externo x 20, furo Ø10, colar Ø22, cota 5 (2 pecas)",
+      "bucha_pivo": "Ø25/4 pol externo(Ø58) x 25, furo Ø5/4 pol",
+      "bucha_pequena": "Ø30 x 15 com furo Ø15,1 +0,1/-0"
+    },
+    "furos_e_interfaces": "Furos Ø13 passo 50 (regulagem encosto), Ø26/Ø30 (eixos de roldana), Ø22 (eixo do braco), setor de furos Ø15 +0,01/-0 em R70 a 18 graus no disco Ø200x1/4, buchas de nylon Ø25x20 no pivo",
+    "dobra_ou_curva": "Cortes angulares na BOM: 30 graus (item 32), 15 graus (itens 27/30/31 e 1), 11,3/25 graus (item 23), 45/45 (item 21), 30/30 (item 20), 30 (item 18), 11,5 (item 17)",
+    "obs": "BOM completa: 50 MANCAL (2); 49 BRACO REGULAGEM VER TRG016002 (1); 48 SUPORTE POLIA CABO ACO VER PDR008 (2); 47 SUPORTE POLIA SUPERIOR VER PDR006 (2); 46 PROTETOR ROLDANA VER PDR004 (2); 45 PROTETOR ROLDANA PLANO VER PDR003 (2); 44 DISCO Ø200x1/4 (1); 43 TUBO QUADRADO 40x40x1,5x600 INOX (1); 42 40x40x1,5x400 INOX (2); 41 40x40x1,5x35 INOX (2); 40 CHAPA 3x100x440 (1); 39 CHAPA 3x200x200 (1); 38 FERRO CHATO 5x31x120 (1); 37 5x31x205 (1); 36 5x31x120 (1); 35 5x25x95 (3); 34 5x38x80 (6); 33 5x50x50 (2); 32 TUBO RETANGULAR 50x30x1,5x380 (1, corte 30); 31 TUBO QUADRADO 50x50x1,5x690 (1, corte 15); 30 50x50x1,5x660 (1, corte 15); 29 50x50x1,5x565 (1); 28 50x50x1,5x495 (2); 27 50x50x1,5x488 (1, corte 15); 26 50x50x1,5x480 (1); 25 50x50x1,5x200 (1); 24 50x50x1,5x150 (2); 23 40x40x1,5x575 (1, cortes 11,3/25); 22 40x40x1,5x495 (1); 21 40x40x1,5x325 (1, cortes 45/45); 20 40x40x2,0x300 (1, cortes 30/30); 19 40x40x2,0x265 (1); 18 40x40x1,5x150 (1, corte 30); 17 40x40x1,5x100 (1, corte 11,5); 16 TUBO OBLONGO 40x115x1,5x835 (1); 15 40x115x1,5x670 (1); 14 40x115x1,5x583 (1); 13 40x115x1,5x400 (1); 12 TUBO REDONDO Ø1 1/4x570 (1); 11 BUCHA NYLON Ø25x20 (2); 10 EIXO Ø38x25 (1); 9 EIXO Ø30x15 (2); 8 EIXO Ø20x340 (1); 7 EIXO Ø15x610 (1); 6 EIXO Ø3/8x605 (1); 5 TUBO REDONDO Ø60x3700 (1); 4 Ø25,4x1,5x573 (1); 3 Ø26,8x550 (1); 2 Ø25,4x1,5x555 (1); 1 Ø25,4x1,5x150 (2, corte 15). Demais itens ABNT-1010."
+  },
+  {
+    "arquivo": "FLEXOR_SENTADO/FLEXOR SENTADO/01606-DESENHO.pdf",
+    "projeto": "flexor_sentado",
+    "peca": "MONTAGEM FLEXOR SENTADO (desenho 01606, folha A2)",
+    "funcao": "Vistas explodidas e conjunto montado da cadeira flexora mostrando a sequencia de montagem.",
+    "material": "nao especificado (desenho de montagem, sem BOM preenchida)",
+    "secao_ou_espessura": "nao especificado",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra coluna de pesos, torre em U com roldanas, disco setor de regulagem com pino indexador, braco articulado com rolos de espuma, apoio de coxa e encosto regulavel por coluna furada",
+    "dobra_ou_curva": "Torre em U; braco de regulagem curvado",
+    "obs": "Sem cotas; duas explodidas e uma isometrica montada."
+  }
+]

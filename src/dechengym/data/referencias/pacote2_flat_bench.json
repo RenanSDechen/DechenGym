@@ -1,0 +1,649 @@
+[
+ {
+  "pagina": 1,
+  "projeto": "flat_bench",
+  "peca": "Capa - Flat Bench",
+  "funcao": "Capa do dossiê",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Projeto craftsmanspace.com; cotas em mm e polegadas (entre parênteses); construção soldada. PDF tem 50 páginas (não 102): pág. 1-29 desenhos/BOMs, 30-50 instruções de montagem."
+ },
+ {
+  "pagina": 2,
+  "projeto": "flat_bench",
+  "peca": "Subassembly list (conjunto geral)",
+  "funcao": "Lista de subconjuntos do sistema completo",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "CONJUNTO GERAL: item 1 Flat Bench (qtd 1), item 2 Stand (qtd 2), item 3 Weight Set (qtd 1). Banco reto + par de suportes de barra independentes + anilhas/barra."
+ },
+ {
+  "pagina": 3,
+  "projeto": "flat_bench",
+  "peca": "Flat Bench Subassembly - BOM",
+  "funcao": "Lista de peças do subconjunto banco",
+  "material": "Aço + madeira",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "Assento parafusado com M5x30 (12x) + arruela pressão + porca M5",
+  "obs": "BOM: 1) tubo quadrado 50x50x4, 365,36mm x1; 2) idem 190,42mm x1; 3) idem 1435,36mm x1; 4) idem 500mm x1; 5) idem 400mm x2; 6) tubo redondo D25,4x3,2, 300mm x1; 7) Sheet (madeira) x1; 8) Sheet Support aço x6; 9) Triangle support x6; 10) parafuso M5x30 x12; 11) arruela pressão x12; 12) porca M5 x12; 13) Cover 50x50 x4; 14) Cover D25,4 x2."
+ },
+ {
+  "pagina": 4,
+  "projeto": "flat_bench",
+  "peca": "Flat Bench - conjunto soldado (vistas 2D)",
+  "funcao": "Desenho de conjunto do banco",
+  "material": "Aço + tampo madeira",
+  "secao_ou_espessura": "tubo 50x50x4",
+  "dimensoes_principais_mm": [
+   "comprimento total 1570",
+   "tampo 1435 x 350",
+   "largura base 410",
+   "altura total ~470/570 (altura assento)",
+   "pé dianteiro inclinado 135°",
+   "suportes do tampo espaçados 427,5"
+  ],
+  "furos_e_interfaces": "6 chapas de fixação soldadas no tubo superior (pares de furos, passo 60); seção A-A e detalhe B mostram chapa + triângulo soldados",
+  "obs": "CONJUNTO: quadro em C - tubo superior longitudinal 1435 apoiado em perna traseira vertical (500) e perna dianteira dobrada a 135° com pé em T; travessa de pé 410/310."
+ },
+ {
+  "pagina": 5,
+  "projeto": "flat_bench",
+  "peca": "Frame Components (peças 1.01-1.06)",
+  "funcao": "Estrutura soldada do banco",
+  "material": "Aço",
+  "secao_ou_espessura": "tubo quadrado 50x50x4; tubo redondo D25,4x3,2",
+  "dimensoes_principais_mm": [
+   "longarina 1435,36",
+   "perna dianteira 365,36 (dobra 135°, trecho 190,42)",
+   "perna traseira 500",
+   "pés 400 (x2)",
+   "pino porta-anilhas D25,4 L300",
+   "furo do pino a 150 do pé"
+  ],
+  "furos_e_interfaces": "Furo D25,4 na perna dianteira para atravessar tubo redondo (porta-anilhas); pés em T soldados",
+  "obs": "Página de componentes do quadro com tabela de corte."
+ },
+ {
+  "pagina": 6,
+  "projeto": "flat_bench",
+  "peca": "1.07 Sheet (tampo)",
+  "funcao": "Assento de madeira",
+  "material": "Madeira",
+  "secao_ou_espessura": "esp. 20",
+  "dimensoes_principais_mm": [
+   "1435 x 350",
+   "R60 cantos",
+   "3 grupos de furos: passos 40 e 60",
+   "distâncias 210 e 447,5 entre grupos"
+  ],
+  "furos_e_interfaces": "12 furos D6 com rebaixo D11 x prof. até 17 (parafuso embutido por cima)",
+  "obs": ""
+ },
+ {
+  "pagina": 7,
+  "projeto": "flat_bench",
+  "peca": "1.08 Sheet Support",
+  "funcao": "Chapa de fixação do tampo",
+  "material": "Aço",
+  "secao_ou_espessura": "chapa 5",
+  "dimensoes_principais_mm": [
+   "60 x 30",
+   "2 furos D6,5, a 10 da borda"
+  ],
+  "furos_e_interfaces": "Soldada na longarina; recebe parafusos M5 do tampo",
+  "obs": "6 unidades"
+ },
+ {
+  "pagina": 8,
+  "projeto": "flat_bench",
+  "peca": "1.09 Triangle Support",
+  "funcao": "Gusset de reforço das chapas do tampo",
+  "material": "Aço",
+  "secao_ou_espessura": "chapa 5",
+  "dimensoes_principais_mm": [
+   "30 x 30 (triângulo retângulo)"
+  ],
+  "furos_e_interfaces": "Soldado entre chapa 1.08 e tubo",
+  "obs": "6 unidades"
+ },
+ {
+  "pagina": 9,
+  "projeto": "flat_bench",
+  "peca": "1.13 Cover 50x50",
+  "funcao": "Tampa plástica/aço dos tubos quadrados",
+  "material": "Aço (cf. BOM)",
+  "secao_ou_espessura": "esp. 5",
+  "dimensoes_principais_mm": [
+   "50 x 50",
+   "R8",
+   "chanfro 3x45°"
+  ],
+  "furos_e_interfaces": "Encaixa nas extremidades dos tubos 50x50",
+  "obs": "4 unidades"
+ },
+ {
+  "pagina": 10,
+  "projeto": "flat_bench",
+  "peca": "1.14 Cover D25,4",
+  "funcao": "Tampa do tubo redondo porta-anilhas",
+  "material": "Aço (cf. BOM)",
+  "secao_ou_espessura": "esp. 5",
+  "dimensoes_principais_mm": [
+   "D25,4",
+   "chanfro 2x45°"
+  ],
+  "furos_e_interfaces": "Encaixa na ponta do pino D25,4",
+  "obs": "2 unidades"
+ },
+ {
+  "pagina": 11,
+  "projeto": "flat_bench",
+  "peca": "Standard Parts (1.10-1.12)",
+  "funcao": "Fixadores comerciais do banco",
+  "material": "Aço",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [
+   "parafuso fenda M5x30",
+   "arruela pressão 5",
+   "porca sextavada (rotulada M10 no desenho; BOM indica M5)"
+  ],
+  "furos_e_interfaces": "Fixam tampo às chapas 1.08",
+  "obs": "Página de peças padrão"
+ },
+ {
+  "pagina": 12,
+  "projeto": "flat_bench",
+  "peca": "Stand Subassembly - BOM",
+  "funcao": "Lista de peças do suporte de barra (2 un.)",
+  "material": "Aço",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "Coluna interna deslizante presa por cotter (pino em L)",
+  "obs": "BOM: 1) tubo retangular 50x30x2,6, 350mm x2; 2) idem 300mm x1; 3) tubo quadrado 40x40x4, 885mm x1; 4) idem 150,50mm x2; 5) Cover 50x30 x4; 6) tubo quadrado 30x30x3, 787mm x1; 7) Cotter x2; 8) Dumbbell Holder x1"
+ },
+ {
+  "pagina": 13,
+  "projeto": "flat_bench",
+  "peca": "Stand - conjunto (vistas 2D)",
+  "funcao": "Suporte de barra ajustável em altura",
+  "material": "Aço",
+  "secao_ou_espessura": "40x40x4 + 30x30x3 + 50x30x2,6",
+  "dimensoes_principais_mm": [
+   "altura mínima 915",
+   "altura máxima 1105",
+   "base 400 x 350/360",
+   "abertura entre pés 300"
+  ],
+  "furos_e_interfaces": "Coluna interna 30x30 desliza dentro da 40x40; ajuste por furos e cotters; berço da barra no topo",
+  "obs": "CONJUNTO do stand; 'Minimal Height' 915, máx 1105; inclinado apoiado em base H"
+ },
+ {
+  "pagina": 14,
+  "projeto": "flat_bench",
+  "peca": "Stand Frame Components (2.01-2.04, 2.06)",
+  "funcao": "Componentes soldados do stand",
+  "material": "Aço",
+  "secao_ou_espessura": "50x30x2,6 / 40x40x4 / 30x30x3",
+  "dimensoes_principais_mm": [
+   "coluna externa 885",
+   "coluna interna 787",
+   "pés 350 x2 e travessa 300",
+   "gussets 40x40 L150,5 a 135°",
+   "base 350x400"
+  ],
+  "furos_e_interfaces": "Dois reforços diagonais 40x40 a 135° entre coluna e base",
+  "obs": "Tabela de corte do stand"
+ },
+ {
+  "pagina": 15,
+  "projeto": "flat_bench",
+  "peca": "2.03 Square Tubing 40x40x4",
+  "funcao": "Coluna externa do stand",
+  "material": "Aço",
+  "secao_ou_espessura": "40x40x4",
+  "dimensoes_principais_mm": [
+   "L 885",
+   "2 furos D7 passo 100 (a 100 da extremidade)"
+  ],
+  "furos_e_interfaces": "Furos D7 para cotter de ajuste",
+  "obs": ""
+ },
+ {
+  "pagina": 16,
+  "projeto": "flat_bench",
+  "peca": "2.05 Cover 50x30",
+  "funcao": "Tampa dos tubos retangulares do stand",
+  "material": "Aço",
+  "secao_ou_espessura": "esp. 5",
+  "dimensoes_principais_mm": [
+   "50 x 30",
+   "R5,2",
+   "chanfro 2x45°"
+  ],
+  "furos_e_interfaces": "Extremidades dos tubos 50x30",
+  "obs": "4 un. por stand"
+ },
+ {
+  "pagina": 17,
+  "projeto": "flat_bench",
+  "peca": "2.06 Square Tubing 30x30x3",
+  "funcao": "Coluna interna telescópica do stand",
+  "material": "Aço",
+  "secao_ou_espessura": "30x30x3",
+  "dimensoes_principais_mm": [
+   "L 787 (com gancho, total 800)",
+   "8 furos D7 passo 50",
+   "primeiro furo a 200 da ponta",
+   "R20 no gancho"
+  ],
+  "furos_e_interfaces": "Furos D7 para cotter; topo curvado forma berço da barra",
+  "obs": "Peça que dá o ajuste de altura em passos de 50 mm"
+ },
+ {
+  "pagina": 18,
+  "projeto": "flat_bench",
+  "peca": "2.07 Cotter",
+  "funcao": "Pino em L de travamento da altura",
+  "material": "Aço",
+  "secao_ou_espessura": "vergalhão D6",
+  "dimensoes_principais_mm": [
+   "braço 70",
+   "perna 20",
+   "R10"
+  ],
+  "furos_e_interfaces": "Atravessa furos D7 das colunas",
+  "obs": "2 por stand"
+ },
+ {
+  "pagina": 19,
+  "projeto": "flat_bench",
+  "peca": "2.08 Dumbbell Holder",
+  "funcao": "Berço/gancho de apoio da barra",
+  "material": "Aço",
+  "secao_ou_espessura": "chapa 3",
+  "dimensoes_principais_mm": [
+   "50 larg.",
+   "aba 40",
+   "gancho R20, aba 20 a 45°"
+  ],
+  "furos_e_interfaces": "Soldado no topo da coluna interna",
+  "obs": ""
+ },
+ {
+  "pagina": 20,
+  "projeto": "flat_bench",
+  "peca": "Weight Set Subassembly - BOM",
+  "funcao": "Lista de peças barra + anilhas",
+  "material": "Aço",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "Anilhas retidas por Dumbbell Nut roscada TR32x3",
+  "obs": "BOM: 1) barra tubo redondo D31,8x6,3 x1; 2) Delimiter x2; 3) anilha 7kg x2; 4) 5kg x2; 5) Dumbbell Nut x2; 6) 9kg x2; 7) 3kg x2; 8) 1,5kg x2"
+ },
+ {
+  "pagina": 21,
+  "projeto": "flat_bench",
+  "peca": "Weight Set - conjunto (vistas 2D)",
+  "funcao": "Barra montada com anilhas",
+  "material": "Aço",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [
+   "comprimento total 1800",
+   "vão livre entre anilhas 1400",
+   "maior anilha D248",
+   "empilhamento por lado ~170 de largura"
+  ],
+  "furos_e_interfaces": "Seção A-A do empilhamento das anilhas",
+  "obs": "CONJUNTO do weight set"
+ },
+ {
+  "pagina": 22,
+  "projeto": "flat_bench",
+  "peca": "3.01 Round Tubing D31,8x6,3 (barra)",
+  "funcao": "Barra de pesos",
+  "material": "Aço",
+  "secao_ou_espessura": "tubo D31,8 parede 6,3",
+  "dimensoes_principais_mm": [
+   "L 1800 (min 1600, máx 1800)",
+   "rosca TR32x3 x 200 em cada ponta"
+  ],
+  "furos_e_interfaces": "Rosca trapezoidal TR32x3 para Dumbbell Nut",
+  "obs": ""
+ },
+ {
+  "pagina": 23,
+  "projeto": "flat_bench",
+  "peca": "3.02 Delimiter",
+  "funcao": "Anel batente interno das anilhas",
+  "material": "Aço",
+  "secao_ou_espessura": "esp. 10",
+  "dimensoes_principais_mm": [
+   "D70 ext",
+   "D32 int"
+  ],
+  "furos_e_interfaces": "Soldado/encaixado na barra",
+  "obs": "2 un."
+ },
+ {
+  "pagina": 24,
+  "projeto": "flat_bench",
+  "peca": "3.03 Dumbbell 7kg",
+  "funcao": "Anilha 7 kg",
+  "material": "Aço",
+  "secao_ou_espessura": "larg. 30 (alma 10)",
+  "dimensoes_principais_mm": [
+   "D225 ext",
+   "furo D32,5",
+   "cubo D70/150"
+  ],
+  "furos_e_interfaces": "Desliza na barra D31,8",
+  "obs": "Seção em I (alma 10)"
+ },
+ {
+  "pagina": 25,
+  "projeto": "flat_bench",
+  "peca": "3.04 Dumbbell 5kg",
+  "funcao": "Anilha 5 kg",
+  "material": "Aço",
+  "secao_ou_espessura": "larg. 30",
+  "dimensoes_principais_mm": [
+   "D200 ext",
+   "furo D32,5"
+  ],
+  "furos_e_interfaces": "Desliza na barra",
+  "obs": ""
+ },
+ {
+  "pagina": 26,
+  "projeto": "flat_bench",
+  "peca": "3.05 Dumbbell Nut",
+  "funcao": "Porca de fixação das anilhas",
+  "material": "Aço",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [
+   "flange D60 x5",
+   "corpo quadrado 40x40 L30",
+   "rosca interna TR32x3"
+  ],
+  "furos_e_interfaces": "Rosca TR32x3 na barra",
+  "obs": "2 un."
+ },
+ {
+  "pagina": 27,
+  "projeto": "flat_bench",
+  "peca": "3.06 Dumbbell 9kg",
+  "funcao": "Anilha 9 kg",
+  "material": "Aço",
+  "secao_ou_espessura": "larg. 30",
+  "dimensoes_principais_mm": [
+   "D248 ext",
+   "furo D32,5"
+  ],
+  "furos_e_interfaces": "Desliza na barra",
+  "obs": "Maior anilha do conjunto"
+ },
+ {
+  "pagina": 28,
+  "projeto": "flat_bench",
+  "peca": "3.07 Dumbbell 3kg",
+  "funcao": "Anilha 3 kg",
+  "material": "Aço",
+  "secao_ou_espessura": "larg. 30",
+  "dimensoes_principais_mm": [
+   "D155 ext",
+   "furo D32,5"
+  ],
+  "furos_e_interfaces": "Desliza na barra",
+  "obs": ""
+ },
+ {
+  "pagina": 29,
+  "projeto": "flat_bench",
+  "peca": "3.08 Dumbbell 1,5kg",
+  "funcao": "Anilha 1,5 kg",
+  "material": "Aço",
+  "secao_ou_espessura": "larg. 30",
+  "dimensoes_principais_mm": [
+   "D111 ext",
+   "furo D33"
+  ],
+  "furos_e_interfaces": "Desliza na barra",
+  "obs": "Menor anilha"
+ },
+ {
+  "pagina": 30,
+  "projeto": "flat_bench",
+  "peca": "Assemblage Instruction - passo 1 (banco)",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar Cover 50x50 (item 13) nos tubos 400mm (item 5) - fazer 2; usar gabaritos/grampos na soldagem"
+ },
+ {
+  "pagina": 31,
+  "projeto": "flat_bench",
+  "peca": "Montagem banco - passo 2",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar tubo 365,36mm (item 1, perna dianteira) ao pé em T do passo 1"
+ },
+ {
+  "pagina": 32,
+  "projeto": "flat_bench",
+  "peca": "Montagem banco - passo 3",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar tubo 190,42mm (item 2, trecho da dobra 135°) ao subconjunto; chanfrar bordas antes de soldar"
+ },
+ {
+  "pagina": 33,
+  "projeto": "flat_bench",
+  "peca": "Montagem banco - passo 4",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar tubo 500mm (item 4, perna traseira) ao outro pé em T"
+ },
+ {
+  "pagina": 34,
+  "projeto": "flat_bench",
+  "peca": "Montagem banco - passo 5",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar longarina 1435,36mm (item 3) às duas pernas; chanfrar bordas para solda"
+ },
+ {
+  "pagina": 35,
+  "projeto": "flat_bench",
+  "peca": "Montagem banco - passo 5 (cont.)",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Vista do quadro em C completo soldado (juntas em 135° destacadas)"
+ },
+ {
+  "pagina": 36,
+  "projeto": "flat_bench",
+  "peca": "Montagem banco - passos 6-7",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar Sheet Support (item 8) + Triangle Support (item 9) - 6 conjuntos; soldá-los à longarina"
+ },
+ {
+  "pagina": 37,
+  "projeto": "flat_bench",
+  "peca": "Montagem banco - passo 7 (cont.)",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Vista das 6 chapas com gussets soldadas ao longo da longarina"
+ },
+ {
+  "pagina": 38,
+  "projeto": "flat_bench",
+  "peca": "Montagem banco - passo 8",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Fixar tampo (item 7) com parafusos M5x30 + arruela pressão + porca M5 (12x)"
+ },
+ {
+  "pagina": 39,
+  "projeto": "flat_bench",
+  "peca": "Montagem banco - passos 8-9",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Banco completo; soldar tubo redondo D25,4x3,2 L300 (item 6, porta-anilhas) atravessando a perna dianteira"
+ },
+ {
+  "pagina": 40,
+  "projeto": "flat_bench",
+  "peca": "Montagem banco - passo 10",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar Cover D25,4 (item 14) nas pontas do tubo porta-anilhas; banco finalizado"
+ },
+ {
+  "pagina": 41,
+  "projeto": "flat_bench",
+  "peca": "Montagem stand - passo 1",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Banco pronto (vista). Stand: soldar Cover 50x30 (item 5) nos tubos retangulares 350mm (item 1)"
+ },
+ {
+  "pagina": 42,
+  "projeto": "flat_bench",
+  "peca": "Montagem stand - passo 2",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Fazer o segundo pé idêntico (2 tubos 350 com tampas)"
+ },
+ {
+  "pagina": 43,
+  "projeto": "flat_bench",
+  "peca": "Montagem stand - passo 3",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar travessa 50x30x2,6 L300 (item 2) entre os dois pés formando base em H"
+ },
+ {
+  "pagina": 44,
+  "projeto": "flat_bench",
+  "peca": "Montagem stand - passo 4",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar coluna 40x40x4 L885 (item 3) inclinada sobre a travessa da base H"
+ },
+ {
+  "pagina": 45,
+  "projeto": "flat_bench",
+  "peca": "Montagem stand - passo 5",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar os 2 reforços 40x40x4 L150,5 (item 4) entre coluna e travessa (triangulação)"
+ },
+ {
+  "pagina": 46,
+  "projeto": "flat_bench",
+  "peca": "Montagem stand - passo 6",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar Dumbbell Holder (item 8, berço) no topo da coluna interna 30x30x3 L787 (item 6)"
+ },
+ {
+  "pagina": 47,
+  "projeto": "flat_bench",
+  "peca": "Montagem stand - passo 7",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Inserir coluna interna na externa 40x40 e travar com Cotters (item 7) na altura desejada"
+ },
+ {
+  "pagina": 48,
+  "projeto": "flat_bench",
+  "peca": "Montagem weight set - passo 1",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Soldar Delimiters (item 2) na barra D31,8x6,3 (item 1)"
+ },
+ {
+  "pagina": 49,
+  "projeto": "flat_bench",
+  "peca": "Montagem weight set - passo 2",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Enfileirar anilhas nas duas pontas da barra (9/7/5/3/1,5 kg)"
+ },
+ {
+  "pagina": 50,
+  "projeto": "flat_bench",
+  "peca": "Montagem weight set - passo 3",
+  "funcao": "Instrução de montagem",
+  "material": "-",
+  "secao_ou_espessura": "-",
+  "dimensoes_principais_mm": [],
+  "furos_e_interfaces": "-",
+  "obs": "Fixar anilhas com Dumbbell Nut (item 5) rosca TR32x3; conjunto final da barra montada. Última página do documento (50 de 50)."
+ }
+]

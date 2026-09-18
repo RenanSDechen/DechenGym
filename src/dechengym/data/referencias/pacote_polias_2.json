@@ -1,0 +1,339 @@
+[
+  {
+    "arquivo": "POLIA_SIMPLES/POLIA SIMPLES/05101-DESENHO.pdf",
+    "projeto": "polia_simples",
+    "peca": "Chassi (Pedestral Cross Over)",
+    "funcao": "Estrutura principal da torre de polia simples: arco de tubos verticais que sustenta as roldanas superiores, a coluna de placas e a base.",
+    "material": "Aco ABNT-1010 (tubos redondos, oblongos, quadrado, ferro chato)",
+    "secao_ou_espessura": "Tubo redondo O38x1,5 e O60x1,5; tubo oblongo 40x115; tubo quadrado 50x50x1,5; ferro chato 40x5,0",
+    "dimensoes_principais_mm": {
+      "altura_total": 2200,
+      "altura_arco_frontal": 2140,
+      "largura_topo_arco": 580,
+      "espacamento_montantes_topo": 185,
+      "raio_curva_topo": "R205",
+      "largura_base_frontal": 900,
+      "profundidade_base_lateral": 750,
+      "planta_coluna": "750 total (115+520+115), corpo 900/405",
+      "encosto_tubo_curvo_lateral": "encosto 1230 / comp 1325, altura reta 1160, avanco 270, R175",
+      "tubo_de_sustencao_roldanas": "O60 comp 750; furos O10 a 60/260/180 e 140/430/70; altura suporte 30",
+      "apoio": "tubo O38 em U, vao 482, braco 650 a 45 graus",
+      "base": "altura tubo base 150, oblongo 40 de altura de secao"
+    },
+    "furos_e_interfaces": "Chapa detalhe A 40x40 com furo O10 e R5 (fixacao da haste); furos O10 no tubo de sustencao para eixos das 3 roldanas (O30/O26 no topo, espacadas 185); ganchos e chapas VER PDR002",
+    "dobra_ou_curva": "Arco superior em tubo curvado R205; tubo lateral curvado 90 graus (nota: comp 1600, encosto 715, angulo 90); apoio em U; cortes 45/45 graus no tubo O38x1600",
+    "obs": "BOM: 1 TUBO REDONDO O38x1,5x1325 (2); 2 TUBO REDONDO O38x1,5x1600 (1, corte 45/45); 3 TUBO REDONDO O60x1,5x750 (1); 4 TUBO REDONDO O60x1,5x4700 (1); 5 TUBO OBLONGO 40x115x415 (1); 6 TUBO OBLONGO 40x115x530 (2); 7 TUBO OBLONGO 40x115x900 (2); 8 TUBO QUADRADO 50x50x1,5x480 (1); 9 FERRO CHATO 40x5,0x40 (2); 10 CHAPA DE FIXACAO VER PDR002 (2); 11 PROT. DE ROLD. PLANO VER PDR003 (8); 12 PROT. DE ROLD. T. OBLONGO VER PDR004 (2). Folha A2."
+  },
+  {
+    "arquivo": "POLIA_SIMPLES/POLIA SIMPLES/05102-DESENHO.pdf",
+    "projeto": "polia_simples",
+    "peca": "Haste de sustentacao",
+    "funcao": "Guia vertical furada por onde corre o pino seletor da coluna de placas (tijolos).",
+    "material": "Aco ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 40x40x1,5",
+    "dimensoes_principais_mm": {
+      "comprimento": 2000,
+      "furo_superior_a": 25,
+      "furo_inferior_a": 20,
+      "furos_inferiores_ref": "150 e 200 da base"
+    },
+    "furos_e_interfaces": "Serie de furos O10 ao longo do tubo (seletor de carga); 1 furo O13 central; furo inferior O10 executado somente na montagem",
+    "dobra_ou_curva": "Sem dobras (peca reta)",
+    "obs": "BOM: 1 TUBO QUADRADO 40x40x1,5x2000 ABNT-1010 (1). Folha A4."
+  },
+  {
+    "arquivo": "POLIA_SIMPLES/POLIA SIMPLES/05103-DESENHO.pdf",
+    "projeto": "polia_simples",
+    "peca": "Chapa de fixacao da haste",
+    "funcao": "Garfo de chapas que fixa o topo da haste de sustentacao ao chassi.",
+    "material": "Aco ABNT-1010 (tubo); chapa conforme PDR005",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; chapas PDR005",
+    "dimensoes_principais_mm": {
+      "comprimento_chapa": 250,
+      "largura_topo": 100,
+      "largura_base": 50,
+      "luva_tubo": "50x50x1,5x100",
+      "abertura_garfo": "61 externo, abertura 2 graus"
+    },
+    "furos_e_interfaces": "2 furos O10 no topo (a 25 da borda, espacados 50) e 1 furo O10 na base (a 25); encaixa no tubo 40x40 da haste",
+    "dobra_ou_curva": "Chapas abertas em 2 graus formando garfo",
+    "obs": "BOM: 1 TUBO QUADRADO 50x50x1,5x100 ABNT-1010 (2); 2 CHAPA PDR005 (4). Folha A4."
+  },
+  {
+    "arquivo": "POLIA_SIMPLES/POLIA SIMPLES/05104-DESENHO.pdf",
+    "projeto": "polia_simples",
+    "peca": "Barra de ajuste roldana",
+    "funcao": "Cursor deslizante com gancho que permite regular a altura da roldana ao longo da coluna.",
+    "material": "Aco ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; ferro chato 5x40",
+    "dimensoes_principais_mm": {
+      "comprimento_corpo": 150,
+      "secao_corpo": "50x50",
+      "abas_ferro_chato": "5x40x40, espacadas 66 (a 42 da base)",
+      "gancho_posicao": "30/50 do topo"
+    },
+    "furos_e_interfaces": "Porca 3/4 pol soldada (furo O22) para trava; furo O10 a 12/40 nas abas; gancho soldavel VER PDR001",
+    "dobra_ou_curva": "Sem dobras (conjunto soldado)",
+    "obs": "BOM: 1 TUBO QUADRADO 50x50x1,5x150 ABNT-1010 (1); 2 FERRO CHATO 5x40x40 ABNT-1010 (2); 3 GANCHO VER PDR001 ABNT-1010 (1). Folha A4."
+  },
+  {
+    "arquivo": "POLIA_SIMPLES/POLIA SIMPLES/05105-DESENHO.pdf",
+    "projeto": "polia_simples",
+    "peca": "Puxador",
+    "funcao": "Pegador de mao unica (estribo com manopla giratoria) engatado ao cabo pelo gancho soldavel.",
+    "material": "Aco ABNT-1010",
+    "secao_ou_espessura": "Tubo redondo O25,4x1,06 (estribo) e O1/2 pol SCH40 (manopla); chapa 5x31",
+    "dimensoes_principais_mm": {
+      "altura_total": 135,
+      "altura_arco": 67.5,
+      "largura_manopla": 120,
+      "largura_total": 125,
+      "offset_eixo": 10
+    },
+    "furos_e_interfaces": "Parafuso PS 3/8 pol x 5 3/4 pol com porca 3/8 pol atravessando a manopla; gancho soldavel VER PDR001",
+    "dobra_ou_curva": "Estribo em U curvado em tubo O25,4",
+    "obs": "BOM: 1 TUBO REDONDO O25,4x1,06x120 ABNT-1010 (1); 2 TUBO REDONDO O1/2 pol SCH40x125 ABNT-1010 (1); 3 GANCHO VER PDR001 (1). Folha A4."
+  },
+  {
+    "arquivo": "POLIA_SIMPLES/POLIA SIMPLES/05106-DESENHO.pdf",
+    "projeto": "polia_simples",
+    "peca": "Protetor de roldana",
+    "funcao": "Carenagem em chapa dobrada em U que cobre a roldana e impede o escape do cabo.",
+    "material": "Chapa de aco",
+    "secao_ou_espessura": "Chapa 3,0 mm, sem rebarbas",
+    "dimensoes_principais_mm": {
+      "diametro_corpo": 110,
+      "altura_total": 125,
+      "largura_aba": 50,
+      "abertura_U": 27
+    },
+    "furos_e_interfaces": "Furo central O10 (eixo da roldana); furo O10 na aba inferior; dobra a 1/4 pol da base",
+    "dobra_ou_curva": "Dobrada em U (largura interna 27)",
+    "obs": "1 peca. Sem BOM tabelada (peca unica de chapa). Folha A4."
+  },
+  {
+    "arquivo": "POLIA_SIMPLES/POLIA SIMPLES/05107-DESENHO.pdf",
+    "projeto": "polia_simples",
+    "peca": "Pino guia do tijolo (pino seletor)",
+    "funcao": "Pino central rosqueado que atravessa a coluna de placas e recebe o pino seletor de carga.",
+    "material": "Aco (barra redonda)",
+    "secao_ou_espessura": "O22",
+    "dimensoes_principais_mm": {
+      "diametro": 22,
+      "rosca_ponta": "3/8 pol",
+      "chanfro_topo": "30 graus",
+      "primeiro_furo_a": 10,
+      "comprimentos_tabelados_C": "392 a 657 conforme numero de placas (10 a 110: furos de 102 a 632, passo 26,5)"
+    },
+    "furos_e_interfaces": "Furos transversais O10 espacados 26,5 mm, tabela de 10 a 110 (ex.: 102(10), 155(20), 314(50), 632(110) com C=657)",
+    "dobra_ou_curva": "Sem dobras",
+    "obs": "Tabela parametrica de comprimento C em funcao da carga: C=392 (60) ate C=657 (110). 1 peca. Folha A4."
+  },
+  {
+    "arquivo": "POLIA_SIMPLES/POLIA SIMPLES/05108-DESENHO.pdf",
+    "projeto": "polia_simples",
+    "peca": "Montagem geral (Pedestral Cross Over)",
+    "funcao": "Prancha de montagem com vistas ortogonais, isometricas e explodida do conjunto completo da torre de polia.",
+    "material": "Nao aplicavel (desenho de conjunto)",
+    "secao_ou_espessura": "Nao indicado",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra posicionamento da haste de sustentacao, coluna de placas (tijolos), pino guia, barra de ajuste e protetores de roldana",
+    "dobra_ou_curva": "Nao aplicavel",
+    "obs": "Sem cotas e sem BOM preenchida; vista explodida mostra chassi, haste furada, pilha de placas com pino e roldana com suporte. Folha A2."
+  },
+  {
+    "arquivo": "GRAVITON/GRAVITON/6301-DESENHO.pdf",
+    "projeto": "graviton",
+    "peca": "Chassi Graviton",
+    "funcao": "Estrutura da maquina de barra fixa/paralela assistida: torre com pegadas superiores, guias em viga U para o carrinho contrapeso e plataforma dobravel.",
+    "material": "Aco ABNT-1010",
+    "secao_ou_espessura": "Viga U 3 pol 1a alma; tubo redondo O38x1,5 e O60x1,5; tubo oblongo 40x115x1,5; tubos quadrados 25/40/50x1,5; chapa 3,0; eixos O20 e O22",
+    "dimensoes_principais_mm": {
+      "altura_total": 2200,
+      "altura_guias_viga_U": 1700,
+      "altura_pegas_paralelas": 1120,
+      "largura_frontal_colunas": "560 externo / 460 interno",
+      "barra_superior_pegadas": "topo 580 com pontas a 190, centro 250/180, tubo O38",
+      "planta_base": "900 x 440/600, coluna traseira 580",
+      "encostos_tubos_curvos": "O38,10x950: curva 90 encosto 950 (1); curva 90 encosto 900 (2); curva 15 encosto 230 (2, dir/esq)",
+      "carrinho_contrapeso": "540 alto x 500, chapa 210/250, furos 260/300, eixo O22, rodas O20, furos O6",
+      "plataforma": "chapa 3,0x250x300 com braco 440/490/430, apoios a 330, furos O23 e O40",
+      "chapa_guia": "300x120, furos O10 a 60/160",
+      "eixo": "O20x550 (comprimento entre pontas 550)",
+      "apoio_joelhos": "tubo curvado O40 raio R85, altura 320/1120"
+    },
+    "furos_e_interfaces": "Furos O10 nas chapas 120x300; furo O22 e O20 no carrinho; furos O23/O40 na chapa da plataforma; rosca O3/8 pol no eixo",
+    "dobra_ou_curva": "Tubos O38 curvados a 90 graus (encostos 950 e 900) e 15 graus (encosto 230); pegadas superiores curvadas; cortes 45/45, 36 e 30 graus na BOM",
+    "obs": "BOM: 1 VIGA U 3 pol 1a ALMA x1700 (2); 2 TUBO REDONDO O38x1,5x505 (2, corte 30); 3 TUBO REDONDO O38x1,5x950 (2); 4 TUBO REDONDO O38x1,5x1490 (1, corte 36); 5 TUBO REDONDO O60x1,5x1000 (2); 6 TUBO REDONDO O60x1,5x4700 (1); 7 TUBO OBILONGO 40x115x1,5x415 (1); 8 TUBO OBILONGO 40x115x1,5x610 (2); 9 TUBO OBILONGO 40x115x1,5x900 (2); 10 TUBO QUADRADO 25x25x1,5x250 (1); 11 TUBO QUADRADO 40x40x1,5x200 (1, corte 45/45); 12 TUBO QUADRADO 40x40x1,5x440 (1); 13 TUBO QUADRADO 40x40x1,5x450 (1); 14 TUBO QUADRADO 50x50x1,5x125 (2); 15 TUBO QUADRADO 50x50x1,5x480 (1); 16 CHAPA 3,0x120x300 (2); 17 CHAPA 3,0x250x300 (1); 18 EIXO O22x540 (2); 19 EIXO O20x553 (1). Todos ABNT-1010. Folha A2."
+  },
+  {
+    "arquivo": "GRAVITON/GRAVITON/6302-DESENHO.pdf",
+    "projeto": "graviton",
+    "peca": "Montagem Graviton",
+    "funcao": "Prancha de montagem com vista explodida e conjunto montado do Graviton (barra/paralela assistida por contrapeso).",
+    "material": "Nao aplicavel (desenho de conjunto)",
+    "secao_ou_espessura": "Nao indicado",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra insercao da coluna de placas (~15 placas), carrinho com rodas nas vigas U, plataforma dobravel com dobradica, pegadas e apoios de joelho",
+    "dobra_ou_curva": "Nao aplicavel",
+    "obs": "Sem cotas e sem BOM preenchida. Folha A2."
+  },
+  {
+    "arquivo": "cross_over_pdf/cross over pdf/cross over/00201.pdf",
+    "projeto": "cross_over",
+    "peca": "Chassi (torre do Cross Over)",
+    "funcao": "Estrutura de cada torre do cross over: arco de tubos que sustenta roldanas superiores/inferiores, coluna de placas e base (quantidades da BOM ja consideram as duas torres).",
+    "material": "Aco ABNT-1010",
+    "secao_ou_espessura": "Tubo redondo O38x1,5 e O60x1,5; tubo oblongo 40x115; tubo quadrado 50x50x1,5; ferro chato 40x5,0",
+    "dimensoes_principais_mm": {
+      "altura_total": 2200,
+      "altura_arco": 2140,
+      "largura_topo_arco": 580,
+      "espacamento_montantes_topo": 185,
+      "raio_curva_topo": "R205",
+      "profundidade_base": 750,
+      "planta_coluna": "750/685, recuos 230/115/57,5",
+      "encosto_tubo_curvo": "encosto 1230 / comp 1325, altura reta 1160, avanco 270, R175",
+      "tubo_de_sustencao_roldanas": "O60 comp 750; furos O10 a 60/260/180 e 430/140; alturas 50/20/30",
+      "apoio": "tubo O38 em U, vao 482",
+      "nota_curva": "comp 1600, encosto 715, angulo 90"
+    },
+    "furos_e_interfaces": "Detalhe A: chapa 40x40 com furo O10 e R5 para fixacao da haste; furos O10 para eixos das roldanas; chapas VER PDR002",
+    "dobra_ou_curva": "Arco superior curvado R205; tubo lateral curvado 90 graus (comp 1600/encosto 715); corte 45/45 no tubo O38x1600",
+    "obs": "BOM (conjunto p/ 2 torres): 1 TUBO QUADRADO 50x50x1,5x480 (2); 2 TUBO REDONDO O60x1,5x4700 (2); 3 TUBO REDONDO O38x1,5x1600 (2, corte 45/45); 4 TUBO REDONDO O38x1,5x1325 (4); 5 TUBO REDONDO O60x1,5x750 (2); 7 TUBO OBLONGO 40x115x750 (4); 8 TUBO OBLONGO 40x115x270 (4); 9 FERRO CHATO 40x5,0x40 (4); 10 CHAPA DE FIXACAO VER PDR002 (4); 11 PROT. DE ROLD. PLANO VER PDR003 (16); 12 PROT. DE ROLD. T. OBLONGO VER PDR004 (4). Todos ABNT-1010. Folha A2."
+  },
+  {
+    "arquivo": "cross_over_pdf/cross over pdf/cross over/00202.pdf",
+    "projeto": "cross_over",
+    "peca": "Haste de sustentacao",
+    "funcao": "Guia vertical furada do pino seletor da coluna de placas; uma por torre (2 pecas).",
+    "material": "Aco ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 40x40x1,5",
+    "dimensoes_principais_mm": {
+      "comprimento": 2000,
+      "furo_superior_a": 25,
+      "furo_inferior_a": 20,
+      "furos_inferiores_ref": "150 e 200 da base"
+    },
+    "furos_e_interfaces": "Serie de furos O10 (seletor); furo O13 central; furo inferior O10 executado somente na montagem",
+    "dobra_ou_curva": "Sem dobras",
+    "obs": "BOM: 1 TUBO QUADRADO 40x40x1,5x2000 ABNT-1010 (1); indicado 2 pecas no desenho. Identica a 05102. Folha A4."
+  },
+  {
+    "arquivo": "cross_over_pdf/cross over pdf/cross over/00203.pdf",
+    "projeto": "cross_over",
+    "peca": "Tubo de sustentacao (travessa superior)",
+    "funcao": "Travessa superior que une as duas torres do cross over e serve de barra de apoio, com arco interno em tubo fino.",
+    "material": "Aco ABNT-1010",
+    "secao_ou_espessura": "Tubo redondo O50x1,5 (O50,8x1,5 cotado) e O25,4x1,5",
+    "dimensoes_principais_mm": {
+      "comprimento_travessa": 1800,
+      "vao_arco_interno": 1500,
+      "furos_ponta": "O10 a 25 e 50 da extremidade, 20 da borda"
+    },
+    "furos_e_interfaces": "2 furos O10 em cada ponta para aparafusar nas torres; travessa central curta O25,4x110",
+    "dobra_ou_curva": "Arco interno em tubo O25,4 curvado em U rebaixado (vao 1500)",
+    "obs": "BOM: 1 TUBO REDONDO O50x1,5x1800 (1); 2 TUBO REDONDO O25,4x1,5x1600 (1); 3 TUBO REDONDO O25,4x1,5x110 (1). Todos ABNT-1010. Folha A3."
+  },
+  {
+    "arquivo": "cross_over_pdf/cross over pdf/cross over/00204.pdf",
+    "projeto": "cross_over",
+    "peca": "Chapa de fixacao da haste",
+    "funcao": "Garfo de chapas que fixa o topo da haste de sustentacao ao chassi (2 pecas).",
+    "material": "Aco ABNT-1010 (tubo); chapa conforme PDR005",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; chapas PDR005",
+    "dimensoes_principais_mm": {
+      "comprimento_chapa": 250,
+      "largura_topo": 100,
+      "largura_base": 50,
+      "luva_tubo": "50x50x1,5x100",
+      "abertura_garfo": "61 externo, abertura 2 graus"
+    },
+    "furos_e_interfaces": "2 furos O10 no topo (a 25, espacados 50) e 1 furo O10 na base (a 25/50)",
+    "dobra_ou_curva": "Chapas abertas em 2 graus formando garfo",
+    "obs": "BOM: 1 TUBO QUADRADO 50x50x1,5x100 ABNT-1010 (2); 2 CHAPA PDR005 (4). Identica a 05103. Folha A4."
+  },
+  {
+    "arquivo": "cross_over_pdf/cross over pdf/cross over/00205.pdf",
+    "projeto": "cross_over",
+    "peca": "Barra de ajuste roldana",
+    "funcao": "Cursor com gancho e trava rosqueada que regula a altura da roldana na coluna (2 pecas).",
+    "material": "Aco ABNT-1010",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5; ferro chato 5x40",
+    "dimensoes_principais_mm": {
+      "comprimento_corpo": 150,
+      "secao_corpo": "50x50",
+      "abas_ferro_chato": "5x40x40, espacadas 66 (a 42 da base)",
+      "gancho_posicao": "30/50"
+    },
+    "furos_e_interfaces": "Porca 3/4 pol soldada (furo O22); furo O10 a 12/40; gancho VER PDR001",
+    "dobra_ou_curva": "Sem dobras (conjunto soldado)",
+    "obs": "BOM: 1 TUBO QUADRADO 50x50x1,5x150 ABNT-1010 (1); 2 FERRO CHATO 5x40x40 ABNT-1010 (2); 3 GANCHO VER PDR001 ABNT-1010 (1). Indicado 2 pecas. Identica a 05104. Folha A4."
+  },
+  {
+    "arquivo": "cross_over_pdf/cross over pdf/cross over/00206.pdf",
+    "projeto": "cross_over",
+    "peca": "Puxador",
+    "funcao": "Pegador de mao unica com manopla giratoria e gancho soldavel para engate no cabo (2 pecas).",
+    "material": "Aco ABNT-1010",
+    "secao_ou_espessura": "Tubo redondo O25,4x1,06 (estribo) e O1/2 pol SCH40 (manopla); chapa 5x31",
+    "dimensoes_principais_mm": {
+      "altura_total": 135,
+      "altura_arco": 67.5,
+      "largura_manopla": 120,
+      "largura_total": 125,
+      "offset_eixo": 10
+    },
+    "furos_e_interfaces": "Parafuso PS 3/8 pol x 5 3/4 pol com porca 3/8 pol; gancho soldavel VER PDR001",
+    "dobra_ou_curva": "Estribo em U curvado em tubo O25,4",
+    "obs": "BOM: 1 TUBO REDONDO O25,4x1,06x120 ABNT-1010 (1); 2 TUBO REDONDO O1/2 pol SCH40x125 ABNT-1010 (1); 3 GANCHO VER PDR001 (1). Identico a 05105. Folha A4."
+  },
+  {
+    "arquivo": "cross_over_pdf/cross over pdf/cross over/00207.pdf",
+    "projeto": "cross_over",
+    "peca": "Protetor de roldana duplo (suporte roldana para pino guia)",
+    "funcao": "Chapa oblonga dobrada em U que abriga duas roldanas lado a lado e guia o pino/cabo.",
+    "material": "Aco ABNT-1010",
+    "secao_ou_espessura": "Chapa 3,0 mm, sem rebarbas",
+    "dimensoes_principais_mm": {
+      "comprimento_oblongo": "115 entre centros dos furos",
+      "altura": 125,
+      "raio_extremidades": "R55",
+      "abertura_U": 28,
+      "aba_guia": "O21,8 com rasgo de 4"
+    },
+    "furos_e_interfaces": "2 furos O10 (eixos das roldanas) espacados 115, a 55 da borda; recorte O21,8 para passagem do pino guia",
+    "dobra_ou_curva": "Dobrada em U (largura interna 28, paredes de 3)",
+    "obs": "BOM: item 1 ABNT-1010 (4). Desenho indica 2 pecas por conjunto. Folha A4."
+  },
+  {
+    "arquivo": "cross_over_pdf/cross over pdf/cross over/00208.pdf",
+    "projeto": "cross_over",
+    "peca": "Pino guia do tijolinho (pino seletor)",
+    "funcao": "Pino central rosqueado da coluna de placas com furos para o seletor de carga (2 pecas, um por torre).",
+    "material": "Aco (barra redonda)",
+    "secao_ou_espessura": "O22",
+    "dimensoes_principais_mm": {
+      "diametro": 22,
+      "rosca_ponta": "3/8 pol",
+      "chanfro_topo": "30 graus",
+      "primeiro_furo_a": 10,
+      "comprimentos_tabelados_C": "392 a 657 conforme carga (furos de 102(10) a 632(110), passo 26,5)"
+    },
+    "furos_e_interfaces": "Furos transversais O10 espacados 26,5 mm; tabela 10 a 110 identica a 05107",
+    "dobra_ou_curva": "Sem dobras",
+    "obs": "2 pecas. Tabela parametrica C=392 (60) ate C=657 (110). Identico a 05107. Folha A4."
+  },
+  {
+    "arquivo": "cross_over_pdf/cross over pdf/cross over/00209.pdf",
+    "projeto": "cross_over",
+    "peca": "Montagem Cross Over",
+    "funcao": "Prancha de montagem da estacao dupla: duas torres unidas pela travessa superior, com vista explodida das hastes, colunas de placas e roldanas.",
+    "material": "Nao aplicavel (desenho de conjunto)",
+    "secao_ou_espessura": "Nao indicado",
+    "dimensoes_principais_mm": {},
+    "furos_e_interfaces": "Mostra travessa superior 00203 ligando as torres, hastes furadas 00202, pilhas de placas com pinos 00208 e puxadores/roldanas",
+    "dobra_ou_curva": "Nao aplicavel",
+    "obs": "Sem cotas e sem BOM preenchida. Folha A2."
+  }
+]

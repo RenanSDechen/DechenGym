@@ -1,0 +1,215 @@
+[
+  {
+    "arquivo": "puxada_alta/puxada alta/02201.pdf",
+    "projeto": "puxada_alta",
+    "peca": "CHASSI - PULLEY CONJUGADO (desenho 02201, folha A2)",
+    "funcao": "Chassi soldado da puxada alta (pulley conjugado): base horizontal longa com torre de colunas oblongas para a pilha de placas e arco superior em tubo redondo curvado.",
+    "material": "Nao indicado no carimbo (materiais definidos na lista do desenho 02202: ABNT-1010 e INOX)",
+    "secao_ou_espessura": "Tubo oblongo 115x40x1,5; tubos redondos Ø60 (colunas curvadas); tubo quadrado 50x50; ferro chato 70x6 (talas das colunas)",
+    "dimensoes_principais_mm": {
+      "comprimento_total_chassi": 2200,
+      "colunas_pilha_placas": "tubo oblongo 115x40x1,5x940/960 (corte B-B), vao interno 27 entre abas",
+      "largura_travessa_traseira": 680,
+      "guia": "peca GUIA de 400 mm com furos espacados de 50 em 50; vista da guia vertical com 500 mm e furos Ø13",
+      "outras_cotas_vista": "337,5 / 280 / 300 / 150 / 115 / 203 / 273 / 32,5 / diagonal 779,22 / Ø60"
+    },
+    "furos_e_interfaces": "Furos Ø13 em linha (passo 50) na guia de regulagem; furos Ø60 de passagem das colunas na base; furacao Ø10 a 45 graus nos pes; interface parafusada da torre com a base",
+    "dobra_ou_curva": "Arco superior do chassi em tubo redondo curvado em U; reforco diagonal soldado a 45 graus",
+    "obs": "Desenho de conjunto soldado com cortes B-B (tubo oblongo 115x40x1,5x940) e C-C (largura 680, altura 850/880). BOM completa esta no desenho 02202."
+  },
+  {
+    "arquivo": "puxada_alta/puxada alta/02202.pdf",
+    "projeto": "puxada_alta",
+    "peca": "DETALHES DE FURACAO + LISTA DE MATERIAIS - PULLEY CONJUGADO (desenho 02202, folha A3)",
+    "funcao": "Folha de detalhes de furacao das barras/guias e lista de materiais completa do pulley conjugado.",
+    "material": "ABNT-1010 (estrutura) e INOX (guias e suporte do banco), conforme lista",
+    "secao_ou_espessura": "Tubos redondos Ø60x1,5 / Ø38x1,5 / Ø25,4x1,5; tubo quadrado 50x50x1,5 e 40x40x1,5; tubo oblongo 115x40x1,5 e 40x115x1,5; ferro chato 5x63x70",
+    "dimensoes_principais_mm": {
+      "detalhe_1_barra_guia": "500 de comprimento, seccao 40, furo Ø26 na ponta (a 25) e furos Ø13 com passo 50",
+      "detalhe_2_barra_flutuante": "480 de comprimento, seccao 50, furos Ø26 nas pontas (entre eixos 185) e furo central Ø30 (2 variantes de furacao)",
+      "detalhe_3": "300 de comprimento, Ø50, furo Ø22 a 30 da ponta",
+      "detalhe_4": "500 de comprimento, Ø50, furo Ø22 a 30 da ponta",
+      "detalhe_5": "780 de comprimento, furos Ø26 (cota 210)",
+      "detalhe_6_coluna": "tubo oblongo 115x40x1,5x940 (2 pecas), furos Ø10 nas cotas 105 e 255",
+      "apoio_de_coxas": "DETALHE APOIO: tubo Ø38 dobrado em U, largura 482 (2 pecas)",
+      "tubo_curvado_principal": "NOTA: comprimento 1600, encosto 715, angulo 90 graus, pontas chanfradas a 45 graus"
+    },
+    "furos_e_interfaces": "Furacoes Ø13 (passo 50), Ø26, Ø30, Ø22 e Ø10 detalhadas por peca; guias em inox deslizantes na coluna",
+    "dobra_ou_curva": "Apoio em U (Ø38, largura 482); tubo de 1600 dobrado a 90 graus (encosto 715); cortes a 45 graus",
+    "obs": "BOM (itens legiveis): 19 FERRO CHATO 5x63x70 ABNT-1010 x1; 18 TUBO REDONDO Ø25x27x1,5 ABNT-1010 x1; 17 SUPORTE BANCO 40x40x1,5x300 INOX x1; 16 TUBO QUADRADO 40x40x1,5x500 INOX x1; 15 TUBO REDONDO Ø25,4x1,5x500 INOX x1; 14 TUBO OBLONGO 115x40x1,5x960 ABNT-1010 x2; 12 TUBO QUADRADO 50x50x1,5x500 x1; 11 TQ 50x50x1,5x480 x1; 10 TQ 50x50x1,5x345 x1; 9 TQ 50x50x1,5x300 x1; 8 TQ 50x50x1,5x250 x1; 7 TUBO OBLONGO 40x115x1,5x680 x1; 6 TO 40x115x1,5x690 x1; 5 TO 40x115x1,5x300 x1; 4 TO 40x115x1,5x205 x1; 3 TUBO REDONDO Ø60x1,5x4700 x1; 2 TR Ø60x1,5x2195 x1; 1 TR Ø38x1,5x1600 x1 (item 13 ilegivel no PDF)."
+  },
+  {
+    "arquivo": "puxada_alta/puxada alta/02203.pdf",
+    "projeto": "puxada_alta",
+    "peca": "MONTAGEM - PUXADA ALTA (desenho 02203, folha A2)",
+    "funcao": "Desenho de montagem geral (vista isometrica e explodida) da puxada alta com pilha de placas.",
+    "material": "Nao indicado (ver lista do desenho 02202)",
+    "secao_ou_espessura": "Nao cotado nesta folha",
+    "dimensoes_principais_mm": {
+      "observacao": "Sem cotas; mostra chassi, coluna de placas (pilha com cerca de 12 placas na explodida), barra de puxada curvada, banco/assento plano, apoio de coxas com rolos de espuma, guias, batentes e pino seletor"
+    },
+    "furos_e_interfaces": "Explodida mostra pino seletor com corrente, hastes-guia das placas, buchas/batentes de borracha, ponteiras e fixacoes parafusadas do banco e do apoio",
+    "dobra_ou_curva": "Barra de puxada com pontas dobradas; arco do chassi curvado",
+    "obs": "Sem BOM nesta folha; serve como referencia de sequencia de montagem."
+  },
+  {
+    "arquivo": "puxada_inferior/puxada inferior/1001.pdf",
+    "projeto": "puxada_inferior",
+    "peca": "CHASSI - PUXADA INFERIOR / PUXADA BAIXA (desenho 1001, folha A3)",
+    "funcao": "Chassi da puxada baixa (remada sentada): base longa com apoio de pes inclinado e torre vertical curta para pilha de placas.",
+    "material": "Nao indicado no carimbo (materiais na lista do desenho 1002: ABNT-1010, NYLON)",
+    "secao_ou_espessura": "Tubo redondo Ø60 (quadro curvado), tubo oblongo 40x115x1,5, tubo quadrado 50x50x1,5, ferro chato 1/4\"x2\"",
+    "dimensoes_principais_mm": {
+      "comprimento_total": 2200,
+      "torre_coluna_de_placas": "altura 1290 (montante), trecho superior 700 com travessas, furos de fixacao com passos 300/300",
+      "base_planta": "largura da base 650, travessa 460, entre-eixos 240/250/350, montante longitudinal 1160",
+      "apoio_de_pes": "plataforma inclinada a 70 graus, cotas 200/300, altura 250 e 160",
+      "bucha": "Ø25 externo x Ø10 interno x 25 de comprimento (escala 1:1)"
+    },
+    "furos_e_interfaces": "CORTE A-A: barra de 480 com furos Ø26 (entre eixos 185) e Ø30 central; DETALHE A: chapa 1/4\"x2\"x200 com furo redondo e oblongo (cotas 35/65/50, espessura 10) - 2 pecas; furos Ø6 na travessa (cotas 80/32/27/10); nota VER DESENHO PDR006 para o suporte da polia",
+    "dobra_ou_curva": "Quadro dianteiro em tubo Ø60 curvado em U; apoio de pes inclinado 70 graus",
+    "obs": "Titulo da vista: PUXADA BAIXA (escala 1:10). BOM completa no desenho 1002."
+  },
+  {
+    "arquivo": "puxada_inferior/puxada inferior/1002.pdf",
+    "projeto": "puxada_inferior",
+    "peca": "DETALHES DE FURACAO - PUXADA INFERIOR (desenho 1002, folha A4)",
+    "funcao": "Folha de furacao das pecas soltas e lista de materiais completa da puxada inferior.",
+    "material": "ABNT-1010 (estrutura), NYLON (bucha)",
+    "secao_ou_espessura": "Ø60; tubo oblongo 40x115x1,5; tubo quadrado 50x50x1,5; tubo retangular 30x50x1,5; ferro chato 5x32 e 1/4\"x2\"",
+    "dimensoes_principais_mm": {
+      "detalhe_1": "ferro chato 32x80 com furo Ø5 a 10 da borda (6 pecas)",
+      "detalhe_2_barra_flutuante": "480 de comprimento, furos Ø26 nas pontas (entre eixos 185) e Ø30 central (1 peca)",
+      "detalhe_3": "chapa 1/4\"x2\" com 200 de comprimento, furo redondo + furo oblongo (cotas 35/65/50, espessura 10) - 2 pecas"
+    },
+    "furos_e_interfaces": "Furos Ø5, Ø26, Ø30, furo oblongo em chapa de fixacao da polia; bucha nylon Ø25x25",
+    "dobra_ou_curva": "Item 6 (tubo 50x50x1,5x255) com corte inclinado a 10 graus indicado na coluna CORTE",
+    "obs": "BOM completa: 1 TUBO REDONDO Ø60x4700 ABNT-1010 x1; 2 TUBO OBLONGO 40x115x1,5x350 x1; 3 TO 40x115x1,5x650 x1; 4 TO 40x115x1,5x1300 x1; 5 TUBO QUADRADO 50x50x1,5x250 x1; 6 TQ 50x50x1,5x255 x2 (corte 10 graus); 7 TQ 50x50x1,5x480 x1; 8 TQ 50x50x1,5x1160 x1; 9 TQ 50x50x1,5x160 x2; 10 TUBO RETANGULAR 30x50x1,5x300 x2; 11 FERRO CHATO 5x32x80 x6; 12 FERRO CHATO 1/4\"x2\"x200 x2; 13 BUCHA Ø25x25 NYLON x1; 14 SUPORTE POLIA SUPERIOR - VER DESENHO PDR006 x2. Todos ABNT-1010 salvo bucha."
+  },
+  {
+    "arquivo": "puxada_inferior/puxada inferior/1003.pdf",
+    "projeto": "puxada_inferior",
+    "peca": "MONTAGEM - PUXADA INFERIOR (desenho 1003, folha A2)",
+    "funcao": "Montagem geral (isometrica e explodida) da puxada inferior com pilha de placas e detalhe ampliado do suporte de polia.",
+    "material": "Nao indicado (ver lista do desenho 1002)",
+    "secao_ou_espessura": "Nao cotado nesta folha",
+    "dimensoes_principais_mm": {
+      "observacao": "Sem cotas; mostra chassi, torre com pilha de placas, encosto/plataforma de pes, esticador de cabo com rosca, polia dianteira no quadro em U e placas na explodida"
+    },
+    "furos_e_interfaces": "Detalhe ampliado do suporte da polia com parafusos sextavados e chapa lateral; pino seletor; hastes-guia das placas; esticador roscado do cabo",
+    "dobra_ou_curva": "Quadro dianteiro em U curvado (tubo redondo)",
+    "obs": "Sem BOM nesta folha."
+  },
+  {
+    "arquivo": "POLIA_ALTA_E_BAIXA/POLIA ALTA E BAIXA/02301-DESENHO.pdf",
+    "projeto": "polia_alta_baixa",
+    "peca": "CHASSI - POLIA ALTA E BAIXA (desenho 02301, folha A2)",
+    "funcao": "Chassi da torre dupla de polia alta e baixa: duas colunas de placas em tubo oblongo, arcos em tubo redondo curvado, travessa superior porta-polias e banco fixo.",
+    "material": "Nao indicado no carimbo (materiais na lista do 02304: ABNT-1010 e INOX); guias marcadas INOX no proprio desenho",
+    "secao_ou_espessura": "Tubo oblongo 115x40x1,5 (colunas, corte B-B: TUBO OBLONGO 1060x115x1,5x40); tubo redondo Ø60 (arcos); tubo quadrado 50x50; travessa 30x20",
+    "dimensoes_principais_mm": {
+      "altura_total": 2200,
+      "travessa_superior_porta_polias": "1080 de comprimento x 115 de altura, furos Ø10 nas cotas 105/500/415/60, topo 700x350 na vista auxiliar",
+      "colunas_de_placas": "tubo oblongo 115x40x1,5x1060, vao 27 entre colunas (corte B-B); altura util 930",
+      "base": "650 + 260 + 400 na vista; planta com 115/205/115, 590 e largura total 680",
+      "banco_assento": "estrutura 700x350, altura do assento 300, montante com Ø5 e aba 38, apoios 250/350 e alturas 300/150",
+      "guia": "GUIA de 500 com furos em passo 50 (INOX); vista com Ø25,4 e furos Ø13",
+      "apoio_inclinado": "braco a 45 graus com cotas 510 e 300 (VER DET. APOIO)"
+    },
+    "furos_e_interfaces": "Furos Ø10 na travessa superior para eixos das polias; furos Ø13 em guia de regulagem (passo 50); furos Ø26/Ø60 de passagem; furacao Ø5 no suporte do banco",
+    "dobra_ou_curva": "Dois arcos em tubo Ø60 curvados em U invertido formando a torre; braco de apoio inclinado a 45 graus",
+    "obs": "Cortes e vistas: VISTA 1:10, PLANTA 1:10, BANCO 1:10, CORTE B-B 1:2.5, GUIA 1:10. BOM completa no desenho 02304."
+  },
+  {
+    "arquivo": "POLIA_ALTA_E_BAIXA/POLIA ALTA E BAIXA/02302-DESENHO.pdf",
+    "projeto": "polia_alta_baixa",
+    "peca": "MONTAGEM - POLIA ALTA E BAIXA (desenho 02302, folha A2)",
+    "funcao": "Montagem geral da torre dupla: tres polias na travessa superior, duas pilhas de placas, banco com rolos de apoio de coxas e polia baixa com apoio de pes.",
+    "material": "Nao indicado (ver lista do desenho 02304)",
+    "secao_ou_espessura": "Nao cotado nesta folha",
+    "dimensoes_principais_mm": {
+      "observacao": "Sem cotas; mostra 3 polias/roldanas alinhadas na travessa superior, cabo com barra de puxada curvada, duas colunas de placas com hastes-guia, banco com 2 rolos de espuma para coxas"
+    },
+    "furos_e_interfaces": "Detalhe ampliado da polia baixa: roldana com parafuso e porca sextavada, manipulo esferico de regulagem e rolo de espuma para apoio dos pes montado na base",
+    "dobra_ou_curva": "Arcos das colunas e barra de puxada curvados",
+    "obs": "Sem BOM nesta folha; escala indicada como INDICADAS."
+  },
+  {
+    "arquivo": "POLIA_ALTA_E_BAIXA/POLIA ALTA E BAIXA/02303-DESENHO.pdf",
+    "projeto": "polia_alta_baixa",
+    "peca": "BARRA GRANDE / BARRA PEQUENA - POLIA ALTA E BAIXA (desenho 02303, folha A4)",
+    "funcao": "Barras de puxada (acessorios): barra grande reta, barra grande inclinada e barra pequena com suporte central de engate do cabo.",
+    "material": "ABNT-1010 (barras grandes e suporte) e INOX (barra pequena)",
+    "secao_ou_espessura": "Tubo Ø26,8x2,5 (3/4\" DIN 2440), tubo Ø25,4x1,5, tubo Ø33x1,5, ferro chato 5x38",
+    "dimensoes_principais_mm": {
+      "barra_grande_reta": "1000 de comprimento, Ø26,8 (3/4\" DIN 2440), suporte central de 50 com furo Ø10 (cotas 38/15), altura do conjunto 40",
+      "barra_grande_inclinada": "1000 total = 120 + 760 + 120, pontas dobradas para baixo, mesmo suporte central com furo Ø10",
+      "barra_pequena": "400 de comprimento, Ø25,4, luva central de 50 com furo",
+      "suporte": "ferro chato 38x50 com furo Ø10 a 15 da borda, soldado em tubo Ø33"
+    },
+    "furos_e_interfaces": "Furo Ø10 no suporte central para engate do mosquetao/cabo",
+    "dobra_ou_curva": "Barra grande inclinada com as duas pontas de 120 dobradas em angulo",
+    "obs": "BOM completa: 1 TUBO REDONDO Ø25,4x1,5x400 INOX x1; 2 TUBO REDONDO Ø26,8x2,5x1000 ABNT-1010 x1; 3 TUBO REDONDO Ø33x1,5x50 ABNT-1010 x1; 4 FERRO CHATO 5x38x50 ABNT-1010 x2."
+  },
+  {
+    "arquivo": "POLIA_ALTA_E_BAIXA/POLIA ALTA E BAIXA/02304-DESENHO.pdf",
+    "projeto": "polia_alta_baixa",
+    "peca": "DETALHES DE FURACAO + LISTA DE MATERIAIS - POLIA ALTA E BAIXA (desenho 02304, folha A3)",
+    "funcao": "Folha de furacao de todas as pecas soltas e lista de materiais completa (25 itens) da polia alta e baixa.",
+    "material": "ABNT-1010 (estrutura), INOX (guias e suporte do banco), NYLON (buchas)",
+    "secao_ou_espessura": "Ø60x1,5 / Ø38x1,5 / Ø25,4x1,5; tubo quadrado 50x50x1,5 e 40x40x1,5; tubo oblongo 40x115x1,5; tubo retangular 50x30x1,5 e 20x50x1,5; ferro chato 5x50, 5x38, 3x27; chapa/bucha Ø25",
+    "dimensoes_principais_mm": {
+      "detalhe_1_guia": "500 de comprimento, seccao 40, furo Ø26 no topo (a 25) e furos Ø13 em passo 50 (cota inicial 125/150)",
+      "detalhe_2": "400 de comprimento, Ø50, furo Ø(22) a 30 do topo",
+      "detalhe_3": "300 de comprimento, Ø50, furo a 30 do topo",
+      "detalhe_4_travessa_polias": "tubo oblongo 1060/1080x115x1,5x40 (2 pecas), furos Ø10 nas cotas 105/500/415/60, altura 115",
+      "detalhe_5": "ferro chato 38x80 com furo Ø5 a 10 da borda (2 pecas)",
+      "detalhe_6_barra_flutuante": "480 de comprimento, furos Ø26 (entre eixos 185) e Ø30 central, seccao 50 (2 pecas)",
+      "detalhe_7": "ferro chato 50x135 com furo Ø11 (cotas 70/15) - 2 pecas",
+      "bucha": "Ø25x25 com furo Ø10 (2 pecas, escala 1:2)",
+      "apoio_de_coxas": "DETALHE APOIO: tubo Ø38 em U, largura 482 (2 pecas); braco VISTA de 650 com corte a 45 graus",
+      "tubo_curvado": "NOTA: comprimento 1600, encosto 715, angulo 90 graus"
+    },
+    "furos_e_interfaces": "Furacoes Ø5, Ø10, Ø11, Ø13 (passo 50), Ø22, Ø26, Ø30 detalhadas por peca; cortes angulares indicados na coluna CORTE (45, 22,5 e 15 graus)",
+    "dobra_ou_curva": "Apoio em U Ø38 largura 482; tubo 1600 dobrado a 90 graus (encosto 715); cortes 45/45 no item 1 e 7, 15 graus no item 12, 22,5 graus indicados",
+    "obs": "BOM completa: 25 TR Ø25,4x1,5x27 x1; 24 SUPORTE BANCO 40x40x300 INOX x1; 23 TQ 40x40x1,5x500 INOX x1; 22 TR Ø25,4x1,5x500 INOX x1; 21 TO 40x115x1,5x1080 x2; 20 FC 5x50x135 x2; 19 FC 3,0x27x120 x2; 18 FC 5x38x80 x6; 17 TRet 50x30x1,5x300 x2; 16 TRet 20x50x1,5x260 x2; 15 TQ 50x50x1,5x700 x1; 14 TQ 50x50x1,5x500 x1; 13 TQ 50x50x1,5x480 x2; 12 TQ 50x50x1,5x400 x2 (corte 15); 11 TQ 50x50x1,5x355 x1; 10 TQ 50x50x1,5x300 x3; 9 TQ 50x50x1,5x250 x2; 8 TQ 50x50x1,5x150 x2; 7 TQ 40x40x1,5x250 x2 (corte 45/45); 6 TO 40x115x1,5x680 x2; 5 TO 40x115x1,5x600 x1; 4 TO 40x115x1,5x300 x1; 3 TO 40x115x1,5x215 x2; 2 TR Ø60x1,5x4700 x2; 1 TR Ø38x1,5x1600 x1 (corte 45/45). TQ=tubo quadrado, TO=tubo oblongo, TR=tubo redondo, TRet=tubo retangular, FC=ferro chato; ABNT-1010 salvo onde marcado INOX."
+  },
+  {
+    "arquivo": "DORSAL_45_U00ba/DORSAL 45#U00ba/4401-DESENHO.pdf",
+    "projeto": "dorsal_45",
+    "peca": "MONTAGEM - DORSAL 45 graus (desenho 4401, folha A3)",
+    "funcao": "Conjunto soldado do banco de dorsal (remada/hiperextensao) a 45 graus: base longa, rampa a 45 graus, montantes de regulagem e apoio de pes em U com pinos.",
+    "material": "Nao indicado no carimbo (materiais na lista do 4402: ABNT-1010 e INOX)",
+    "secao_ou_espessura": "Tubo quadrado 50x50 (estrutura), 40x40 (montantes de regulagem), tubo redondo Ø25,4 (pinos/apoios), chapa dobrada 3 mm",
+    "dimensoes_principais_mm": {
+      "base": "comprimento 1500, pe dianteiro 340, seccao 50; travessa traseira em T com 450 de largura",
+      "rampa_45_graus": "braco principal 800 a 45 graus, bracos auxiliares 600 e 300, braco superior 280, torre traseira 180/160 de altura",
+      "apoio_de_pes": "quadro em U de tubo Ø25,4, largura 650, vao 400 entre suportes, pinos com 100 e altura 200, cota 38, furos Ø5",
+      "montante_regulagem": "montante vertical 400 (sobre base de 450) com furos Ø13 em passo 50 e pe de 150; coluna de 300 com furos em passo 50 (cotas 100/50/50)",
+      "pino_porta_peso": "pino Ø25,4 com 150 de comprimento na rampa e no suporte lateral (cotas 150/25)",
+      "chapa_plataforma": "chapa dobrada em L 300x400 com aba de 50"
+    },
+    "furos_e_interfaces": "Furos Ø13 em passo 50 nos montantes de regulagem; pinos Ø25,4 para anilhas/regulagem; furos Ø5 nos ferros chatos do apoio de pes; ponta com tubo Ø25,4 e cota 38",
+    "dobra_ou_curva": "Rampa soldada a 45 graus; apoio de pes em tubo Ø25,4 dobrado em U; chapa 3 mm dobrada em L (300x400, aba 50)",
+    "obs": "Vistas: VISTA 1:10, PLANTA 1:10, mais vistas parciais 1:5 dos montantes. BOM completa no desenho 4402."
+  },
+  {
+    "arquivo": "DORSAL_45_U00ba/DORSAL 45#U00ba/4402-DESENHO.pdf",
+    "projeto": "dorsal_45",
+    "peca": "DETALHES - DORSAL 45 graus (desenho 4402, folha A3)",
+    "funcao": "Folha de detalhes de furacao das pecas soltas e lista de materiais completa (16 itens) do dorsal 45 graus.",
+    "material": "ABNT-1010 (estrutura), INOX (tubos de regulagem 40x40 e Ø25,4)",
+    "secao_ou_espessura": "Tubo quadrado 50x50x1,5 e 40x40x1,5; tubo redondo Ø25,4x1,5 e Ø25,5x1,5; ferro chato 5x25; chapa 3 mm",
+    "dimensoes_principais_mm": {
+      "detalhe_1_montante": "tubo seccao 40, comprimento 500, furos Ø13 (primeira a 150, demais em passo 50)",
+      "detalhe_2_montante": "tubo seccao 40, comprimento 300, furo Ø26 no topo (a 30) e furos Ø13 em passo 50",
+      "detalhe_3": "tubo seccao 50, comprimento 280, furo Ø22 a 30 do topo, corte inclinado 23 graus na base",
+      "detalhe_4": "tubo seccao 50, comprimento 180, furo Ø22 a 30",
+      "detalhe_5_rampa": "tubo seccao 50, comprimento 800, furo Ø22 a 30 do topo, corte a 45 graus na base",
+      "detalhe_6": "ferro chato 38 de largura x 100, furo Ø5 a 10 da borda (8 pecas)"
+    },
+    "furos_e_interfaces": "Furos Ø13 (passo 50) para pino de regulagem, Ø22 e Ø26 para buchas/eixos, Ø5 para fixacao dos apoios",
+    "dobra_ou_curva": "Cortes angulares na coluna CORTE: 45 graus (itens 10, 9 e 7), 22,5 graus (itens 6 e 4)",
+    "obs": "BOM completa: 16 TQ 40x40x1,5x500 INOX x1; 15 TQ 40x40x1,5x300 INOX x1; 14 TR Ø25,4x1,5x400 INOX x1; 13 CHAPA #3x350x400 ABNT-1010 x1; 12 FC 5x25x100 x8; 11 TQ 50x50x1,5x1500 x1; 10 TQ 50x50x1,5x800 x1 (45); 9 TQ 50x50x1,5x600 x1 (45); 8 TQ 50x50x1,5x450 x2; 7 TQ 50x50x1,5x300 x1 (45); 6 TQ 50x50x1,5x280 x1 (22,5); 5 TQ 50x50x1,5x180 x1; 4 TQ 50x50x1,5x160 x1 (22,5); 3 TQ 40x40x1,5x400 x1; 2 TR Ø25,5x1,5x960 x1; 1 TR Ø25,4x1,5x150 x2. ABNT-1010 salvo onde marcado INOX."
+  }
+]

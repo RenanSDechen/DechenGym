@@ -61,6 +61,13 @@ CATALOGO_METALON: dict[str, PerfilMetalon] = {
     "50x30": _perfil(50, 30),
     "60x40": _perfil(60, 40, espessuras=(1.2, 1.5, 2.0, 3.0, 4.75)),
     "80x40": _perfil(80, 40, espessuras=(1.5, 2.0, 3.0, 4.75)),
+    # Perfis industriais de máquinas de musculação (memoriais descritivos de
+    # mercado): 75x35 e 80x40 com parede 2,0-3,0 mm. As entradas com a
+    # ALTURA maior ("35x75", "40x80") representam o perfil orientado com a
+    # alma na vertical — a orientação correta para flexão da alavanca.
+    "75x35": _perfil(75, 35, espessuras=(2.0, 3.0)),
+    "35x75": _perfil(35, 75, espessuras=(2.0, 3.0)),
+    "40x80": _perfil(40, 80, espessuras=(1.5, 2.0, 3.0, 4.75)),
 }
 
 
