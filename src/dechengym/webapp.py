@@ -296,7 +296,7 @@ footer{{padding:14px 26px;border-top:1px solid var(--line);color:var(--mut);font
 
 
 _PAGINA_TREINO = """<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>DechenGym — Meu Treino</title><style>
 :root{--bg:#0f1216;--panel:#171b21;--line:#262c34;--txt:#e8ebef;--mut:#9aa4b0;--acc:#e0a422;--ok:#22c55e;--warn:#f59e0b;--err:#ef4444}
 *{box-sizing:border-box;margin:0}
@@ -304,7 +304,7 @@ body{background:var(--bg);color:var(--txt);font:14px/1.5 'Segoe UI',system-ui,sa
 header{padding:16px 26px;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:baseline}
 header h1{font-size:19px}header h1 b{color:var(--acc)}
 header a{margin-left:auto;color:var(--acc);text-decoration:none;font-weight:600}
-main{max-width:1100px;margin:0 auto;padding:24px}
+main{max-width:1100px;margin:0 auto;padding:24px;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
 .chips{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
 .chip{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 16px;min-width:130px}
 .chip b{font-size:18px;display:block}.chip span{color:var(--mut);font-size:11.5px}
@@ -336,8 +336,8 @@ table{width:100%;border-collapse:collapse;font-size:12.5px;background:var(--pane
 td,th{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line)}
 th{color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
 .und{background:none;border:1px solid var(--line);color:var(--mut);width:auto;font-weight:500;font-size:11.5px;padding:6px 10px;margin-top:8px}
-#msg{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ok);color:#08110b;font-weight:700;border-radius:10px;padding:10px 18px;display:none}
-footer{padding:12px 26px;border-top:1px solid var(--line);color:var(--mut);font-size:11.5px}
+#msg{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ok);color:#08110b;font-weight:700;border-radius:10px;padding:10px 18px;display:none}
+footer{padding:12px 26px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);color:var(--mut);font-size:11.5px}
 </style></head><body>
 <header><h1><b>Dechen</b>Gym · Meu Treino</h1><a href="/academia">🏟 Academia Virtual</a><a href="/">⚙ Estúdio de Projeto</a></header>
 <main id="app"><p style="color:var(--mut)">Carregando…</p></main>
