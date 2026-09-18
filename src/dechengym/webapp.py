@@ -30,6 +30,12 @@ from dechengym.academia import gerar_catalogo_academia, gerar_planta_academia
 from dechengym.data.exercicios_db import CATALOGO_EXERCICIOS
 from dechengym.data.metalon_db import perfis_disponiveis
 from dechengym.orquestrador import AdaptadorRegras, orquestrar
+from dechengym.treino import (
+    definir_divisao,
+    desfazer_ultimo,
+    registrar_treino,
+    visao_geral_treino,
+)
 
 RAIZ = Path(__file__).resolve().parents[2]
 SAIDA = RAIZ / "output" / "webapp"
@@ -80,7 +86,7 @@ td.ok{color:var(--ok)}td.no{color:var(--err)}
 footer{padding:10px 26px;border-top:1px solid var(--line);color:var(--mut);font-size:11.5px}
 @media(max-width:860px){main{grid-template-columns:1fr}form{border-right:0;border-bottom:1px solid var(--line)}}
 </style></head><body>
-<header><h1><b>Dechen</b>Gym · Estúdio de Projeto</h1><span>briefing → ergonomia → came → estrutura → 3D → dossiê</span><a href="/academia" style="margin-left:auto;color:var(--acc);text-decoration:none;font-weight:600">🏟 Academia Virtual →</a></header>
+<header><h1><b>Dechen</b>Gym · Estúdio de Projeto</h1><span>briefing → ergonomia → came → estrutura → 3D → dossiê</span><a href="/treino" style="margin-left:auto;color:var(--acc);text-decoration:none;font-weight:600">💪 Meu Treino →</a><a href="/academia" style="color:var(--acc);text-decoration:none;font-weight:600">🏟 Academia Virtual →</a></header>
 <main>
 <form id="f" onsubmit="return false">
   <h2>Briefing livre (opcional)</h2>
@@ -273,7 +279,7 @@ h2{{font-size:14px;margin:26px 0 12px;color:var(--acc);text-transform:uppercase;
 .planta img{{width:100%;display:block}}
 footer{{padding:14px 26px;border-top:1px solid var(--line);color:var(--mut);font-size:11.5px}}
 </style></head><body>
-<header><h1><b>Dechen</b>Gym · Academia Virtual</h1><a href="/">&larr; Estudio de Projeto</a></header>
+<header><h1><b>Dechen</b>Gym · Academia Virtual</h1><a href="/treino" style="margin-left:auto">💪 Meu Treino</a><a href="/">&larr; Estudio de Projeto</a></header>
 <main>
 <div class="resumo">
   <div class="chip"><b>{res['total_equipamentos']}</b><span>equipamentos mais usados</span></div>
@@ -287,6 +293,98 @@ footer{{padding:14px 26px;border-top:1px solid var(--line);color:var(--mut);font
 </main>
 <footer>Base compilada de rankings do setor (Skelcore, WodGuru, Fitness Expo) e fichas de fabricantes topo de linha (Hammer Strength/Life Fitness, Technogym, Matrix). Dimensoes de referencia — confirme na ficha do fabricante.</footer>
 </body></html>"""
+
+
+_PAGINA_TREINO = """<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DechenGym — Meu Treino</title><style>
+:root{--bg:#0f1216;--panel:#171b21;--line:#262c34;--txt:#e8ebef;--mut:#9aa4b0;--acc:#e0a422;--ok:#22c55e;--warn:#f59e0b;--err:#ef4444}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--txt);font:14px/1.5 'Segoe UI',system-ui,sans-serif}
+header{padding:16px 26px;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:baseline}
+header h1{font-size:19px}header h1 b{color:var(--acc)}
+header a{margin-left:auto;color:var(--acc);text-decoration:none;font-weight:600}
+main{max-width:1100px;margin:0 auto;padding:24px}
+.chips{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.chip{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 16px;min-width:130px}
+.chip b{font-size:18px;display:block}.chip span{color:var(--mut);font-size:11.5px}
+.chip select{background:#0e1114;border:1px solid var(--line);border-radius:8px;color:var(--txt);padding:6px 8px;font-size:13px;margin-top:2px}
+h2{font-size:13px;margin:22px 0 10px;color:var(--acc);text-transform:uppercase;letter-spacing:.07em}
+.ciclo{display:flex;gap:10px;flex-wrap:wrap}
+.pill{display:flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 16px 8px 9px}
+.pill .lt{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:#232a33;color:var(--mut)}
+.pill.feito .lt{background:rgba(34,197,94,.18);color:var(--ok);border:1px solid rgba(34,197,94,.45)}
+.pill small{color:var(--mut);display:block;font-size:11px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.tr{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;position:relative}
+.tr.rec{border-color:rgba(224,164,34,.65);box-shadow:0 0 0 1px rgba(224,164,34,.35)}
+.tr.feito{opacity:.62}
+.badge{position:absolute;top:-9px;right:14px;background:var(--acc);color:#14161a;font-size:10px;font-weight:800;border-radius:999px;padding:3px 10px;letter-spacing:.05em}
+.tr-top{display:flex;gap:12px;align-items:center;margin-bottom:6px}
+.tr-top .lt{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;font-weight:800;background:#232a33;color:var(--acc)}
+.tr-top b{font-size:15px;display:block}
+.tr-top small{color:var(--mut)}
+.rec-l{list-style:none;margin:8px 0;font-size:12.5px}
+.rec-l li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:3px 0;color:var(--mut)}
+.rec-l .ok{color:var(--ok)}.rec-l .warn{color:var(--warn)}
+.motivo{font-size:12px;color:var(--mut);font-style:italic;margin:6px 0}
+.eqs{font-size:11.5px;color:#c8d0da;margin:6px 0 10px}
+.eqs a{color:var(--acc);text-decoration:none}
+button{background:var(--acc);border:0;border-radius:9px;color:#14161a;font-weight:700;font-size:13px;padding:10px 14px;cursor:pointer;width:100%}
+.tr.feito button{background:#232a33;color:var(--mut);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:12.5px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+td,th{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.und{background:none;border:1px solid var(--line);color:var(--mut);width:auto;font-weight:500;font-size:11.5px;padding:6px 10px;margin-top:8px}
+#msg{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ok);color:#08110b;font-weight:700;border-radius:10px;padding:10px 18px;display:none}
+footer{padding:12px 26px;border-top:1px solid var(--line);color:var(--mut);font-size:11.5px}
+</style></head><body>
+<header><h1><b>Dechen</b>Gym · Meu Treino</h1><a href="/academia">🏟 Academia Virtual</a><a href="/">⚙ Estúdio de Projeto</a></header>
+<main id="app"><p style="color:var(--mut)">Carregando…</p></main>
+<div id="msg"></div>
+<footer>Sugestões: pendência no ciclo + recuperação por grupo muscular (inclui trabalho indireto das sinergias). Registro em output/treino/historico.json.</footer>
+<script>
+const $=s=>document.querySelector(s);
+async function api(rota,corpo){const r=await fetch(rota,corpo?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(corpo)}:undefined);const d=await r.json();if(!r.ok)throw new Error(d.erro||'falha');return d}
+function aviso(t){const m=$('#msg');m.textContent=t;m.style.display='block';setTimeout(()=>m.style.display='none',2600)}
+function fmtRec(g){if(g.dias_descanso===null)return `<li><span>${g.grupo}</span><span class="ok">descansado</span></li>`;
+ const cls=g.dias_descanso>=2?'ok':'warn';const ind=g.indireto?' (indireto)':'';
+ return `<li><span>${g.grupo}${ind}</span><span class="${cls}">${g.dias_descanso}d de descanso</span></li>`}
+function render(v){
+ const pills=Object.keys(v.divisoes_disponiveis).map(k=>`<option value="${k}"${k===v.divisao?' selected':''}>${v.divisoes_disponiveis[k]}</option>`).join('');
+ const feitos=Object.fromEntries(v.ciclo.feitos.map(f=>[f.letra,f.data]));
+ const todas=[...v.ciclo.feitos.map(f=>f.letra),...v.ciclo.pendentes];
+ todas.sort();
+ const ciclo=todas.map(l=>{const ok=l in feitos;return `<div class="pill${ok?' feito':''}"><div class="lt">${ok?'✓':l}</div><div><b>${l}</b><small>${ok?feitos[l]:'pendente'}</small></div></div>`}).join('');
+ const cards=v.sugestoes.map(s=>{
+  const eqs=s.equipamentos.map(e=>e.projeto_completo?`<a href="/?exercicio=${e.exercicio_pipeline}">${e.nome}</a>`:e.nome).join(' · ');
+  return `<div class="tr${s.recomendado?' rec':''}${s.pendente_no_ciclo?'':' feito'}">
+   ${s.recomendado?'<div class="badge">RECOMENDADO HOJE</div>':''}
+   <div class="tr-top"><div class="lt">${s.letra}</div><div><b>${s.nome}</b><small>${s.ultimo_treino?'último: '+s.ultimo_treino:'nunca treinado'}</small></div></div>
+   <ul class="rec-l">${s.recuperacao.map(fmtRec).join('')}</ul>
+   <p class="motivo">${s.motivo}</p>
+   <p class="eqs">🏋 ${eqs}</p>
+   <button onclick="treinar('${s.letra}','${s.nome.replace(/'/g,'')}')">${s.pendente_no_ciclo?'✓ Treinar este hoje':'↻ Repetir mesmo assim'}</button>
+  </div>`}).join('');
+ const hist=v.historico_recente.map(h=>`<tr><td>${h.data}</td><td><b>${h.letra}</b> — ${h.nome}</td><td>${h.dias_atras===0?'hoje':h.dias_atras+'d atrás'}</td></tr>`).join('')||'<tr><td colspan="3" style="color:var(--mut)">Nenhum treino registrado ainda — escolha um card acima.</td></tr>';
+ $('#app').innerHTML=`
+ <div class="chips">
+  <div class="chip"><b>${v.ciclo.progresso}</b><span>ciclo atual</span></div>
+  <div class="chip"><b>${v.treinos_ultimos_7_dias}</b><span>treinos nos últimos 7 dias</span></div>
+  <div class="chip"><b>${v.hoje}</b><span>hoje</span></div>
+  <div class="chip"><span>divisão</span><br/><select id="div" onchange="mudarDiv(this.value)">${pills}</select></div>
+ </div>
+ <h2>Ciclo atual — ${v.divisao_nome}</h2><div class="ciclo">${ciclo}</div>
+ <h2>Próximos treinos (escolha ou troque)</h2><div class="cards">${cards}</div>
+ <h2>Histórico recente</h2><table><tr><th>Data</th><th>Treino</th><th></th></tr>${hist}</table>
+ <button class="und" onclick="desfazer()">↶ desfazer último registro</button>`;
+}
+async function carregar(){render(await api('/api/treino'))}
+async function treinar(l,n){render(await api('/api/treino/registrar',{letra:l}));aviso('Treino '+l+' — '+n+' registrado 💪')}
+async function mudarDiv(d){render(await api('/api/treino/divisao',{divisao:d}));aviso('Divisão alterada — histórico preservado')}
+async function desfazer(){render(await api('/api/treino/desfazer',{}));aviso('Último registro removido')}
+carregar();
+</script></body></html>"""
 
 
 class _Handler(BaseHTTPRequestHandler):
@@ -327,6 +425,17 @@ class _Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(corpo)
             return
+        if rota == "/treino":
+            corpo = _PAGINA_TREINO.encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(corpo)))
+            self.end_headers()
+            self.wfile.write(corpo)
+            return
+        if rota == "/api/treino":
+            self._json(visao_geral_treino())
+            return
         if rota == "/api/academia":
             self._json(gerar_catalogo_academia())
             return
@@ -361,6 +470,12 @@ class _Handler(BaseHTTPRequestHandler):
                 self._json(req.to_dict())
             elif rota == "/api/projetar":
                 self._json(_projetar(corpo))
+            elif rota == "/api/treino/registrar":
+                self._json(registrar_treino(corpo["letra"], corpo.get("data")))
+            elif rota == "/api/treino/divisao":
+                self._json(definir_divisao(corpo["divisao"]))
+            elif rota == "/api/treino/desfazer":
+                self._json(desfazer_ultimo())
             else:
                 self._json({"erro": "rota desconhecida"}, 404)
         except Exception as exc:  # erro de domínio vira mensagem legível

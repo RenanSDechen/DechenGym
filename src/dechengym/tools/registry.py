@@ -54,6 +54,11 @@ from dechengym.data.referencias_loader import (
     get_desenhos_projeto,
     listar_projetos_extraidos,
 )
+from dechengym.treino import (
+    definir_divisao,
+    registrar_treino,
+    visao_geral_treino,
+)
 from dechengym.montagem3d import (
     gerar_pecas_maquina,
     gerar_visualizador_html,
@@ -123,6 +128,10 @@ TOOLS: dict[str, Callable[..., Any]] = {
     "listar_biblioteca_padroes": listar_biblioteca_padroes,
     "listar_projetos_extraidos": listar_projetos_extraidos,
     "get_desenhos_projeto": get_desenhos_projeto,
+    # --- Meu Treino ---
+    "visao_geral_treino": visao_geral_treino,
+    "registrar_treino": registrar_treino,
+    "definir_divisao_treino": definir_divisao,
 }
 
 
@@ -808,6 +817,42 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
             "type": "object",
             "properties": {"projeto": {"type": "string"}},
             "required": ["projeto"],
+        },
+    },
+    # ---------------------------- Meu Treino ------------------------------
+    {
+        "name": "visao_geral_treino",
+        "description": (
+            "Tela macro do treino do usuario: divisao atual, progresso do "
+            "ciclo, recuperacao por grupo muscular e proximos treinos "
+            "ranqueados (com motivo e equipamentos da academia)."
+        ),
+        "input_schema": {"type": "object", "properties": {}, "required": []},
+    },
+    {
+        "name": "registrar_treino",
+        "description": (
+            "Registra o treino feito hoje (letra da divisao atual, ex.: 'B') "
+            "e retorna a visao geral atualizada com as proximas opcoes."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {"letra": {"type": "string"},
+                           "data": {"type": "string"}},
+            "required": ["letra"],
+        },
+    },
+    {
+        "name": "definir_divisao_treino",
+        "description": (
+            "Troca a divisao de treino do usuario (abc, abcd ou abcde), "
+            "preservando o historico ja registrado."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {"divisao": {"type": "string",
+                                       "enum": ["abc", "abcd", "abcde"]}},
+            "required": ["divisao"],
         },
     },
 ]
